@@ -1,0 +1,67 @@
+ [project]
+authors = ["josiahls <jklaivins@gmail.com>"]
+channels = ["https://conda.modular.com/max-nightly", "https://conda.modular.com/max", "https://repo.prefix.dev/modular-community", "conda-forge"]
+name = "dpdk_mojo"
+platforms = ["linux-64", "linux-aarch64"]
+version = "0.1.0"
+
+[dependencies]
+mojo = ">=25.6.0.dev2025080116"
+pre-commit = ">=4.2.0,<5"
+
+[tasks]
+######################### DPDK #######################################
+clone_dpdk = { cmd = [
+    "bash", "-c", 
+    "if [ ! -d dpdk ]; then git clone https://github.com/DPDK/dpdk.git; else echo 'DPDK directory already exists.'; fi"
+]}
+
+init_dpdk_build = { cmd = [
+    "cd", "dpdk", "&&",
+    "mkdir", "-p", "build", "&&",
+    "cd", "build", "&&",
+    "cmake", ".."
+], outputs = ["dpdk/build"]}
+
+build_dpdk = { cmd = [
+    "cd", "dpdk/build", "&&",
+    "make",
+], depends-on = [
+    "init_dpdk_build"
+], outputs = ["dpdk/build/lib/libdpdk.so"]}
+
+
+######################### C Binder Mojo #######################################
+clone_c_binder_mojo = { cmd = [
+    "bash", "-c", 
+    "if [ ! -d c_binder_mojo ]; then git clone https://github.com/josiahls/c_binder_mojo.git; else echo 'C Binder Mojo directory already exists.'; fi"
+]}
+
+######################### Core API ############################################
+configure = { cmd = [
+    "echo", "configuring"
+], depends-on = [ "build_dpdk", "clone_c_binder_mojo" ] }
+
+generate_bindings = { cmd = [
+    "cd", "c_binder_mojo", "&&",
+    "pixi", "run", "generate_bindings", 
+    "--input_header_path", "$PIXI_PROJECT_ROOT/dpdk/include/dpdk/dpdk.h", 
+    "--output_dir", "$PIXI_PROJECT_ROOT/dpdk_mojo/", 
+    "--so_file_path", "$PIXI_PROJECT_ROOT/dpdk/build/lib/libdpdk.so", 
+    "--extra_args", "-I $PIXI_PROJECT_ROOT/dpdk/include", 
+    "--include_only_prefixes","mj", 
+    "--debug_output", "true"
+], depends-on = [ "configure" ]}
+
+format = { cmd = [
+    "mojo", "format", "c_binder_mojo"
+]}
+
+
+######################### Tests ############################################
+
+test_hello_world = { cmd = [
+    "export", "LIBDPDK_LIB_PATH=$PIXI_PROJECT_ROOT/dpdk/build/lib/", "&&",
+    "pixi", "run", "mojo", "run","-I",".", "-I", "c_binder_mojo", "tests/test_hello_world.mojo"
+], depends-on = [ "init_dpdk_build", "generate_bindings" ]}
+

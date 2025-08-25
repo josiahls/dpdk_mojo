@@ -1,0 +1,11 @@
+[submodule "dpdk"]
+    path = dpdk
+    url = https://github.com/DPDK/dpdk
+    branch = main
+    ignore = all
+
+[submodule "c_binder_mojo"]
+	path = c_binder_mojo
+	url = https://github.com/josiahls/c_binder_mojo.git
+	branch = main
+    ignore = all
