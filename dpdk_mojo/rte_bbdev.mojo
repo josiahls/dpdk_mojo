@@ -10,8 +10,7 @@ from utils import StaticTuple
 # Node: TranslationUnitDecl()
 alias __int128_t = Int128
 alias __uint128_t = UInt128
-@register_passable("trivial")
-struct __NSConstantString_tag:
+struct __NSConstantString_tag(ExplicitlyCopyable & Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
 
@@ -65,8 +64,7 @@ alias __clang_svfloat64x4_t = UnsafePointer[Float64]
 alias __clang_svbfloat16x4_t = UnsafePointer[BFloat16]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
-@register_passable("trivial")
-struct __va_list:
+struct __va_list(ExplicitlyCopyable & Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
@@ -104,9 +102,8 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-@register_passable("trivial")
-struct anonomous_record_1:
-	var __val : StaticTuple[Int32, 2]
+struct anonomous_record_1(ExplicitlyCopyable & Copyable & Movable):
+	var __val : InlineArray[Int32, 2]
 
 alias __fsid_t = anonomous_record_1
 
@@ -166,8 +163,7 @@ alias intptr_t = ffi.c_long
 alias uintptr_t = ffi.c_ulong
 alias intmax_t = __intmax_t
 alias uintmax_t = __uintmax_t
-@register_passable("trivial")
-struct rte_bbdev_op_td_flag_bitmasks:
+struct rte_bbdev_op_td_flag_bitmasks(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_BBDEV_TURBO_SUBBLOCK_DEINTERLEAVE = 0
 
@@ -203,8 +199,7 @@ struct rte_bbdev_op_td_flag_bitmasks:
 
 	alias RTE_BBDEV_TURBO_DEC_CRC_24B_DROP = 16
 
-@register_passable("trivial")
-struct rte_bbdev_op_te_flag_bitmasks:
+struct rte_bbdev_op_te_flag_bitmasks(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_BBDEV_TURBO_RV_INDEX_BYPASS = 0
 
@@ -218,8 +213,7 @@ struct rte_bbdev_op_te_flag_bitmasks:
 
 	alias RTE_BBDEV_TURBO_ENC_SCATTER_GATHER = 5
 
-@register_passable("trivial")
-struct rte_bbdev_op_ldpcdec_flag_bitmasks:
+struct rte_bbdev_op_ldpcdec_flag_bitmasks(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_BBDEV_LDPC_CRC_TYPE_24A_CHECK = 0
 
@@ -263,8 +257,7 @@ struct rte_bbdev_op_ldpcdec_flag_bitmasks:
 
 	alias RTE_BBDEV_LDPC_HARQ_4BIT_COMPRESSION = 20
 
-@register_passable("trivial")
-struct rte_bbdev_op_ldpcenc_flag_bitmasks:
+struct rte_bbdev_op_ldpcenc_flag_bitmasks(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_BBDEV_LDPC_INTERLEAVER_BYPASS = 0
 
@@ -282,8 +275,7 @@ struct rte_bbdev_op_ldpcenc_flag_bitmasks:
 
 	alias RTE_BBDEV_LDPC_ENC_CONCATENATION = 7
 
-@register_passable("trivial")
-struct rte_bbdev_op_fft_flag_bitmasks:
+struct rte_bbdev_op_fft_flag_bitmasks(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_BBDEV_FFT_WINDOWING = 0
 
@@ -309,23 +301,19 @@ struct rte_bbdev_op_fft_flag_bitmasks:
 
 	alias RTE_BBDEV_FFT_FREQ_RESAMPLING = 11
 
-@register_passable("trivial")
-struct rte_bbdev_op_mldts_flag_bitmasks:
+struct rte_bbdev_op_mldts_flag_bitmasks(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_BBDEV_MLDTS_REP = 0
 
-@register_passable("trivial")
-struct rte_bbdev_op_cb_mode:
+struct rte_bbdev_op_cb_mode(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_BBDEV_TRANSPORT_BLOCK = 0
 
 	alias RTE_BBDEV_CODE_BLOCK = 1
 
-@register_passable("trivial")
-struct rte_mbuf:
+struct rte_mbuf(ExplicitlyCopyable & Copyable & Movable):
 	pass
-@register_passable("trivial")
-struct rte_bbdev_op_data:
+struct rte_bbdev_op_data(ExplicitlyCopyable & Copyable & Movable):
 
 	var data : rte_mbuf
 
@@ -333,20 +321,17 @@ struct rte_bbdev_op_data:
 
 	var length : UInt32
 
-@register_passable("trivial")
-struct rte_bbdev_op_dec_turbo_cb_params:
+struct rte_bbdev_op_dec_turbo_cb_params(ExplicitlyCopyable & Copyable & Movable):
 
 	var k : UInt16
 
 	var e : UInt32
 
-@register_passable("trivial")
-struct rte_bbdev_op_dec_ldpc_cb_params:
+struct rte_bbdev_op_dec_ldpc_cb_params(ExplicitlyCopyable & Copyable & Movable):
 
 	var e : UInt32
 
-@register_passable("trivial")
-struct rte_bbdev_op_dec_turbo_tb_params:
+struct rte_bbdev_op_dec_turbo_tb_params(ExplicitlyCopyable & Copyable & Movable):
 
 	var k_neg : UInt16
 
@@ -364,8 +349,7 @@ struct rte_bbdev_op_dec_turbo_tb_params:
 
 	var r : UInt8
 
-@register_passable("trivial")
-struct rte_bbdev_op_dec_ldpc_tb_params:
+struct rte_bbdev_op_dec_ldpc_tb_params(ExplicitlyCopyable & Copyable & Movable):
 
 	var ea : UInt32
 
@@ -379,8 +363,7 @@ struct rte_bbdev_op_dec_ldpc_tb_params:
 
 alias anonomous_record_2 = C_Union[rte_bbdev_op_dec_turbo_cb_params, rte_bbdev_op_dec_turbo_tb_params]
 
-@register_passable("trivial")
-struct rte_bbdev_op_turbo_dec:
+struct rte_bbdev_op_turbo_dec(ExplicitlyCopyable & Copyable & Movable):
 
 	var input : rte_bbdev_op_data
 
@@ -410,8 +393,7 @@ struct rte_bbdev_op_turbo_dec:
 
 alias anonomous_record_3 = C_Union[rte_bbdev_op_dec_ldpc_cb_params, rte_bbdev_op_dec_ldpc_tb_params]
 
-@register_passable("trivial")
-struct rte_bbdev_op_ldpc_dec:
+struct rte_bbdev_op_ldpc_dec(ExplicitlyCopyable & Copyable & Movable):
 
 	var input : rte_bbdev_op_data
 
@@ -449,8 +431,7 @@ struct rte_bbdev_op_ldpc_dec:
 
 	var k0 : UInt16
 
-@register_passable("trivial")
-struct rte_bbdev_op_enc_turbo_cb_params:
+struct rte_bbdev_op_enc_turbo_cb_params(ExplicitlyCopyable & Copyable & Movable):
 
 	var k : UInt16
 
@@ -458,8 +439,7 @@ struct rte_bbdev_op_enc_turbo_cb_params:
 
 	var ncb : UInt16
 
-@register_passable("trivial")
-struct rte_bbdev_op_enc_turbo_tb_params:
+struct rte_bbdev_op_enc_turbo_tb_params(ExplicitlyCopyable & Copyable & Movable):
 
 	var k_neg : UInt16
 
@@ -481,13 +461,11 @@ struct rte_bbdev_op_enc_turbo_tb_params:
 
 	var r : UInt8
 
-@register_passable("trivial")
-struct rte_bbdev_op_enc_ldpc_cb_params:
+struct rte_bbdev_op_enc_ldpc_cb_params(ExplicitlyCopyable & Copyable & Movable):
 
 	var e : UInt32
 
-@register_passable("trivial")
-struct rte_bbdev_op_enc_ldpc_tb_params:
+struct rte_bbdev_op_enc_ldpc_tb_params(ExplicitlyCopyable & Copyable & Movable):
 
 	var ea : UInt32
 
@@ -501,8 +479,7 @@ struct rte_bbdev_op_enc_ldpc_tb_params:
 
 alias anonomous_record_4 = C_Union[rte_bbdev_op_enc_turbo_cb_params, rte_bbdev_op_enc_turbo_tb_params]
 
-@register_passable("trivial")
-struct rte_bbdev_op_turbo_enc:
+struct rte_bbdev_op_turbo_enc(ExplicitlyCopyable & Copyable & Movable):
 
 	var input : rte_bbdev_op_data
 
@@ -520,8 +497,7 @@ struct rte_bbdev_op_turbo_enc:
 
 alias anonomous_record_5 = C_Union[rte_bbdev_op_enc_ldpc_cb_params, rte_bbdev_op_enc_ldpc_tb_params]
 
-@register_passable("trivial")
-struct rte_bbdev_op_ldpc_enc:
+struct rte_bbdev_op_ldpc_enc(ExplicitlyCopyable & Copyable & Movable):
 
 	var input : rte_bbdev_op_data
 
@@ -547,8 +523,7 @@ struct rte_bbdev_op_ldpc_enc:
 
 
 
-@register_passable("trivial")
-struct rte_bbdev_op_fft:
+struct rte_bbdev_op_fft(ExplicitlyCopyable & Copyable & Movable):
 
 	var base_input : rte_bbdev_op_data
 
@@ -568,7 +543,7 @@ struct rte_bbdev_op_fft:
 
 	var output_leading_depadding : UInt16
 
-	var window_index : StaticTuple[UInt8, 6]
+	var window_index : InlineArray[UInt8, 6]
 
 	var cs_bitmap : UInt16
 
@@ -594,14 +569,13 @@ struct rte_bbdev_op_fft:
 
 	var output_depadded_size : UInt16
 
-	var cs_theta_0 : StaticTuple[UInt16, 12]
+	var cs_theta_0 : InlineArray[UInt16, 12]
 
-	var cs_theta_d : StaticTuple[ffi.c_ulong, 12]
+	var cs_theta_d : InlineArray[ffi.c_ulong, 12]
 
-	var time_offset : StaticTuple[Int8, 12]
+	var time_offset : InlineArray[Int8, 12]
 
-@register_passable("trivial")
-struct rte_bbdev_op_mldts:
+struct rte_bbdev_op_mldts(ExplicitlyCopyable & Copyable & Movable):
 
 	var qhy_input : rte_bbdev_op_data
 
@@ -615,14 +589,13 @@ struct rte_bbdev_op_mldts:
 
 	var num_layers : UInt16
 
-	var q_m : StaticTuple[UInt8, 4]
+	var q_m : InlineArray[UInt8, 4]
 
 	var r_rep : UInt8
 
 	var c_rep : UInt8
 
-@register_passable("trivial")
-struct rte_bbdev_op_cap_turbo_dec:
+struct rte_bbdev_op_cap_turbo_dec(ExplicitlyCopyable & Copyable & Movable):
 
 	var capability_flags : UInt32
 
@@ -634,8 +607,7 @@ struct rte_bbdev_op_cap_turbo_dec:
 
 	var num_buffers_soft_out : UInt8
 
-@register_passable("trivial")
-struct rte_bbdev_op_cap_turbo_enc:
+struct rte_bbdev_op_cap_turbo_enc(ExplicitlyCopyable & Copyable & Movable):
 
 	var capability_flags : UInt32
 
@@ -643,8 +615,7 @@ struct rte_bbdev_op_cap_turbo_enc:
 
 	var num_buffers_dst : UInt8
 
-@register_passable("trivial")
-struct rte_bbdev_op_cap_ldpc_dec:
+struct rte_bbdev_op_cap_ldpc_dec(ExplicitlyCopyable & Copyable & Movable):
 
 	var capability_flags : UInt32
 
@@ -658,8 +629,7 @@ struct rte_bbdev_op_cap_ldpc_dec:
 
 	var num_buffers_soft_out : UInt16
 
-@register_passable("trivial")
-struct rte_bbdev_op_cap_ldpc_enc:
+struct rte_bbdev_op_cap_ldpc_enc(ExplicitlyCopyable & Copyable & Movable):
 
 	var capability_flags : UInt32
 
@@ -667,8 +637,7 @@ struct rte_bbdev_op_cap_ldpc_enc:
 
 	var num_buffers_dst : UInt16
 
-@register_passable("trivial")
-struct rte_bbdev_op_cap_fft:
+struct rte_bbdev_op_cap_fft(ExplicitlyCopyable & Copyable & Movable):
 
 	var capability_flags : UInt32
 
@@ -678,8 +647,7 @@ struct rte_bbdev_op_cap_fft:
 
 	var fft_windows_num : UInt16
 
-@register_passable("trivial")
-struct rte_bbdev_op_cap_mld:
+struct rte_bbdev_op_cap_mld(ExplicitlyCopyable & Copyable & Movable):
 
 	var capability_flags : UInt32
 
@@ -687,8 +655,7 @@ struct rte_bbdev_op_cap_mld:
 
 	var num_buffers_dst : UInt16
 
-@register_passable("trivial")
-struct rte_bbdev_op_type:
+struct rte_bbdev_op_type(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_BBDEV_OP_NONE = 0
 
@@ -717,11 +684,9 @@ alias RTE_BBDEV_ENGINE_ERROR = 4
 
 alias anonomous_record_6 = C_Union[rte_bbdev_op_turbo_enc, rte_bbdev_op_ldpc_enc]
 
-@register_passable("trivial")
-struct rte_mempool:
+struct rte_mempool(ExplicitlyCopyable & Copyable & Movable):
 	pass
-@register_passable("trivial")
-struct rte_bbdev_enc_op:
+struct rte_bbdev_enc_op(ExplicitlyCopyable & Copyable & Movable):
 
 	var status : Int32
 
@@ -735,8 +700,7 @@ struct rte_bbdev_enc_op:
 
 alias anonomous_record_7 = C_Union[rte_bbdev_op_turbo_dec, rte_bbdev_op_ldpc_dec]
 
-@register_passable("trivial")
-struct rte_bbdev_dec_op:
+struct rte_bbdev_dec_op(ExplicitlyCopyable & Copyable & Movable):
 
 	var status : Int32
 
@@ -748,8 +712,7 @@ struct rte_bbdev_dec_op:
 
 
 
-@register_passable("trivial")
-struct rte_bbdev_fft_op:
+struct rte_bbdev_fft_op(ExplicitlyCopyable & Copyable & Movable):
 
 	var status : Int32
 
@@ -759,8 +722,7 @@ struct rte_bbdev_fft_op:
 
 	var fft : rte_bbdev_op_fft
 
-@register_passable("trivial")
-struct rte_bbdev_mldts_op:
+struct rte_bbdev_mldts_op(ExplicitlyCopyable & Copyable & Movable):
 
 	var status : Int32
 
@@ -772,17 +734,15 @@ struct rte_bbdev_mldts_op:
 
 alias anonomous_record_8 = C_Union[rte_bbdev_op_cap_turbo_dec, rte_bbdev_op_cap_turbo_enc, rte_bbdev_op_cap_ldpc_dec, rte_bbdev_op_cap_ldpc_enc, rte_bbdev_op_cap_fft, rte_bbdev_op_cap_mld]
 
-@register_passable("trivial")
-struct rte_bbdev_op_cap:
+struct rte_bbdev_op_cap(ExplicitlyCopyable & Copyable & Movable):
 
 	var type : rte_bbdev_op_type
 
 	var union_placeholder_1 : anonomous_record_8
 
-@register_passable("trivial")
-struct rte_bbdev_op_pool_private:
+struct rte_bbdev_op_pool_private(ExplicitlyCopyable & Copyable & Movable):
 # Node: PlaceHolder()
-# {"closeName":"","id":"0x356b6230","inner":[{"id":"0x356b6280","kind":"VerbatimBlockLineComment","loc":{"col":14,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36789,"tokLen":0},"range":{"begin":{"col":14,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36789,"tokLen":0},"end":{"col":66,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36841,"tokLen":1}},"text":" Private data structure stored with operation pool. "},{"id":"0x356b62a0","kind":"VerbatimBlockLineComment","loc":{"col":68,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36843,"tokLen":0},"range":{"begin":{"col":68,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36843,"tokLen":0},"end":{"col":68,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36843,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36781,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36780,"tokLen":1},"end":{"col":14,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36789,"tokLen":0}}}
+# {"closeName":"","id":"0x17ebe230","inner":[{"id":"0x17ebe280","kind":"VerbatimBlockLineComment","loc":{"col":14,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36789,"tokLen":0},"range":{"begin":{"col":14,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36789,"tokLen":0},"end":{"col":66,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36841,"tokLen":1}},"text":" Private data structure stored with operation pool. "},{"id":"0x17ebe2a0","kind":"VerbatimBlockLineComment","loc":{"col":68,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36843,"tokLen":0},"range":{"begin":{"col":68,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36843,"tokLen":0},"end":{"col":68,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36843,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36781,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36780,"tokLen":1},"end":{"col":14,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/lib/bbdev/rte_bbdev.h"},"offset":36789,"tokLen":0}}}
 
 	var type : rte_bbdev_op_type
 
@@ -805,8 +765,7 @@ alias rte_bbdev_is_valid = fn (UInt16) -> Bool
 alias rte_bbdev_find_next = fn (UInt16) -> UInt16
 alias rte_bbdev_setup_queues = fn (UInt16, UInt16, Int32) -> Int32
 alias rte_bbdev_intr_enable = fn (UInt16) -> Int32
-@register_passable("trivial")
-struct rte_bbdev_queue_conf:
+struct rte_bbdev_queue_conf(ExplicitlyCopyable & Copyable & Movable):
 
 	var socket : Int32
 
@@ -824,8 +783,7 @@ alias rte_bbdev_stop = fn (UInt16) -> Int32
 alias rte_bbdev_close = fn (UInt16) -> Int32
 alias rte_bbdev_queue_start = fn (UInt16, UInt16) -> Int32
 alias rte_bbdev_queue_stop = fn (UInt16, UInt16) -> Int32
-@register_passable("trivial")
-struct rte_bbdev_enqueue_status:
+struct rte_bbdev_enqueue_status(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_BBDEV_ENQ_STATUS_NONE = 0
 
@@ -835,8 +793,7 @@ struct rte_bbdev_enqueue_status:
 
 	alias RTE_BBDEV_ENQ_STATUS_INVALID_OP = 3
 
-@register_passable("trivial")
-struct rte_bbdev_device_status:
+struct rte_bbdev_device_status(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_BBDEV_DEV_NOSTATUS = 0
 
@@ -856,8 +813,7 @@ struct rte_bbdev_device_status:
 
 	alias RTE_BBDEV_DEV_CORRECT_ERR = 8
 
-@register_passable("trivial")
-struct rte_bbdev_stats:
+struct rte_bbdev_stats(ExplicitlyCopyable & Copyable & Movable):
 
 	var enqueued_count : ffi.c_ulong
 
@@ -871,7 +827,7 @@ struct rte_bbdev_stats:
 
 	var dequeue_warn_count : ffi.c_ulong
 
-	var enqueue_status_count : StaticTuple[ffi.c_ulong_long, 6]
+	var enqueue_status_count : InlineArray[ffi.c_ulong_long, 6]
 
 	var acc_offload_cycles : ffi.c_ulong
 
@@ -879,18 +835,16 @@ struct rte_bbdev_stats:
 
 alias rte_bbdev_stats_get = fn (UInt16, UnsafePointer[rte_bbdev_stats]) -> Int32
 alias rte_bbdev_stats_reset = fn (UInt16) -> Int32
-@register_passable("trivial")
-struct rte_cpu_flag_t:
-@register_passable("trivial")
-struct rte_bbdev_driver_info:
+struct rte_cpu_flag_t(ExplicitlyCopyable & Copyable & Movable):
+struct rte_bbdev_driver_info(ExplicitlyCopyable & Copyable & Movable):
 
 	var driver_name : UnsafePointer[Int8]
 
 	var max_num_queues : UInt32
 
-	var num_queues : StaticTuple[UInt32, 8]
+	var num_queues : InlineArray[UInt32, 8]
 
-	var queue_priority : StaticTuple[UInt32, 8]
+	var queue_priority : InlineArray[UInt32, 8]
 
 	var queue_size_lim : UInt32
 
@@ -918,11 +872,9 @@ struct rte_bbdev_driver_info:
 
 	var fft_window_width : UnsafePointer[UInt16]
 
-@register_passable("trivial")
-struct rte_device:
+struct rte_device(ExplicitlyCopyable & Copyable & Movable):
 	pass
-@register_passable("trivial")
-struct rte_bbdev_info:
+struct rte_bbdev_info(ExplicitlyCopyable & Copyable & Movable):
 
 	var socket_id : Int32
 
@@ -937,18 +889,16 @@ struct rte_bbdev_info:
 	var drv : rte_bbdev_driver_info
 
 alias rte_bbdev_info_get = fn (UInt16, UnsafePointer[rte_bbdev_info]) -> Int32
-@register_passable("trivial")
-struct rte_bbdev_queue_info:
+struct rte_bbdev_queue_info(ExplicitlyCopyable & Copyable & Movable):
 
 	var conf : rte_bbdev_queue_conf
 
 	var started : Bool
 
 alias rte_bbdev_queue_info_get = fn (UInt16, UInt16, UnsafePointer[rte_bbdev_queue_info]) -> Int32
-@register_passable("trivial")
-struct rte_bbdev_queue_data:
+struct rte_bbdev_queue_data(ExplicitlyCopyable & Copyable & Movable):
 # Node: PlaceHolder()
-# {"closeName":"","id":"0x356bf3f0","inner":[{"id":"0x356bf440","kind":"VerbatimBlockLineComment","loc":{"col":14,"offset":12693,"tokLen":0},"range":{"begin":{"col":14,"offset":12693,"tokLen":0},"end":{"col":74,"offset":12753,"tokLen":1}},"text":" The data structure associated with each queue of a device. "},{"id":"0x356bf460","kind":"VerbatimBlockLineComment","loc":{"col":76,"offset":12755,"tokLen":0},"range":{"begin":{"col":76,"offset":12755,"tokLen":0},"end":{"col":76,"offset":12755,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"offset":12685,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"offset":12684,"tokLen":1},"end":{"col":14,"offset":12693,"tokLen":0}}}
+# {"closeName":"","id":"0x17ec73f0","inner":[{"id":"0x17ec7440","kind":"VerbatimBlockLineComment","loc":{"col":14,"offset":12693,"tokLen":0},"range":{"begin":{"col":14,"offset":12693,"tokLen":0},"end":{"col":74,"offset":12753,"tokLen":1}},"text":" The data structure associated with each queue of a device. "},{"id":"0x17ec7460","kind":"VerbatimBlockLineComment","loc":{"col":76,"offset":12755,"tokLen":0},"range":{"begin":{"col":76,"offset":12755,"tokLen":0},"end":{"col":76,"offset":12755,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"offset":12685,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"offset":12684,"tokLen":1},"end":{"col":14,"offset":12693,"tokLen":0}}}
 
 	var queue_private : OpaquePointer
 
@@ -968,12 +918,11 @@ alias rte_bbdev_dequeue_enc_ops_t = fn(UnsafePointer[rte_bbdev_queue_data], Unsa
 alias rte_bbdev_dequeue_dec_ops_t = fn(UnsafePointer[rte_bbdev_queue_data], UnsafePointer[UnsafePointer[rte_bbdev_dec_op]], UInt16) -> UInt16
 alias rte_bbdev_dequeue_fft_ops_t = fn(UnsafePointer[rte_bbdev_queue_data], UnsafePointer[UnsafePointer[rte_bbdev_fft_op]], UInt16) -> UInt16
 alias rte_bbdev_dequeue_mldts_ops_t = fn(UnsafePointer[rte_bbdev_queue_data], UnsafePointer[UnsafePointer[rte_bbdev_mldts_op]], UInt16) -> UInt16
-@register_passable("trivial")
-struct rte_bbdev_data:
+struct rte_bbdev_data(ExplicitlyCopyable & Copyable & Movable):
 # Node: PlaceHolder()
-# {"closeName":"","id":"0x356c0500","inner":[{"id":"0x356c0550","kind":"VerbatimBlockLineComment","loc":{"col":13,"offset":14895,"tokLen":0},"range":{"begin":{"col":13,"offset":14895,"tokLen":0},"end":{"col":75,"offset":14957,"tokLen":0}},"text":" The data associated with a device, with no function pointers."},{"id":"0x356c0570","kind":"VerbatimBlockLineComment","loc":{"col":3,"line":483,"offset":14960,"tokLen":0},"range":{"begin":{"col":3,"offset":14960,"tokLen":0},"end":{"col":71,"offset":15028,"tokLen":0}},"text":" This structure is safe to place in shared memory to be common among"},{"id":"0x356c0590","kind":"VerbatimBlockLineComment","loc":{"col":3,"line":484,"offset":15031,"tokLen":0},"range":{"begin":{"col":3,"offset":15031,"tokLen":0},"end":{"col":76,"offset":15104,"tokLen":0}},"text":" different processes in a multi-process configuration. Drivers can access"},{"id":"0x356c05b0","kind":"VerbatimBlockLineComment","loc":{"col":3,"line":485,"offset":15107,"tokLen":0},"range":{"begin":{"col":3,"offset":15107,"tokLen":0},"end":{"col":49,"offset":15153,"tokLen":0}},"text":" these fields, but should never write to them!"},{"id":"0x356c05d0","kind":"VerbatimBlockLineComment","loc":{"col":1,"line":486,"offset":15154,"tokLen":0},"range":{"begin":{"col":1,"offset":15154,"tokLen":0},"end":{"col":2,"offset":15155,"tokLen":1}},"text":" "},{"id":"0x356c05f0","kind":"VerbatimBlockLineComment","loc":{"col":4,"offset":15157,"tokLen":0},"range":{"begin":{"col":4,"offset":15157,"tokLen":0},"end":{"col":4,"offset":15157,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"offset":14887,"tokLen":8},"name":"internal","range":{"begin":{"col":4,"offset":14886,"tokLen":1},"end":{"col":13,"offset":14895,"tokLen":0}}}
+# {"closeName":"","id":"0x17ec8500","inner":[{"id":"0x17ec8550","kind":"VerbatimBlockLineComment","loc":{"col":13,"offset":14895,"tokLen":0},"range":{"begin":{"col":13,"offset":14895,"tokLen":0},"end":{"col":75,"offset":14957,"tokLen":0}},"text":" The data associated with a device, with no function pointers."},{"id":"0x17ec8570","kind":"VerbatimBlockLineComment","loc":{"col":3,"line":483,"offset":14960,"tokLen":0},"range":{"begin":{"col":3,"offset":14960,"tokLen":0},"end":{"col":71,"offset":15028,"tokLen":0}},"text":" This structure is safe to place in shared memory to be common among"},{"id":"0x17ec8590","kind":"VerbatimBlockLineComment","loc":{"col":3,"line":484,"offset":15031,"tokLen":0},"range":{"begin":{"col":3,"offset":15031,"tokLen":0},"end":{"col":76,"offset":15104,"tokLen":0}},"text":" different processes in a multi-process configuration. Drivers can access"},{"id":"0x17ec85b0","kind":"VerbatimBlockLineComment","loc":{"col":3,"line":485,"offset":15107,"tokLen":0},"range":{"begin":{"col":3,"offset":15107,"tokLen":0},"end":{"col":49,"offset":15153,"tokLen":0}},"text":" these fields, but should never write to them!"},{"id":"0x17ec85d0","kind":"VerbatimBlockLineComment","loc":{"col":1,"line":486,"offset":15154,"tokLen":0},"range":{"begin":{"col":1,"offset":15154,"tokLen":0},"end":{"col":2,"offset":15155,"tokLen":1}},"text":" "},{"id":"0x17ec85f0","kind":"VerbatimBlockLineComment","loc":{"col":4,"offset":15157,"tokLen":0},"range":{"begin":{"col":4,"offset":15157,"tokLen":0},"end":{"col":4,"offset":15157,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"offset":14887,"tokLen":8},"name":"internal","range":{"begin":{"col":4,"offset":14886,"tokLen":1},"end":{"col":13,"offset":14895,"tokLen":0}}}
 
-	var name : StaticTuple[Int8, 64]
+	var name : InlineArray[Int8, 64]
 
 	var dev_private : OpaquePointer
 
@@ -989,19 +938,15 @@ struct rte_bbdev_data:
 
 	var RTE_ATOMIC : Int32(UInt16)
 
-@register_passable("trivial")
-struct rte_bbdev_ops:
+struct rte_bbdev_ops(ExplicitlyCopyable & Copyable & Movable):
 
 	pass
-@register_passable("trivial")
-struct rte_bbdev_callback:
+struct rte_bbdev_callback(ExplicitlyCopyable & Copyable & Movable):
 	pass
-@register_passable("trivial")
-struct rte_intr_handle:
+struct rte_intr_handle(ExplicitlyCopyable & Copyable & Movable):
 	pass
 alias RTE_TAILQ_HEAD = fn () -> Int32
-@register_passable("trivial")
-struct __rte_cache_aligned:
+struct __rte_cache_aligned(ExplicitlyCopyable & Copyable & Movable):
 	pass
 alias rte_bbdev = __rte_cache_aligned
 alias rte_bbdev_devices = Int32
@@ -1017,8 +962,7 @@ alias rte_bbdev_dequeue_ldpc_enc_ops = fn (UInt16, UInt16, UnsafePointer[UnsafeP
 alias rte_bbdev_dequeue_ldpc_dec_ops = fn (UInt16, UInt16, UnsafePointer[UnsafePointer[rte_bbdev_dec_op]], UInt16) -> UInt16
 alias rte_bbdev_dequeue_fft_ops = fn (UInt16, UInt16, UnsafePointer[UnsafePointer[rte_bbdev_fft_op]], UInt16) -> UInt16
 alias rte_bbdev_dequeue_mldts_ops = fn (UInt16, UInt16, UnsafePointer[UnsafePointer[rte_bbdev_mldts_op]], UInt16) -> UInt16
-@register_passable("trivial")
-struct rte_bbdev_event_type:
+struct rte_bbdev_event_type(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_BBDEV_EVENT_UNKNOWN = 0
 

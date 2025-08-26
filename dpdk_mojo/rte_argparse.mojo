@@ -10,8 +10,7 @@ from utils import StaticTuple
 # Node: TranslationUnitDecl()
 alias __int128_t = Int128
 alias __uint128_t = UInt128
-@register_passable("trivial")
-struct __NSConstantString_tag:
+struct __NSConstantString_tag(ExplicitlyCopyable & Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
 
@@ -65,8 +64,7 @@ alias __clang_svfloat64x4_t = UnsafePointer[Float64]
 alias __clang_svbfloat16x4_t = UnsafePointer[BFloat16]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
-@register_passable("trivial")
-struct __va_list:
+struct __va_list(ExplicitlyCopyable & Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
@@ -104,9 +102,8 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-@register_passable("trivial")
-struct anonomous_record_1:
-	var __val : StaticTuple[Int32, 2]
+struct anonomous_record_1(ExplicitlyCopyable & Copyable & Movable):
+	var __val : InlineArray[Int32, 2]
 
 alias __fsid_t = anonomous_record_1
 
@@ -166,8 +163,7 @@ alias intptr_t = ffi.c_long
 alias uintptr_t = ffi.c_ulong
 alias intmax_t = __intmax_t
 alias uintmax_t = __uintmax_t
-@register_passable("trivial")
-struct rte_argparse_value_required:
+struct rte_argparse_value_required(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_ARGPARSE_VALUE_NONE = 0
 
@@ -175,8 +171,7 @@ struct rte_argparse_value_required:
 
 	alias RTE_ARGPARSE_VALUE_OPTIONAL = 2
 
-@register_passable("trivial")
-struct rte_argparse_value_type:
+struct rte_argparse_value_type(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_ARGPARSE_VALUE_TYPE_NONE = 0
 
@@ -194,14 +189,12 @@ struct rte_argparse_value_type:
 
 	alias RTE_ARGPARSE_VALUE_TYPE_BOOL = 7
 
-@register_passable("trivial")
-struct rte_argparse_arg_flags:
+struct rte_argparse_arg_flags(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_ARGPARSE_FLAG_SUPPORT_MULTI = 0
 
 alias RTE_BIT32 = fn () -> Int32
-@register_passable("trivial")
-struct rte_argparse_arg:
+struct rte_argparse_arg(ExplicitlyCopyable & Copyable & Movable):
 
 	var name_long : UnsafePointer[Int8]
 
@@ -220,8 +213,7 @@ struct rte_argparse_arg:
 	var flags : UInt32
 
 alias rte_arg_parser_t = fn(ffi.c_ulong, read UnsafePointer[Int8], OpaquePointer) -> Int32
-@register_passable("trivial")
-struct rte_argparse:
+struct rte_argparse(ExplicitlyCopyable & Copyable & Movable):
 
 	var prog_name : UnsafePointer[Int8]
 
@@ -237,7 +229,7 @@ struct rte_argparse:
 
 	var opaque : OpaquePointer
 
-	var reserved : StaticTuple[OpaquePointer, 16]
+	var reserved : InlineArray[OpaquePointer, 16]
 
 	var args : UnsafePointer[rte_argparse_arg] # Failed to parse array size
 
