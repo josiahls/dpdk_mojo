@@ -23,39 +23,17 @@ volumes:
 
 
 services:
-  dpdk_mojo_gpu_arm64: &dpdk_mojo_gpu_arm64
-    <<: *dpdk_mojo_base
-    restart: unless-stopped
-    # NOTE: Reusing the c_binder_mojo image 
-    image: josiahls/c_binder_mojo-arm64-gpu:${VERSION:-latest}
-    profiles: ["gpu_arm64"]
-    platform: linux/arm64
-    # depends_on:
-    #   - ollama
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
-  
   dpdk_mojo_cpu_arm64: &dpdk_mojo_cpu_arm64
     <<: *dpdk_mojo_base
     profiles: ["cpu_arm64"]
     restart: unless-stopped
     platform: linux/arm64
     # NOTE: Reusing the c_binder_mojo image 
-    image: josiahls/c_binder_mojo-arm64-cpu:${VERSION:-latest}
+    image: josiahls/c_binder_mojo-arm64:${VERSION:-latest}
 
-
-  dpdk_mojo_gpu_x86_64: &dpdk_mojo_gpu_x86_64
-    <<: *dpdk_mojo_base
-    restart: unless-stopped
-    # NOTE: Reusing the c_binder_mojo image 
-    image: josiahls/c_binder_mojo-x86_64-gpu:${VERSION:-latest}
-    profiles: ["gpu_x86_64"]
-    platform: linux/amd64
+  dpdk_mojo_gpu_arm64: &dpdk_mojo_gpu_arm64
+    <<: *dpdk_mojo_cpu_arm64
+    profiles: ["gpu_arm64"]
     deploy:
       resources:
         reservations:
@@ -70,4 +48,17 @@ services:
     restart: unless-stopped
     platform: linux/amd64
     # NOTE: Reusing the c_binder_mojo image 
-    image: josiahls/c_binder_mojo-x86_64-cpu:${VERSION:-latest}
+    image: josiahls/c_binder_mojo-x86_64:${VERSION:-latest}
+
+  dpdk_mojo_gpu_x86_64: &dpdk_mojo_gpu_x86_64
+    <<: *dpdk_mojo_cpu_x86_64
+    profiles: ["gpu_x86_64"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+  
+
