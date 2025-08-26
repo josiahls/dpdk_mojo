@@ -42,20 +42,18 @@ try_symlink_c_binder_mojo = { cmd = [
     "./scripts/optional_symlinks.sh"
 ]}
 
+checkout_c_binder_mojo = { cmd = [
+    "cd", "c_binder_mojo", "&&",
+    "git", "checkout", "feat/add-recursive-header-include"
+], depends-on = [ "try_symlink_c_binder_mojo" ]}
+
 ######################### Core API ############################################
 configure = { cmd = [
     "echo", "configuring"
-], depends-on = [ "build_dpdk", "try_symlink_c_binder_mojo" ] }
+], depends-on = [ "build_dpdk", "checkout_c_binder_mojo" ] }
 
 generate_bindings = { cmd = [
-    "cd", "c_binder_mojo", "&&",
-    "pixi", "run", "generate_bindings", 
-    "--input_header_path", "$PIXI_PROJECT_ROOT/dpdk/include/dpdk/dpdk.h", 
-    "--output_dir", "$PIXI_PROJECT_ROOT/dpdk_mojo/", 
-    "--so_file_path", "$PIXI_PROJECT_ROOT/dpdk/build/lib/libdpdk.so", 
-    "--extra_args", "-I $PIXI_PROJECT_ROOT/dpdk/include", 
-    "--include_only_prefixes","mj", 
-    "--debug_output", "true"
+    "./generate_bindings.sh"
 ], depends-on = [ "configure" ]}
 
 format = { cmd = [
