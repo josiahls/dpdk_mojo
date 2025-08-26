@@ -8,6 +8,7 @@ version = "0.1.0"
 [dependencies]
 mojo = ">=25.6.0.dev2025080116"
 pre-commit = ">=4.2.0,<5"
+pyelftools = ">=0.29"
 
 [tasks]
 ######################### DPDK #######################################
@@ -16,18 +17,18 @@ clone_dpdk = { cmd = [
     "if [ ! -d dpdk ]; then git clone https://github.com/DPDK/dpdk.git; else echo 'DPDK directory already exists.'; fi"
 ]}
 
-init_dpdk_build = { cmd = [
+init_build_dpdk = { cmd = [
     "cd", "dpdk", "&&",
-    "mkdir", "-p", "build", "&&",
-    "cd", "build", "&&",
-    "cmake", ".."
-], outputs = ["dpdk/build"]}
+    "meson", "-Dplatform=generic", "-Dmax_numa_nodes=1", "-Dexamples=all", "build"
+], depends-on = [ 
+    "clone_dpdk"
+]}
 
 build_dpdk = { cmd = [
-    "cd", "dpdk/build", "&&",
-    "make",
+    "cd", "dpdk", "&&",
+    "ninja", "-C", "build"
 ], depends-on = [
-    "init_dpdk_build"
+    "init_build_dpdk"
 ], outputs = ["dpdk/build/lib/libdpdk.so"]}
 
 
@@ -37,10 +38,14 @@ clone_c_binder_mojo = { cmd = [
     "if [ ! -d c_binder_mojo ]; then git clone https://github.com/josiahls/c_binder_mojo.git; else echo 'C Binder Mojo directory already exists.'; fi"
 ]}
 
+try_symlink_c_binder_mojo = { cmd = [
+    "./scripts/optional_symlinks.sh"
+]}
+
 ######################### Core API ############################################
 configure = { cmd = [
     "echo", "configuring"
-], depends-on = [ "build_dpdk", "clone_c_binder_mojo" ] }
+], depends-on = [ "build_dpdk", "try_symlink_c_binder_mojo" ] }
 
 generate_bindings = { cmd = [
     "cd", "c_binder_mojo", "&&",
