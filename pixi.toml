@@ -42,15 +42,10 @@ try_symlink_c_binder_mojo = { cmd = [
     "./scripts/optional_symlinks.sh"
 ]}
 
-checkout_c_binder_mojo = { cmd = [
-    "cd", "c_binder_mojo", "&&",
-    "git", "checkout", "feat/add-recursive-header-include"
-], depends-on = [ "try_symlink_c_binder_mojo" ]}
-
 ######################### Core API ############################################
 configure = { cmd = [
     "echo", "configuring"
-], depends-on = [ "build_dpdk", "checkout_c_binder_mojo" ] }
+], depends-on = [ "build_dpdk", "try_symlink_c_binder_mojo" ] }
 
 generate_bindings = { cmd = [
     "./generate_bindings.sh"
