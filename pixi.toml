@@ -65,6 +65,11 @@ format = { cmd = [
 
 ######################### Tests ############################################
 
+test_hello_world_c = { cmd = [
+    "cd", "dpdk/build/examples", "&&",
+    "./dpdk-helloworld", "--no-huge", "--file-prefix=test", "--proc-type=primary"
+], depends-on = [ "build_dpdk" ]}
+
 test_hello_world = { cmd = [
     "export", "LIBDPDK_LIB_PATH=$PIXI_PROJECT_ROOT/dpdk/build/lib/", "&&",
     "pixi", "run", "mojo", "run","-I",".", "-I", "c_binder_mojo", "tests/test_hello_world.mojo"
