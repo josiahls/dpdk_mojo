@@ -288,12 +288,6 @@ fn _get_lib_path(so_file_name: String) raises -> Path:
 
 @fieldwise_init
 struct rte_argparse(Copyable, Movable):
-    """Handle to the CPython interpreter present in the current process."""
-
-    # ===-------------------------------------------------------------------===#
-    # Fields
-    # ===-------------------------------------------------------------------===#
-
     var lib: DLHandle
     
     var rte_argparse_parse: rte_argparse_rte_argparse_parse.type
