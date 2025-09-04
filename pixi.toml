@@ -48,7 +48,7 @@ configure = { cmd = [
 ], depends-on = [ "build_dpdk", "try_symlink_c_binder_mojo" ] }
 
 generate_bindings = { cmd = [
-    "./generate_bindings.sh"
+    "pixi", "run", "mojo", "run", "-I", "c_binder_mojo/firehose","-I", "c_binder_mojo","-I","c_binder_mojo/EmberJson","generate_bindings.mojo"
 ], depends-on = [ "configure" ]}
 
 format = { cmd = [
