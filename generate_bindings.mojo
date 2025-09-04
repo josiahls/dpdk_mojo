@@ -41,8 +41,6 @@ struct SubmoduleBinding(ExplicitlyCopyable & Movable & Writable):
 
         if so_file_path == Path(""):
             self.so_file_path = self._header_parent_path / (lib_name + ".so")
-        if output_dir == Path(""):
-            self.output_dir = Path("dpkg_mojo")
         self.so_file_path = so_file_path
         self.output_dir = output_dir
 
@@ -103,150 +101,150 @@ struct SubmoduleBinding(ExplicitlyCopyable & Movable & Writable):
 
 
 alias SUBMODULE_BINDINGS: List[SubmoduleBinding] = [
-    # SubmoduleBinding(
-    #     header_file_path=Path("dpdk/lib/eal/include/rte_eal.h"),
-    #     lib_name="librte_eal",
-    #     extra_header_include="-Idpdk/lib/eal/include/",
-    #     so_file_path=Path("dpdk/build/lib/librte_eal.so")
-    # ),
-    SubmoduleBinding(
-        header_file_path=Path("dpdk/lib/acl/rte_acl.h"),
-        lib_name="librte_acl",
-        extra_header_include="-Idpdk/lib/acl/",
-        so_file_path=Path("dpdk/build/lib/librte_acl.so")
+    SubmoduleBinding( # Works
+        header_file_path=Path("dpdk/lib/eal/include/rte_eal.h"),
+        lib_name="librte_eal",
+        extra_header_include="-Idpdk/lib/eal/include/",
+        so_file_path=Path("dpdk/build/lib/librte_eal.so")
     ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Fails to parge types with __attribute__ and __vector_size__
+    #     header_file_path=Path("dpdk/lib/acl/rte_acl.h"),
+    #     lib_name="librte_acl",
+    #     extra_header_include="-Idpdk/lib/acl/",
+    #     so_file_path=Path("dpdk/build/lib/librte_acl.so")
+    # ),
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/argparse/rte_argparse.h"),
     #     lib_name="librte_argparse",
     #     extra_header_include="-Idpdk/lib/argparse/",
     #     so_file_path=Path("dpdk/build/lib/librte_argparse.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/bbdev/rte_bbdev.h"),
     #     lib_name="librte_bbdev",
-    #     extra_header_include="-Idpdk/lib/bbdev/",
+    #     extra_header_include="-Idpdk/lib/bbdev/ -Idpdk/lib/mbuf/ -Idpdk/lib/mempool/ -Idpdk/lib/ring/",
     #     so_file_path=Path("dpdk/build/lib/librte_bbdev.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/bitratestats/rte_bitrate.h"),
     #     lib_name="librte_bitratestats",
     #     extra_header_include="-Idpdk/lib/bitratestats/",
     #     so_file_path=Path("dpdk/build/lib/librte_bitratestats.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/bpf/rte_bpf.h"),
     #     lib_name="librte_bpf",
-    #     extra_header_include="-Idpdk/lib/bpf/",
+    #     extra_header_include="-Idpdk/lib/bpf/ -Idpdk/lib/mbuf/ -Idpdk/lib/mempool/ -Idpdk/lib/ring/",
     #     so_file_path=Path("dpdk/build/lib/librte_bpf.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/cfgfile/rte_cfgfile.h"),
     #     lib_name="librte_cfgfile",
     #     extra_header_include="-Idpdk/lib/cfgfile/",
     #     so_file_path=Path("dpdk/build/lib/librte_cfgfile.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/cmdline/cmdline.h"),
     #     lib_name="librte_cmdline",
     #     extra_header_include="-Idpdk/lib/cmdline/",
     #     so_file_path=Path("dpdk/build/lib/librte_cmdline.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/compressdev/rte_compressdev.h"),
     #     lib_name="librte_compressdev",
-    #     extra_header_include="-Idpdk/lib/compressdev/",
+    #     extra_header_include="-Idpdk/lib/compressdev/  -Idpdk/lib/mbuf/ -Idpdk/lib/mempool/ -Idpdk/lib/ring/",
     #     so_file_path=Path("dpdk/build/lib/librte_compressdev.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/cryptodev/rte_cryptodev.h"),
     #     lib_name="librte_cryptodev",
-    #     extra_header_include="-Idpdk/lib/cryptodev/",
+    #     extra_header_include="-Idpdk/lib/cryptodev/ -Idpdk/lib/kvargs/ -Idpdk/lib/mbuf/  -Idpdk/lib/mempool/ -Idpdk/lib/ring/  -Idpdk/lib/rcu/",
     #     so_file_path=Path("dpdk/build/lib/librte_cryptodev.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/dispatcher/rte_dispatcher.h"),
     #     lib_name="librte_dispatcher",
-    #     extra_header_include="-Idpdk/lib/dispatcher/",
+    #     extra_header_include="-Idpdk/lib/dispatcher/  -Idpdk/lib/eventdev/ -Idpdk/lib/mbuf/ -Idpdk/lib/mempool/ -Idpdk/lib/ring/",
     #     so_file_path=Path("dpdk/build/lib/librte_dispatcher.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/distributor/rte_distributor.h"),
     #     lib_name="librte_distributor",
     #     extra_header_include="-Idpdk/lib/distributor/",
     #     so_file_path=Path("dpdk/build/lib/librte_distributor.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/dmadev/rte_dmadev.h"),
     #     lib_name="librte_dmadev",
     #     extra_header_include="-Idpdk/lib/dmadev/",
     #     so_file_path=Path("dpdk/build/lib/librte_dmadev.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/efd/rte_efd.h"),
     #     lib_name="librte_efd",
     #     extra_header_include="-Idpdk/lib/efd/",
     #     so_file_path=Path("dpdk/build/lib/librte_efd.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/ethdev/rte_ethdev.h"),
     #     lib_name="librte_ethdev",
-    #     extra_header_include="-Idpdk/lib/ethdev/",
+    #     extra_header_include="-Idpdk/lib/ethdev/ -Idpdk/lib/mbuf/ -Idpdk/lib/mempool/ -Idpdk/lib/ring/  -Idpdk/lib/net/ -Idpdk/lib/meter/",
     #     so_file_path=Path("dpdk/build/lib/librte_ethdev.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/eventdev/rte_eventdev.h"),
     #     lib_name="librte_eventdev",
-    #     extra_header_include="-Idpdk/lib/eventdev/",
+    #     extra_header_include="-Idpdk/lib/eventdev/ -Idpdk/lib/mbuf/ -Idpdk/lib/mempool/ -Idpdk/lib/ring/",
     #     so_file_path=Path("dpdk/build/lib/librte_eventdev.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/fib/rte_fib.h"),
     #     lib_name="librte_fib",
-    #     extra_header_include="-Idpdk/lib/fib/",
+    #     extra_header_include="-Idpdk/lib/fib/ -Idpdk/lib/rcu/ -Idpdk/lib/ring/",
     #     so_file_path=Path("dpdk/build/lib/librte_fib.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/gpudev/rte_gpudev.h"),
     #     lib_name="librte_gpudev",
-    #     extra_header_include="-Idpdk/lib/gpudev/",
+    #     extra_header_include="-Idpdk/lib/gpudev/ -Idpdk/lib/mbuf/ -Idpdk/lib/mempool/ -Idpdk/lib/ring/",
     #     so_file_path=Path("dpdk/build/lib/librte_gpudev.so")
     # ),
-    # SubmoduleBinding(
+    # SubmoduleBinding( # Works
     #     header_file_path=Path("dpdk/lib/graph/rte_graph.h"),
     #     lib_name="librte_graph",
     #     extra_header_include="-Idpdk/lib/graph/",
     #     so_file_path=Path("dpdk/build/lib/librte_graph.so")
     # ),
-    # SubmoduleBinding(
-    #     header_file_path=Path("dpdk/lib/gro/rte_gro.h"),
-    #     lib_name="librte_gro",
-    #     extra_header_include="-Idpdk/lib/gro/",
-    #     so_file_path=Path("dpdk/build/lib/librte_gro.so")
-    # ),
-    # SubmoduleBinding(
-    #     header_file_path=Path("dpdk/lib/gso/rte_gso.h"),
-    #     lib_name="librte_gso",
-    #     extra_header_include="-Idpdk/lib/gso/",
-    #     so_file_path=Path("dpdk/build/lib/librte_gso.so")
-    # ),
-    # SubmoduleBinding(
-    #     header_file_path=Path("dpdk/lib/hash/rte_hash.h"),
-    #     lib_name="librte_hash",
-    #     extra_header_include="-Idpdk/lib/hash/",
-    #     so_file_path=Path("dpdk/build/lib/librte_hash.so")
-    # ),
-    # SubmoduleBinding(
-    #     header_file_path=Path("dpdk/lib/ip_frag/rte_ip_frag.h"),
-    #     lib_name="librte_ip_frag",
-    #     extra_header_include="-Idpdk/lib/ip_frag/",
-    #     so_file_path=Path("dpdk/build/lib/librte_ip_frag.so")
-    # ),
-    # SubmoduleBinding(
-    #     header_file_path=Path("dpdk/lib/ipsec/rte_ipsec.h"),
-    #     lib_name="librte_ipsec",
-    #     extra_header_include="-Idpdk/lib/ipsec/",
-    #     so_file_path=Path("dpdk/build/lib/librte_ipsec.so")
-    # ),
+    SubmoduleBinding(
+        header_file_path=Path("dpdk/lib/gro/rte_gro.h"),
+        lib_name="librte_gro",
+        extra_header_include="-Idpdk/lib/gro/",
+        so_file_path=Path("dpdk/build/lib/librte_gro.so")
+    ),
+    SubmoduleBinding(
+        header_file_path=Path("dpdk/lib/gso/rte_gso.h"),
+        lib_name="librte_gso",
+        extra_header_include="-Idpdk/lib/gso/",
+        so_file_path=Path("dpdk/build/lib/librte_gso.so")
+    ),
+    SubmoduleBinding(
+        header_file_path=Path("dpdk/lib/hash/rte_hash.h"),
+        lib_name="librte_hash",
+        extra_header_include="-Idpdk/lib/hash/",
+        so_file_path=Path("dpdk/build/lib/librte_hash.so")
+    ),
+    SubmoduleBinding(
+        header_file_path=Path("dpdk/lib/ip_frag/rte_ip_frag.h"),
+        lib_name="librte_ip_frag",
+        extra_header_include="-Idpdk/lib/ip_frag/",
+        so_file_path=Path("dpdk/build/lib/librte_ip_frag.so")
+    ),
+    SubmoduleBinding(
+        header_file_path=Path("dpdk/lib/ipsec/rte_ipsec.h"),
+        lib_name="librte_ipsec",
+        extra_header_include="-Idpdk/lib/ipsec/",
+        so_file_path=Path("dpdk/build/lib/librte_ipsec.so")
+    ),
     # SubmoduleBinding(
     #     header_file_path=Path("dpdk/lib/jobstats/rte_jobstats.h"),
     #     lib_name="librte_jobstats",
@@ -459,16 +457,16 @@ fn main() raises:
 
     for ref submodule_binding in SUBMODULE_BINDINGS:
         submodule_binding.runtime_check()
-        print(submodule_binding)
+        print('submodule_binding.lib_name: ' + submodule_binding.lib_name)
         var root_node = generate_bindings(
             submodule_binding.header_file_path,
             submodule_binding.output_dir,
             submodule_binding.so_file_path,
             logger,
             extra_args=submodule_binding.extra_header_include_with_defaults(),
-            debug_output=True,
+            # debug_output=True,
         )
-        print('Generated bindings for: ' + String(submodule_binding.header_file_path.name().split(".")[0]))
+        print('Generated bindings for: ' + String(submodule_binding.lib_name))
         append_to_mojo_file(
             root_node,
             submodule_binding.output_dir / (submodule_binding.header_file_path.name().split(".")[0] + ".mojo"),
