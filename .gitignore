@@ -7,3 +7,4 @@
 
 c_binder_mojo
 dpdk_mojo/*.json
+kgen*
