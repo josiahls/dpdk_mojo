@@ -8,10 +8,44 @@ from sys import CompilationTarget
 from firehose.logging import Logger, set_global_logger_settings
 
 # First Party Modules
-from c_binder_mojo.ast_parser import AstParser
-from c_binder_mojo.lib_gen.lib_gen import append_to_mojo_file
+from c_binder_mojo.binding_tools.ast_parser import AstParser
+from c_binder_mojo.binding_tools.lib_gen import append_to_mojo_file
+from c_binder_mojo.binding_tools.binding_gen import generate_bindings
 from c_binder_mojo.ast.nodes import AstNode
-from c_binder_mojo.binding_gen import generate_bindings
+
+
+fn _meson_dep_walk(current_path: Path, mut module_map: Dict[String, Path]) raises: 
+    if current_path.is_file():
+        return
+
+    dir_name = current_path.name()
+
+    if dir_name.startswith("meson-"):
+        return
+    if '.' in dir_name:
+        return 
+    if dir_name in module_map:
+        return
+
+    module_map[dir_name] = current_path
+
+    for d in os.listdir(current_path):
+        dir_path = current_path / d
+        if dir_path.is_dir():
+            _meson_dep_walk(dir_path, module_map)
+
+fn meson_dep_walk(build_path: Path, source_dir: Optional[Path] = None) raises -> Dict[String, Path]:
+    var module_map: Dict[String, Path] = {}
+
+    for d in os.listdir(build_path):
+        dir_path = build_path / d
+        if dir_path.is_dir():
+            _meson_dep_walk(dir_path, module_map)
+
+    keys = List[String]([k for k in module_map.keys()])
+    for key in keys:
+        module_map[key] = Path(module_map[key].path.replace('dpdk/build/', 'dpdk/'))
+    return module_map
 
 
 struct SubmoduleBinding(ExplicitlyCopyable & Movable & Writable):
@@ -455,23 +489,29 @@ alias SUBMODULE_BINDINGS: List[SubmoduleBinding] = [
 fn main() raises:
     var logger = Logger.get_default_logger("c_binder_mojo")
 
-    for ref submodule_binding in SUBMODULE_BINDINGS:
-        submodule_binding.runtime_check()
-        print('submodule_binding.lib_name: ' + submodule_binding.lib_name)
-        var root_node = generate_bindings(
-            submodule_binding.header_file_path,
-            submodule_binding.output_dir,
-            submodule_binding.so_file_path,
-            logger,
-            extra_args=submodule_binding.extra_header_include_with_defaults(),
-            # debug_output=True,
-        )
-        print('Generated bindings for: ' + String(submodule_binding.lib_name))
-        append_to_mojo_file(
-            root_node,
-            submodule_binding.output_dir / (submodule_binding.header_file_path.name().split(".")[0] + ".mojo"),
-            submodule_binding.so_file_path,
-            String(submodule_binding.header_file_path.name().split(".")[0]),
-            include_only_prefixes=List[String]()
-        )
-    logger.info("Done")
+    meson_dep_map = meson_dep_walk(Path("dpdk/build"))
+
+    for item in meson_dep_map.items():
+        print('item: key: ', item.key, 'value: ', item.value)
+    # print('meson_dep_map: ', meson_dep_map)
+
+    # for ref submodule_binding in SUBMODULE_BINDINGS:
+    #     submodule_binding.runtime_check()
+    #     print('submodule_binding.lib_name: ' + submodule_binding.lib_name)
+    #     var root_node = generate_bindings(
+    #         submodule_binding.header_file_path,
+    #         submodule_binding.output_dir,
+    #         submodule_binding.so_file_path,
+    #         logger,
+    #         extra_args=submodule_binding.extra_header_include_with_defaults(),
+    #         # debug_output=True,
+    #     )
+    #     print('Generated bindings for: ' + String(submodule_binding.lib_name))
+    #     append_to_mojo_file(
+    #         root_node,
+    #         submodule_binding.output_dir / (submodule_binding.header_file_path.name().split(".")[0] + ".mojo"),
+    #         submodule_binding.so_file_path,
+    #         String(submodule_binding.header_file_path.name().split(".")[0]),
+    #         include_only_prefixes=List[String]()
+    #     )
+    # logger.info("Done")

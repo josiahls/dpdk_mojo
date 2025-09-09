@@ -220,7 +220,7 @@ alias rte_iova_t = uint64_t
 #  Otherwise, in virtual mode (IOVA as VA), an IOMMU may do the translation.
 
 alias RTE_MARKER = 	# # Node: PlaceHolder()
-	# {"id":"0xfd9a600","inner":[{"id":"0xfc0ac90","inner":[{"id":"0xfc09f50","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
+	# {"id":"0x33949600","inner":[{"id":"0x337b9c90","inner":[{"id":"0x337b8f50","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -228,7 +228,7 @@ alias RTE_MARKER = 	# # Node: PlaceHolder()
 #  Generic marker for any place in a structure. 
 
 alias RTE_MARKER8 = 	# # Node: PlaceHolder()
-	# {"id":"0xfd9a790","inner":[{"decl":{"id":"0xfd269a8","kind":"TypedefDecl","name":"uint8_t"},"id":"0xfd9a6f0","inner":[{"decl":{"id":"0xfcfc8d0","kind":"TypedefDecl","name":"__uint8_t"},"id":"0xfcfcc60","inner":[{"id":"0xfc0a050","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
+	# {"id":"0x33949790","inner":[{"decl":{"id":"0x338d59a8","kind":"TypedefDecl","name":"uint8_t"},"id":"0x339496f0","inner":[{"decl":{"id":"0x338ab8d0","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x338abc60","inner":[{"id":"0x337b9050","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -236,7 +236,7 @@ alias RTE_MARKER8 = 	# # Node: PlaceHolder()
 #  Marker for 1B alignment in a structure. 
 
 alias RTE_MARKER16 = 	# # Node: PlaceHolder()
-	# {"id":"0xfd9a8f0","inner":[{"decl":{"id":"0xfd26a10","kind":"TypedefDecl","name":"uint16_t"},"id":"0xfd6d6e0","inner":[{"decl":{"id":"0xfcfc9b0","kind":"TypedefDecl","name":"__uint16_t"},"id":"0xfcfcd80","inner":[{"id":"0xfc0a070","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
+	# {"id":"0x339498f0","inner":[{"decl":{"id":"0x338d5a10","kind":"TypedefDecl","name":"uint16_t"},"id":"0x3391c6e0","inner":[{"decl":{"id":"0x338ab9b0","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x338abd80","inner":[{"id":"0x337b9070","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -244,7 +244,7 @@ alias RTE_MARKER16 = 	# # Node: PlaceHolder()
 #  Marker for 2B alignment in a structure. 
 
 alias RTE_MARKER32 = 	# # Node: PlaceHolder()
-	# {"id":"0xfd9aa50","inner":[{"decl":{"id":"0xfd26a78","kind":"TypedefDecl","name":"uint32_t"},"id":"0xfd6d650","inner":[{"decl":{"id":"0xfcfca90","kind":"TypedefDecl","name":"__uint32_t"},"id":"0xfcfcea0","inner":[{"id":"0xfc0a090","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
+	# {"id":"0x33949a50","inner":[{"decl":{"id":"0x338d5a78","kind":"TypedefDecl","name":"uint32_t"},"id":"0x3391c650","inner":[{"decl":{"id":"0x338aba90","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x338abea0","inner":[{"id":"0x337b9090","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -252,7 +252,7 @@ alias RTE_MARKER32 = 	# # Node: PlaceHolder()
 #  Marker for 4B alignment in a structure. 
 
 alias RTE_MARKER64 = 	# # Node: PlaceHolder()
-	# {"id":"0xfd9abb0","inner":[{"decl":{"id":"0xfd26ae0","kind":"TypedefDecl","name":"uint64_t"},"id":"0xfd6d5c0","inner":[{"decl":{"id":"0xfcfcb70","kind":"TypedefDecl","name":"__uint64_t"},"id":"0xfd1c880","inner":[{"id":"0xfc0a0b0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
+	# {"id":"0x33949bb0","inner":[{"decl":{"id":"0x338d5ae0","kind":"TypedefDecl","name":"uint64_t"},"id":"0x3391c5c0","inner":[{"decl":{"id":"0x338abb70","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x338cb880","inner":[{"id":"0x337b90b0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()

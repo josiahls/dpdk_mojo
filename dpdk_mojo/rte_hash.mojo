@@ -229,7 +229,7 @@ alias rte_iova_t = uint64_t
 #  Otherwise, in virtual mode (IOVA as VA), an IOMMU may do the translation.
 
 alias RTE_MARKER = 	# # Node: PlaceHolder()
-	# {"id":"0xed12510","inner":[{"id":"0xeb89e60","inner":[{"id":"0xeb89120","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
+	# {"id":"0x140e510","inner":[{"id":"0x1285e60","inner":[{"id":"0x1285120","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -237,7 +237,7 @@ alias RTE_MARKER = 	# # Node: PlaceHolder()
 #  Generic marker for any place in a structure. 
 
 alias RTE_MARKER8 = 	# # Node: PlaceHolder()
-	# {"id":"0xed126a0","inner":[{"decl":{"id":"0xec851f8","kind":"TypedefDecl","name":"uint8_t"},"id":"0xed12600","inner":[{"decl":{"id":"0xec2d500","kind":"TypedefDecl","name":"__uint8_t"},"id":"0xec7abb0","inner":[{"id":"0xeb89220","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
+	# {"id":"0x140e6a0","inner":[{"decl":{"id":"0x13811f8","kind":"TypedefDecl","name":"uint8_t"},"id":"0x140e600","inner":[{"decl":{"id":"0x1329500","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x1376bb0","inner":[{"id":"0x1285220","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -245,7 +245,7 @@ alias RTE_MARKER8 = 	# # Node: PlaceHolder()
 #  Marker for 1B alignment in a structure. 
 
 alias RTE_MARKER16 = 	# # Node: PlaceHolder()
-	# {"id":"0xed1b1a0","inner":[{"decl":{"id":"0xec85260","kind":"TypedefDecl","name":"uint16_t"},"id":"0xece9af0","inner":[{"decl":{"id":"0xec2d5e0","kind":"TypedefDecl","name":"__uint16_t"},"id":"0xec7acd0","inner":[{"id":"0xeb89240","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
+	# {"id":"0x14171a0","inner":[{"decl":{"id":"0x1381260","kind":"TypedefDecl","name":"uint16_t"},"id":"0x13e5af0","inner":[{"decl":{"id":"0x13295e0","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x1376cd0","inner":[{"id":"0x1285240","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -253,7 +253,7 @@ alias RTE_MARKER16 = 	# # Node: PlaceHolder()
 #  Marker for 2B alignment in a structure. 
 
 alias RTE_MARKER32 = 	# # Node: PlaceHolder()
-	# {"id":"0xed1b300","inner":[{"decl":{"id":"0xec852c8","kind":"TypedefDecl","name":"uint32_t"},"id":"0xece9a60","inner":[{"decl":{"id":"0xec2d6c0","kind":"TypedefDecl","name":"__uint32_t"},"id":"0xec7adf0","inner":[{"id":"0xeb89260","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
+	# {"id":"0x1417300","inner":[{"decl":{"id":"0x13812c8","kind":"TypedefDecl","name":"uint32_t"},"id":"0x13e5a60","inner":[{"decl":{"id":"0x13296c0","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x1376df0","inner":[{"id":"0x1285260","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -261,7 +261,7 @@ alias RTE_MARKER32 = 	# # Node: PlaceHolder()
 #  Marker for 4B alignment in a structure. 
 
 alias RTE_MARKER64 = 	# # Node: PlaceHolder()
-	# {"id":"0xed1b460","inner":[{"decl":{"id":"0xec85330","kind":"TypedefDecl","name":"uint64_t"},"id":"0xece99d0","inner":[{"decl":{"id":"0xec2d7a0","kind":"TypedefDecl","name":"__uint64_t"},"id":"0xec7af10","inner":[{"id":"0xeb89280","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
+	# {"id":"0x1417460","inner":[{"decl":{"id":"0x1381330","kind":"TypedefDecl","name":"uint64_t"},"id":"0x13e59d0","inner":[{"decl":{"id":"0x13297a0","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x1376f10","inner":[{"id":"0x1285280","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -326,7 +326,7 @@ struct rte_hash_rcu_config(ExplicitlyCopyable & Copyable & Movable):
 
 struct rte_hash(ExplicitlyCopyable & Copyable & Movable):
 # # Node: PlaceHolder()
-# {"closeName":"","id":"0xed369f0","inner":[{"id":"0xed36a40","kind":"VerbatimBlockLineComment","loc":{"col":14,"offset":4008,"tokLen":0},"range":{"begin":{"col":14,"offset":4008,"tokLen":0},"end":{"col":39,"offset":4033,"tokLen":1}},"text":" A hash table structure. "},{"id":"0xed36a60","kind":"VerbatimBlockLineComment","loc":{"col":41,"offset":4035,"tokLen":0},"range":{"begin":{"col":41,"offset":4035,"tokLen":0},"end":{"col":41,"offset":4035,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"offset":4000,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"offset":3999,"tokLen":1},"end":{"col":14,"offset":4008,"tokLen":0}}}
+# {"closeName":"","id":"0x14329f0","inner":[{"id":"0x1432a40","kind":"VerbatimBlockLineComment","loc":{"col":14,"offset":4008,"tokLen":0},"range":{"begin":{"col":14,"offset":4008,"tokLen":0},"end":{"col":39,"offset":4033,"tokLen":1}},"text":" A hash table structure. "},{"id":"0x1432a60","kind":"VerbatimBlockLineComment","loc":{"col":41,"offset":4035,"tokLen":0},"range":{"begin":{"col":41,"offset":4035,"tokLen":0},"end":{"col":41,"offset":4035,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"offset":4000,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"offset":3999,"tokLen":1},"end":{"col":14,"offset":4008,"tokLen":0}}}
 
 	pass
 alias rte_hash_free = fn (UnsafePointer[rte_hash]) -> NoneType

@@ -317,7 +317,7 @@ alias stpcpy = fn (UnsafePointer[Int8], read UnsafePointer[Int8]) -> UnsafePoint
 alias __stpncpy = fn (UnsafePointer[Int8], read UnsafePointer[Int8], size_t) -> UnsafePointer[Int8]
 alias stpncpy = fn (UnsafePointer[Int8], read UnsafePointer[Int8], ffi.c_ulong) -> UnsafePointer[Int8]
 alias rte_uuid_t = 	# # Node: PlaceHolder()
-	# {"id":"0x223b3bc0","inner":[{"id":"0x2224d400","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"ConstantArrayType","size":16,"type":{"qualType":"unsigned char[16]"}}
+	# {"id":"0x2e70fbc0","inner":[{"id":"0x2e5a9400","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"ConstantArrayType","size":16,"type":{"qualType":"unsigned char[16]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
