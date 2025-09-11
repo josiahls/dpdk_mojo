@@ -10,7 +10,7 @@ from utils import StaticTuple
 # # Node: TranslationUnitDecl()
 alias __int128_t = Int128
 alias __uint128_t = UInt128
-struct __NSConstantString_tag(ExplicitlyCopyable & Copyable & Movable):
+struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
 
@@ -64,7 +64,7 @@ alias __clang_svfloat64x4_t = UnsafePointer[Float64]
 alias __clang_svbfloat16x4_t = UnsafePointer[BFloat16]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
-struct __va_list(ExplicitlyCopyable & Copyable & Movable):
+struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
@@ -102,7 +102,7 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_3(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_3(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
 alias __fsid_t = anonomous_record_3
@@ -171,38 +171,38 @@ alias va_list = __builtin_va_list
 alias __gnuc_va_list = __builtin_va_list
 alias anonomous_record_4 = C_Union[UInt32, InlineArray[Int8, 4]]
 
-struct anonomous_record_5(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_5(Copyable & Movable):
 	var __count : Int32
 
 	var __value : anonomous_record_4
 
 alias __mbstate_t = anonomous_record_5
 
-struct _G_fpos_t(ExplicitlyCopyable & Copyable & Movable):
+struct _G_fpos_t(Copyable & Movable):
 	var __pos : ffi.c_long
 
 	var __state : __mbstate_t
 
 alias __fpos_t = _G_fpos_t
 
-struct _G_fpos64_t(ExplicitlyCopyable & Copyable & Movable):
+struct _G_fpos64_t(Copyable & Movable):
 	var __pos : ffi.c_long
 
 	var __state : __mbstate_t
 
 alias __fpos64_t = _G_fpos64_t
 
-struct _IO_FILE(ExplicitlyCopyable & Copyable & Movable):
+struct _IO_FILE(Copyable & Movable):
 	pass
 alias __FILE = _IO_FILE
 
 alias FILE = _IO_FILE
 
-struct _IO_marker(ExplicitlyCopyable & Copyable & Movable):
+struct _IO_marker(Copyable & Movable):
 	pass
-struct _IO_codecvt(ExplicitlyCopyable & Copyable & Movable):
+struct _IO_codecvt(Copyable & Movable):
 	pass
-struct _IO_wide_data(ExplicitlyCopyable & Copyable & Movable):
+struct _IO_wide_data(Copyable & Movable):
 	pass
 alias _IO_lock_t = NoneType
 alias off_t = __off_t
@@ -302,17 +302,17 @@ alias __uflow = fn (UnsafePointer[FILE]) -> Int32
 alias __overflow = fn (UnsafePointer[FILE], Int32) -> Int32
 alias alloca = fn (ffi.c_ulong) -> OpaquePointer
 alias time_t = __time_t
-struct timespec(ExplicitlyCopyable & Copyable & Movable):
+struct timespec(Copyable & Movable):
 	var tv_sec : ffi.c_long
 
 	var tv_nsec : ffi.c_long
 
 alias pid_t = __pid_t
-struct sched_param(ExplicitlyCopyable & Copyable & Movable):
+struct sched_param(Copyable & Movable):
 	var sched_priority : Int32
 
 alias __cpu_mask = ffi.c_ulong
-struct anonomous_record_6(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_6(Copyable & Movable):
 	var __bits : InlineArray[__cpu_mask, 16]
 
 alias cpu_set_t = anonomous_record_6
@@ -353,7 +353,7 @@ alias rte_iova_t = uint64_t
 #  Otherwise, in virtual mode (IOVA as VA), an IOMMU may do the translation.
 
 alias RTE_MARKER = 	# # Node: PlaceHolder()
-	# {"id":"0x242ba650","inner":[{"id":"0x240fce60","inner":[{"id":"0x240fc120","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
+	# {"id":"0x3170f330","inner":[{"id":"0x31552c70","inner":[{"id":"0x31551f30","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -361,7 +361,7 @@ alias RTE_MARKER = 	# # Node: PlaceHolder()
 #  Generic marker for any place in a structure. 
 
 alias RTE_MARKER8 = 	# # Node: PlaceHolder()
-	# {"id":"0x242ba7e0","inner":[{"decl":{"id":"0x241fb588","kind":"TypedefDecl","name":"uint8_t"},"id":"0x242ba740","inner":[{"decl":{"id":"0x241a1d60","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x241eff50","inner":[{"id":"0x240fc220","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
+	# {"id":"0x3170f4c0","inner":[{"decl":{"id":"0x31651678","kind":"TypedefDecl","name":"uint8_t"},"id":"0x3170f420","inner":[{"decl":{"id":"0x315f7bf0","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x31646040","inner":[{"id":"0x31552030","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -369,7 +369,7 @@ alias RTE_MARKER8 = 	# # Node: PlaceHolder()
 #  Marker for 1B alignment in a structure. 
 
 alias RTE_MARKER16 = 	# # Node: PlaceHolder()
-	# {"id":"0x242ba940","inner":[{"decl":{"id":"0x241fb5f0","kind":"TypedefDecl","name":"uint16_t"},"id":"0x242ae200","inner":[{"decl":{"id":"0x241a1e40","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x241f0070","inner":[{"id":"0x240fc240","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
+	# {"id":"0x3170f620","inner":[{"decl":{"id":"0x316516e0","kind":"TypedefDecl","name":"uint16_t"},"id":"0x31702ee0","inner":[{"decl":{"id":"0x315f7cd0","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x31646160","inner":[{"id":"0x31552050","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -377,7 +377,7 @@ alias RTE_MARKER16 = 	# # Node: PlaceHolder()
 #  Marker for 2B alignment in a structure. 
 
 alias RTE_MARKER32 = 	# # Node: PlaceHolder()
-	# {"id":"0x242baaa0","inner":[{"decl":{"id":"0x241fb658","kind":"TypedefDecl","name":"uint32_t"},"id":"0x242ae170","inner":[{"decl":{"id":"0x241a1f20","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x241f0190","inner":[{"id":"0x240fc260","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
+	# {"id":"0x3170f780","inner":[{"decl":{"id":"0x31651748","kind":"TypedefDecl","name":"uint32_t"},"id":"0x31702e50","inner":[{"decl":{"id":"0x315f7db0","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x31646280","inner":[{"id":"0x31552070","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -385,7 +385,7 @@ alias RTE_MARKER32 = 	# # Node: PlaceHolder()
 #  Marker for 4B alignment in a structure. 
 
 alias RTE_MARKER64 = 	# # Node: PlaceHolder()
-	# {"id":"0x242bac00","inner":[{"decl":{"id":"0x241fb6c0","kind":"TypedefDecl","name":"uint64_t"},"id":"0x242ae0e0","inner":[{"decl":{"id":"0x241a2000","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x241f02b0","inner":[{"id":"0x240fc280","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
+	# {"id":"0x3170f8e0","inner":[{"decl":{"id":"0x316517b0","kind":"TypedefDecl","name":"uint64_t"},"id":"0x31702dc0","inner":[{"decl":{"id":"0x315f7e90","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x316463a0","inner":[{"id":"0x31552090","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -463,7 +463,7 @@ alias rte_align64pow2 = fn (ffi.c_ulong_long) -> ffi.c_ulong_long
 alias rte_align64prevpow2 = fn (ffi.c_ulong_long) -> ffi.c_ulong_long
 alias rte_log2_u32 = fn (ffi.c_ulong) -> ffi.c_ulong
 alias rte_log2_u64 = fn (ffi.c_ulong_long) -> ffi.c_ulong
-struct rte_argparse_value_required(ExplicitlyCopyable & Copyable & Movable):
+struct rte_argparse_value_required(Copyable & Movable):
 
 	alias RTE_ARGPARSE_VALUE_NONE = 0
 
@@ -471,7 +471,7 @@ struct rte_argparse_value_required(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_ARGPARSE_VALUE_OPTIONAL = 2
 
-struct rte_argparse_value_type(ExplicitlyCopyable & Copyable & Movable):
+struct rte_argparse_value_type(Copyable & Movable):
 
 	alias RTE_ARGPARSE_VALUE_TYPE_NONE = 0
 
@@ -489,11 +489,11 @@ struct rte_argparse_value_type(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_ARGPARSE_VALUE_TYPE_BOOL = 7
 
-struct rte_argparse_arg_flags(ExplicitlyCopyable & Copyable & Movable):
+struct rte_argparse_arg_flags(Copyable & Movable):
 
 	alias RTE_ARGPARSE_FLAG_SUPPORT_MULTI = 0
 
-struct rte_argparse_arg(ExplicitlyCopyable & Copyable & Movable):
+struct rte_argparse_arg(Copyable & Movable):
 
 	var name_long : UnsafePointer[Int8]
 
@@ -512,7 +512,7 @@ struct rte_argparse_arg(ExplicitlyCopyable & Copyable & Movable):
 	var flags : UInt32
 
 alias rte_arg_parser_t = fn(ffi.c_ulong, read UnsafePointer[Int8], OpaquePointer) -> Int32
-struct rte_argparse(ExplicitlyCopyable & Copyable & Movable):
+struct rte_argparse(Copyable & Movable):
 
 	var prog_name : UnsafePointer[Int8]
 

@@ -10,7 +10,7 @@ from utils import StaticTuple
 # # Node: TranslationUnitDecl()
 alias __int128_t = Int128
 alias __uint128_t = UInt128
-struct __NSConstantString_tag(ExplicitlyCopyable & Copyable & Movable):
+struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
 
@@ -64,7 +64,7 @@ alias __clang_svfloat64x4_t = UnsafePointer[Float64]
 alias __clang_svbfloat16x4_t = UnsafePointer[BFloat16]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
-struct __va_list(ExplicitlyCopyable & Copyable & Movable):
+struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
@@ -102,7 +102,7 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_57(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_57(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
 alias __fsid_t = anonomous_record_57
@@ -169,17 +169,17 @@ alias __assert = fn (read UnsafePointer[Int8], read UnsafePointer[Int8], Int32) 
 alias size_t = ffi.c_ulong
 alias alloca = fn (ffi.c_ulong) -> OpaquePointer
 alias time_t = __time_t
-struct timespec(ExplicitlyCopyable & Copyable & Movable):
+struct timespec(Copyable & Movable):
 	var tv_sec : ffi.c_long
 
 	var tv_nsec : ffi.c_long
 
 alias pid_t = __pid_t
-struct sched_param(ExplicitlyCopyable & Copyable & Movable):
+struct sched_param(Copyable & Movable):
 	var sched_priority : Int32
 
 alias __cpu_mask = ffi.c_ulong
-struct anonomous_record_58(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_58(Copyable & Movable):
 	var __bits : InlineArray[__cpu_mask, 16]
 
 alias cpu_set_t = anonomous_record_58
@@ -220,7 +220,7 @@ alias rte_iova_t = uint64_t
 #  Otherwise, in virtual mode (IOVA as VA), an IOMMU may do the translation.
 
 alias RTE_MARKER = 	# # Node: PlaceHolder()
-	# {"id":"0x2c33fee0","inner":[{"id":"0x2c1b3e70","inner":[{"id":"0x2c1b3130","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
+	# {"id":"0x97d7c20","inner":[{"id":"0x964bc80","inner":[{"id":"0x964af40","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -228,7 +228,7 @@ alias RTE_MARKER = 	# # Node: PlaceHolder()
 #  Generic marker for any place in a structure. 
 
 alias RTE_MARKER8 = 	# # Node: PlaceHolder()
-	# {"id":"0x2c340070","inner":[{"decl":{"id":"0x2c2af6f8","kind":"TypedefDecl","name":"uint8_t"},"id":"0x2c33ffd0","inner":[{"decl":{"id":"0x2c257ab0","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x2c2a50b0","inner":[{"id":"0x2c1b3230","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
+	# {"id":"0x97d7db0","inner":[{"decl":{"id":"0x9747178","kind":"TypedefDecl","name":"uint8_t"},"id":"0x97d7d10","inner":[{"decl":{"id":"0x96ef940","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x973d0d0","inner":[{"id":"0x964b040","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -236,7 +236,7 @@ alias RTE_MARKER8 = 	# # Node: PlaceHolder()
 #  Marker for 1B alignment in a structure. 
 
 alias RTE_MARKER16 = 	# # Node: PlaceHolder()
-	# {"id":"0x2c3401d0","inner":[{"decl":{"id":"0x2c2af760","kind":"TypedefDecl","name":"uint16_t"},"id":"0x2c3128c0","inner":[{"decl":{"id":"0x2c257b90","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x2c2a51d0","inner":[{"id":"0x2c1b3250","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
+	# {"id":"0x97d7f10","inner":[{"decl":{"id":"0x97471e0","kind":"TypedefDecl","name":"uint16_t"},"id":"0x97aa990","inner":[{"decl":{"id":"0x96efa20","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x973d1f0","inner":[{"id":"0x964b060","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -244,7 +244,7 @@ alias RTE_MARKER16 = 	# # Node: PlaceHolder()
 #  Marker for 2B alignment in a structure. 
 
 alias RTE_MARKER32 = 	# # Node: PlaceHolder()
-	# {"id":"0x2c340330","inner":[{"decl":{"id":"0x2c2af7c8","kind":"TypedefDecl","name":"uint32_t"},"id":"0x2c312830","inner":[{"decl":{"id":"0x2c257c70","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x2c2a52f0","inner":[{"id":"0x2c1b3270","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
+	# {"id":"0x97d8070","inner":[{"decl":{"id":"0x9747248","kind":"TypedefDecl","name":"uint32_t"},"id":"0x97aa900","inner":[{"decl":{"id":"0x96efb00","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x973d310","inner":[{"id":"0x964b080","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -252,7 +252,7 @@ alias RTE_MARKER32 = 	# # Node: PlaceHolder()
 #  Marker for 4B alignment in a structure. 
 
 alias RTE_MARKER64 = 	# # Node: PlaceHolder()
-	# {"id":"0x2c340490","inner":[{"decl":{"id":"0x2c2af830","kind":"TypedefDecl","name":"uint64_t"},"id":"0x2c3127a0","inner":[{"decl":{"id":"0x2c257d50","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x2c2a5410","inner":[{"id":"0x2c1b3290","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
+	# {"id":"0x97d81d0","inner":[{"decl":{"id":"0x97472b0","kind":"TypedefDecl","name":"uint64_t"},"id":"0x97aa870","inner":[{"decl":{"id":"0x96efbe0","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x973d430","inner":[{"id":"0x964b0a0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -262,7 +262,7 @@ alias RTE_MARKER64 = 	# # Node: PlaceHolder()
 alias rte_str_to_size = fn (read UnsafePointer[Int8]) -> ffi.c_ulong_long
 alias rte_size_to_str = fn (UnsafePointer[Int8], Int32, ffi.c_ulong_long, Bool, read UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias rte_exit = fn (Int32, read *UnsafePointer[Int8]) -> NoneType
-struct rte_stats_bitrates(ExplicitlyCopyable & Copyable & Movable):
+struct rte_stats_bitrates(Copyable & Movable):
 
 	pass
 alias rte_stats_bitrate_free = fn (UnsafePointer[rte_stats_bitrates]) -> NoneType

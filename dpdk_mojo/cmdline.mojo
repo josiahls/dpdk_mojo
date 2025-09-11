@@ -10,7 +10,7 @@ from utils import StaticTuple
 # # Node: TranslationUnitDecl()
 alias __int128_t = Int128
 alias __uint128_t = UInt128
-struct __NSConstantString_tag(ExplicitlyCopyable & Copyable & Movable):
+struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
 
@@ -64,7 +64,7 @@ alias __clang_svfloat64x4_t = UnsafePointer[Float64]
 alias __clang_svbfloat16x4_t = UnsafePointer[BFloat16]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
-struct __va_list(ExplicitlyCopyable & Copyable & Movable):
+struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
@@ -105,7 +105,7 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_106(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_106(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
 alias __fsid_t = anonomous_record_106
@@ -169,17 +169,17 @@ alias uintmax_t = __uintmax_t
 alias size_t = ffi.c_ulong
 alias alloca = fn (ffi.c_ulong) -> OpaquePointer
 alias time_t = __time_t
-struct timespec(ExplicitlyCopyable & Copyable & Movable):
+struct timespec(Copyable & Movable):
 	var tv_sec : ffi.c_long
 
 	var tv_nsec : ffi.c_long
 
 alias pid_t = __pid_t
-struct sched_param(ExplicitlyCopyable & Copyable & Movable):
+struct sched_param(Copyable & Movable):
 	var sched_priority : Int32
 
 alias __cpu_mask = ffi.c_ulong
-struct anonomous_record_107(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_107(Copyable & Movable):
 	var __bits : InlineArray[__cpu_mask, 16]
 
 alias cpu_set_t = anonomous_record_107
@@ -220,7 +220,7 @@ alias rte_iova_t = uint64_t
 #  Otherwise, in virtual mode (IOVA as VA), an IOMMU may do the translation.
 
 alias RTE_MARKER = 	# # Node: PlaceHolder()
-	# {"id":"0x342ee6a0","inner":[{"id":"0x34161eb0","inner":[{"id":"0x34161170","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
+	# {"id":"0x37f24b80","inner":[{"id":"0x37d97e30","inner":[{"id":"0x37d970f0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -228,7 +228,7 @@ alias RTE_MARKER = 	# # Node: PlaceHolder()
 #  Generic marker for any place in a structure. 
 
 alias RTE_MARKER8 = 	# # Node: PlaceHolder()
-	# {"id":"0x342ee830","inner":[{"decl":{"id":"0x34279938","kind":"TypedefDecl","name":"uint8_t"},"id":"0x342ee790","inner":[{"decl":{"id":"0x34250090","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x34250420","inner":[{"id":"0x34161270","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
+	# {"id":"0x37f24d10","inner":[{"decl":{"id":"0x37eafc98","kind":"TypedefDecl","name":"uint8_t"},"id":"0x37f24c70","inner":[{"decl":{"id":"0x37e85070","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x37e85400","inner":[{"id":"0x37d971f0","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -236,7 +236,7 @@ alias RTE_MARKER8 = 	# # Node: PlaceHolder()
 #  Marker for 1B alignment in a structure. 
 
 alias RTE_MARKER16 = 	# # Node: PlaceHolder()
-	# {"id":"0x342ee990","inner":[{"decl":{"id":"0x342799a0","kind":"TypedefDecl","name":"uint16_t"},"id":"0x342c0910","inner":[{"decl":{"id":"0x34250170","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x34250540","inner":[{"id":"0x34161290","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
+	# {"id":"0x37f24e70","inner":[{"decl":{"id":"0x37eafd00","kind":"TypedefDecl","name":"uint16_t"},"id":"0x37ef6e30","inner":[{"decl":{"id":"0x37e85150","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x37e85520","inner":[{"id":"0x37d97210","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -244,7 +244,7 @@ alias RTE_MARKER16 = 	# # Node: PlaceHolder()
 #  Marker for 2B alignment in a structure. 
 
 alias RTE_MARKER32 = 	# # Node: PlaceHolder()
-	# {"id":"0x342eeaf0","inner":[{"decl":{"id":"0x34279a08","kind":"TypedefDecl","name":"uint32_t"},"id":"0x342c0880","inner":[{"decl":{"id":"0x34250250","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x34250660","inner":[{"id":"0x341612b0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
+	# {"id":"0x37f24fd0","inner":[{"decl":{"id":"0x37eafd68","kind":"TypedefDecl","name":"uint32_t"},"id":"0x37ef6da0","inner":[{"decl":{"id":"0x37e85230","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x37e85640","inner":[{"id":"0x37d97230","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -252,7 +252,7 @@ alias RTE_MARKER32 = 	# # Node: PlaceHolder()
 #  Marker for 4B alignment in a structure. 
 
 alias RTE_MARKER64 = 	# # Node: PlaceHolder()
-	# {"id":"0x342eec50","inner":[{"decl":{"id":"0x34279a70","kind":"TypedefDecl","name":"uint64_t"},"id":"0x342c07f0","inner":[{"decl":{"id":"0x34250330","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x34250780","inner":[{"id":"0x341612d0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
+	# {"id":"0x37f25130","inner":[{"decl":{"id":"0x37eafdd0","kind":"TypedefDecl","name":"uint64_t"},"id":"0x37ef6d10","inner":[{"decl":{"id":"0x37e85310","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x37e85760","inner":[{"id":"0x37d97250","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -266,38 +266,38 @@ alias va_list = __builtin_va_list
 alias __gnuc_va_list = __builtin_va_list
 alias anonomous_record_108 = C_Union[UInt32, InlineArray[Int8, 4]]
 
-struct anonomous_record_109(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_109(Copyable & Movable):
 	var __count : Int32
 
 	var __value : anonomous_record_108
 
 alias __mbstate_t = anonomous_record_109
 
-struct _G_fpos_t(ExplicitlyCopyable & Copyable & Movable):
+struct _G_fpos_t(Copyable & Movable):
 	var __pos : ffi.c_long
 
 	var __state : __mbstate_t
 
 alias __fpos_t = _G_fpos_t
 
-struct _G_fpos64_t(ExplicitlyCopyable & Copyable & Movable):
+struct _G_fpos64_t(Copyable & Movable):
 	var __pos : ffi.c_long
 
 	var __state : __mbstate_t
 
 alias __fpos64_t = _G_fpos64_t
 
-struct _IO_FILE(ExplicitlyCopyable & Copyable & Movable):
+struct _IO_FILE(Copyable & Movable):
 	pass
 alias __FILE = _IO_FILE
 
 alias FILE = _IO_FILE
 
-struct _IO_marker(ExplicitlyCopyable & Copyable & Movable):
+struct _IO_marker(Copyable & Movable):
 	pass
-struct _IO_codecvt(ExplicitlyCopyable & Copyable & Movable):
+struct _IO_codecvt(Copyable & Movable):
 	pass
-struct _IO_wide_data(ExplicitlyCopyable & Copyable & Movable):
+struct _IO_wide_data(Copyable & Movable):
 	pass
 alias _IO_lock_t = NoneType
 alias off_t = __off_t
@@ -395,7 +395,7 @@ alias ftrylockfile = fn (UnsafePointer[FILE]) -> Int32
 alias funlockfile = fn (UnsafePointer[FILE]) -> NoneType
 alias __uflow = fn (UnsafePointer[FILE]) -> Int32
 alias __overflow = fn (UnsafePointer[FILE], Int32) -> Int32
-struct cirbuf(ExplicitlyCopyable & Copyable & Movable):
+struct cirbuf(Copyable & Movable):
 
 	var maxlen : UInt32
 
@@ -427,14 +427,14 @@ alias cirbuf_get_buf_tail = fn (UnsafePointer[cirbuf], UnsafePointer[Int8], UInt
 alias cirbuf_align_left = fn (UnsafePointer[cirbuf]) -> Int32
 alias cirbuf_align_right = fn (UnsafePointer[cirbuf]) -> Int32
 alias cmdline_vt100_commands = UnsafePointer[UnsafePointer[Int8]] # Failed to parse array size
-struct cmdline_vt100_parser_state(ExplicitlyCopyable & Copyable & Movable):
+struct cmdline_vt100_parser_state(Copyable & Movable):
 	alias CMDLINE_VT100_INIT = 0
 
 	alias CMDLINE_VT100_ESCAPE = 1
 
 	alias CMDLINE_VT100_ESCAPE_CSI = 2
 
-struct cmdline_vt100(ExplicitlyCopyable & Copyable & Movable):
+struct cmdline_vt100(Copyable & Movable):
 	var bufpos : UInt8
 
 	var buf : InlineArray[Int8, 8]
@@ -443,16 +443,16 @@ struct cmdline_vt100(ExplicitlyCopyable & Copyable & Movable):
 
 alias vt100_init = fn (UnsafePointer[cmdline_vt100]) -> NoneType
 alias vt100_parser = fn (UnsafePointer[cmdline_vt100], Int8) -> Int32
-struct rdline(ExplicitlyCopyable & Copyable & Movable):
+struct rdline(Copyable & Movable):
 	pass
 alias rdline_write_char_t = 	# # Node: PlaceHolder()
-	# {"id":"0x34333b30","inner":[{"cc":"cdecl","id":"0x34333af0","inner":[{"id":"0x34161210","kind":"BuiltinType","type":{"qualType":"int"}},{"id":"0x34333980","inner":[{"id":"0x34333920","inner":[{"decl":{"id":"0x34333880","kind":"RecordDecl","name":"rdline"},"id":"0x34333900","kind":"RecordType","type":{"qualType":"struct rdline"}}],"kind":"ElaboratedType","type":{"qualType":"struct rdline"}}],"kind":"PointerType","type":{"qualType":"struct rdline *"}},{"id":"0x341611b0","kind":"BuiltinType","type":{"qualType":"char"}}],"kind":"FunctionProtoType","type":{"qualType":"int (struct rdline *, char)"}}],"kind":"ParenType","type":{"qualType":"int (struct rdline *, char)"}}
+	# {"id":"0x37f69260","inner":[{"cc":"cdecl","id":"0x37f69220","inner":[{"id":"0x37d97190","kind":"BuiltinType","type":{"qualType":"int"}},{"id":"0x37f690b0","inner":[{"id":"0x37f69050","inner":[{"decl":{"id":"0x37f68fb0","kind":"RecordDecl","name":"rdline"},"id":"0x37f69030","kind":"RecordType","type":{"qualType":"struct rdline"}}],"kind":"ElaboratedType","type":{"qualType":"struct rdline"}}],"kind":"PointerType","type":{"qualType":"struct rdline *"}},{"id":"0x37d97130","kind":"BuiltinType","type":{"qualType":"char"}}],"kind":"FunctionProtoType","type":{"qualType":"int (struct rdline *, char)"}}],"kind":"ParenType","type":{"qualType":"int (struct rdline *, char)"}}
 
 alias rdline_validate_t = 	# # Node: PlaceHolder()
-	# {"id":"0x34333e00","inner":[{"cc":"cdecl","id":"0x34333dc0","inner":[{"id":"0x34161170","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x34333980","inner":[{"id":"0x34333920","inner":[{"decl":{"id":"0x34333880","kind":"RecordDecl","name":"rdline"},"id":"0x34333900","kind":"RecordType","type":{"qualType":"struct rdline"}}],"kind":"ElaboratedType","type":{"qualType":"struct rdline"}}],"kind":"PointerType","type":{"qualType":"struct rdline *"}},{"id":"0x342038f0","inner":[{"id":"0x341611b1","inner":[{"id":"0x341611b0","kind":"BuiltinType","type":{"qualType":"char"}}],"kind":"QualType","qualifiers":"const","type":{"qualType":"const char"}}],"kind":"PointerType","type":{"qualType":"const char *"}},{"id":"0x341612b0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rdline *, const char *, unsigned int)"}}],"kind":"ParenType","type":{"qualType":"void (struct rdline *, const char *, unsigned int)"}}
+	# {"id":"0x37f69530","inner":[{"cc":"cdecl","id":"0x37f694f0","inner":[{"id":"0x37d970f0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x37f690b0","inner":[{"id":"0x37f69050","inner":[{"decl":{"id":"0x37f68fb0","kind":"RecordDecl","name":"rdline"},"id":"0x37f69030","kind":"RecordType","type":{"qualType":"struct rdline"}}],"kind":"ElaboratedType","type":{"qualType":"struct rdline"}}],"kind":"PointerType","type":{"qualType":"struct rdline *"}},{"id":"0x37e39820","inner":[{"id":"0x37d97131","inner":[{"id":"0x37d97130","kind":"BuiltinType","type":{"qualType":"char"}}],"kind":"QualType","qualifiers":"const","type":{"qualType":"const char"}}],"kind":"PointerType","type":{"qualType":"const char *"}},{"id":"0x37d97230","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rdline *, const char *, unsigned int)"}}],"kind":"ParenType","type":{"qualType":"void (struct rdline *, const char *, unsigned int)"}}
 
 alias rdline_complete_t = 	# # Node: PlaceHolder()
-	# {"id":"0x34334220","inner":[{"cc":"cdecl","id":"0x343341d0","inner":[{"id":"0x34161210","kind":"BuiltinType","type":{"qualType":"int"}},{"id":"0x34333980","inner":[{"id":"0x34333920","inner":[{"decl":{"id":"0x34333880","kind":"RecordDecl","name":"rdline"},"id":"0x34333900","kind":"RecordType","type":{"qualType":"struct rdline"}}],"kind":"ElaboratedType","type":{"qualType":"struct rdline"}}],"kind":"PointerType","type":{"qualType":"struct rdline *"}},{"id":"0x342038f0","inner":[{"id":"0x341611b1","inner":[{"id":"0x341611b0","kind":"BuiltinType","type":{"qualType":"char"}}],"kind":"QualType","qualifiers":"const","type":{"qualType":"const char"}}],"kind":"PointerType","type":{"qualType":"const char *"}},{"id":"0x342052d0","inner":[{"id":"0x341611b0","kind":"BuiltinType","type":{"qualType":"char"}}],"kind":"PointerType","type":{"qualType":"char *"}},{"id":"0x341612b0","kind":"BuiltinType","type":{"qualType":"unsigned int"}},{"id":"0x343340d0","inner":[{"id":"0x34161210","kind":"BuiltinType","type":{"qualType":"int"}}],"kind":"PointerType","type":{"qualType":"int *"}}],"kind":"FunctionProtoType","type":{"qualType":"int (struct rdline *, const char *, char *, unsigned int, int *)"}}],"kind":"ParenType","type":{"qualType":"int (struct rdline *, const char *, char *, unsigned int, int *)"}}
+	# {"id":"0x37f69950","inner":[{"cc":"cdecl","id":"0x37f69900","inner":[{"id":"0x37d97190","kind":"BuiltinType","type":{"qualType":"int"}},{"id":"0x37f690b0","inner":[{"id":"0x37f69050","inner":[{"decl":{"id":"0x37f68fb0","kind":"RecordDecl","name":"rdline"},"id":"0x37f69030","kind":"RecordType","type":{"qualType":"struct rdline"}}],"kind":"ElaboratedType","type":{"qualType":"struct rdline"}}],"kind":"PointerType","type":{"qualType":"struct rdline *"}},{"id":"0x37e39820","inner":[{"id":"0x37d97131","inner":[{"id":"0x37d97130","kind":"BuiltinType","type":{"qualType":"char"}}],"kind":"QualType","qualifiers":"const","type":{"qualType":"const char"}}],"kind":"PointerType","type":{"qualType":"const char *"}},{"id":"0x37e3b200","inner":[{"id":"0x37d97130","kind":"BuiltinType","type":{"qualType":"char"}}],"kind":"PointerType","type":{"qualType":"char *"}},{"id":"0x37d97230","kind":"BuiltinType","type":{"qualType":"unsigned int"}},{"id":"0x37f69800","inner":[{"id":"0x37d97190","kind":"BuiltinType","type":{"qualType":"int"}}],"kind":"PointerType","type":{"qualType":"int *"}}],"kind":"FunctionProtoType","type":{"qualType":"int (struct rdline *, const char *, char *, unsigned int, int *)"}}],"kind":"ParenType","type":{"qualType":"int (struct rdline *, const char *, char *, unsigned int, int *)"}}
 
 alias rdline_new = fn (UnsafePointer[rdline_write_char_t], UnsafePointer[rdline_validate_t], UnsafePointer[rdline_complete_t], OpaquePointer) -> UnsafePointer[rdline]
 alias rdline_free = fn (UnsafePointer[rdline]) -> NoneType
@@ -469,9 +469,9 @@ alias rdline_clear_history = fn (UnsafePointer[rdline]) -> NoneType
 alias rdline_get_history_item = fn (UnsafePointer[rdline], UInt32) -> UnsafePointer[Int8]
 alias rdline_get_history_buffer_size = fn (UnsafePointer[rdline]) -> size_t
 alias rdline_get_opaque = fn (UnsafePointer[rdline]) -> OpaquePointer
-struct cmdline_token_ops(ExplicitlyCopyable & Copyable & Movable):
+struct cmdline_token_ops(Copyable & Movable):
 	pass
-struct cmdline_token_hdr(ExplicitlyCopyable & Copyable & Movable):
+struct cmdline_token_hdr(Copyable & Movable):
 
 	var ops : cmdline_token_ops
 
@@ -479,13 +479,13 @@ struct cmdline_token_hdr(ExplicitlyCopyable & Copyable & Movable):
 
 alias cmdline_parse_token_hdr_t = cmdline_token_hdr
 
-struct cmdline(ExplicitlyCopyable & Copyable & Movable):
+struct cmdline(Copyable & Movable):
 	pass
-struct cmdline_inst(ExplicitlyCopyable & Copyable & Movable):
+struct cmdline_inst(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"closeName":"endcode","id":"0x34348fb0","inner":[{"id":"0x34349000","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":84,"offset":2755,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2755,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2755,"tokLen":0}},"text":""},{"id":"0x34349020","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":85,"offset":2758,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2758,"tokLen":0},"end":{"col":44,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2799,"tokLen":0}},"text":" f((struct cmdline_token_hdr **)&token_p,"},{"id":"0x34349040","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":86,"offset":2802,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2802,"tokLen":0},"end":{"col":11,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2810,"tokLen":0}},"text":"   NULL,"},{"id":"0x34349060","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":87,"offset":2813,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2813,"tokLen":0},"end":{"col":55,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2865,"tokLen":0}},"text":"   (struct cmdline_token_hdr **)&inst->tokens[num]);"},{"id":"0x34349080","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":88,"offset":2868,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2868,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2868,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2748,"tokLen":4},"name":"code","range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2747,"tokLen":1},"end":{"col":9,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2752,"tokLen":0}}}
+# {"closeName":"endcode","id":"0x37f7e6e0","inner":[{"id":"0x37f7e730","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":84,"offset":2755,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2755,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2755,"tokLen":0}},"text":""},{"id":"0x37f7e750","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":85,"offset":2758,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2758,"tokLen":0},"end":{"col":44,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2799,"tokLen":0}},"text":" f((struct cmdline_token_hdr **)&token_p,"},{"id":"0x37f7e770","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":86,"offset":2802,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2802,"tokLen":0},"end":{"col":11,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2810,"tokLen":0}},"text":"   NULL,"},{"id":"0x37f7e790","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":87,"offset":2813,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2813,"tokLen":0},"end":{"col":55,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2865,"tokLen":0}},"text":"   (struct cmdline_token_hdr **)&inst->tokens[num]);"},{"id":"0x37f7e7b0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":88,"offset":2868,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2868,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2868,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2748,"tokLen":4},"name":"code","range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2747,"tokLen":1},"end":{"col":9,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":2752,"tokLen":0}}}
 # # Node: PlaceHolder()
-# {"closeName":"endcode","id":"0x3434ace0","inner":[{"id":"0x3434ad30","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":113,"offset":3880,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3880,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3880,"tokLen":0}},"text":""},{"id":"0x3434ad50","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":114,"offset":3883,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3883,"tokLen":0},"end":{"col":74,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3954,"tokLen":0}},"text":" // Assuming first and third arguments are respectively named \"token_p\""},{"id":"0x3434ad70","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":115,"offset":3957,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3957,"tokLen":0},"end":{"col":19,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3973,"tokLen":0}},"text":" // and \"token\":"},{"id":"0x3434ad90","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":116,"offset":3976,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3976,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3976,"tokLen":0}},"text":""},{"id":"0x3434adb0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":117,"offset":3979,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3979,"tokLen":0},"end":{"col":37,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4013,"tokLen":0}},"text":" int index = token - inst->tokens;"},{"id":"0x3434add0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":118,"offset":4016,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4016,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4016,"tokLen":0}},"text":""},{"id":"0x3434adf0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":119,"offset":4019,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4019,"tokLen":0},"end":{"col":17,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4033,"tokLen":0}},"text":" if (!index) {"},{"id":"0x3434ae10","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":120,"offset":4036,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4036,"tokLen":0},"end":{"col":50,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4083,"tokLen":0}},"text":"     [...] // Clean up internal context if any."},{"id":"0x3434ae30","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":121,"offset":4086,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4086,"tokLen":0},"end":{"col":5,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4088,"tokLen":0}},"text":" }"},{"id":"0x3434ae50","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":122,"offset":4091,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4091,"tokLen":0},"end":{"col":54,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4142,"tokLen":0}},"text":" [...] // Then set up dyn_token according to index."},{"id":"0x3434ae70","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":123,"offset":4145,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4145,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4145,"tokLen":0}},"text":""},{"id":"0x3434ae90","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":124,"offset":4148,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4148,"tokLen":0},"end":{"col":23,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4168,"tokLen":0}},"text":" if (no_more_tokens)"},{"id":"0x3434aeb0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":125,"offset":4171,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4171,"tokLen":0},"end":{"col":24,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4192,"tokLen":0}},"text":"     *token_p = NULL;"},{"id":"0x3434aed0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":126,"offset":4195,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4195,"tokLen":0},"end":{"col":8,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4200,"tokLen":0}},"text":" else"},{"id":"0x3434aef0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":127,"offset":4203,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4203,"tokLen":0},"end":{"col":30,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4230,"tokLen":0}},"text":"     *token_p = &dyn_token;"},{"id":"0x3434af10","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":128,"offset":4233,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4233,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4233,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3873,"tokLen":4},"name":"code","range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3872,"tokLen":1},"end":{"col":9,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3877,"tokLen":0}}}
+# {"closeName":"endcode","id":"0x37f80410","inner":[{"id":"0x37f80460","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":113,"offset":3880,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3880,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3880,"tokLen":0}},"text":""},{"id":"0x37f80480","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":114,"offset":3883,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3883,"tokLen":0},"end":{"col":74,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3954,"tokLen":0}},"text":" // Assuming first and third arguments are respectively named \"token_p\""},{"id":"0x37f804a0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":115,"offset":3957,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3957,"tokLen":0},"end":{"col":19,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3973,"tokLen":0}},"text":" // and \"token\":"},{"id":"0x37f804c0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":116,"offset":3976,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3976,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3976,"tokLen":0}},"text":""},{"id":"0x37f804e0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":117,"offset":3979,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3979,"tokLen":0},"end":{"col":37,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4013,"tokLen":0}},"text":" int index = token - inst->tokens;"},{"id":"0x37f80500","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":118,"offset":4016,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4016,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4016,"tokLen":0}},"text":""},{"id":"0x37f80520","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":119,"offset":4019,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4019,"tokLen":0},"end":{"col":17,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4033,"tokLen":0}},"text":" if (!index) {"},{"id":"0x37f80540","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":120,"offset":4036,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4036,"tokLen":0},"end":{"col":50,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4083,"tokLen":0}},"text":"     [...] // Clean up internal context if any."},{"id":"0x37f80560","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":121,"offset":4086,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4086,"tokLen":0},"end":{"col":5,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4088,"tokLen":0}},"text":" }"},{"id":"0x37f80580","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":122,"offset":4091,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4091,"tokLen":0},"end":{"col":54,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4142,"tokLen":0}},"text":" [...] // Then set up dyn_token according to index."},{"id":"0x37f805a0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":123,"offset":4145,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4145,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4145,"tokLen":0}},"text":""},{"id":"0x37f805c0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":124,"offset":4148,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4148,"tokLen":0},"end":{"col":23,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4168,"tokLen":0}},"text":" if (no_more_tokens)"},{"id":"0x37f805e0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":125,"offset":4171,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4171,"tokLen":0},"end":{"col":24,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4192,"tokLen":0}},"text":"     *token_p = NULL;"},{"id":"0x37f80600","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":126,"offset":4195,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4195,"tokLen":0},"end":{"col":8,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4200,"tokLen":0}},"text":" else"},{"id":"0x37f80620","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":127,"offset":4203,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4203,"tokLen":0},"end":{"col":30,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4230,"tokLen":0}},"text":"     *token_p = &dyn_token;"},{"id":"0x37f80640","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"line":128,"offset":4233,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4233,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":4233,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3873,"tokLen":4},"name":"code","range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3872,"tokLen":1},"end":{"col":9,"includedFrom":{"file":"dpdk/lib/cmdline/cmdline.h"},"offset":3877,"tokLen":0}}}
 
 	var f : fn(OpaquePointer, UnsafePointer[cmdline], OpaquePointer) -> NoneType
 
@@ -510,7 +510,7 @@ alias cmdline_parse_check = fn (UnsafePointer[cmdline], read UnsafePointer[Int8]
 alias cmdline_complete = fn (UnsafePointer[cmdline], read UnsafePointer[Int8], UnsafePointer[Int32], UnsafePointer[Int8], UInt32) -> Int32
 alias cmdline_isendoftoken = fn (Int8) -> Int32
 alias cmdline_isendofcommand = fn (Int8) -> Int32
-struct rdline_status(ExplicitlyCopyable & Copyable & Movable):
+struct rdline_status(Copyable & Movable):
 	alias RDLINE_INIT = 0
 
 	alias RDLINE_RUNNING = 1

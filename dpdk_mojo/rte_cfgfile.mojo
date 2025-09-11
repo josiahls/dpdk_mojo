@@ -10,7 +10,7 @@ from utils import StaticTuple
 # # Node: TranslationUnitDecl()
 alias __int128_t = Int128
 alias __uint128_t = UInt128
-struct __NSConstantString_tag(ExplicitlyCopyable & Copyable & Movable):
+struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
 
@@ -64,30 +64,30 @@ alias __clang_svfloat64x4_t = UnsafePointer[Float64]
 alias __clang_svbfloat16x4_t = UnsafePointer[BFloat16]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
-struct __va_list(ExplicitlyCopyable & Copyable & Movable):
+struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
 alias ptrdiff_t = ffi.c_long
 alias size_t = ffi.c_ulong
 alias wchar_t = UInt32
-struct anonomous_record_105(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_105(Copyable & Movable):
 	var __clang_max_align_nonce1 : ffi.c_long_long
 
 	var __clang_max_align_nonce2 : Float64
 
 alias max_align_t = anonomous_record_105
 
-struct rte_cfgfile(ExplicitlyCopyable & Copyable & Movable):
+struct rte_cfgfile(Copyable & Movable):
 
 	pass
-struct rte_cfgfile_entry(ExplicitlyCopyable & Copyable & Movable):
+struct rte_cfgfile_entry(Copyable & Movable):
 
 	var name : InlineArray[Int8, 64]
 
 	var value : InlineArray[Int8, 256]
 
-struct rte_cfgfile_parameters(ExplicitlyCopyable & Copyable & Movable):
+struct rte_cfgfile_parameters(Copyable & Movable):
 
 	var comment_character : Int8
 

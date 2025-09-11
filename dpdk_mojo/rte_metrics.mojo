@@ -102,10 +102,10 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_290(Copyable & Movable):
+struct anonomous_record_994(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
-alias __fsid_t = anonomous_record_290
+alias __fsid_t = anonomous_record_994
 
 alias __clock_t = ffi.c_long
 alias __rlim_t = ffi.c_ulong
@@ -163,27 +163,35 @@ alias intptr_t = ffi.c_long
 alias uintptr_t = ffi.c_ulong
 alias intmax_t = __intmax_t
 alias uintmax_t = __uintmax_t
-alias efd_value_t = uint8_t
-alias efd_lookuptbl_t = uint16_t
-alias efd_hashfunc_t = uint16_t
-struct rte_efd_table(Copyable & Movable):
-	pass
-alias rte_efd_create = fn (read UnsafePointer[Int8], ffi.c_ulong, ffi.c_ulong, ffi.c_ulong_long, UInt8) -> UnsafePointer[rte_efd_table]
-alias rte_efd_free = fn (UnsafePointer[rte_efd_table]) -> NoneType
-alias rte_efd_find_existing = fn (read UnsafePointer[Int8]) -> UnsafePointer[rte_efd_table]
-alias rte_efd_update = fn (UnsafePointer[rte_efd_table], UInt32, read OpaquePointer, efd_value_t) -> Int32
-alias rte_efd_delete = fn (UnsafePointer[rte_efd_table], UInt32, read OpaquePointer, UnsafePointer[efd_value_t]) -> Int32
-alias rte_efd_lookup = fn (read UnsafePointer[rte_efd_table], UInt32, read OpaquePointer) -> efd_value_t
-alias rte_efd_lookup_bulk = fn (read UnsafePointer[rte_efd_table], UInt32, Int32, read UnsafePointer[OpaquePointer], UnsafePointer[efd_value_t]) -> NoneType
+alias metrics_initialized = Int32
+struct rte_metric_name(Copyable & Movable):
+
+	var name : InlineArray[Int8, 64]
+
+struct rte_metric_value(Copyable & Movable):
+
+	var key : UInt16
+
+	var value : ffi.c_ulong
+
+alias rte_metrics_init = fn (Int32) -> Int32
+alias rte_metrics_deinit = fn (NoneType) -> Int32
+alias rte_metrics_reg_name = fn (read UnsafePointer[Int8]) -> Int32
+alias rte_metrics_reg_names = fn (read UnsafePointer[UnsafePointer[Int8]], UInt16) -> Int32
+alias rte_metrics_get_names = fn (UnsafePointer[rte_metric_name], UInt16) -> Int32
+alias rte_metrics_get_values = fn (Int32, UnsafePointer[rte_metric_value], UInt16) -> Int32
+alias rte_metrics_update_value = fn (Int32, UInt16, read ffi.c_ulong_long) -> Int32
+alias rte_metrics_update_values = fn (Int32, UInt16, read UnsafePointer[ffi.c_ulong_long], ffi.c_ulong) -> Int32
 
 
-alias rte_efd_rte_efd_create = ExternalFunction['rte_efd_create', rte_efd_create]
-alias rte_efd_rte_efd_free = ExternalFunction['rte_efd_free', rte_efd_free]
-alias rte_efd_rte_efd_find_existing = ExternalFunction['rte_efd_find_existing', rte_efd_find_existing]
-alias rte_efd_rte_efd_update = ExternalFunction['rte_efd_update', rte_efd_update]
-alias rte_efd_rte_efd_delete = ExternalFunction['rte_efd_delete', rte_efd_delete]
-alias rte_efd_rte_efd_lookup = ExternalFunction['rte_efd_lookup', rte_efd_lookup]
-alias rte_efd_rte_efd_lookup_bulk = ExternalFunction['rte_efd_lookup_bulk', rte_efd_lookup_bulk]
+alias rte_metrics_rte_metrics_init = ExternalFunction['rte_metrics_init', rte_metrics_init]
+alias rte_metrics_rte_metrics_deinit = ExternalFunction['rte_metrics_deinit', rte_metrics_deinit]
+alias rte_metrics_rte_metrics_reg_name = ExternalFunction['rte_metrics_reg_name', rte_metrics_reg_name]
+alias rte_metrics_rte_metrics_reg_names = ExternalFunction['rte_metrics_reg_names', rte_metrics_reg_names]
+alias rte_metrics_rte_metrics_get_names = ExternalFunction['rte_metrics_get_names', rte_metrics_get_names]
+alias rte_metrics_rte_metrics_get_values = ExternalFunction['rte_metrics_get_values', rte_metrics_get_values]
+alias rte_metrics_rte_metrics_update_value = ExternalFunction['rte_metrics_update_value', rte_metrics_update_value]
+alias rte_metrics_rte_metrics_update_values = ExternalFunction['rte_metrics_update_values', rte_metrics_update_values]
 
 @always_inline
 fn _get_lib_path(so_file_name: String) raises -> Path:
@@ -224,31 +232,33 @@ fn _get_lib_path(so_file_name: String) raises -> Path:
 
 
 @fieldwise_init
-struct rte_efd(Copyable, Movable):
+struct rte_metrics(Copyable, Movable):
     var lib: DLHandle
     
-    var rte_efd_create: rte_efd_rte_efd_create.type
-    var rte_efd_free: rte_efd_rte_efd_free.type
-    var rte_efd_find_existing: rte_efd_rte_efd_find_existing.type
-    var rte_efd_update: rte_efd_rte_efd_update.type
-    var rte_efd_delete: rte_efd_rte_efd_delete.type
-    var rte_efd_lookup: rte_efd_rte_efd_lookup.type
-    var rte_efd_lookup_bulk: rte_efd_rte_efd_lookup_bulk.type
+    var rte_metrics_init: rte_metrics_rte_metrics_init.type
+    var rte_metrics_deinit: rte_metrics_rte_metrics_deinit.type
+    var rte_metrics_reg_name: rte_metrics_rte_metrics_reg_name.type
+    var rte_metrics_reg_names: rte_metrics_rte_metrics_reg_names.type
+    var rte_metrics_get_names: rte_metrics_rte_metrics_get_names.type
+    var rte_metrics_get_values: rte_metrics_rte_metrics_get_values.type
+    var rte_metrics_update_value: rte_metrics_rte_metrics_update_value.type
+    var rte_metrics_update_values: rte_metrics_rte_metrics_update_values.type
 
     fn __init__(out self):
         try:
-            self.lib = DLHandle(_get_lib_path('librte_efd.so'))
+            self.lib = DLHandle(_get_lib_path('librte_metrics.so'))
         except e:
             self.lib = abort[DLHandle](
-                String("Failed to load rte_efd from", 'librte_efd.so', ":\n", e)
+                String("Failed to load rte_metrics from", 'librte_metrics.so', ":\n", e)
             )
 
     
-        self.rte_efd_create = rte_efd_rte_efd_create.load(self.lib)
-        self.rte_efd_free = rte_efd_rte_efd_free.load(self.lib)
-        self.rte_efd_find_existing = rte_efd_rte_efd_find_existing.load(self.lib)
-        self.rte_efd_update = rte_efd_rte_efd_update.load(self.lib)
-        self.rte_efd_delete = rte_efd_rte_efd_delete.load(self.lib)
-        self.rte_efd_lookup = rte_efd_rte_efd_lookup.load(self.lib)
-        self.rte_efd_lookup_bulk = rte_efd_rte_efd_lookup_bulk.load(self.lib)
+        self.rte_metrics_init = rte_metrics_rte_metrics_init.load(self.lib)
+        self.rte_metrics_deinit = rte_metrics_rte_metrics_deinit.load(self.lib)
+        self.rte_metrics_reg_name = rte_metrics_rte_metrics_reg_name.load(self.lib)
+        self.rte_metrics_reg_names = rte_metrics_rte_metrics_reg_names.load(self.lib)
+        self.rte_metrics_get_names = rte_metrics_rte_metrics_get_names.load(self.lib)
+        self.rte_metrics_get_values = rte_metrics_rte_metrics_get_values.load(self.lib)
+        self.rte_metrics_update_value = rte_metrics_rte_metrics_update_value.load(self.lib)
+        self.rte_metrics_update_values = rte_metrics_rte_metrics_update_values.load(self.lib)
 

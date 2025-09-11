@@ -10,7 +10,7 @@ from utils import StaticTuple
 # # Node: TranslationUnitDecl()
 alias __int128_t = Int128
 alias __uint128_t = UInt128
-struct __NSConstantString_tag(ExplicitlyCopyable & Copyable & Movable):
+struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
 
@@ -64,7 +64,7 @@ alias __clang_svfloat64x4_t = UnsafePointer[Float64]
 alias __clang_svbfloat16x4_t = UnsafePointer[BFloat16]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
-struct __va_list(ExplicitlyCopyable & Copyable & Movable):
+struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
@@ -102,10 +102,10 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_134(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_422(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
-alias __fsid_t = anonomous_record_134
+alias __fsid_t = anonomous_record_422
 
 alias __clock_t = ffi.c_long
 alias __rlim_t = ffi.c_ulong
@@ -169,40 +169,40 @@ alias __assert = fn (read UnsafePointer[Int8], read UnsafePointer[Int8], Int32) 
 alias size_t = ffi.c_ulong
 alias va_list = __builtin_va_list
 alias __gnuc_va_list = __builtin_va_list
-alias anonomous_record_135 = C_Union[UInt32, InlineArray[Int8, 4]]
+alias anonomous_record_423 = C_Union[UInt32, InlineArray[Int8, 4]]
 
-struct anonomous_record_136(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_424(Copyable & Movable):
 	var __count : Int32
 
-	var __value : anonomous_record_135
+	var __value : anonomous_record_423
 
-alias __mbstate_t = anonomous_record_136
+alias __mbstate_t = anonomous_record_424
 
-struct _G_fpos_t(ExplicitlyCopyable & Copyable & Movable):
+struct _G_fpos_t(Copyable & Movable):
 	var __pos : ffi.c_long
 
 	var __state : __mbstate_t
 
 alias __fpos_t = _G_fpos_t
 
-struct _G_fpos64_t(ExplicitlyCopyable & Copyable & Movable):
+struct _G_fpos64_t(Copyable & Movable):
 	var __pos : ffi.c_long
 
 	var __state : __mbstate_t
 
 alias __fpos64_t = _G_fpos64_t
 
-struct _IO_FILE(ExplicitlyCopyable & Copyable & Movable):
+struct _IO_FILE(Copyable & Movable):
 	pass
 alias __FILE = _IO_FILE
 
 alias FILE = _IO_FILE
 
-struct _IO_marker(ExplicitlyCopyable & Copyable & Movable):
+struct _IO_marker(Copyable & Movable):
 	pass
-struct _IO_codecvt(ExplicitlyCopyable & Copyable & Movable):
+struct _IO_codecvt(Copyable & Movable):
 	pass
-struct _IO_wide_data(ExplicitlyCopyable & Copyable & Movable):
+struct _IO_wide_data(Copyable & Movable):
 	pass
 alias _IO_lock_t = NoneType
 alias off_t = __off_t
@@ -302,20 +302,20 @@ alias __uflow = fn (UnsafePointer[FILE]) -> Int32
 alias __overflow = fn (UnsafePointer[FILE], Int32) -> Int32
 alias alloca = fn (ffi.c_ulong) -> OpaquePointer
 alias time_t = __time_t
-struct timespec(ExplicitlyCopyable & Copyable & Movable):
+struct timespec(Copyable & Movable):
 	var tv_sec : ffi.c_long
 
 	var tv_nsec : ffi.c_long
 
 alias pid_t = __pid_t
-struct sched_param(ExplicitlyCopyable & Copyable & Movable):
+struct sched_param(Copyable & Movable):
 	var sched_priority : Int32
 
 alias __cpu_mask = ffi.c_ulong
-struct anonomous_record_137(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_425(Copyable & Movable):
 	var __bits : InlineArray[__cpu_mask, 16]
 
-alias cpu_set_t = anonomous_record_137
+alias cpu_set_t = anonomous_record_425
 
 alias __sched_cpucount = fn (size_t, read UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
@@ -353,7 +353,7 @@ alias rte_iova_t = uint64_t
 #  Otherwise, in virtual mode (IOVA as VA), an IOMMU may do the translation.
 
 alias RTE_MARKER = 	# # Node: PlaceHolder()
-	# {"id":"0x1ef6fcc0","inner":[{"id":"0x1edb23f0","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
+	# {"id":"0x112b3ca0","inner":[{"id":"0x110f5210","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -361,7 +361,7 @@ alias RTE_MARKER = 	# # Node: PlaceHolder()
 #  Generic marker for any place in a structure. 
 
 alias RTE_MARKER8 = 	# # Node: PlaceHolder()
-	# {"id":"0x1ef6fe50","inner":[{"decl":{"id":"0x1ee8c9d8","kind":"TypedefDecl","name":"uint8_t"},"id":"0x1ef6fdb0","inner":[{"decl":{"id":"0x1ee55b40","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x1eea5370","inner":[{"id":"0x1edb17b0","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
+	# {"id":"0x112b3e30","inner":[{"decl":{"id":"0x111cf7f8","kind":"TypedefDecl","name":"uint8_t"},"id":"0x112b3d90","inner":[{"decl":{"id":"0x11198960","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x111e7180","inner":[{"id":"0x110f45d0","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -369,7 +369,7 @@ alias RTE_MARKER8 = 	# # Node: PlaceHolder()
 #  Marker for 1B alignment in a structure. 
 
 alias RTE_MARKER16 = 	# # Node: PlaceHolder()
-	# {"id":"0x1ef6ffb0","inner":[{"decl":{"id":"0x1ee8ca40","kind":"TypedefDecl","name":"uint16_t"},"id":"0x1ef63870","inner":[{"decl":{"id":"0x1ee55c20","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x1eea5490","inner":[{"id":"0x1edb17d0","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
+	# {"id":"0x112b3f90","inner":[{"decl":{"id":"0x111cf860","kind":"TypedefDecl","name":"uint16_t"},"id":"0x112a6840","inner":[{"decl":{"id":"0x11198a40","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x111e72a0","inner":[{"id":"0x110f45f0","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -377,7 +377,7 @@ alias RTE_MARKER16 = 	# # Node: PlaceHolder()
 #  Marker for 2B alignment in a structure. 
 
 alias RTE_MARKER32 = 	# # Node: PlaceHolder()
-	# {"id":"0x1ef70110","inner":[{"decl":{"id":"0x1ee8caa8","kind":"TypedefDecl","name":"uint32_t"},"id":"0x1ef637e0","inner":[{"decl":{"id":"0x1ee55d00","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x1eea55b0","inner":[{"id":"0x1edb17f0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
+	# {"id":"0x112b40f0","inner":[{"decl":{"id":"0x111cf8c8","kind":"TypedefDecl","name":"uint32_t"},"id":"0x112a67b0","inner":[{"decl":{"id":"0x11198b20","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x111e73c0","inner":[{"id":"0x110f4610","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -385,7 +385,7 @@ alias RTE_MARKER32 = 	# # Node: PlaceHolder()
 #  Marker for 4B alignment in a structure. 
 
 alias RTE_MARKER64 = 	# # Node: PlaceHolder()
-	# {"id":"0x1ef70270","inner":[{"decl":{"id":"0x1ee8cb10","kind":"TypedefDecl","name":"uint64_t"},"id":"0x1ef63750","inner":[{"decl":{"id":"0x1eea5280","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x1eea56d0","inner":[{"id":"0x1edb1810","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
+	# {"id":"0x112b4250","inner":[{"decl":{"id":"0x111cf930","kind":"TypedefDecl","name":"uint64_t"},"id":"0x112a6720","inner":[{"decl":{"id":"0x111e7090","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x111e74e0","inner":[{"id":"0x110f4630","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -480,12 +480,12 @@ alias rte_mbuf_set_user_mempool_ops = fn (read UnsafePointer[Int8]) -> Int32
 alias rte_mbuf_user_mempool_ops = fn (NoneType) -> UnsafePointer[Int8]
 alias rte_mbuf_best_mempool_ops = fn (NoneType) -> UnsafePointer[Int8]
 alias __gwchar_t = UInt32
-struct anonomous_record_138(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_426(Copyable & Movable):
 	var quot : ffi.c_long
 
 	var rem : ffi.c_long
 
-alias imaxdiv_t = anonomous_record_138
+alias imaxdiv_t = anonomous_record_426
 
 alias imaxabs = fn (intmax_t) -> intmax_t
 alias imaxdiv = fn (intmax_t, intmax_t) -> imaxdiv_t
@@ -494,7 +494,7 @@ alias strtoumax = fn (read UnsafePointer[Int8], UnsafePointer[UnsafePointer[Int8
 alias wcstoimax = fn (read UnsafePointer[__gwchar_t], UnsafePointer[UnsafePointer[__gwchar_t]], Int32) -> intmax_t
 alias wcstoumax = fn (read UnsafePointer[__gwchar_t], UnsafePointer[UnsafePointer[__gwchar_t]], Int32) -> uintmax_t
 alias clock_t = __clock_t
-struct tm(ExplicitlyCopyable & Copyable & Movable):
+struct tm(Copyable & Movable):
 	var tm_sec : Int32
 
 	var tm_min : Int32
@@ -519,16 +519,16 @@ struct tm(ExplicitlyCopyable & Copyable & Movable):
 
 alias clockid_t = __clockid_t
 alias timer_t = __timer_t
-struct itimerspec(ExplicitlyCopyable & Copyable & Movable):
+struct itimerspec(Copyable & Movable):
 	var it_interval : timespec
 
 	var it_value : timespec
 
-struct sigevent(ExplicitlyCopyable & Copyable & Movable):
+struct sigevent(Copyable & Movable):
 	pass
-struct __locale_data(ExplicitlyCopyable & Copyable & Movable):
+struct __locale_data(Copyable & Movable):
 	pass
-struct __locale_struct(ExplicitlyCopyable & Copyable & Movable):
+struct __locale_struct(Copyable & Movable):
 	var __locales : __locale_data
 
 	var __ctype_b : UnsafePointer[UInt16]
@@ -579,12 +579,12 @@ alias timer_getoverrun = fn (timer_t) -> Int32
 alias timespec_get = fn (UnsafePointer[timespec], Int32) -> Int32
 alias ptrdiff_t = ffi.c_long
 alias wchar_t = UInt32
-struct anonomous_record_139(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_427(Copyable & Movable):
 	var __clang_max_align_nonce1 : ffi.c_long_long
 
 	var __clang_max_align_nonce2 : Float64
 
-alias max_align_t = anonomous_record_139
+alias max_align_t = anonomous_record_427
 
 alias memcpy = fn (OpaquePointer, read OpaquePointer, ffi.c_ulong) -> OpaquePointer
 alias memmove = fn (OpaquePointer, read OpaquePointer, ffi.c_ulong) -> OpaquePointer
@@ -639,7 +639,7 @@ alias stpcpy = fn (UnsafePointer[Int8], read UnsafePointer[Int8]) -> UnsafePoint
 alias __stpncpy = fn (UnsafePointer[Int8], read UnsafePointer[Int8], size_t) -> UnsafePointer[Int8]
 alias stpncpy = fn (UnsafePointer[Int8], read UnsafePointer[Int8], ffi.c_ulong) -> UnsafePointer[Int8]
 alias rte_uuid_t = 	# # Node: PlaceHolder()
-	# {"id":"0x1f00d480","inner":[{"id":"0x1edb17b0","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"ConstantArrayType","size":16,"type":{"qualType":"unsigned char[16]"}}
+	# {"id":"0x113503d0","inner":[{"id":"0x110f45d0","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"ConstantArrayType","size":16,"type":{"qualType":"unsigned char[16]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -651,7 +651,7 @@ alias rte_uuid_copy = fn (UnsafePointer[UInt8], read UnsafePointer[UInt8]) -> No
 alias rte_uuid_compare = fn (read UnsafePointer[UInt8], read UnsafePointer[UInt8]) -> Int32
 alias rte_uuid_parse = fn (read UnsafePointer[Int8], UnsafePointer[UInt8]) -> Int32
 alias rte_uuid_unparse = fn (read UnsafePointer[UInt8], UnsafePointer[Int8], size_t) -> NoneType
-struct rte_intr_mode(ExplicitlyCopyable & Copyable & Movable):
+struct rte_intr_mode(Copyable & Movable):
 
 	alias RTE_INTR_MODE_NONE = 0
 
@@ -661,7 +661,7 @@ struct rte_intr_mode(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_INTR_MODE_MSIX = 3
 
-struct rte_proc_type_t(ExplicitlyCopyable & Copyable & Movable):
+struct rte_proc_type_t(Copyable & Movable):
 
 	alias RTE_PROC_AUTO = -1
 
@@ -677,7 +677,7 @@ alias rte_eal_init = fn (Int32, UnsafePointer[UnsafePointer[Int8]]) -> Int32
 alias rte_eal_cleanup = fn (NoneType) -> Int32
 alias rte_eal_primary_proc_alive = fn (read UnsafePointer[Int8]) -> Int32
 alias rte_mp_disable = fn (NoneType) -> Bool
-struct rte_mp_msg(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mp_msg(Copyable & Movable):
 	var name : InlineArray[Int8, 64]
 
 	var len_param : Int32
@@ -688,7 +688,7 @@ struct rte_mp_msg(ExplicitlyCopyable & Copyable & Movable):
 
 	var fds : InlineArray[Int32, 253]
 
-struct rte_mp_reply(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mp_reply(Copyable & Movable):
 	var nb_sent : Int32
 
 	var nb_received : Int32
@@ -713,7 +713,7 @@ alias rte_sys_gettid = fn (NoneType) -> Int32
 alias per_lcore__thread_id = Int32
 alias rte_gettid = fn (NoneType) -> Int32
 alias rte_eal_get_baseaddr = fn (NoneType) -> ffi.c_ulong_long
-struct rte_iova_mode(ExplicitlyCopyable & Copyable & Movable):
+struct rte_iova_mode(Copyable & Movable):
 
 	alias RTE_IOVA_DC = 0
 
@@ -725,14 +725,14 @@ alias rte_eal_iova_mode = fn (NoneType) -> rte_iova_mode
 alias rte_eal_mbuf_user_pool_ops = fn (NoneType) -> UnsafePointer[Int8]
 alias rte_eal_get_runtime_dir = fn (NoneType) -> UnsafePointer[Int8]
 alias rte_eal_parse_coremask = fn (read UnsafePointer[Int8], UnsafePointer[Int32]) -> Int32
-struct rte_lcore_state_t(ExplicitlyCopyable & Copyable & Movable):
+struct rte_lcore_state_t(Copyable & Movable):
 
 	alias WAIT = 0
 
 	alias RUNNING = 1
 
 alias lcore_function_t = 	# # Node: PlaceHolder()
-	# {"id":"0x1f01c370","inner":[{"cc":"cdecl","id":"0x1eff4ef0","inner":[{"id":"0x1edb1750","kind":"BuiltinType","type":{"qualType":"int"}},{"id":"0x1edb23f0","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"int (void *)"}}],"kind":"ParenType","type":{"qualType":"int (void *)"}}
+	# {"id":"0x1135e270","inner":[{"cc":"cdecl","id":"0x11337030","inner":[{"id":"0x110f4570","kind":"BuiltinType","type":{"qualType":"int"}},{"id":"0x110f5210","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"int (void *)"}}],"kind":"ParenType","type":{"qualType":"int (void *)"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -740,7 +740,7 @@ alias lcore_function_t = 	# # Node: PlaceHolder()
 #  Definition of a remote launch function.
 
 alias rte_eal_remote_launch = fn (UnsafePointer[lcore_function_t], OpaquePointer, UInt32) -> Int32
-struct rte_rmt_call_main_t(ExplicitlyCopyable & Copyable & Movable):
+struct rte_rmt_call_main_t(Copyable & Movable):
 
 	alias SKIP_MAIN = 0
 
@@ -750,11 +750,11 @@ alias rte_eal_mp_remote_launch = fn (UnsafePointer[lcore_function_t], OpaquePoin
 alias rte_eal_get_lcore_state = fn (UInt32) -> rte_lcore_state_t
 alias rte_eal_wait_lcore = fn (UInt32) -> Int32
 alias rte_eal_mp_wait_lcore = fn (NoneType) -> NoneType
-struct anonomous_record_140(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_428(Copyable & Movable):
 
 	var opaque_id : ffi.c_ulong
 
-alias rte_thread_t = anonomous_record_140
+alias rte_thread_t = anonomous_record_428
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -762,24 +762,24 @@ alias rte_thread_t = anonomous_record_140
 #  Thread id descriptor.
 
 alias rte_thread_func = fn(OpaquePointer) -> ffi.c_ulong
-struct rte_thread_priority(ExplicitlyCopyable & Copyable & Movable):
+struct rte_thread_priority(Copyable & Movable):
 
 	alias RTE_THREAD_PRIORITY_NORMAL = 0
 
 	alias RTE_THREAD_PRIORITY_REALTIME_CRITICAL = 1
 
-struct anonomous_record_141(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_429(Copyable & Movable):
 
 	var priority : rte_thread_priority
 
-alias rte_thread_attr_t = anonomous_record_141
+alias rte_thread_attr_t = anonomous_record_429
 
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Representation for thread attributes.
 
-struct eal_tls_key(ExplicitlyCopyable & Copyable & Movable):
+struct eal_tls_key(Copyable & Movable):
 	pass
 alias rte_thread_key = UnsafePointer[eal_tls_key]
 # Node: FullComment()
@@ -805,7 +805,7 @@ alias rte_thread_key_delete = fn (rte_thread_key) -> Int32
 alias rte_thread_value_set = fn (rte_thread_key, read OpaquePointer) -> Int32
 alias rte_thread_value_get = fn (rte_thread_key) -> OpaquePointer
 alias per_lcore__lcore_id = UInt32
-struct rte_lcore_role_t(ExplicitlyCopyable & Copyable & Movable):
+struct rte_lcore_role_t(Copyable & Movable):
 
 	alias ROLE_RTE = 0
 
@@ -834,7 +834,7 @@ alias rte_lcore_callback_register = fn (read UnsafePointer[Int8], rte_lcore_init
 alias rte_lcore_callback_unregister = fn (OpaquePointer) -> NoneType
 alias rte_lcore_iterate_cb = fn(UInt32, OpaquePointer) -> Int32
 alias rte_lcore_iterate = fn (rte_lcore_iterate_cb, OpaquePointer) -> Int32
-struct rte_lcore_usage(ExplicitlyCopyable & Copyable & Movable):
+struct rte_lcore_usage(Copyable & Movable):
 
 	var total_cycles : ffi.c_ulong
 
@@ -851,11 +851,11 @@ alias __sync_bool_compare_and_swap = fn () -> NoneType
 alias __sync_bool_compare_and_swap_2 = fn (UnsafePointer[Int16], Int16, *Int16) -> Bool
 alias rte_atomic16_exchange = fn (UnsafePointer[UInt16], UInt16) -> UInt16
 alias __atomic_exchange_n = fn () -> NoneType
-struct anonomous_record_142(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_430(Copyable & Movable):
 
 	var cnt : Int16
 
-alias rte_atomic16_t = anonomous_record_142
+alias rte_atomic16_t = anonomous_record_430
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -880,11 +880,11 @@ alias rte_atomic16_clear = fn (UnsafePointer[rte_atomic16_t]) -> NoneType
 alias rte_atomic32_cmpset = fn (UnsafePointer[ffi.c_ulong], ffi.c_ulong, ffi.c_ulong) -> Int32
 alias __sync_bool_compare_and_swap_4 = fn (UnsafePointer[Int32], Int32, *Int32) -> Bool
 alias rte_atomic32_exchange = fn (UnsafePointer[ffi.c_ulong], ffi.c_ulong) -> ffi.c_ulong
-struct anonomous_record_143(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_431(Copyable & Movable):
 
 	var cnt : Int32
 
-alias rte_atomic32_t = anonomous_record_143
+alias rte_atomic32_t = anonomous_record_431
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -907,11 +907,11 @@ alias rte_atomic32_clear = fn (UnsafePointer[rte_atomic32_t]) -> NoneType
 alias rte_atomic64_cmpset = fn (UnsafePointer[ffi.c_ulong_long], ffi.c_ulong_long, ffi.c_ulong_long) -> Int32
 alias __sync_bool_compare_and_swap_8 = fn (UnsafePointer[ffi.c_long_long], ffi.c_long_long, *ffi.c_long_long) -> Bool
 alias rte_atomic64_exchange = fn (UnsafePointer[ffi.c_ulong_long], ffi.c_ulong_long) -> ffi.c_ulong_long
-struct anonomous_record_144(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_432(Copyable & Movable):
 
 	var cnt : ffi.c_long
 
-alias rte_atomic64_t = anonomous_record_144
+alias rte_atomic64_t = anonomous_record_432
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -931,18 +931,18 @@ alias rte_atomic64_inc_and_test = fn (UnsafePointer[rte_atomic64_t]) -> Int32
 alias rte_atomic64_dec_and_test = fn (UnsafePointer[rte_atomic64_t]) -> Int32
 alias rte_atomic64_test_and_set = fn (UnsafePointer[rte_atomic64_t]) -> Int32
 alias rte_atomic64_clear = fn (UnsafePointer[rte_atomic64_t]) -> NoneType
-alias anonomous_record_145 = C_Union[InlineArray[ffi.c_ulong_long, 2], Int128]
+alias anonomous_record_433 = C_Union[InlineArray[ffi.c_ulong_long, 2], Int128]
 
-struct anonomous_record_146(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_434(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x1f04bfd0","inner":[{"id":"0x1f04bfb0","inner":[{"id":"0x1f04bef0","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}},"end":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}},"end":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":16,"file":"dpdk/lib/eal/include/generic/rte_atomic.h","includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"line":1101,"offset":25559,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":16,"file":"dpdk/lib/eal/include/generic/rte_atomic.h","includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"line":1101,"offset":25559,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+	# {"id":"0x1138df20","inner":[{"id":"0x1138df00","inner":[{"id":"0x1138de40","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}},"end":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}},"end":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":16,"file":"dpdk/lib/eal/include/generic/rte_atomic.h","includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"line":1101,"offset":25559,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":16,"file":"dpdk/lib/eal/include/generic/rte_atomic.h","includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"line":1101,"offset":25559,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
 
 
-	var union_placeholder_1 : anonomous_record_145
+	var union_placeholder_1 : anonomous_record_433
 
 
 
-alias rte_int128_t = anonomous_record_146
+alias rte_int128_t = anonomous_record_434
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -957,11 +957,11 @@ alias rte_wait_until_equal_16 = fn (UnsafePointer[UInt16], UInt16, rte_memory_or
 alias rte_wait_until_equal_32 = fn (UnsafePointer[ffi.c_ulong], ffi.c_ulong, rte_memory_order) -> NoneType
 alias rte_wait_until_equal_64 = fn (UnsafePointer[ffi.c_ulong_long], ffi.c_ulong_long, rte_memory_order) -> NoneType
 alias __atomic_load_n = fn () -> NoneType
-struct anonomous_record_147(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_435(Copyable & Movable):
 
 	var locked : Int32
 
-alias rte_spinlock_t = anonomous_record_147
+alias rte_spinlock_t = anonomous_record_435
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -979,7 +979,7 @@ alias rte_tm_supported = fn (NoneType) -> Int32
 alias rte_spinlock_lock_tm = fn (UnsafePointer[rte_spinlock_t]) -> NoneType
 alias rte_spinlock_unlock_tm = fn (UnsafePointer[rte_spinlock_t]) -> NoneType
 alias rte_spinlock_trylock_tm = fn (UnsafePointer[rte_spinlock_t]) -> Int32
-struct anonomous_record_148(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_436(Copyable & Movable):
 
 	var sl : rte_spinlock_t
 
@@ -987,7 +987,7 @@ struct anonomous_record_148(ExplicitlyCopyable & Copyable & Movable):
 
 	var count : Int32
 
-alias rte_spinlock_recursive_t = anonomous_record_148
+alias rte_spinlock_recursive_t = anonomous_record_436
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -1002,10 +1002,10 @@ alias rte_spinlock_recursive_lock_tm = fn (UnsafePointer[rte_spinlock_recursive_
 alias rte_spinlock_recursive_unlock_tm = fn (UnsafePointer[rte_spinlock_recursive_t]) -> NoneType
 alias rte_spinlock_recursive_trylock_tm = fn (UnsafePointer[rte_spinlock_recursive_t]) -> Int32
 alias __errno_location = fn (NoneType) -> UnsafePointer[Int32]
-struct anonomous_record_149(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_437(Copyable & Movable):
 	var cnt : Int32
 
-alias rte_rwlock_t = anonomous_record_149
+alias rte_rwlock_t = anonomous_record_437
 
 alias rte_rwlock_init = fn (UnsafePointer[rte_rwlock_t]) -> NoneType
 alias rte_rwlock_read_lock = fn (UnsafePointer[rte_rwlock_t]) -> NoneType
@@ -1040,7 +1040,7 @@ alias rte_mcfg_mempool_write_unlock = fn (NoneType) -> NoneType
 alias rte_mcfg_timer_lock = fn (NoneType) -> NoneType
 alias rte_mcfg_timer_unlock = fn (NoneType) -> NoneType
 alias rte_mcfg_get_single_file_segments = fn (NoneType) -> Bool
-struct rte_fbarray(ExplicitlyCopyable & Copyable & Movable):
+struct rte_fbarray(Copyable & Movable):
 	var name : InlineArray[Int8, 64]
 
 	var count : UInt32
@@ -1079,16 +1079,16 @@ alias rte_fbarray_find_biggest_used = fn (UnsafePointer[rte_fbarray], UInt32) ->
 alias rte_fbarray_find_rev_biggest_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
 alias rte_fbarray_find_rev_biggest_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
 alias rte_fbarray_dump_metadata = fn (UnsafePointer[rte_fbarray], UnsafePointer[FILE]) -> NoneType
-alias anonomous_record_150 = C_Union[OpaquePointer, ffi.c_ulong]
+alias anonomous_record_438 = C_Union[OpaquePointer, ffi.c_ulong]
 
-struct rte_memseg(ExplicitlyCopyable & Copyable & Movable):
+struct rte_memseg(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x1f08fef8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
+	# {"id":"0x113d1ac8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var iova : ffi.c_ulong
 
-	var union_placeholder_1 : anonomous_record_150
+	var union_placeholder_1 : anonomous_record_438
 
 
 
@@ -1104,11 +1104,11 @@ struct rte_memseg(ExplicitlyCopyable & Copyable & Movable):
 
 	var flags : UInt32
 
-alias anonomous_record_151 = C_Union[OpaquePointer, ffi.c_ulong]
+alias anonomous_record_439 = C_Union[OpaquePointer, ffi.c_ulong]
 
-struct rte_memseg_list(ExplicitlyCopyable & Copyable & Movable):
+struct rte_memseg_list(Copyable & Movable):
 
-	var union_placeholder_1 : anonomous_record_151
+	var union_placeholder_1 : anonomous_record_439
 
 
 
@@ -1157,7 +1157,7 @@ alias rte_mem_check_dma_mask = fn (UInt8) -> Int32
 alias rte_mem_check_dma_mask_thread_unsafe = fn (UInt8) -> Int32
 alias rte_mem_set_dma_mask = fn (UInt8) -> NoneType
 alias rte_eal_using_phys_addrs = fn (NoneType) -> Int32
-struct rte_mem_event(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mem_event(Copyable & Movable):
 
 	alias RTE_MEM_EVENT_ALLOC = 0
 
@@ -1170,18 +1170,18 @@ alias rte_mem_alloc_validator_t = fn(Int32, size_t, size_t) -> Int32
 alias rte_mem_alloc_validator_register = fn (read UnsafePointer[Int8], rte_mem_alloc_validator_t, Int32, size_t) -> Int32
 alias rte_mem_alloc_validator_unregister = fn (read UnsafePointer[Int8], Int32) -> Int32
 alias rte_memzero_explicit = fn (OpaquePointer, size_t) -> NoneType
-alias anonomous_record_152 = C_Union[OpaquePointer, ffi.c_ulong]
+alias anonomous_record_440 = C_Union[OpaquePointer, ffi.c_ulong]
 
-struct rte_memzone(ExplicitlyCopyable & Copyable & Movable):
+struct rte_memzone(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x1eff1488","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
+	# {"id":"0x113335c8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var name : InlineArray[Int8, 32]
 
 	var iova : ffi.c_ulong
 
-	var union_placeholder_1 : anonomous_record_152
+	var union_placeholder_1 : anonomous_record_440
 
 
 
@@ -1202,13 +1202,13 @@ alias rte_memzone_free = fn (read UnsafePointer[rte_memzone]) -> Int32
 alias rte_memzone_lookup = fn (read UnsafePointer[Int8]) -> UnsafePointer[rte_memzone]
 alias rte_memzone_dump = fn (UnsafePointer[FILE]) -> NoneType
 alias rte_memzone_walk = fn (fn(read UnsafePointer[rte_memzone], OpaquePointer), OpaquePointer -> NoneType) -> NoneType
-struct rte_ring_queue_behavior(ExplicitlyCopyable & Copyable & Movable):
+struct rte_ring_queue_behavior(Copyable & Movable):
 
 	alias RTE_RING_QUEUE_FIXED = 0
 
 	alias RTE_RING_QUEUE_VARIABLE = 1
 
-struct rte_ring_sync_type(ExplicitlyCopyable & Copyable & Movable):
+struct rte_ring_sync_type(Copyable & Movable):
 
 	alias RTE_RING_SYNC_MT = 0
 
@@ -1218,26 +1218,26 @@ struct rte_ring_sync_type(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_RING_SYNC_MT_HTS = 3
 
-alias anonomous_record_153 = C_Union[rte_ring_sync_type, UInt32]
+alias anonomous_record_441 = C_Union[rte_ring_sync_type, UInt32]
 
-struct rte_ring_headtail(ExplicitlyCopyable & Copyable & Movable):
+struct rte_ring_headtail(Copyable & Movable):
 
 	var head : UInt32
 
 	var tail : UInt32
 
-	var union_placeholder_1 : anonomous_record_153
+	var union_placeholder_1 : anonomous_record_441
 
 
 
-struct anonomous_record_154(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_442(Copyable & Movable):
 	var cnt : UInt32
 
 	var pos : UInt32
 
-alias __rte_ring_rts_poscnt = C_Union[ffi.c_ulong, anonomous_record_154]
+alias __rte_ring_rts_poscnt = C_Union[ffi.c_ulong, anonomous_record_442]
 
-struct rte_ring_rts_headtail(ExplicitlyCopyable & Copyable & Movable):
+struct rte_ring_rts_headtail(Copyable & Movable):
 	var tail : union __rte_ring_rts_poscnt
 
 	var sync_type : rte_ring_sync_type
@@ -1246,27 +1246,27 @@ struct rte_ring_rts_headtail(ExplicitlyCopyable & Copyable & Movable):
 
 	var head : union __rte_ring_rts_poscnt
 
-struct anonomous_record_155(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_443(Copyable & Movable):
 	var head : UInt32
 
 	var tail : UInt32
 
-alias __rte_ring_hts_pos = C_Union[ffi.c_ulong, anonomous_record_155]
+alias __rte_ring_hts_pos = C_Union[ffi.c_ulong, anonomous_record_443]
 
-struct rte_ring_hts_headtail(ExplicitlyCopyable & Copyable & Movable):
+struct rte_ring_hts_headtail(Copyable & Movable):
 	var ht : union __rte_ring_hts_pos
 
 	var sync_type : rte_ring_sync_type
 
-alias anonomous_record_157 = C_Union[rte_ring_headtail, rte_ring_hts_headtail, rte_ring_rts_headtail]
+alias anonomous_record_445 = C_Union[rte_ring_headtail, rte_ring_hts_headtail, rte_ring_rts_headtail]
 		# # Node: PlaceHolder()
-		# {"id":"0x1f0aae30","inner":[{"id":"0x1f0aae10","inner":[{"id":"0x1f0aad48","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+		# {"id":"0x113eca00","inner":[{"id":"0x113ec9e0","inner":[{"id":"0x113ec918","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
 
-alias anonomous_record_156 = C_Union[rte_ring_headtail, rte_ring_hts_headtail, rte_ring_rts_headtail]
+alias anonomous_record_444 = C_Union[rte_ring_headtail, rte_ring_hts_headtail, rte_ring_rts_headtail]
 		# # Node: PlaceHolder()
-		# {"id":"0x1f0aa6d0","inner":[{"id":"0x1f0aa6b0","inner":[{"id":"0x1f0aa5e8","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+		# {"id":"0x113ec2a0","inner":[{"id":"0x113ec280","inner":[{"id":"0x113ec1b8","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
 
-struct rte_ring(ExplicitlyCopyable & Copyable & Movable):
+struct rte_ring(Copyable & Movable):
 
 	var name : InlineArray[Int8, 29]
 
@@ -1282,14 +1282,14 @@ struct rte_ring(ExplicitlyCopyable & Copyable & Movable):
 
 	var cache_guard_0 : InlineArray[Int8, 128]
 
-	var union_placeholder_1 : anonomous_record_156
+	var union_placeholder_1 : anonomous_record_444
 
 
 
 
 	var cache_guard_1 : InlineArray[Int8, 128]
 
-	var union_placeholder_2 : anonomous_record_157
+	var union_placeholder_2 : anonomous_record_445
 
 
 
@@ -1384,9 +1384,9 @@ alias rte_ring_dequeue_burst_elem_start = fn (UnsafePointer[rte_ring], OpaquePoi
 alias rte_ring_dequeue_burst_start = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
 alias rte_ring_dequeue_elem_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
 alias rte_ring_dequeue_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
-struct rte_ring_zc_data(ExplicitlyCopyable & Copyable & Movable):
+struct rte_ring_zc_data(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x1f1146b0","inner":[{"id":"0x1f114690","inner":[{"id":"0x1f1145d0","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"isMacroArgExpansion":true,"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"isMacroArgExpansion":true,"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"isMacroArgExpansion":true,"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"isMacroArgExpansion":true,"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+	# {"id":"0x11456270","inner":[{"id":"0x11456250","inner":[{"id":"0x11456190","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"isMacroArgExpansion":true,"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"isMacroArgExpansion":true,"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"isMacroArgExpansion":true,"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"isMacroArgExpansion":true,"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
 
 
 	var ptr1 : OpaquePointer
@@ -1453,7 +1453,7 @@ alias rte_mov64 = fn (UnsafePointer[UInt8], read UnsafePointer[UInt8]) -> NoneTy
 alias rte_mov128 = fn (UnsafePointer[UInt8], read UnsafePointer[UInt8]) -> NoneType
 alias rte_mov256 = fn (UnsafePointer[UInt8], read UnsafePointer[UInt8]) -> NoneType
 alias rte_mov48 = fn (UnsafePointer[UInt8], read UnsafePointer[UInt8]) -> NoneType
-struct timer_source(ExplicitlyCopyable & Copyable & Movable):
+struct timer_source(Copyable & Movable):
 	alias EAL_TIMER_TSC = 0
 
 	alias EAL_TIMER_HPET = 1
@@ -1541,7 +1541,7 @@ alias rte_strscpy = fn (UnsafePointer[Int8], read UnsafePointer[Int8], size_t) -
 alias rte_str_skip_leading_spaces = fn (read UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias rte_trace_is_enabled = fn (NoneType) -> Bool
 alias rte_trace_feature_is_enabled = fn (NoneType) -> Bool
-struct rte_trace_mode(ExplicitlyCopyable & Copyable & Movable):
+struct rte_trace_mode(Copyable & Movable):
 
 	alias RTE_TRACE_MODE_OVERWRITE = 0
 
@@ -1588,9 +1588,9 @@ alias __rte_mempool_trace_default_cache = rte_trace_point_t
 alias rte_mempool_trace_default_cache = fn (OpaquePointer, ffi.c_ulong, OpaquePointer) -> NoneType
 alias __rte_mempool_trace_cache_flush = rte_trace_point_t
 alias rte_mempool_trace_cache_flush = fn (OpaquePointer, OpaquePointer) -> NoneType
-struct rte_mempool_cache(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool_cache(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x1f17ae20","inner":[{"id":"0x1f17ae00","inner":[{"id":"0x1f17ad40","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+	# {"id":"0x114bd9f0","inner":[{"id":"0x114bd9d0","inner":[{"id":"0x114bd910","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
 
 
 	var size : UInt32
@@ -1601,7 +1601,7 @@ struct rte_mempool_cache(ExplicitlyCopyable & Copyable & Movable):
 
 	var objs : InlineArray[OpaquePointer, 1024]
 
-struct rte_mempool_objsz(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool_objsz(Copyable & Movable):
 
 	var elt_size : UInt32
 
@@ -1611,57 +1611,57 @@ struct rte_mempool_objsz(ExplicitlyCopyable & Copyable & Movable):
 
 	var total_size : UInt32
 
-struct rte_mempool(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool(Copyable & Movable):
 	pass
-struct anonomous_record_158(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_446(Copyable & Movable):
 	var stqe_next : UnsafePointer[rte_mempool_objhdr]
 
-struct rte_mempool_objhdr(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool_objhdr(Copyable & Movable):
 
-	var next : anonomous_record_158
+	var next : anonomous_record_446
 
 	var mp : rte_mempool
 
 	var iova : ffi.c_ulong
 
-struct rte_mempool_objhdr_list(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool_objhdr_list(Copyable & Movable):
 
 	var stqh_first : UnsafePointer[rte_mempool_objhdr]
 
 	var stqh_last : UnsafePointer[UnsafePointer[rte_mempool_objhdr]]
 
 alias rte_mempool_logtype = Int32
-struct rte_mempool_memhdr(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool_memhdr(Copyable & Movable):
 	pass
-struct rte_mempool_memhdr_list(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool_memhdr_list(Copyable & Movable):
 
 	var stqh_first : rte_mempool_memhdr
 
 	var stqh_last : UnsafePointer[UnsafePointer[rte_mempool_memhdr]]
 
 alias rte_mempool_memchunk_free_cb_t = 	# # Node: PlaceHolder()
-	# {"id":"0x1f17d480","inner":[{"cc":"cdecl","id":"0x1f17d440","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x1f17d1c0","inner":[{"id":"0x1f17d190","inner":[{"decl":{"id":"0x1f17d568","kind":"RecordDecl","name":"rte_mempool_memhdr"},"id":"0x1f17d050","kind":"RecordType","type":{"qualType":"struct rte_mempool_memhdr"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool_memhdr"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool_memhdr *"}},{"id":"0x1edb23f0","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool_memhdr *, void *)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool_memhdr *, void *)"}}
+	# {"id":"0x114c0050","inner":[{"cc":"cdecl","id":"0x114c0010","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x114bfd90","inner":[{"id":"0x114bfd60","inner":[{"decl":{"id":"0x114c0138","kind":"RecordDecl","name":"rte_mempool_memhdr"},"id":"0x114bfc20","kind":"RecordType","type":{"qualType":"struct rte_mempool_memhdr"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool_memhdr"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool_memhdr *"}},{"id":"0x110f5210","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool_memhdr *, void *)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool_memhdr *, void *)"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Callback used to free a memory chunk
 
-struct anonomous_record_159(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_447(Copyable & Movable):
 	var stqe_next : UnsafePointer[rte_mempool_memhdr]
 
-struct rte_mempool_info(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool_info(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x1f17dda0","inner":[{"id":"0x1f17dd80","inner":[{"id":"0x1f17dcb8","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+	# {"id":"0x114c0970","inner":[{"id":"0x114c0950","inner":[{"id":"0x114c0888","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
 
 
 	var contig_block_size : UInt32
 
-alias anonomous_record_160 = C_Union[OpaquePointer, ffi.c_ulong]
+alias anonomous_record_448 = C_Union[OpaquePointer, ffi.c_ulong]
 
 alias rte_mempool_get_header = fn (OpaquePointer) -> UnsafePointer[rte_mempool_objhdr]
 alias rte_mempool_from_obj = fn (OpaquePointer) -> UnsafePointer[rte_mempool]
-struct rte_mempool_objtlr(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool_objtlr(Copyable & Movable):
 	pass
 alias rte_mempool_get_trailer = fn (OpaquePointer) -> UnsafePointer[rte_mempool_objtlr]
 alias rte_mempool_check_cookies = fn (read UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32, Int32) -> NoneType
@@ -1676,7 +1676,7 @@ alias rte_mempool_calc_mem_size_t = fn(read UnsafePointer[rte_mempool], ffi.c_ul
 alias rte_mempool_op_calc_mem_size_helper = fn (read UnsafePointer[rte_mempool], ffi.c_ulong, ffi.c_ulong, size_t, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
 alias rte_mempool_op_calc_mem_size_default = fn (read UnsafePointer[rte_mempool], ffi.c_ulong, ffi.c_ulong, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
 alias rte_mempool_populate_obj_cb_t = 	# # Node: PlaceHolder()
-	# {"id":"0x1f18ad90","inner":[{"cc":"cdecl","id":"0x1f18ad40","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x1f17d820","inner":[{"id":"0x1f17d7f0","inner":[{"decl":{"id":"0x1f17ded8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x1f17c9e0","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x1edb23f0","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"id":"0x1edb23f0","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"decl":{"id":"0x1ef6fbc8","kind":"TypedefDecl","name":"rte_iova_t"},"id":"0x1f08f7c0","inner":[{"decl":{"id":"0x1ee8cb10","kind":"TypedefDecl","name":"uint64_t"},"id":"0x1ef63750","inner":[{"decl":{"id":"0x1eea5280","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x1eea56d0","inner":[{"id":"0x1edb1810","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"TypedefType","type":{"qualType":"rte_iova_t"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool *, void *, void *, rte_iova_t)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool *, void *, void *, rte_iova_t)"}}
+	# {"id":"0x114cd960","inner":[{"cc":"cdecl","id":"0x114cd910","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x114c03f0","inner":[{"id":"0x114c03c0","inner":[{"decl":{"id":"0x114c0aa8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x114bf5b0","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x110f5210","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"id":"0x110f5210","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"decl":{"id":"0x112b3ba8","kind":"TypedefDecl","name":"rte_iova_t"},"id":"0x113d1390","inner":[{"decl":{"id":"0x111cf930","kind":"TypedefDecl","name":"uint64_t"},"id":"0x112a6720","inner":[{"decl":{"id":"0x111e7090","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x111e74e0","inner":[{"id":"0x110f4630","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"TypedefType","type":{"qualType":"rte_iova_t"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool *, void *, void *, rte_iova_t)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool *, void *, void *, rte_iova_t)"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -1686,21 +1686,21 @@ alias rte_mempool_populate_obj_cb_t = 	# # Node: PlaceHolder()
 # Node: TextComment()
 #  
 # # Node: PlaceHolder()
-# {"direction":"in","explicit":true,"id":"0x1f28dec0","inner":[{"id":"0x1f28df70","inner":[{"id":"0x1f28df20","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":587,"offset":20070,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20070,"tokLen":0},"end":{"col":40,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20107,"tokLen":1}},"text":"   A pointer to the mempool structure."},{"id":"0x1f28df40","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":588,"offset":20111,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20111,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20111,"tokLen":0}},"text":" "}],"kind":"ParagraphComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":587,"offset":20070,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20070,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":588,"offset":20111,"tokLen":0}}}],"kind":"ParamCommandComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20055,"tokLen":5},"param":"mp","paramIdx":0,"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20054,"tokLen":1},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":588,"offset":20111,"tokLen":0}}}
+# {"direction":"in","explicit":true,"id":"0x115d0b30","inner":[{"id":"0x115d0be0","inner":[{"id":"0x115d0b90","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":587,"offset":20070,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20070,"tokLen":0},"end":{"col":40,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20107,"tokLen":1}},"text":"   A pointer to the mempool structure."},{"id":"0x115d0bb0","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":588,"offset":20111,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20111,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20111,"tokLen":0}},"text":" "}],"kind":"ParagraphComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":587,"offset":20070,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20070,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":588,"offset":20111,"tokLen":0}}}],"kind":"ParamCommandComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20055,"tokLen":5},"param":"mp","paramIdx":0,"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20054,"tokLen":1},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":588,"offset":20111,"tokLen":0}}}
 # # Node: PlaceHolder()
-# {"direction":"in","explicit":true,"id":"0x1f28df90","inner":[{"id":"0x1f28e040","inner":[{"id":"0x1f28dff0","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":589,"offset":20132,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20132,"tokLen":0},"end":{"col":42,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20171,"tokLen":1}},"text":"   An opaque pointer passed to iterator."},{"id":"0x1f28e010","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":590,"offset":20175,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20175,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20175,"tokLen":0}},"text":" "}],"kind":"ParagraphComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":589,"offset":20132,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20132,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":590,"offset":20175,"tokLen":0}}}],"kind":"ParamCommandComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20113,"tokLen":5},"param":"opaque","paramIdx":1,"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20112,"tokLen":1},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":590,"offset":20175,"tokLen":0}}}
+# {"direction":"in","explicit":true,"id":"0x115d0c00","inner":[{"id":"0x115d0cb0","inner":[{"id":"0x115d0c60","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":589,"offset":20132,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20132,"tokLen":0},"end":{"col":42,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20171,"tokLen":1}},"text":"   An opaque pointer passed to iterator."},{"id":"0x115d0c80","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":590,"offset":20175,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20175,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20175,"tokLen":0}},"text":" "}],"kind":"ParagraphComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":589,"offset":20132,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20132,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":590,"offset":20175,"tokLen":0}}}],"kind":"ParamCommandComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20113,"tokLen":5},"param":"opaque","paramIdx":1,"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20112,"tokLen":1},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":590,"offset":20175,"tokLen":0}}}
 # # Node: PlaceHolder()
-# {"direction":"in","explicit":true,"id":"0x1f28e060","inner":[{"id":"0x1f28e110","inner":[{"id":"0x1f28e0c0","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":591,"offset":20195,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20195,"tokLen":0},"end":{"col":28,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20220,"tokLen":1}},"text":"   Object virtual address."},{"id":"0x1f28e0e0","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":592,"offset":20224,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20224,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20224,"tokLen":0}},"text":" "}],"kind":"ParagraphComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":591,"offset":20195,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20195,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":592,"offset":20224,"tokLen":0}}}],"kind":"ParamCommandComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20177,"tokLen":5},"param":"vaddr","paramIdx":2,"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20176,"tokLen":1},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":592,"offset":20224,"tokLen":0}}}
+# {"direction":"in","explicit":true,"id":"0x115d0cd0","inner":[{"id":"0x115d0d80","inner":[{"id":"0x115d0d30","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":591,"offset":20195,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20195,"tokLen":0},"end":{"col":28,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20220,"tokLen":1}},"text":"   Object virtual address."},{"id":"0x115d0d50","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":592,"offset":20224,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20224,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20224,"tokLen":0}},"text":" "}],"kind":"ParagraphComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":591,"offset":20195,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20195,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":592,"offset":20224,"tokLen":0}}}],"kind":"ParamCommandComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20177,"tokLen":5},"param":"vaddr","paramIdx":2,"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20176,"tokLen":1},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":592,"offset":20224,"tokLen":0}}}
 # # Node: PlaceHolder()
-# {"direction":"in","explicit":true,"id":"0x1f28e130","inner":[{"id":"0x1f28e1c0","inner":[{"id":"0x1f28e190","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20243,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20243,"tokLen":0},"end":{"col":64,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20304,"tokLen":1}},"text":"   Input/output virtual address of the object or RTE_BAD_IOVA."}],"kind":"ParagraphComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20243,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20243,"tokLen":0},"end":{"col":64,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20304,"tokLen":1}}}],"kind":"ParamCommandComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20226,"tokLen":5},"param":"iova","paramIdx":3,"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20225,"tokLen":1},"end":{"col":64,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":593,"offset":20304,"tokLen":1}}}
+# {"direction":"in","explicit":true,"id":"0x115d0da0","inner":[{"id":"0x115d0e30","inner":[{"id":"0x115d0e00","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20243,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20243,"tokLen":0},"end":{"col":64,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20304,"tokLen":1}},"text":"   Input/output virtual address of the object or RTE_BAD_IOVA."}],"kind":"ParagraphComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20243,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20243,"tokLen":0},"end":{"col":64,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20304,"tokLen":1}}}],"kind":"ParamCommandComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20226,"tokLen":5},"param":"iova","paramIdx":3,"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":20225,"tokLen":1},"end":{"col":64,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":593,"offset":20304,"tokLen":1}}}
 
 alias rte_mempool_populate_t = fn(UnsafePointer[rte_mempool], UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
 alias rte_mempool_op_populate_helper = fn (UnsafePointer[rte_mempool], UInt32, UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
 alias rte_mempool_op_populate_default = fn (UnsafePointer[rte_mempool], UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
 alias rte_mempool_get_info_t = fn(read UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_info]) -> Int32
-struct rte_mempool_ops(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool_ops(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x1f18c480","inner":[{"id":"0x1f18c460","inner":[{"id":"0x1f18c398","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+	# {"id":"0x114cf050","inner":[{"id":"0x114cf030","inner":[{"id":"0x114cef68","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
 
 
 	var name : InlineArray[Int8, 32]
@@ -1723,9 +1723,9 @@ struct rte_mempool_ops(ExplicitlyCopyable & Copyable & Movable):
 
 	var dequeue_contig_blocks : fn(UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
 
-struct rte_mempool_ops_table(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool_ops_table(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x1f18cd40","inner":[{"id":"0x1f18cd20","inner":[{"id":"0x1f18cc58","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+	# {"id":"0x114cf910","inner":[{"id":"0x114cf8f0","inner":[{"id":"0x114cf828","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
 
 
 	var sl : rte_spinlock_t
@@ -1747,7 +1747,7 @@ alias rte_mempool_ops_free = fn (UnsafePointer[rte_mempool]) -> NoneType
 alias rte_mempool_set_ops_byname = fn (UnsafePointer[rte_mempool], read UnsafePointer[Int8], OpaquePointer) -> Int32
 alias rte_mempool_register_ops = fn (read UnsafePointer[rte_mempool_ops]) -> Int32
 alias rte_mempool_obj_cb_t = 	# # Node: PlaceHolder()
-	# {"id":"0x1f1935e0","inner":[{"cc":"cdecl","id":"0x1f193590","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x1f17d820","inner":[{"id":"0x1f17d7f0","inner":[{"decl":{"id":"0x1f17ded8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x1f17c9e0","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x1edb23f0","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"id":"0x1edb23f0","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"id":"0x1edb17f0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool *, void *, void *, unsigned int)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool *, void *, void *, unsigned int)"}}
+	# {"id":"0x114d61b0","inner":[{"cc":"cdecl","id":"0x114d6160","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x114c03f0","inner":[{"id":"0x114c03c0","inner":[{"decl":{"id":"0x114c0aa8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x114bf5b0","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x110f5210","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"id":"0x110f5210","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"id":"0x110f4610","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool *, void *, void *, unsigned int)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool *, void *, void *, unsigned int)"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -1759,7 +1759,7 @@ alias rte_mempool_obj_cb_t = 	# # Node: PlaceHolder()
 
 alias rte_mempool_obj_ctor_t = rte_mempool_obj_cb_t
 alias rte_mempool_mem_cb_t = 	# # Node: PlaceHolder()
-	# {"id":"0x1f193a60","inner":[{"cc":"cdecl","id":"0x1f193a10","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x1f17d820","inner":[{"id":"0x1f17d7f0","inner":[{"decl":{"id":"0x1f17ded8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x1f17c9e0","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x1edb23f0","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"id":"0x1f17d1c0","inner":[{"id":"0x1f17d190","inner":[{"decl":{"id":"0x1f17d568","kind":"RecordDecl","name":"rte_mempool_memhdr"},"id":"0x1f17d050","kind":"RecordType","type":{"qualType":"struct rte_mempool_memhdr"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool_memhdr"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool_memhdr *"}},{"id":"0x1edb17f0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool *, void *, struct rte_mempool_memhdr *, unsigned int)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool *, void *, struct rte_mempool_memhdr *, unsigned int)"}}
+	# {"id":"0x114d6630","inner":[{"cc":"cdecl","id":"0x114d65e0","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x114c03f0","inner":[{"id":"0x114c03c0","inner":[{"decl":{"id":"0x114c0aa8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x114bf5b0","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x110f5210","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"id":"0x114bfd90","inner":[{"id":"0x114bfd60","inner":[{"decl":{"id":"0x114c0138","kind":"RecordDecl","name":"rte_mempool_memhdr"},"id":"0x114bfc20","kind":"RecordType","type":{"qualType":"struct rte_mempool_memhdr"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool_memhdr"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool_memhdr *"}},{"id":"0x110f4610","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool *, void *, struct rte_mempool_memhdr *, unsigned int)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool *, void *, struct rte_mempool_memhdr *, unsigned int)"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -1770,7 +1770,7 @@ alias rte_mempool_mem_cb_t = 	# # Node: PlaceHolder()
 #  Used by rte_mempool_mem_iter().
 
 alias rte_mempool_ctor_t = 	# # Node: PlaceHolder()
-	# {"id":"0x1f193cf0","inner":[{"cc":"cdecl","id":"0x1f193cb0","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x1f17d820","inner":[{"id":"0x1f17d7f0","inner":[{"decl":{"id":"0x1f17ded8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x1f17c9e0","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x1edb23f0","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool *, void *)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool *, void *)"}}
+	# {"id":"0x114d68c0","inner":[{"cc":"cdecl","id":"0x114d6880","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x114c03f0","inner":[{"id":"0x114c03c0","inner":[{"decl":{"id":"0x114c0aa8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x114bf5b0","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x110f5210","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool *, void *)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool *, void *)"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -1818,7 +1818,7 @@ alias rte_mempool_list_dump = fn (UnsafePointer[FILE]) -> NoneType
 alias rte_mempool_lookup = fn (read UnsafePointer[Int8]) -> UnsafePointer[rte_mempool]
 alias rte_mempool_calc_obj_size = fn (ffi.c_ulong, ffi.c_ulong, UnsafePointer[rte_mempool_objsz]) -> ffi.c_ulong
 alias rte_mempool_walk = fn (fn(UnsafePointer[rte_mempool], OpaquePointer), OpaquePointer -> NoneType) -> NoneType
-struct rte_mempool_mem_range_info(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool_mem_range_info(Copyable & Movable):
 
 	var start : OpaquePointer
 
@@ -1829,23 +1829,23 @@ struct rte_mempool_mem_range_info(ExplicitlyCopyable & Copyable & Movable):
 alias rte_mempool_get_mem_range = fn (read UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_mem_range_info]) -> Int32
 alias rte_mempool_get_obj_alignment = fn (read UnsafePointer[rte_mempool]) -> size_t
 alias rte_mempool_get_page_size = fn (UnsafePointer[rte_mempool], UnsafePointer[size_t]) -> Int32
-struct rte_mempool_event(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mempool_event(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"closeName":"","id":"0x1f29d3e0","inner":[{"id":"0x1f29d430","kind":"VerbatimBlockLineComment","loc":{"col":1,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":1990,"offset":64759,"tokLen":0},"range":{"begin":{"col":1,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64759,"tokLen":0},"end":{"col":2,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64760,"tokLen":1}},"text":" "},{"id":"0x1f29d450","kind":"VerbatimBlockLineComment","loc":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64762,"tokLen":0},"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64762,"tokLen":0},"end":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64762,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64750,"tokLen":8},"name":"internal","range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64749,"tokLen":1},"end":{"col":13,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64758,"tokLen":0}}}
+# {"closeName":"","id":"0x115e0050","inner":[{"id":"0x115e00a0","kind":"VerbatimBlockLineComment","loc":{"col":1,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":1990,"offset":64759,"tokLen":0},"range":{"begin":{"col":1,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64759,"tokLen":0},"end":{"col":2,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64760,"tokLen":1}},"text":" "},{"id":"0x115e00c0","kind":"VerbatimBlockLineComment","loc":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64762,"tokLen":0},"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64762,"tokLen":0},"end":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64762,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64750,"tokLen":8},"name":"internal","range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64749,"tokLen":1},"end":{"col":13,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64758,"tokLen":0}}}
 
 	alias RTE_MEMPOOL_EVENT_READY = 0
 
 	alias RTE_MEMPOOL_EVENT_DESTROY = 1
 
 alias rte_mempool_event_callback = 	# # Node: PlaceHolder()
-	# {"id":"0x1f1a45d0","inner":[{"cc":"cdecl","id":"0x1f1a4590","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x1f1a4380","inner":[{"decl":{"id":"0x1f1a4108","kind":"EnumDecl","name":"rte_mempool_event"},"id":"0x1f1a41b0","kind":"EnumType","type":{"qualType":"enum rte_mempool_event"}}],"kind":"ElaboratedType","type":{"qualType":"enum rte_mempool_event"}},{"id":"0x1f17d820","inner":[{"id":"0x1f17d7f0","inner":[{"decl":{"id":"0x1f17ded8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x1f17c9e0","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x1edb23f0","inner":[{"id":"0x1edb16b0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"void (enum rte_mempool_event, struct rte_mempool *, void *)"}}],"kind":"ParenType","type":{"qualType":"void (enum rte_mempool_event, struct rte_mempool *, void *)"}}
+	# {"id":"0x114e71a0","inner":[{"cc":"cdecl","id":"0x114e7160","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x114e6f50","inner":[{"decl":{"id":"0x114e6cd8","kind":"EnumDecl","name":"rte_mempool_event"},"id":"0x114e6d80","kind":"EnumType","type":{"qualType":"enum rte_mempool_event"}}],"kind":"ElaboratedType","type":{"qualType":"enum rte_mempool_event"}},{"id":"0x114c03f0","inner":[{"id":"0x114c03c0","inner":[{"decl":{"id":"0x114c0aa8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x114bf5b0","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x110f5210","inner":[{"id":"0x110f44d0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"void (enum rte_mempool_event, struct rte_mempool *, void *)"}}],"kind":"ParenType","type":{"qualType":"void (enum rte_mempool_event, struct rte_mempool *, void *)"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  
 # # Node: PlaceHolder()
-# {"closeName":"","id":"0x1f29d6f0","inner":[{"id":"0x1f29d740","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2000,"offset":64983,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64983,"tokLen":0},"end":{"col":27,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65007,"tokLen":0}},"text":" Mempool event callback."},{"id":"0x1f29d760","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2001,"offset":65010,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65010,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65010,"tokLen":0}},"text":""},{"id":"0x1f29d780","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2002,"offset":65013,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65013,"tokLen":0},"end":{"col":81,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65091,"tokLen":0}},"text":" rte_mempool_event_callback_register() may be called from within the callback,"},{"id":"0x1f29d7a0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2003,"offset":65094,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65094,"tokLen":0},"end":{"col":81,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65172,"tokLen":0}},"text":" but the callbacks registered this way will not be invoked for the same event."},{"id":"0x1f29d7c0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2004,"offset":65175,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65175,"tokLen":0},"end":{"col":69,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65241,"tokLen":0}},"text":" rte_mempool_event_callback_unregister() may only be safely called"},{"id":"0x1f29d7e0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2005,"offset":65244,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65244,"tokLen":0},"end":{"col":35,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65276,"tokLen":0}},"text":" to remove the running callback."},{"id":"0x1f29d800","kind":"VerbatimBlockLineComment","loc":{"col":1,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2006,"offset":65277,"tokLen":0},"range":{"begin":{"col":1,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65277,"tokLen":0},"end":{"col":2,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65278,"tokLen":1}},"text":" "},{"id":"0x1f29d820","kind":"VerbatimBlockLineComment","loc":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65280,"tokLen":0},"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65280,"tokLen":0},"end":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65280,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64972,"tokLen":8},"name":"internal","range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64971,"tokLen":1},"end":{"col":13,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64980,"tokLen":0}}}
+# {"closeName":"","id":"0x115e0360","inner":[{"id":"0x115e03b0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2000,"offset":64983,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64983,"tokLen":0},"end":{"col":27,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65007,"tokLen":0}},"text":" Mempool event callback."},{"id":"0x115e03d0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2001,"offset":65010,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65010,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65010,"tokLen":0}},"text":""},{"id":"0x115e03f0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2002,"offset":65013,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65013,"tokLen":0},"end":{"col":81,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65091,"tokLen":0}},"text":" rte_mempool_event_callback_register() may be called from within the callback,"},{"id":"0x115e0410","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2003,"offset":65094,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65094,"tokLen":0},"end":{"col":81,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65172,"tokLen":0}},"text":" but the callbacks registered this way will not be invoked for the same event."},{"id":"0x115e0430","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2004,"offset":65175,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65175,"tokLen":0},"end":{"col":69,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65241,"tokLen":0}},"text":" rte_mempool_event_callback_unregister() may only be safely called"},{"id":"0x115e0450","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2005,"offset":65244,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65244,"tokLen":0},"end":{"col":35,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65276,"tokLen":0}},"text":" to remove the running callback."},{"id":"0x115e0470","kind":"VerbatimBlockLineComment","loc":{"col":1,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":2006,"offset":65277,"tokLen":0},"range":{"begin":{"col":1,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65277,"tokLen":0},"end":{"col":2,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65278,"tokLen":1}},"text":" "},{"id":"0x115e0490","kind":"VerbatimBlockLineComment","loc":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65280,"tokLen":0},"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65280,"tokLen":0},"end":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":65280,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64972,"tokLen":8},"name":"internal","range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64971,"tokLen":1},"end":{"col":13,"includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"offset":64980,"tokLen":0}}}
 
 alias rte_mempool_event_callback_register = fn (UnsafePointer[rte_mempool_event_callback], OpaquePointer) -> Int32
 alias rte_mempool_event_callback_unregister = fn (UnsafePointer[rte_mempool_event_callback], OpaquePointer) -> Int32
@@ -1871,16 +1871,16 @@ alias __rte_eventdev_trace_timer_arm_tmo_tick_burst = rte_trace_point_t
 alias rte_eventdev_trace_timer_arm_tmo_tick_burst = fn (read OpaquePointer, read ffi.c_ulong_long, UnsafePointer[OpaquePointer], read UInt16) -> NoneType
 alias __rte_eventdev_trace_timer_cancel_burst = rte_trace_point_t
 alias rte_eventdev_trace_timer_cancel_burst = fn (read OpaquePointer, UnsafePointer[OpaquePointer], UInt16) -> NoneType
-struct rte_mbuf(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mbuf(Copyable & Movable):
 	pass
-struct rte_event(ExplicitlyCopyable & Copyable & Movable):
+struct rte_event(Copyable & Movable):
 	pass
 alias rte_event_dev_count = fn (NoneType) -> UInt8
 alias rte_event_dev_get_dev_id = fn (read UnsafePointer[Int8]) -> Int32
 alias rte_event_dev_socket_id = fn (UInt8) -> Int32
-struct rte_device(ExplicitlyCopyable & Copyable & Movable):
+struct rte_device(Copyable & Movable):
 	pass
-struct rte_event_dev_info(ExplicitlyCopyable & Copyable & Movable):
+struct rte_event_dev_info(Copyable & Movable):
 
 	var driver_name : UnsafePointer[Int8]
 
@@ -1918,7 +1918,7 @@ struct rte_event_dev_info(ExplicitlyCopyable & Copyable & Movable):
 
 alias rte_event_dev_info_get = fn (UInt8, UnsafePointer[rte_event_dev_info]) -> Int32
 alias rte_event_dev_attr_get = fn (UInt8, ffi.c_ulong, UnsafePointer[ffi.c_ulong]) -> Int32
-struct rte_event_dev_preschedule_type(ExplicitlyCopyable & Copyable & Movable):
+struct rte_event_dev_preschedule_type(Copyable & Movable):
 
 	alias RTE_EVENT_PRESCHEDULE_NONE = 0
 
@@ -1926,7 +1926,7 @@ struct rte_event_dev_preschedule_type(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_EVENT_PRESCHEDULE_ADAPTIVE = 2
 
-struct rte_event_dev_config(ExplicitlyCopyable & Copyable & Movable):
+struct rte_event_dev_config(Copyable & Movable):
 
 	var dequeue_timeout_ns : UInt32
 
@@ -1949,7 +1949,7 @@ struct rte_event_dev_config(ExplicitlyCopyable & Copyable & Movable):
 	var preschedule_type : rte_event_dev_preschedule_type
 
 alias rte_event_dev_configure = fn (UInt8, read UnsafePointer[rte_event_dev_config]) -> Int32
-struct rte_event_queue_conf(ExplicitlyCopyable & Copyable & Movable):
+struct rte_event_queue_conf(Copyable & Movable):
 
 	var nb_atomic_flows : UInt32
 
@@ -1969,7 +1969,7 @@ alias rte_event_queue_default_conf_get = fn (UInt8, UInt8, UnsafePointer[rte_eve
 alias rte_event_queue_setup = fn (UInt8, UInt8, read UnsafePointer[rte_event_queue_conf]) -> Int32
 alias rte_event_queue_attr_get = fn (UInt8, UInt8, ffi.c_ulong, UnsafePointer[ffi.c_ulong]) -> Int32
 alias rte_event_queue_attr_set = fn (UInt8, UInt8, ffi.c_ulong, ffi.c_ulong_long) -> Int32
-struct rte_event_port_conf(ExplicitlyCopyable & Copyable & Movable):
+struct rte_event_port_conf(Copyable & Movable):
 
 	var new_event_threshold : Int32
 
@@ -1989,21 +1989,21 @@ alias rte_event_dev_stop = fn (UInt8) -> NoneType
 alias rte_eventdev_stop_flush_t = fn(UInt8, rte_event, OpaquePointer) -> NoneType
 alias rte_event_dev_stop_flush_callback_register = fn (UInt8, rte_eventdev_stop_flush_t, OpaquePointer) -> Int32
 alias rte_event_dev_close = fn (UInt8) -> Int32
-struct anonomous_record_161(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_449(Copyable & Movable):
 
 	var port : UInt16
 
 	var queue : UInt16
 
-alias anonomous_record_163 = C_Union[InlineArray[UnsafePointer[rte_mbuf], 0], InlineArray[OpaquePointer, 0], InlineArray[ffi.c_ulong_long, 0]]
+alias anonomous_record_451 = C_Union[InlineArray[UnsafePointer[rte_mbuf], 0], InlineArray[OpaquePointer, 0], InlineArray[ffi.c_ulong_long, 0]]
 		# # Node: PlaceHolder()
-		# {"id":"0x1f0c21b0","inner":[{"id":"0x1f0c2190","inner":[{"id":"0x1f0c20c8","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":60816,"tokLen":13},"spellingLoc":{"col":22,"offset":60830,"tokLen":2}},"end":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":60816,"tokLen":13},"spellingLoc":{"col":22,"offset":60830,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":60816,"tokLen":13},"spellingLoc":{"col":22,"offset":60830,"tokLen":2}},"end":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":60816,"tokLen":13},"spellingLoc":{"col":22,"offset":60830,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev.h","line":1484,"offset":60816,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev.h","line":1484,"offset":60816,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+		# {"id":"0x11403d80","inner":[{"id":"0x11403d60","inner":[{"id":"0x11403c98","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":60816,"tokLen":13},"spellingLoc":{"col":22,"offset":60830,"tokLen":2}},"end":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":60816,"tokLen":13},"spellingLoc":{"col":22,"offset":60830,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":60816,"tokLen":13},"spellingLoc":{"col":22,"offset":60830,"tokLen":2}},"end":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":60816,"tokLen":13},"spellingLoc":{"col":22,"offset":60830,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev.h","line":1484,"offset":60816,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev.h","line":1484,"offset":60816,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
 
-alias anonomous_record_162 = C_Union[anonomous_record_161, , ]
+alias anonomous_record_450 = C_Union[anonomous_record_449, , ]
 
-struct rte_event_vector(ExplicitlyCopyable & Copyable & Movable):
+struct rte_event_vector(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x1f0c16c0","inner":[{"id":"0x1f0c16a0","inner":[{"id":"0x1f0c15d8","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":59349,"tokLen":13},"spellingLoc":{"col":22,"offset":59363,"tokLen":2}},"end":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":59349,"tokLen":13},"spellingLoc":{"col":22,"offset":59363,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":59349,"tokLen":13},"spellingLoc":{"col":22,"offset":59363,"tokLen":2}},"end":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":59349,"tokLen":13},"spellingLoc":{"col":22,"offset":59363,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev.h","line":1446,"offset":59349,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev.h","line":1446,"offset":59349,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+	# {"id":"0x11403290","inner":[{"id":"0x11403270","inner":[{"id":"0x114031a8","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":59349,"tokLen":13},"spellingLoc":{"col":22,"offset":59363,"tokLen":2}},"end":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":59349,"tokLen":13},"spellingLoc":{"col":22,"offset":59363,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":59349,"tokLen":13},"spellingLoc":{"col":22,"offset":59363,"tokLen":2}},"end":{"expansionLoc":{"col":8,"isMacroArgExpansion":true,"offset":59349,"tokLen":13},"spellingLoc":{"col":22,"offset":59363,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev.h","line":1446,"offset":59349,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev.h","line":1446,"offset":59349,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
 
 
 	var nb_elem : UInt16
@@ -2014,18 +2014,18 @@ struct rte_event_vector(ExplicitlyCopyable & Copyable & Movable):
 
 	var attr_valid : UInt16
 
-	var union_placeholder_1 : anonomous_record_162
+	var union_placeholder_1 : anonomous_record_450
 
 
 
 	var impl_opaque : ffi.c_ulong
 
-	var union_placeholder_2 : anonomous_record_163
+	var union_placeholder_2 : anonomous_record_451
 
 
 
 
-struct anonomous_record_164(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_452(Copyable & Movable):
 
 	var flow_id : UInt32
 
@@ -2045,9 +2045,9 @@ struct anonomous_record_164(ExplicitlyCopyable & Copyable & Movable):
 
 	var impl_opaque : UInt8
 
-alias anonomous_record_166 = C_Union[ffi.c_ulong, OpaquePointer, UnsafePointer[rte_mbuf], UnsafePointer[rte_event_vector]]
+alias anonomous_record_454 = C_Union[ffi.c_ulong, OpaquePointer, UnsafePointer[rte_mbuf], UnsafePointer[rte_event_vector]]
 
-alias anonomous_record_165 = C_Union[ffi.c_ulong, anonomous_record_164, , , , , , , , , ]
+alias anonomous_record_453 = C_Union[ffi.c_ulong, anonomous_record_452, , , , , , , , , ]
 
 alias rte_event_eth_rx_adapter_caps_get = fn (UInt8, UInt16, UnsafePointer[ffi.c_ulong]) -> Int32
 alias rte_event_timer_adapter_caps_get = fn (UInt8, UnsafePointer[ffi.c_ulong]) -> Int32
@@ -2065,7 +2065,7 @@ alias rte_event_port_links_get = fn (UInt8, UInt8, UnsafePointer[UInt8], UnsafeP
 alias rte_event_port_profile_links_get = fn (UInt8, UInt8, UnsafePointer[UInt8], UnsafePointer[UInt8], UInt8) -> Int32
 alias rte_event_dev_service_id_get = fn (UInt8, UnsafePointer[ffi.c_ulong]) -> Int32
 alias rte_event_dev_dump = fn (UInt8, UnsafePointer[FILE]) -> Int32
-struct rte_event_dev_xstats_mode(ExplicitlyCopyable & Copyable & Movable):
+struct rte_event_dev_xstats_mode(Copyable & Movable):
 
 	alias RTE_EVENT_DEV_XSTATS_DEVICE = 0
 
@@ -2073,7 +2073,7 @@ struct rte_event_dev_xstats_mode(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_EVENT_DEV_XSTATS_QUEUE = 2
 
-struct rte_event_dev_xstats_name(ExplicitlyCopyable & Copyable & Movable):
+struct rte_event_dev_xstats_name(Copyable & Movable):
 
 	var name : InlineArray[Int8, 64]
 
@@ -2092,9 +2092,9 @@ alias event_dma_adapter_enqueue_t = fn(OpaquePointer, UnsafePointer[rte_event], 
 alias event_profile_switch_t = fn(OpaquePointer, UInt8) -> Int32
 alias event_preschedule_modify_t = fn(OpaquePointer, rte_event_dev_preschedule_type) -> Int32
 alias event_preschedule_t = fn(OpaquePointer, rte_event_dev_preschedule_type) -> NoneType
-struct rte_event_fp_ops(ExplicitlyCopyable & Copyable & Movable):
+struct rte_event_fp_ops(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x1f1f0bb0","inner":[{"id":"0x1f1f0b90","inner":[{"id":"0x1f1f0ac8","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev_core.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":53,"offset":1770,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev_core.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":53,"offset":1770,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev_core.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":53,"offset":1770,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev_core.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":53,"offset":1770,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev_core.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":53,"offset":1770,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev_core.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":53,"offset":1770,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+	# {"id":"0x115337d0","inner":[{"id":"0x115337b0","inner":[{"id":"0x115336e8","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev_core.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":53,"offset":1770,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev_core.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":53,"offset":1770,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev_core.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":53,"offset":1770,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev_core.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"isMacroArgExpansion":true,"line":53,"offset":1770,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev_core.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":53,"offset":1770,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/eventdev/rte_eventdev_core.h","includedFrom":{"file":"dpdk/lib/eventdev/rte_eventdev.h"},"line":53,"offset":1770,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
 
 	var data : UnsafePointer[OpaquePointer]
 

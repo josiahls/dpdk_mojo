@@ -10,7 +10,7 @@ from utils import StaticTuple
 # # Node: TranslationUnitDecl()
 alias __int128_t = Int128
 alias __uint128_t = UInt128
-struct __NSConstantString_tag(ExplicitlyCopyable & Copyable & Movable):
+struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
 
@@ -64,7 +64,7 @@ alias __clang_svfloat64x4_t = UnsafePointer[Float64]
 alias __clang_svbfloat16x4_t = UnsafePointer[BFloat16]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
-struct __va_list(ExplicitlyCopyable & Copyable & Movable):
+struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
@@ -102,7 +102,7 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_1(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_1(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
 alias __fsid_t = anonomous_record_1
@@ -166,7 +166,7 @@ alias uintmax_t = __uintmax_t
 alias size_t = ffi.c_ulong
 alias clock_t = __clock_t
 alias time_t = __time_t
-struct tm(ExplicitlyCopyable & Copyable & Movable):
+struct tm(Copyable & Movable):
 	var tm_sec : Int32
 
 	var tm_min : Int32
@@ -189,24 +189,24 @@ struct tm(ExplicitlyCopyable & Copyable & Movable):
 
 	var tm_zone : UnsafePointer[Int8]
 
-struct timespec(ExplicitlyCopyable & Copyable & Movable):
+struct timespec(Copyable & Movable):
 	var tv_sec : ffi.c_long
 
 	var tv_nsec : ffi.c_long
 
 alias clockid_t = __clockid_t
 alias timer_t = __timer_t
-struct itimerspec(ExplicitlyCopyable & Copyable & Movable):
+struct itimerspec(Copyable & Movable):
 	var it_interval : timespec
 
 	var it_value : timespec
 
-struct sigevent(ExplicitlyCopyable & Copyable & Movable):
+struct sigevent(Copyable & Movable):
 	pass
 alias pid_t = __pid_t
-struct __locale_data(ExplicitlyCopyable & Copyable & Movable):
+struct __locale_data(Copyable & Movable):
 	pass
-struct __locale_struct(ExplicitlyCopyable & Copyable & Movable):
+struct __locale_struct(Copyable & Movable):
 	var __locales : __locale_data
 
 	var __ctype_b : UnsafePointer[UInt16]
@@ -257,7 +257,7 @@ alias timer_getoverrun = fn (timer_t) -> Int32
 alias timespec_get = fn (UnsafePointer[timespec], Int32) -> Int32
 alias ptrdiff_t = ffi.c_long
 alias wchar_t = UInt32
-struct anonomous_record_2(ExplicitlyCopyable & Copyable & Movable):
+struct anonomous_record_2(Copyable & Movable):
 	var __clang_max_align_nonce1 : ffi.c_long_long
 
 	var __clang_max_align_nonce2 : Float64
@@ -317,7 +317,7 @@ alias stpcpy = fn (UnsafePointer[Int8], read UnsafePointer[Int8]) -> UnsafePoint
 alias __stpncpy = fn (UnsafePointer[Int8], read UnsafePointer[Int8], size_t) -> UnsafePointer[Int8]
 alias stpncpy = fn (UnsafePointer[Int8], read UnsafePointer[Int8], ffi.c_ulong) -> UnsafePointer[Int8]
 alias rte_uuid_t = 	# # Node: PlaceHolder()
-	# {"id":"0x2e70fbc0","inner":[{"id":"0x2e5a9400","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"ConstantArrayType","size":16,"type":{"qualType":"unsigned char[16]"}}
+	# {"id":"0x2836ece0","inner":[{"id":"0x2820a160","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"ConstantArrayType","size":16,"type":{"qualType":"unsigned char[16]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -329,7 +329,7 @@ alias rte_uuid_copy = fn (UnsafePointer[UInt8], read UnsafePointer[UInt8]) -> No
 alias rte_uuid_compare = fn (read UnsafePointer[UInt8], read UnsafePointer[UInt8]) -> Int32
 alias rte_uuid_parse = fn (read UnsafePointer[Int8], UnsafePointer[UInt8]) -> Int32
 alias rte_uuid_unparse = fn (read UnsafePointer[UInt8], UnsafePointer[Int8], size_t) -> NoneType
-struct rte_intr_mode(ExplicitlyCopyable & Copyable & Movable):
+struct rte_intr_mode(Copyable & Movable):
 
 	alias RTE_INTR_MODE_NONE = 0
 
@@ -339,7 +339,7 @@ struct rte_intr_mode(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_INTR_MODE_MSIX = 3
 
-struct rte_proc_type_t(ExplicitlyCopyable & Copyable & Movable):
+struct rte_proc_type_t(Copyable & Movable):
 
 	alias RTE_PROC_AUTO = -1
 
@@ -355,7 +355,7 @@ alias rte_eal_init = fn (Int32, UnsafePointer[UnsafePointer[Int8]]) -> Int32
 alias rte_eal_cleanup = fn (NoneType) -> Int32
 alias rte_eal_primary_proc_alive = fn (read UnsafePointer[Int8]) -> Int32
 alias rte_mp_disable = fn (NoneType) -> Bool
-struct rte_mp_msg(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mp_msg(Copyable & Movable):
 	var name : InlineArray[Int8, 64]
 
 	var len_param : Int32
@@ -366,7 +366,7 @@ struct rte_mp_msg(ExplicitlyCopyable & Copyable & Movable):
 
 	var fds : InlineArray[Int32, 253]
 
-struct rte_mp_reply(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mp_reply(Copyable & Movable):
 	var nb_sent : Int32
 
 	var nb_received : Int32
@@ -391,7 +391,7 @@ alias rte_sys_gettid = fn (NoneType) -> Int32
 alias per_lcore__thread_id = Int32
 alias rte_gettid = fn (NoneType) -> Int32
 alias rte_eal_get_baseaddr = fn (NoneType) -> ffi.c_ulong_long
-struct rte_iova_mode(ExplicitlyCopyable & Copyable & Movable):
+struct rte_iova_mode(Copyable & Movable):
 
 	alias RTE_IOVA_DC = 0
 

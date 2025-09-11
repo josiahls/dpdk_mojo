@@ -68,6 +68,7 @@ struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
+alias __errno_location = fn (NoneType) -> UnsafePointer[Int32]
 alias __u_char = UInt8
 alias __u_short = UInt16
 alias __u_int = UInt32
@@ -102,10 +103,10 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_290(Copyable & Movable):
+struct anonomous_record_552(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
-alias __fsid_t = anonomous_record_290
+alias __fsid_t = anonomous_record_552
 
 alias __clock_t = ffi.c_long
 alias __rlim_t = ffi.c_ulong
@@ -163,27 +164,81 @@ alias intptr_t = ffi.c_long
 alias uintptr_t = ffi.c_ulong
 alias intmax_t = __intmax_t
 alias uintmax_t = __uintmax_t
-alias efd_value_t = uint8_t
-alias efd_lookuptbl_t = uint16_t
-alias efd_hashfunc_t = uint16_t
-struct rte_efd_table(Copyable & Movable):
+struct rte_lpm_qsbr_mode(Copyable & Movable):
+
+	alias RTE_LPM_QSBR_MODE_DQ = 0
+
+	alias RTE_LPM_QSBR_MODE_SYNC = 1
+
+struct anonomous_record_553(Copyable & Movable):
+	var next_hop : UInt32
+
+	var valid : UInt32
+
+	var valid_group : UInt32
+
+	var depth : UInt32
+
+alias anonomous_record_554 = C_Union[Int32(ffi.c_ulong), anonomous_record_553, , , , ]
+
+struct rte_lpm_tbl_entry(Copyable & Movable):
+# # Node: PlaceHolder()
+# {"closeName":"","id":"0x3b8a2d0","inner":[{"id":"0x3b8a320","kind":"VerbatimBlockLineComment","loc":{"col":14,"offset":2048,"tokLen":0},"range":{"begin":{"col":14,"offset":2048,"tokLen":0},"end":{"col":38,"offset":2072,"tokLen":1}},"text":" Tbl24 entry structure. "},{"id":"0x3b8a340","kind":"VerbatimBlockLineComment","loc":{"col":40,"offset":2074,"tokLen":0},"range":{"begin":{"col":40,"offset":2074,"tokLen":0},"end":{"col":40,"offset":2074,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"offset":2040,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"offset":2039,"tokLen":1},"end":{"col":14,"offset":2048,"tokLen":0}}}
+
+alias static_assert = fn () -> Int32
+struct rte_lpm_config(Copyable & Movable):
+
+	var max_rules : UInt32
+
+	var number_tbl8s : UInt32
+
+	var flags : Int32
+
+struct rte_lpm(Copyable & Movable):
+# # Node: PlaceHolder()
+# {"closeName":"","id":"0x3b8f080","inner":[{"id":"0x3b8f0d0","kind":"VerbatimBlockLineComment","loc":{"col":14,"offset":3425,"tokLen":0},"range":{"begin":{"col":14,"offset":3425,"tokLen":0},"end":{"col":30,"offset":3441,"tokLen":1}},"text":" LPM structure. "},{"id":"0x3b8f0f0","kind":"VerbatimBlockLineComment","loc":{"col":32,"offset":3443,"tokLen":0},"range":{"begin":{"col":32,"offset":3443,"tokLen":0},"end":{"col":32,"offset":3443,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"offset":3417,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"offset":3416,"tokLen":1},"end":{"col":14,"offset":3425,"tokLen":0}}}
+
+	var tbl24 : InlineArray[rte_lpm_tbl_entry, 16777216]
+
+	var tbl8 : UnsafePointer[rte_lpm_tbl_entry]
+
+struct rte_rcu_qsbr(Copyable & Movable):
 	pass
-alias rte_efd_create = fn (read UnsafePointer[Int8], ffi.c_ulong, ffi.c_ulong, ffi.c_ulong_long, UInt8) -> UnsafePointer[rte_efd_table]
-alias rte_efd_free = fn (UnsafePointer[rte_efd_table]) -> NoneType
-alias rte_efd_find_existing = fn (read UnsafePointer[Int8]) -> UnsafePointer[rte_efd_table]
-alias rte_efd_update = fn (UnsafePointer[rte_efd_table], UInt32, read OpaquePointer, efd_value_t) -> Int32
-alias rte_efd_delete = fn (UnsafePointer[rte_efd_table], UInt32, read OpaquePointer, UnsafePointer[efd_value_t]) -> Int32
-alias rte_efd_lookup = fn (read UnsafePointer[rte_efd_table], UInt32, read OpaquePointer) -> efd_value_t
-alias rte_efd_lookup_bulk = fn (read UnsafePointer[rte_efd_table], UInt32, Int32, read UnsafePointer[OpaquePointer], UnsafePointer[efd_value_t]) -> NoneType
+struct rte_lpm_rcu_config(Copyable & Movable):
+
+	var v : rte_rcu_qsbr
+
+	var mode : rte_lpm_qsbr_mode
+
+	var dq_size : UInt32
+
+	var reclaim_thd : UInt32
+
+	var reclaim_max : UInt32
+
+alias rte_lpm_free = fn (UnsafePointer[rte_lpm]) -> NoneType
+alias rte_lpm_find_existing = fn (read UnsafePointer[Int8]) -> UnsafePointer[rte_lpm]
+alias rte_lpm_rcu_qsbr_add = fn (UnsafePointer[rte_lpm], UnsafePointer[rte_lpm_rcu_config]) -> Int32
+alias rte_lpm_add = fn (UnsafePointer[rte_lpm], ffi.c_ulong, UInt8, ffi.c_ulong) -> Int32
+alias rte_lpm_is_rule_present = fn (UnsafePointer[rte_lpm], ffi.c_ulong, UInt8, UnsafePointer[ffi.c_ulong]) -> Int32
+alias rte_lpm_delete = fn (UnsafePointer[rte_lpm], ffi.c_ulong, UInt8) -> Int32
+alias rte_lpm_delete_all = fn (UnsafePointer[rte_lpm]) -> NoneType
+alias rte_lpm_lookup = fn (read UnsafePointer[rte_lpm], ffi.c_ulong, UnsafePointer[ffi.c_ulong]) -> Int32
+alias rte_lpm_lookup_bulk_func = fn (read UnsafePointer[rte_lpm], read UnsafePointer[ffi.c_ulong], UnsafePointer[ffi.c_ulong], read UInt32) -> Int32
+alias rte_lpm_lookupx4 = fn (read UnsafePointer[rte_lpm], Int32, UnsafePointer[ffi.c_ulong], ffi.c_ulong) -> NoneType
 
 
-alias rte_efd_rte_efd_create = ExternalFunction['rte_efd_create', rte_efd_create]
-alias rte_efd_rte_efd_free = ExternalFunction['rte_efd_free', rte_efd_free]
-alias rte_efd_rte_efd_find_existing = ExternalFunction['rte_efd_find_existing', rte_efd_find_existing]
-alias rte_efd_rte_efd_update = ExternalFunction['rte_efd_update', rte_efd_update]
-alias rte_efd_rte_efd_delete = ExternalFunction['rte_efd_delete', rte_efd_delete]
-alias rte_efd_rte_efd_lookup = ExternalFunction['rte_efd_lookup', rte_efd_lookup]
-alias rte_efd_rte_efd_lookup_bulk = ExternalFunction['rte_efd_lookup_bulk', rte_efd_lookup_bulk]
+alias rte_lpm_static_assert = ExternalFunction['static_assert', static_assert]
+alias rte_lpm_rte_lpm_free = ExternalFunction['rte_lpm_free', rte_lpm_free]
+alias rte_lpm_rte_lpm_find_existing = ExternalFunction['rte_lpm_find_existing', rte_lpm_find_existing]
+alias rte_lpm_rte_lpm_rcu_qsbr_add = ExternalFunction['rte_lpm_rcu_qsbr_add', rte_lpm_rcu_qsbr_add]
+alias rte_lpm_rte_lpm_add = ExternalFunction['rte_lpm_add', rte_lpm_add]
+alias rte_lpm_rte_lpm_is_rule_present = ExternalFunction['rte_lpm_is_rule_present', rte_lpm_is_rule_present]
+alias rte_lpm_rte_lpm_delete = ExternalFunction['rte_lpm_delete', rte_lpm_delete]
+alias rte_lpm_rte_lpm_delete_all = ExternalFunction['rte_lpm_delete_all', rte_lpm_delete_all]
+alias rte_lpm_rte_lpm_lookup = ExternalFunction['rte_lpm_lookup', rte_lpm_lookup]
+alias rte_lpm_rte_lpm_lookup_bulk_func = ExternalFunction['rte_lpm_lookup_bulk_func', rte_lpm_lookup_bulk_func]
+alias rte_lpm_rte_lpm_lookupx4 = ExternalFunction['rte_lpm_lookupx4', rte_lpm_lookupx4]
 
 @always_inline
 fn _get_lib_path(so_file_name: String) raises -> Path:
@@ -224,31 +279,39 @@ fn _get_lib_path(so_file_name: String) raises -> Path:
 
 
 @fieldwise_init
-struct rte_efd(Copyable, Movable):
+struct rte_lpm(Copyable, Movable):
     var lib: DLHandle
     
-    var rte_efd_create: rte_efd_rte_efd_create.type
-    var rte_efd_free: rte_efd_rte_efd_free.type
-    var rte_efd_find_existing: rte_efd_rte_efd_find_existing.type
-    var rte_efd_update: rte_efd_rte_efd_update.type
-    var rte_efd_delete: rte_efd_rte_efd_delete.type
-    var rte_efd_lookup: rte_efd_rte_efd_lookup.type
-    var rte_efd_lookup_bulk: rte_efd_rte_efd_lookup_bulk.type
+    var static_assert: rte_lpm_static_assert.type
+    var rte_lpm_free: rte_lpm_rte_lpm_free.type
+    var rte_lpm_find_existing: rte_lpm_rte_lpm_find_existing.type
+    var rte_lpm_rcu_qsbr_add: rte_lpm_rte_lpm_rcu_qsbr_add.type
+    var rte_lpm_add: rte_lpm_rte_lpm_add.type
+    var rte_lpm_is_rule_present: rte_lpm_rte_lpm_is_rule_present.type
+    var rte_lpm_delete: rte_lpm_rte_lpm_delete.type
+    var rte_lpm_delete_all: rte_lpm_rte_lpm_delete_all.type
+    var rte_lpm_lookup: rte_lpm_rte_lpm_lookup.type
+    var rte_lpm_lookup_bulk_func: rte_lpm_rte_lpm_lookup_bulk_func.type
+    var rte_lpm_lookupx4: rte_lpm_rte_lpm_lookupx4.type
 
     fn __init__(out self):
         try:
-            self.lib = DLHandle(_get_lib_path('librte_efd.so'))
+            self.lib = DLHandle(_get_lib_path('librte_lpm.so'))
         except e:
             self.lib = abort[DLHandle](
-                String("Failed to load rte_efd from", 'librte_efd.so', ":\n", e)
+                String("Failed to load rte_lpm from", 'librte_lpm.so', ":\n", e)
             )
 
     
-        self.rte_efd_create = rte_efd_rte_efd_create.load(self.lib)
-        self.rte_efd_free = rte_efd_rte_efd_free.load(self.lib)
-        self.rte_efd_find_existing = rte_efd_rte_efd_find_existing.load(self.lib)
-        self.rte_efd_update = rte_efd_rte_efd_update.load(self.lib)
-        self.rte_efd_delete = rte_efd_rte_efd_delete.load(self.lib)
-        self.rte_efd_lookup = rte_efd_rte_efd_lookup.load(self.lib)
-        self.rte_efd_lookup_bulk = rte_efd_rte_efd_lookup_bulk.load(self.lib)
+        self.static_assert = rte_lpm_static_assert.load(self.lib)
+        self.rte_lpm_free = rte_lpm_rte_lpm_free.load(self.lib)
+        self.rte_lpm_find_existing = rte_lpm_rte_lpm_find_existing.load(self.lib)
+        self.rte_lpm_rcu_qsbr_add = rte_lpm_rte_lpm_rcu_qsbr_add.load(self.lib)
+        self.rte_lpm_add = rte_lpm_rte_lpm_add.load(self.lib)
+        self.rte_lpm_is_rule_present = rte_lpm_rte_lpm_is_rule_present.load(self.lib)
+        self.rte_lpm_delete = rte_lpm_rte_lpm_delete.load(self.lib)
+        self.rte_lpm_delete_all = rte_lpm_rte_lpm_delete_all.load(self.lib)
+        self.rte_lpm_lookup = rte_lpm_rte_lpm_lookup.load(self.lib)
+        self.rte_lpm_lookup_bulk_func = rte_lpm_rte_lpm_lookup_bulk_func.load(self.lib)
+        self.rte_lpm_lookupx4 = rte_lpm_rte_lpm_lookupx4.load(self.lib)
 

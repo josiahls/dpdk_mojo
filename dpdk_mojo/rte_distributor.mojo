@@ -10,7 +10,7 @@ from utils import StaticTuple
 # # Node: TranslationUnitDecl()
 alias __int128_t = Int128
 alias __uint128_t = UInt128
-struct __NSConstantString_tag(ExplicitlyCopyable & Copyable & Movable):
+struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
 
@@ -64,11 +64,11 @@ alias __clang_svfloat64x4_t = UnsafePointer[Float64]
 alias __clang_svbfloat16x4_t = UnsafePointer[BFloat16]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
-struct __va_list(ExplicitlyCopyable & Copyable & Movable):
+struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
-struct rte_distributor_alg_type(ExplicitlyCopyable & Copyable & Movable):
+struct rte_distributor_alg_type(Copyable & Movable):
 
 	alias RTE_DIST_ALG_BURST = 0
 
@@ -76,9 +76,9 @@ struct rte_distributor_alg_type(ExplicitlyCopyable & Copyable & Movable):
 
 	alias RTE_DIST_NUM_ALG_TYPES = 2
 
-struct rte_distributor(ExplicitlyCopyable & Copyable & Movable):
+struct rte_distributor(Copyable & Movable):
 	pass
-struct rte_mbuf(ExplicitlyCopyable & Copyable & Movable):
+struct rte_mbuf(Copyable & Movable):
 	pass
 alias rte_distributor_create = fn (read UnsafePointer[Int8], UInt32, UInt32, UInt32) -> UnsafePointer[rte_distributor]
 alias rte_distributor_process = fn (UnsafePointer[rte_distributor], UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> Int32
