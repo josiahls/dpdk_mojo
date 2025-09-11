@@ -18,18 +18,30 @@ clone_dpdk = { cmd = [
 ]}
 
 init_build_dpdk = { cmd = [
-    "cd", "dpdk", "&&",
-    "meson", "-Dplatform=generic", "-Dmax_numa_nodes=1", "-Dexamples=all", "build"
+    "cd", "dpdk", "&&", "./.ci/linux-setup.sh"
 ], depends-on = [ 
     "clone_dpdk"
 ]}
 
 build_dpdk = { cmd = [
-    "cd", "dpdk", "&&",
-    "ninja", "-C", "build"
+    "cd", "dpdk", "&&", "./.ci/linux-build.sh"
 ], depends-on = [
     "init_build_dpdk"
 ], outputs = ["dpdk/build/lib/libdpdk.so"]}
+
+# init_build_dpdk = { cmd = [
+#     "cd", "dpdk", "&&",
+#     "meson", "-Dplatform=generic", "-Dmax_numa_nodes=1", "-Dexamples=all", "build"
+# ], depends-on = [ 
+#     "clone_dpdk"
+# ]}
+# 
+# build_dpdk = { cmd = [
+#     "cd", "dpdk", "&&",
+#     "ninja", "-C", "build"
+# ], depends-on = [
+#     "init_build_dpdk"
+# ], outputs = ["dpdk/build/lib/libdpdk.so"]}
 
 
 ######################### C Binder Mojo #######################################
