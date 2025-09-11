@@ -6,7 +6,7 @@ platforms = ["linux-64", "linux-aarch64"]
 version = "0.1.0"
 
 [dependencies]
-mojo = ">=25.6.0.dev2025090305"
+mojo = ">=0.25.6.0.dev2025091105,<0.26.0.0.0"
 pre-commit = ">=4.2.0,<5"
 pyelftools = ">=0.29"
 
@@ -61,7 +61,7 @@ configure = { cmd = [
 
 generate_bindings = { cmd = [
     "pixi", "run", "mojo", "run", "-I", "c_binder_mojo/firehose","-I", "c_binder_mojo","-I","c_binder_mojo/EmberJson","generate_bindings.mojo"
-], depends-on = [ "configure" ]}
+], depends-on = [ ]}
 
 format = { cmd = [
     "mojo", "format", "c_binder_mojo"
