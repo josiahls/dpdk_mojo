@@ -3,11 +3,7 @@
 
 ## Installation
 
-```bash
-pixi run configure
-```
-
 ## Binding generation
 ```bash
-./generate_bindings.sh
+pixi run generate_bindings
 ```
