@@ -75,26 +75,26 @@ alias _Float32 = Float32
 alias _Float64 = Float64
 alias _Float32x = Float64
 alias _Float64x = Float64
-struct anonomous_record_1503(Copyable & Movable):
+struct anonomous_record_997(Copyable & Movable):
 	var quot : Int32
 
 	var rem : Int32
 
-alias div_t = anonomous_record_1503
+alias div_t = anonomous_record_997
 
-struct anonomous_record_1504(Copyable & Movable):
+struct anonomous_record_998(Copyable & Movable):
 	var quot : ffi.c_long
 
 	var rem : ffi.c_long
 
-alias ldiv_t = anonomous_record_1504
+alias ldiv_t = anonomous_record_998
 
-struct anonomous_record_1505(Copyable & Movable):
+struct anonomous_record_999(Copyable & Movable):
 	var quot : ffi.c_long_long
 
 	var rem : ffi.c_long_long
 
-alias lldiv_t = anonomous_record_1505
+alias lldiv_t = anonomous_record_999
 
 alias __ctype_get_mb_cur_max = fn (NoneType) -> size_t
 alias atof = fn (read UnsafePointer[Int8]) -> Float64
@@ -146,10 +146,10 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_1506(Copyable & Movable):
+struct anonomous_record_1000(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
-alias __fsid_t = anonomous_record_1506
+alias __fsid_t = anonomous_record_1000
 
 alias __clock_t = ffi.c_long
 alias __rlim_t = ffi.c_ulong
@@ -223,10 +223,10 @@ alias __bswap_64 = fn (__uint64_t) -> __uint64_t
 alias __uint16_identity = fn (__uint16_t) -> __uint16_t
 alias __uint32_identity = fn (__uint32_t) -> __uint32_t
 alias __uint64_identity = fn (__uint64_t) -> __uint64_t
-struct anonomous_record_1507(Copyable & Movable):
+struct anonomous_record_1001(Copyable & Movable):
 	var __val : InlineArray[ffi.c_ulong, 16]
 
-alias __sigset_t = anonomous_record_1507
+alias __sigset_t = anonomous_record_1001
 
 alias sigset_t = __sigset_t
 struct timeval(Copyable & Movable):
@@ -241,10 +241,10 @@ struct timespec(Copyable & Movable):
 
 alias suseconds_t = __suseconds_t
 alias __fd_mask = ffi.c_long
-struct anonomous_record_1508(Copyable & Movable):
+struct anonomous_record_1002(Copyable & Movable):
 	var __fds_bits : InlineArray[__fd_mask, 16]
 
-alias fd_set = anonomous_record_1508
+alias fd_set = anonomous_record_1002
 
 alias fd_mask = __fd_mask
 alias select = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timeval]) -> Int32
@@ -253,14 +253,14 @@ alias blksize_t = __blksize_t
 alias blkcnt_t = __blkcnt_t
 alias fsblkcnt_t = __fsblkcnt_t
 alias fsfilcnt_t = __fsfilcnt_t
-struct anonomous_record_1509(Copyable & Movable):
+struct anonomous_record_1003(Copyable & Movable):
 	var __low : UInt32
 
 	var __high : UInt32
 
-alias anonomous_record_1510 = C_Union[ffi.c_ulong_long, anonomous_record_1509]
+alias anonomous_record_1004 = C_Union[ffi.c_ulong_long, anonomous_record_1003]
 
-alias __atomic_wide_counter = anonomous_record_1510
+alias __atomic_wide_counter = anonomous_record_1004
 
 struct __pthread_internal_list(Copyable & Movable):
 	var __prev : UnsafePointer[__pthread_internal_list]
@@ -329,48 +329,48 @@ struct __pthread_cond_s(Copyable & Movable):
 
 alias __tss_t = UInt32
 alias __thrd_t = ffi.c_ulong
-struct anonomous_record_1511(Copyable & Movable):
+struct anonomous_record_1005(Copyable & Movable):
 	var __data : Int32
 
-alias __once_flag = anonomous_record_1511
+alias __once_flag = anonomous_record_1005
 
 alias pthread_t = ffi.c_ulong
-alias anonomous_record_1512 = C_Union[InlineArray[Int8, 8], Int32]
+alias anonomous_record_1006 = C_Union[InlineArray[Int8, 8], Int32]
 
-alias pthread_mutexattr_t = anonomous_record_1512
+alias pthread_mutexattr_t = anonomous_record_1006
 
-alias anonomous_record_1513 = C_Union[InlineArray[Int8, 8], Int32]
+alias anonomous_record_1007 = C_Union[InlineArray[Int8, 8], Int32]
 
-alias pthread_condattr_t = anonomous_record_1513
+alias pthread_condattr_t = anonomous_record_1007
 
 alias pthread_key_t = UInt32
 alias pthread_once_t = Int32
 alias pthread_attr_t = C_Union[InlineArray[Int8, 64], ffi.c_long]
 
-alias anonomous_record_1514 = C_Union[__pthread_mutex_s, InlineArray[Int8, 48], ffi.c_long]
+alias anonomous_record_1008 = C_Union[__pthread_mutex_s, InlineArray[Int8, 48], ffi.c_long]
 
-alias pthread_mutex_t = anonomous_record_1514
+alias pthread_mutex_t = anonomous_record_1008
 
-alias anonomous_record_1515 = C_Union[__pthread_cond_s, InlineArray[Int8, 48], ffi.c_long_long]
+alias anonomous_record_1009 = C_Union[__pthread_cond_s, InlineArray[Int8, 48], ffi.c_long_long]
 
-alias pthread_cond_t = anonomous_record_1515
+alias pthread_cond_t = anonomous_record_1009
 
-alias anonomous_record_1516 = C_Union[__pthread_rwlock_arch_t, InlineArray[Int8, 56], ffi.c_long]
+alias anonomous_record_1010 = C_Union[__pthread_rwlock_arch_t, InlineArray[Int8, 56], ffi.c_long]
 
-alias pthread_rwlock_t = anonomous_record_1516
+alias pthread_rwlock_t = anonomous_record_1010
 
-alias anonomous_record_1517 = C_Union[InlineArray[Int8, 8], ffi.c_long]
+alias anonomous_record_1011 = C_Union[InlineArray[Int8, 8], ffi.c_long]
 
-alias pthread_rwlockattr_t = anonomous_record_1517
+alias pthread_rwlockattr_t = anonomous_record_1011
 
 alias pthread_spinlock_t = Int32 # QualType: volatile
-alias anonomous_record_1518 = C_Union[InlineArray[Int8, 32], ffi.c_long]
+alias anonomous_record_1012 = C_Union[InlineArray[Int8, 32], ffi.c_long]
 
-alias pthread_barrier_t = anonomous_record_1518
+alias pthread_barrier_t = anonomous_record_1012
 
-alias anonomous_record_1519 = C_Union[InlineArray[Int8, 8], Int32]
+alias anonomous_record_1013 = C_Union[InlineArray[Int8, 8], Int32]
 
-alias pthread_barrierattr_t = anonomous_record_1519
+alias pthread_barrierattr_t = anonomous_record_1013
 
 alias random = fn (NoneType) -> ffi.c_long
 alias srandom = fn (UInt32) -> NoneType
@@ -509,10 +509,10 @@ struct sched_param(Copyable & Movable):
 	var sched_priority : Int32
 
 alias __cpu_mask = ffi.c_ulong
-struct anonomous_record_1520(Copyable & Movable):
+struct anonomous_record_1014(Copyable & Movable):
 	var __bits : InlineArray[__cpu_mask, 16]
 
-alias cpu_set_t = anonomous_record_1520
+alias cpu_set_t = anonomous_record_1014
 
 alias __sched_cpucount = fn (size_t, read UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
@@ -550,7 +550,7 @@ alias rte_iova_t = uint64_t
 #  Otherwise, in virtual mode (IOVA as VA), an IOMMU may do the translation.
 
 alias RTE_MARKER = 	# # Node: PlaceHolder()
-	# {"id":"0x31d064d0","inner":[{"id":"0x31b19dc0","inner":[{"id":"0x31b19080","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
+	# {"id":"0x2efbd2f0","inner":[{"id":"0x2edc24f0","inner":[{"id":"0x2edc17b0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -558,7 +558,7 @@ alias RTE_MARKER = 	# # Node: PlaceHolder()
 #  Generic marker for any place in a structure. 
 
 alias RTE_MARKER8 = 	# # Node: PlaceHolder()
-	# {"id":"0x31d06660","inner":[{"decl":{"id":"0x31c20e28","kind":"TypedefDecl","name":"uint8_t"},"id":"0x31d065c0","inner":[{"decl":{"id":"0x31c23610","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x31c239a0","inner":[{"id":"0x31b19180","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
+	# {"id":"0x2efbd480","inner":[{"decl":{"id":"0x2eecdb58","kind":"TypedefDecl","name":"uint8_t"},"id":"0x2efbd3e0","inner":[{"decl":{"id":"0x2eed0340","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x2eed06d0","inner":[{"id":"0x2edc18b0","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -566,7 +566,7 @@ alias RTE_MARKER8 = 	# # Node: PlaceHolder()
 #  Marker for 1B alignment in a structure. 
 
 alias RTE_MARKER16 = 	# # Node: PlaceHolder()
-	# {"id":"0x31d067c0","inner":[{"decl":{"id":"0x31c20e90","kind":"TypedefDecl","name":"uint16_t"},"id":"0x31cd8150","inner":[{"decl":{"id":"0x31c236f0","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x31c23ac0","inner":[{"id":"0x31b191a0","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
+	# {"id":"0x2efbd5e0","inner":[{"decl":{"id":"0x2eecdbc0","kind":"TypedefDecl","name":"uint16_t"},"id":"0x2ef8dc10","inner":[{"decl":{"id":"0x2eed0420","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x2eed07f0","inner":[{"id":"0x2edc18d0","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -574,7 +574,7 @@ alias RTE_MARKER16 = 	# # Node: PlaceHolder()
 #  Marker for 2B alignment in a structure. 
 
 alias RTE_MARKER32 = 	# # Node: PlaceHolder()
-	# {"id":"0x31d06920","inner":[{"decl":{"id":"0x31c20ef8","kind":"TypedefDecl","name":"uint32_t"},"id":"0x31cd80c0","inner":[{"decl":{"id":"0x31c237d0","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x31c23be0","inner":[{"id":"0x31b191c0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
+	# {"id":"0x2efbd740","inner":[{"decl":{"id":"0x2eecdc28","kind":"TypedefDecl","name":"uint32_t"},"id":"0x2ef8db80","inner":[{"decl":{"id":"0x2eed0500","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x2eed0910","inner":[{"id":"0x2edc18f0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -582,7 +582,7 @@ alias RTE_MARKER32 = 	# # Node: PlaceHolder()
 #  Marker for 4B alignment in a structure. 
 
 alias RTE_MARKER64 = 	# # Node: PlaceHolder()
-	# {"id":"0x31d06a80","inner":[{"decl":{"id":"0x31c20f60","kind":"TypedefDecl","name":"uint64_t"},"id":"0x31cd8030","inner":[{"decl":{"id":"0x31c238b0","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x31c23d00","inner":[{"id":"0x31b191e0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
+	# {"id":"0x2efbd8a0","inner":[{"decl":{"id":"0x2eecdc90","kind":"TypedefDecl","name":"uint64_t"},"id":"0x2ef8daf0","inner":[{"decl":{"id":"0x2eed05e0","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x2eed0a30","inner":[{"id":"0x2edc1910","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()

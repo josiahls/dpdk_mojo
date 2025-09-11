@@ -102,10 +102,10 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_994(Copyable & Movable):
+struct anonomous_record_253(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
-alias __fsid_t = anonomous_record_994
+alias __fsid_t = anonomous_record_253
 
 alias __clock_t = ffi.c_long
 alias __rlim_t = ffi.c_ulong

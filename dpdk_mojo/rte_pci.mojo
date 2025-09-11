@@ -105,10 +105,10 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_1162(Copyable & Movable):
+struct anonomous_record_236(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
-alias __fsid_t = anonomous_record_1162
+alias __fsid_t = anonomous_record_236
 
 alias __clock_t = ffi.c_long
 alias __rlim_t = ffi.c_ulong
@@ -138,14 +138,14 @@ alias __caddr_t = UnsafePointer[Int8]
 alias __intptr_t = ffi.c_long
 alias __socklen_t = UInt32
 alias __sig_atomic_t = Int32
-alias anonomous_record_1163 = C_Union[UInt32, InlineArray[Int8, 4]]
+alias anonomous_record_237 = C_Union[UInt32, InlineArray[Int8, 4]]
 
-struct anonomous_record_1164(Copyable & Movable):
+struct anonomous_record_238(Copyable & Movable):
 	var __count : Int32
 
-	var __value : anonomous_record_1163
+	var __value : anonomous_record_237
 
-alias __mbstate_t = anonomous_record_1164
+alias __mbstate_t = anonomous_record_238
 
 struct _G_fpos_t(Copyable & Movable):
 	var __pos : ffi.c_long
@@ -298,12 +298,12 @@ alias uintptr_t = ffi.c_ulong
 alias intmax_t = __intmax_t
 alias uintmax_t = __uintmax_t
 alias __gwchar_t = UInt32
-struct anonomous_record_1165(Copyable & Movable):
+struct anonomous_record_239(Copyable & Movable):
 	var quot : ffi.c_long
 
 	var rem : ffi.c_long
 
-alias imaxdiv_t = anonomous_record_1165
+alias imaxdiv_t = anonomous_record_239
 
 alias imaxabs = fn (intmax_t) -> intmax_t
 alias imaxdiv = fn (intmax_t, intmax_t) -> imaxdiv_t
@@ -349,10 +349,10 @@ alias __bswap_64 = fn (__uint64_t) -> __uint64_t
 alias __uint16_identity = fn (__uint16_t) -> __uint16_t
 alias __uint32_identity = fn (__uint32_t) -> __uint32_t
 alias __uint64_identity = fn (__uint64_t) -> __uint64_t
-struct anonomous_record_1166(Copyable & Movable):
+struct anonomous_record_240(Copyable & Movable):
 	var __val : InlineArray[ffi.c_ulong, 16]
 
-alias __sigset_t = anonomous_record_1166
+alias __sigset_t = anonomous_record_240
 
 alias sigset_t = __sigset_t
 struct timeval(Copyable & Movable):
@@ -367,10 +367,10 @@ struct timespec(Copyable & Movable):
 
 alias suseconds_t = __suseconds_t
 alias __fd_mask = ffi.c_long
-struct anonomous_record_1167(Copyable & Movable):
+struct anonomous_record_241(Copyable & Movable):
 	var __fds_bits : InlineArray[__fd_mask, 16]
 
-alias fd_set = anonomous_record_1167
+alias fd_set = anonomous_record_241
 
 alias fd_mask = __fd_mask
 alias select = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timeval]) -> Int32
@@ -379,14 +379,14 @@ alias blksize_t = __blksize_t
 alias blkcnt_t = __blkcnt_t
 alias fsblkcnt_t = __fsblkcnt_t
 alias fsfilcnt_t = __fsfilcnt_t
-struct anonomous_record_1168(Copyable & Movable):
+struct anonomous_record_242(Copyable & Movable):
 	var __low : UInt32
 
 	var __high : UInt32
 
-alias anonomous_record_1169 = C_Union[ffi.c_ulong_long, anonomous_record_1168]
+alias anonomous_record_243 = C_Union[ffi.c_ulong_long, anonomous_record_242]
 
-alias __atomic_wide_counter = anonomous_record_1169
+alias __atomic_wide_counter = anonomous_record_243
 
 struct __pthread_internal_list(Copyable & Movable):
 	var __prev : UnsafePointer[__pthread_internal_list]
@@ -455,48 +455,48 @@ struct __pthread_cond_s(Copyable & Movable):
 
 alias __tss_t = UInt32
 alias __thrd_t = ffi.c_ulong
-struct anonomous_record_1170(Copyable & Movable):
+struct anonomous_record_244(Copyable & Movable):
 	var __data : Int32
 
-alias __once_flag = anonomous_record_1170
+alias __once_flag = anonomous_record_244
 
 alias pthread_t = ffi.c_ulong
-alias anonomous_record_1171 = C_Union[InlineArray[Int8, 8], Int32]
+alias anonomous_record_245 = C_Union[InlineArray[Int8, 8], Int32]
 
-alias pthread_mutexattr_t = anonomous_record_1171
+alias pthread_mutexattr_t = anonomous_record_245
 
-alias anonomous_record_1172 = C_Union[InlineArray[Int8, 8], Int32]
+alias anonomous_record_246 = C_Union[InlineArray[Int8, 8], Int32]
 
-alias pthread_condattr_t = anonomous_record_1172
+alias pthread_condattr_t = anonomous_record_246
 
 alias pthread_key_t = UInt32
 alias pthread_once_t = Int32
 alias pthread_attr_t = C_Union[InlineArray[Int8, 64], ffi.c_long]
 
-alias anonomous_record_1173 = C_Union[__pthread_mutex_s, InlineArray[Int8, 48], ffi.c_long]
+alias anonomous_record_247 = C_Union[__pthread_mutex_s, InlineArray[Int8, 48], ffi.c_long]
 
-alias pthread_mutex_t = anonomous_record_1173
+alias pthread_mutex_t = anonomous_record_247
 
-alias anonomous_record_1174 = C_Union[__pthread_cond_s, InlineArray[Int8, 48], ffi.c_long_long]
+alias anonomous_record_248 = C_Union[__pthread_cond_s, InlineArray[Int8, 48], ffi.c_long_long]
 
-alias pthread_cond_t = anonomous_record_1174
+alias pthread_cond_t = anonomous_record_248
 
-alias anonomous_record_1175 = C_Union[__pthread_rwlock_arch_t, InlineArray[Int8, 56], ffi.c_long]
+alias anonomous_record_249 = C_Union[__pthread_rwlock_arch_t, InlineArray[Int8, 56], ffi.c_long]
 
-alias pthread_rwlock_t = anonomous_record_1175
+alias pthread_rwlock_t = anonomous_record_249
 
-alias anonomous_record_1176 = C_Union[InlineArray[Int8, 8], ffi.c_long]
+alias anonomous_record_250 = C_Union[InlineArray[Int8, 8], ffi.c_long]
 
-alias pthread_rwlockattr_t = anonomous_record_1176
+alias pthread_rwlockattr_t = anonomous_record_250
 
 alias pthread_spinlock_t = Int32 # QualType: volatile
-alias anonomous_record_1177 = C_Union[InlineArray[Int8, 32], ffi.c_long]
+alias anonomous_record_251 = C_Union[InlineArray[Int8, 32], ffi.c_long]
 
-alias pthread_barrier_t = anonomous_record_1177
+alias pthread_barrier_t = anonomous_record_251
 
-alias anonomous_record_1178 = C_Union[InlineArray[Int8, 8], Int32]
+alias anonomous_record_252 = C_Union[InlineArray[Int8, 8], Int32]
 
-alias pthread_barrierattr_t = anonomous_record_1178
+alias pthread_barrierattr_t = anonomous_record_252
 
 struct rte_pci_id(Copyable & Movable):
 

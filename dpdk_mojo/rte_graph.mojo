@@ -105,10 +105,10 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_524(Copyable & Movable):
+struct anonomous_record_1769(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
-alias __fsid_t = anonomous_record_524
+alias __fsid_t = anonomous_record_1769
 
 alias __clock_t = ffi.c_long
 alias __rlim_t = ffi.c_ulong
@@ -138,14 +138,14 @@ alias __caddr_t = UnsafePointer[Int8]
 alias __intptr_t = ffi.c_long
 alias __socklen_t = UInt32
 alias __sig_atomic_t = Int32
-alias anonomous_record_525 = C_Union[UInt32, InlineArray[Int8, 4]]
+alias anonomous_record_1770 = C_Union[UInt32, InlineArray[Int8, 4]]
 
-struct anonomous_record_526(Copyable & Movable):
+struct anonomous_record_1771(Copyable & Movable):
 	var __count : Int32
 
-	var __value : anonomous_record_525
+	var __value : anonomous_record_1770
 
-alias __mbstate_t = anonomous_record_526
+alias __mbstate_t = anonomous_record_1771
 
 struct _G_fpos_t(Copyable & Movable):
 	var __pos : ffi.c_long
@@ -312,10 +312,10 @@ struct sched_param(Copyable & Movable):
 	var sched_priority : Int32
 
 alias __cpu_mask = ffi.c_ulong
-struct anonomous_record_527(Copyable & Movable):
+struct anonomous_record_1772(Copyable & Movable):
 	var __bits : InlineArray[__cpu_mask, 16]
 
-alias cpu_set_t = anonomous_record_527
+alias cpu_set_t = anonomous_record_1772
 
 alias __sched_cpucount = fn (size_t, read UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
@@ -353,7 +353,7 @@ alias rte_iova_t = uint64_t
 #  Otherwise, in virtual mode (IOVA as VA), an IOMMU may do the translation.
 
 alias RTE_MARKER = 	# # Node: PlaceHolder()
-	# {"id":"0xd603220","inner":[{"id":"0xd44ac40","inner":[{"id":"0xd449f00","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
+	# {"id":"0x187ef020","inner":[{"id":"0x18627480","inner":[{"id":"0x18626740","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -361,7 +361,7 @@ alias RTE_MARKER = 	# # Node: PlaceHolder()
 #  Generic marker for any place in a structure. 
 
 alias RTE_MARKER8 = 	# # Node: PlaceHolder()
-	# {"id":"0xd6033b0","inner":[{"decl":{"id":"0xd57b448","kind":"TypedefDecl","name":"uint8_t"},"id":"0xd603310","inner":[{"decl":{"id":"0xd4ee398","kind":"TypedefDecl","name":"__uint8_t"},"id":"0xd53c450","inner":[{"id":"0xd44a000","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
+	# {"id":"0x187ef1b0","inner":[{"decl":{"id":"0x18761938","kind":"TypedefDecl","name":"uint8_t"},"id":"0x187ef110","inner":[{"decl":{"id":"0x186caa48","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x1871e070","inner":[{"id":"0x18626840","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -369,7 +369,7 @@ alias RTE_MARKER8 = 	# # Node: PlaceHolder()
 #  Marker for 1B alignment in a structure. 
 
 alias RTE_MARKER16 = 	# # Node: PlaceHolder()
-	# {"id":"0xd603510","inner":[{"decl":{"id":"0xd57b4b0","kind":"TypedefDecl","name":"uint16_t"},"id":"0xd5f6dd0","inner":[{"decl":{"id":"0xd4ee478","kind":"TypedefDecl","name":"__uint16_t"},"id":"0xd53c570","inner":[{"id":"0xd44a020","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
+	# {"id":"0x187ef310","inner":[{"decl":{"id":"0x187619a0","kind":"TypedefDecl","name":"uint16_t"},"id":"0x187e2bd0","inner":[{"decl":{"id":"0x186cab28","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x1871e190","inner":[{"id":"0x18626860","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -377,7 +377,7 @@ alias RTE_MARKER16 = 	# # Node: PlaceHolder()
 #  Marker for 2B alignment in a structure. 
 
 alias RTE_MARKER32 = 	# # Node: PlaceHolder()
-	# {"id":"0xd603670","inner":[{"decl":{"id":"0xd57b518","kind":"TypedefDecl","name":"uint32_t"},"id":"0xd5f6d40","inner":[{"decl":{"id":"0xd53c280","kind":"TypedefDecl","name":"__uint32_t"},"id":"0xd53c690","inner":[{"id":"0xd44a040","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
+	# {"id":"0x187ef470","inner":[{"decl":{"id":"0x18761a08","kind":"TypedefDecl","name":"uint32_t"},"id":"0x187e2b40","inner":[{"decl":{"id":"0x1871dea0","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x1871e2b0","inner":[{"id":"0x18626880","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -385,7 +385,7 @@ alias RTE_MARKER32 = 	# # Node: PlaceHolder()
 #  Marker for 4B alignment in a structure. 
 
 alias RTE_MARKER64 = 	# # Node: PlaceHolder()
-	# {"id":"0xd6037d0","inner":[{"decl":{"id":"0xd57b580","kind":"TypedefDecl","name":"uint64_t"},"id":"0xd5f6cb0","inner":[{"decl":{"id":"0xd53c360","kind":"TypedefDecl","name":"__uint64_t"},"id":"0xd53c7b0","inner":[{"id":"0xd44a060","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
+	# {"id":"0x187ef5d0","inner":[{"decl":{"id":"0x18761a70","kind":"TypedefDecl","name":"uint64_t"},"id":"0x187e2ab0","inner":[{"decl":{"id":"0x1871df80","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x1871e3d0","inner":[{"id":"0x186268a0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -412,19 +412,19 @@ alias rte_node_process_t = fn(UnsafePointer[rte_graph], UnsafePointer[rte_node],
 alias rte_node_init_t = fn(read UnsafePointer[rte_graph], UnsafePointer[rte_node]) -> Int32
 alias rte_node_fini_t = fn(read UnsafePointer[rte_graph], UnsafePointer[rte_node]) -> NoneType
 alias rte_graph_cluster_stats_cb_t = fn(Bool, Bool, OpaquePointer, read UnsafePointer[rte_graph_cluster_node_stats]) -> Int32
-struct anonomous_record_529(Copyable & Movable):
+struct anonomous_record_1774(Copyable & Movable):
 	var wq_size_max : UInt32
 
 	var mp_capacity : UInt32
 
-struct anonomous_record_528(Copyable & Movable):
+struct anonomous_record_1773(Copyable & Movable):
 	var rsvd : ffi.c_ulong
 
-alias anonomous_record_530 = C_Union[anonomous_record_528, anonomous_record_529]
+alias anonomous_record_1775 = C_Union[anonomous_record_1773, anonomous_record_1774]
 
 struct rte_graph_param(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0xd6258a0","inner":[{"id":"0xd625900","inner":[{"id":"0xd6258d0","kind":"TextComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}},"text":" rte_graph_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":4774,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":4773,"tokLen":1},"end":{"col":26,"offset":4795,"tokLen":1}}}
+# {"id":"0x188116e0","inner":[{"id":"0x18811740","inner":[{"id":"0x18811710","kind":"TextComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}},"text":" rte_graph_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":4774,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":4773,"tokLen":1},"end":{"col":26,"offset":4795,"tokLen":1}}}
 
 	var socket_id : Int32
 
@@ -438,21 +438,21 @@ struct rte_graph_param(Copyable & Movable):
 
 	var pcap_filename : UnsafePointer[Int8]
 
-	var union_placeholder_1 : anonomous_record_530
+	var union_placeholder_1 : anonomous_record_1775
 
 
 
-alias anonomous_record_531 = C_Union[OpaquePointer, UnsafePointer[FILE]]
+alias anonomous_record_1776 = C_Union[OpaquePointer, UnsafePointer[FILE]]
 
 struct rte_graph_cluster_stats_param(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0xd6260d0","inner":[{"id":"0xd626130","inner":[{"id":"0xd626100","kind":"TextComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}},"text":" rte_graph_cluster_stats_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":5572,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":5571,"tokLen":1},"end":{"col":40,"offset":5607,"tokLen":1}}}
+# {"id":"0x18811f10","inner":[{"id":"0x18811f70","inner":[{"id":"0x18811f40","kind":"TextComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}},"text":" rte_graph_cluster_stats_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":5572,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":5571,"tokLen":1},"end":{"col":40,"offset":5607,"tokLen":1}}}
 
 	var socket_id : Int32
 
 	var fn_ : fn(Bool, Bool, OpaquePointer, read UnsafePointer[rte_graph_cluster_node_stats]) -> Int32
 
-	var union_placeholder_1 : anonomous_record_531
+	var union_placeholder_1 : anonomous_record_1776
 
 
 
@@ -460,12 +460,12 @@ struct rte_graph_cluster_stats_param(Copyable & Movable):
 
 	var graph_patterns : UnsafePointer[UnsafePointer[Int8]]
 
-struct anonomous_record_532(Copyable & Movable):
+struct anonomous_record_1777(Copyable & Movable):
 	var sched_objs : ffi.c_ulong
 
 	var sched_fail : ffi.c_ulong
 
-alias anonomous_record_533 = C_Union[anonomous_record_532]
+alias anonomous_record_1778 = C_Union[anonomous_record_1777]
 
 alias rte_graph_create = fn (read UnsafePointer[Int8], UnsafePointer[rte_graph_param]) -> rte_graph_t
 alias rte_graph_destroy = fn (rte_graph_t) -> Int32
@@ -494,7 +494,7 @@ struct rte_node_xstats(Copyable & Movable):
 
 struct rte_node_register(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0xd62ae30","inner":[{"id":"0xd62ae90","inner":[{"id":"0xd62ae60","kind":"TextComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}},"text":" __rte_node_register(), RTE_NODE_REGISTER()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":13323,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":13322,"tokLen":1},"end":{"col":50,"offset":13368,"tokLen":1}}}
+# {"id":"0x18816c70","inner":[{"id":"0x18816cd0","inner":[{"id":"0x18816ca0","kind":"TextComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}},"text":" __rte_node_register(), RTE_NODE_REGISTER()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":13323,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":13322,"tokLen":1},"end":{"col":50,"offset":13368,"tokLen":1}}}
 
 	var name : InlineArray[Int8, 64]
 

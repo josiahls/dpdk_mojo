@@ -71,12 +71,12 @@ alias __builtin_va_list = __va_list
 alias ptrdiff_t = ffi.c_long
 alias size_t = ffi.c_ulong
 alias wchar_t = UInt32
-struct anonomous_record_105(Copyable & Movable):
+struct anonomous_record_389(Copyable & Movable):
 	var __clang_max_align_nonce1 : ffi.c_long_long
 
 	var __clang_max_align_nonce2 : Float64
 
-alias max_align_t = anonomous_record_105
+alias max_align_t = anonomous_record_389
 
 struct rte_cfgfile(Copyable & Movable):
 

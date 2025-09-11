@@ -102,10 +102,10 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_3(Copyable & Movable):
+struct anonomous_record_5(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
-alias __fsid_t = anonomous_record_3
+alias __fsid_t = anonomous_record_5
 
 alias __clock_t = ffi.c_long
 alias __rlim_t = ffi.c_ulong
@@ -169,14 +169,14 @@ alias __assert = fn (read UnsafePointer[Int8], read UnsafePointer[Int8], Int32) 
 alias size_t = ffi.c_ulong
 alias va_list = __builtin_va_list
 alias __gnuc_va_list = __builtin_va_list
-alias anonomous_record_4 = C_Union[UInt32, InlineArray[Int8, 4]]
+alias anonomous_record_6 = C_Union[UInt32, InlineArray[Int8, 4]]
 
-struct anonomous_record_5(Copyable & Movable):
+struct anonomous_record_7(Copyable & Movable):
 	var __count : Int32
 
-	var __value : anonomous_record_4
+	var __value : anonomous_record_6
 
-alias __mbstate_t = anonomous_record_5
+alias __mbstate_t = anonomous_record_7
 
 struct _G_fpos_t(Copyable & Movable):
 	var __pos : ffi.c_long
@@ -312,10 +312,10 @@ struct sched_param(Copyable & Movable):
 	var sched_priority : Int32
 
 alias __cpu_mask = ffi.c_ulong
-struct anonomous_record_6(Copyable & Movable):
+struct anonomous_record_8(Copyable & Movable):
 	var __bits : InlineArray[__cpu_mask, 16]
 
-alias cpu_set_t = anonomous_record_6
+alias cpu_set_t = anonomous_record_8
 
 alias __sched_cpucount = fn (size_t, read UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
@@ -353,7 +353,7 @@ alias rte_iova_t = uint64_t
 #  Otherwise, in virtual mode (IOVA as VA), an IOMMU may do the translation.
 
 alias RTE_MARKER = 	# # Node: PlaceHolder()
-	# {"id":"0x3170f330","inner":[{"id":"0x31552c70","inner":[{"id":"0x31551f30","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
+	# {"id":"0x2311b70","inner":[{"id":"0x2152e70","inner":[{"id":"0x2152130","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -361,7 +361,7 @@ alias RTE_MARKER = 	# # Node: PlaceHolder()
 #  Generic marker for any place in a structure. 
 
 alias RTE_MARKER8 = 	# # Node: PlaceHolder()
-	# {"id":"0x3170f4c0","inner":[{"decl":{"id":"0x31651678","kind":"TypedefDecl","name":"uint8_t"},"id":"0x3170f420","inner":[{"decl":{"id":"0x315f7bf0","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x31646040","inner":[{"id":"0x31552030","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
+	# {"id":"0x2311d00","inner":[{"decl":{"id":"0x22527b8","kind":"TypedefDecl","name":"uint8_t"},"id":"0x2311c60","inner":[{"decl":{"id":"0x21f7e70","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x2246170","inner":[{"id":"0x2152230","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -369,7 +369,7 @@ alias RTE_MARKER8 = 	# # Node: PlaceHolder()
 #  Marker for 1B alignment in a structure. 
 
 alias RTE_MARKER16 = 	# # Node: PlaceHolder()
-	# {"id":"0x3170f620","inner":[{"decl":{"id":"0x316516e0","kind":"TypedefDecl","name":"uint16_t"},"id":"0x31702ee0","inner":[{"decl":{"id":"0x315f7cd0","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x31646160","inner":[{"id":"0x31552050","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
+	# {"id":"0x2311e60","inner":[{"decl":{"id":"0x2252820","kind":"TypedefDecl","name":"uint16_t"},"id":"0x2305720","inner":[{"decl":{"id":"0x21f7f50","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x2246290","inner":[{"id":"0x2152250","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -377,7 +377,7 @@ alias RTE_MARKER16 = 	# # Node: PlaceHolder()
 #  Marker for 2B alignment in a structure. 
 
 alias RTE_MARKER32 = 	# # Node: PlaceHolder()
-	# {"id":"0x3170f780","inner":[{"decl":{"id":"0x31651748","kind":"TypedefDecl","name":"uint32_t"},"id":"0x31702e50","inner":[{"decl":{"id":"0x315f7db0","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x31646280","inner":[{"id":"0x31552070","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
+	# {"id":"0x2311fc0","inner":[{"decl":{"id":"0x2252888","kind":"TypedefDecl","name":"uint32_t"},"id":"0x2305690","inner":[{"decl":{"id":"0x21f8030","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x22463b0","inner":[{"id":"0x2152270","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -385,7 +385,7 @@ alias RTE_MARKER32 = 	# # Node: PlaceHolder()
 #  Marker for 4B alignment in a structure. 
 
 alias RTE_MARKER64 = 	# # Node: PlaceHolder()
-	# {"id":"0x3170f8e0","inner":[{"decl":{"id":"0x316517b0","kind":"TypedefDecl","name":"uint64_t"},"id":"0x31702dc0","inner":[{"decl":{"id":"0x315f7e90","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x316463a0","inner":[{"id":"0x31552090","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
+	# {"id":"0x2312120","inner":[{"decl":{"id":"0x22528f0","kind":"TypedefDecl","name":"uint64_t"},"id":"0x2305600","inner":[{"decl":{"id":"0x21f8110","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x22464d0","inner":[{"id":"0x2152290","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()

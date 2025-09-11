@@ -102,10 +102,10 @@ alias __nlink_t = UInt32
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = Int32
-struct anonomous_record_961(Copyable & Movable):
+struct anonomous_record_859(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
-alias __fsid_t = anonomous_record_961
+alias __fsid_t = anonomous_record_859
 
 alias __clock_t = ffi.c_long
 alias __rlim_t = ffi.c_ulong
@@ -164,12 +164,12 @@ alias uintptr_t = ffi.c_ulong
 alias intmax_t = __intmax_t
 alias uintmax_t = __uintmax_t
 alias __gwchar_t = UInt32
-struct anonomous_record_962(Copyable & Movable):
+struct anonomous_record_860(Copyable & Movable):
 	var quot : ffi.c_long
 
 	var rem : ffi.c_long
 
-alias imaxdiv_t = anonomous_record_962
+alias imaxdiv_t = anonomous_record_860
 
 alias imaxabs = fn (intmax_t) -> intmax_t
 alias imaxdiv = fn (intmax_t, intmax_t) -> imaxdiv_t
@@ -193,10 +193,10 @@ struct sched_param(Copyable & Movable):
 	var sched_priority : Int32
 
 alias __cpu_mask = ffi.c_ulong
-struct anonomous_record_963(Copyable & Movable):
+struct anonomous_record_861(Copyable & Movable):
 	var __bits : InlineArray[__cpu_mask, 16]
 
-alias cpu_set_t = anonomous_record_963
+alias cpu_set_t = anonomous_record_861
 
 alias __sched_cpucount = fn (size_t, read UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
@@ -234,7 +234,7 @@ alias rte_iova_t = uint64_t
 #  Otherwise, in virtual mode (IOVA as VA), an IOMMU may do the translation.
 
 alias RTE_MARKER = 	# # Node: PlaceHolder()
-	# {"id":"0x29d5bec0","inner":[{"id":"0x29bbada0","inner":[{"id":"0x29bba060","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
+	# {"id":"0x382a44f0","inner":[{"id":"0x380f6020","inner":[{"id":"0x380f52e0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -242,7 +242,7 @@ alias RTE_MARKER = 	# # Node: PlaceHolder()
 #  Generic marker for any place in a structure. 
 
 alias RTE_MARKER8 = 	# # Node: PlaceHolder()
-	# {"id":"0x29d5c050","inner":[{"decl":{"id":"0x29cb61d8","kind":"TypedefDecl","name":"uint8_t"},"id":"0x29d5bfb0","inner":[{"decl":{"id":"0x29c5e4d0","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x29cabb50","inner":[{"id":"0x29bba160","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
+	# {"id":"0x382a4680","inner":[{"decl":{"id":"0x381f5988","kind":"TypedefDecl","name":"uint8_t"},"id":"0x382a45e0","inner":[{"decl":{"id":"0x381994b0","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x381eaea0","inner":[{"id":"0x380f53e0","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -250,7 +250,7 @@ alias RTE_MARKER8 = 	# # Node: PlaceHolder()
 #  Marker for 1B alignment in a structure. 
 
 alias RTE_MARKER16 = 	# # Node: PlaceHolder()
-	# {"id":"0x29d5c1b0","inner":[{"decl":{"id":"0x29cb6240","kind":"TypedefDecl","name":"uint16_t"},"id":"0x29d2b3d0","inner":[{"decl":{"id":"0x29c5e5b0","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x29cabc70","inner":[{"id":"0x29bba180","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
+	# {"id":"0x382a47e0","inner":[{"decl":{"id":"0x381f59f0","kind":"TypedefDecl","name":"uint16_t"},"id":"0x38271fc0","inner":[{"decl":{"id":"0x38199590","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x381eafc0","inner":[{"id":"0x380f5400","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -258,7 +258,7 @@ alias RTE_MARKER16 = 	# # Node: PlaceHolder()
 #  Marker for 2B alignment in a structure. 
 
 alias RTE_MARKER32 = 	# # Node: PlaceHolder()
-	# {"id":"0x29d5c310","inner":[{"decl":{"id":"0x29cb62a8","kind":"TypedefDecl","name":"uint32_t"},"id":"0x29d2b340","inner":[{"decl":{"id":"0x29c5e690","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x29cabd90","inner":[{"id":"0x29bba1a0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
+	# {"id":"0x382a4940","inner":[{"decl":{"id":"0x381f5a58","kind":"TypedefDecl","name":"uint32_t"},"id":"0x38271f30","inner":[{"decl":{"id":"0x38199670","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x381eb0e0","inner":[{"id":"0x380f5420","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -266,7 +266,7 @@ alias RTE_MARKER32 = 	# # Node: PlaceHolder()
 #  Marker for 4B alignment in a structure. 
 
 alias RTE_MARKER64 = 	# # Node: PlaceHolder()
-	# {"id":"0x29d5c470","inner":[{"decl":{"id":"0x29cb6310","kind":"TypedefDecl","name":"uint64_t"},"id":"0x29d2b2b0","inner":[{"decl":{"id":"0x29c5e770","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x29cabeb0","inner":[{"id":"0x29bba1c0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
+	# {"id":"0x382a4aa0","inner":[{"decl":{"id":"0x381f5ac0","kind":"TypedefDecl","name":"uint64_t"},"id":"0x38271ea0","inner":[{"decl":{"id":"0x38199750","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x381eb200","inner":[{"id":"0x380f5440","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
 
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -351,14 +351,14 @@ alias __stpncpy = fn (UnsafePointer[Int8], read UnsafePointer[Int8], size_t) -> 
 alias stpncpy = fn (UnsafePointer[Int8], read UnsafePointer[Int8], ffi.c_ulong) -> UnsafePointer[Int8]
 alias va_list = __builtin_va_list
 alias __gnuc_va_list = __builtin_va_list
-alias anonomous_record_964 = C_Union[UInt32, InlineArray[Int8, 4]]
+alias anonomous_record_862 = C_Union[UInt32, InlineArray[Int8, 4]]
 
-struct anonomous_record_965(Copyable & Movable):
+struct anonomous_record_863(Copyable & Movable):
 	var __count : Int32
 
-	var __value : anonomous_record_964
+	var __value : anonomous_record_862
 
-alias __mbstate_t = anonomous_record_965
+alias __mbstate_t = anonomous_record_863
 
 struct _G_fpos_t(Copyable & Movable):
 	var __pos : ffi.c_long
@@ -537,7 +537,7 @@ alias rte_jhash_2words = fn (ffi.c_ulong, ffi.c_ulong, ffi.c_ulong) -> ffi.c_ulo
 alias rte_jhash_1word = fn (ffi.c_ulong, ffi.c_ulong) -> ffi.c_ulong
 struct rte_member_setsum(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"closeName":"","id":"0x29e0e650","inner":[{"id":"0x29e0e6a0","kind":"VerbatimBlockLineComment","loc":{"col":14,"offset":4310,"tokLen":0},"range":{"begin":{"col":14,"offset":4310,"tokLen":0},"end":{"col":37,"offset":4333,"tokLen":1}},"text":" setsummary structure. "},{"id":"0x29e0e6c0","kind":"VerbatimBlockLineComment","loc":{"col":39,"offset":4335,"tokLen":0},"range":{"begin":{"col":39,"offset":4335,"tokLen":0},"end":{"col":39,"offset":4335,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"offset":4302,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"offset":4301,"tokLen":1},"end":{"col":14,"offset":4310,"tokLen":0}}}
+# {"closeName":"","id":"0x38358c10","inner":[{"id":"0x38358c60","kind":"VerbatimBlockLineComment","loc":{"col":14,"offset":4310,"tokLen":0},"range":{"begin":{"col":14,"offset":4310,"tokLen":0},"end":{"col":37,"offset":4333,"tokLen":1}},"text":" setsummary structure. "},{"id":"0x38358c80","kind":"VerbatimBlockLineComment","loc":{"col":39,"offset":4335,"tokLen":0},"range":{"begin":{"col":39,"offset":4335,"tokLen":0},"end":{"col":39,"offset":4335,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"offset":4302,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"offset":4301,"tokLen":1},"end":{"col":14,"offset":4310,"tokLen":0}}}
 
 	pass
 struct rte_member_parameters(Copyable & Movable):
@@ -555,7 +555,7 @@ struct rte_member_setsum_type(Copyable & Movable):
 
 struct rte_member_sig_compare_function(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"closeName":"","id":"0x29e0eb00","inner":[{"id":"0x29e0eb50","kind":"VerbatimBlockLineComment","loc":{"col":14,"offset":4711,"tokLen":0},"range":{"begin":{"col":14,"offset":4711,"tokLen":0},"end":{"col":52,"offset":4749,"tokLen":1}},"text":" compare function for different arch. "},{"id":"0x29e0eb70","kind":"VerbatimBlockLineComment","loc":{"col":54,"offset":4751,"tokLen":0},"range":{"begin":{"col":54,"offset":4751,"tokLen":0},"end":{"col":54,"offset":4751,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"offset":4703,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"offset":4702,"tokLen":1},"end":{"col":14,"offset":4711,"tokLen":0}}}
+# {"closeName":"","id":"0x383590c0","inner":[{"id":"0x38359110","kind":"VerbatimBlockLineComment","loc":{"col":14,"offset":4711,"tokLen":0},"range":{"begin":{"col":14,"offset":4711,"tokLen":0},"end":{"col":52,"offset":4749,"tokLen":1}},"text":" compare function for different arch. "},{"id":"0x38359130","kind":"VerbatimBlockLineComment","loc":{"col":54,"offset":4751,"tokLen":0},"range":{"begin":{"col":54,"offset":4751,"tokLen":0},"end":{"col":54,"offset":4751,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"offset":4703,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"offset":4702,"tokLen":1},"end":{"col":14,"offset":4711,"tokLen":0}}}
 
 	alias RTE_MEMBER_COMPARE_SCALAR = 0
 
