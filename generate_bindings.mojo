@@ -63,10 +63,9 @@ fn main() raises:
                     var root_node = generate_bindings(
                         header_file_path.value(),
                         output_dir,
-                        value.so_file_path(),
                         logger,
                         extra_args='-Idpdk/build/ ' + value.get_included_headers('dpdk/'),
-                        # debug_output=True,
+                        debug_output=True,
                     )
                     append_to_mojo_file(
                         root_node,

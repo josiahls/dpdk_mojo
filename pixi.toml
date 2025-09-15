@@ -51,6 +51,10 @@ generate_bindings = { cmd = [
     "pixi", "run", "mojo", "run", "-I", "c_binder_mojo/firehose","-I", "c_binder_mojo","-I","c_binder_mojo/EmberJson","generate_bindings.mojo"
 ], depends-on = [ ]}
 
+debug_generate_bindings = { cmd = [
+    "pixi", "run", "mojo", "debug", "-I", "c_binder_mojo/firehose","-I", "c_binder_mojo","-I","c_binder_mojo/EmberJson","generate_bindings.mojo"
+], depends-on = [ ]}
+
 format = { cmd = [
     "mojo", "format", "c_binder_mojo"
 ]}
