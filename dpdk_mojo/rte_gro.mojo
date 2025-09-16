@@ -16,48 +16,48 @@ alias __NSConstantString = __NSConstantString_tag
 
 alias __SVInt8_t = Int8
 alias __SVInt16_t = Int16
-alias __SVInt32_t = Int32
-alias __SVInt64_t = ffi.c_long
+alias __SVInt32_t = ffi.c_int
+alias __SVInt64_t = ffi.c_long_long
 alias __SVUint8_t = UInt8
 alias __SVUint16_t = UInt16
-alias __SVUint32_t = UInt32
-alias __SVUint64_t = ffi.c_ulong
+alias __SVUint32_t = ffi.c_int
+alias __SVUint64_t = ffi.c_ulong_long
 alias __SVFloat16_t = Float16
 alias __SVFloat32_t = Float32
 alias __SVFloat64_t = Float64
 alias __SVBFloat16_t = BFloat16
 alias __clang_svint8x2_t = SIMD[Int8.dtype, 2]
 alias __clang_svint16x2_t = SIMD[Int16.dtype, 2]
-alias __clang_svint32x2_t = SIMD[Int32.dtype, 2]
-alias __clang_svint64x2_t = SIMD[ffi.c_long.dtype, 2]
+alias __clang_svint32x2_t = SIMD[ffi.c_int.dtype, 2]
+alias __clang_svint64x2_t = SIMD[ffi.c_long_long.dtype, 2]
 alias __clang_svuint8x2_t = SIMD[UInt8.dtype, 2]
 alias __clang_svuint16x2_t = SIMD[UInt16.dtype, 2]
-alias __clang_svuint32x2_t = SIMD[UInt32.dtype, 2]
-alias __clang_svuint64x2_t = SIMD[ffi.c_ulong.dtype, 2]
+alias __clang_svuint32x2_t = SIMD[ffi.c_int.dtype, 2]
+alias __clang_svuint64x2_t = SIMD[ffi.c_ulong_long.dtype, 2]
 alias __clang_svfloat16x2_t = SIMD[Float16.dtype, 2]
 alias __clang_svfloat32x2_t = SIMD[Float32.dtype, 2]
 alias __clang_svfloat64x2_t = SIMD[Float64.dtype, 2]
 alias __clang_svbfloat16x2_t = SIMD[BFloat16.dtype, 2]
 alias __clang_svint8x3_t = SIMD[Int8.dtype, 3]
 alias __clang_svint16x3_t = SIMD[Int16.dtype, 3]
-alias __clang_svint32x3_t = SIMD[Int32.dtype, 3]
-alias __clang_svint64x3_t = SIMD[ffi.c_long.dtype, 3]
+alias __clang_svint32x3_t = SIMD[ffi.c_int.dtype, 3]
+alias __clang_svint64x3_t = SIMD[ffi.c_long_long.dtype, 3]
 alias __clang_svuint8x3_t = SIMD[UInt8.dtype, 3]
 alias __clang_svuint16x3_t = SIMD[UInt16.dtype, 3]
-alias __clang_svuint32x3_t = SIMD[UInt32.dtype, 3]
-alias __clang_svuint64x3_t = SIMD[ffi.c_ulong.dtype, 3]
+alias __clang_svuint32x3_t = SIMD[ffi.c_int.dtype, 3]
+alias __clang_svuint64x3_t = SIMD[ffi.c_ulong_long.dtype, 3]
 alias __clang_svfloat16x3_t = SIMD[Float16.dtype, 3]
 alias __clang_svfloat32x3_t = SIMD[Float32.dtype, 3]
 alias __clang_svfloat64x3_t = SIMD[Float64.dtype, 3]
 alias __clang_svbfloat16x3_t = SIMD[BFloat16.dtype, 3]
 alias __clang_svint8x4_t = SIMD[Int8.dtype, 4]
 alias __clang_svint16x4_t = SIMD[Int16.dtype, 4]
-alias __clang_svint32x4_t = SIMD[Int32.dtype, 4]
-alias __clang_svint64x4_t = SIMD[ffi.c_long.dtype, 4]
+alias __clang_svint32x4_t = SIMD[ffi.c_int.dtype, 4]
+alias __clang_svint64x4_t = SIMD[ffi.c_long_long.dtype, 4]
 alias __clang_svuint8x4_t = SIMD[UInt8.dtype, 4]
 alias __clang_svuint16x4_t = SIMD[UInt16.dtype, 4]
-alias __clang_svuint32x4_t = SIMD[UInt32.dtype, 4]
-alias __clang_svuint64x4_t = SIMD[ffi.c_ulong.dtype, 4]
+alias __clang_svuint32x4_t = SIMD[ffi.c_int.dtype, 4]
+alias __clang_svuint64x4_t = SIMD[ffi.c_ulong_long.dtype, 4]
 alias __clang_svfloat16x4_t = SIMD[Float16.dtype, 4]
 alias __clang_svfloat32x4_t = SIMD[Float32.dtype, 4]
 alias __clang_svfloat64x4_t = SIMD[Float64.dtype, 4]
@@ -70,14 +70,14 @@ alias __builtin_va_list = __va_list
 
 alias __u_char = UInt8
 alias __u_short = UInt16
-alias __u_int = UInt32
+alias __u_int = ffi.c_int
 alias __u_long = ffi.c_ulong
 alias __int8_t = Int8
 alias __uint8_t = UInt8
 alias __int16_t = Int16
 alias __uint16_t = UInt16
-alias __int32_t = Int32
-alias __uint32_t = UInt32
+alias __int32_t = ffi.c_int
+alias __uint32_t = ffi.c_int
 alias __int64_t = ffi.c_long
 alias __uint64_t = ffi.c_ulong
 alias __int_least8_t = __int8_t
@@ -93,15 +93,15 @@ alias __u_quad_t = ffi.c_ulong
 alias __intmax_t = ffi.c_long
 alias __uintmax_t = ffi.c_ulong
 alias __dev_t = ffi.c_ulong
-alias __uid_t = UInt32
-alias __gid_t = UInt32
+alias __uid_t = ffi.c_int
+alias __gid_t = ffi.c_int
 alias __ino_t = ffi.c_ulong
 alias __ino64_t = ffi.c_ulong
-alias __mode_t = UInt32
-alias __nlink_t = UInt32
+alias __mode_t = ffi.c_int
+alias __nlink_t = ffi.c_int
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
-alias __pid_t = Int32
+alias __pid_t = ffi.c_int
 struct anonomous_record_647(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
@@ -110,16 +110,16 @@ alias __fsid_t = anonomous_record_647
 alias __clock_t = ffi.c_long
 alias __rlim_t = ffi.c_ulong
 alias __rlim64_t = ffi.c_ulong
-alias __id_t = UInt32
+alias __id_t = ffi.c_int
 alias __time_t = ffi.c_long
-alias __useconds_t = UInt32
+alias __useconds_t = ffi.c_int
 alias __suseconds_t = ffi.c_long
 alias __suseconds64_t = ffi.c_long
-alias __daddr_t = Int32
-alias __key_t = Int32
-alias __clockid_t = Int32
+alias __daddr_t = ffi.c_int
+alias __key_t = ffi.c_int
+alias __clockid_t = ffi.c_int
 alias __timer_t = OpaquePointer
-alias __blksize_t = Int32
+alias __blksize_t = ffi.c_int
 alias __blkcnt_t = ffi.c_long
 alias __blkcnt64_t = ffi.c_long
 alias __fsblkcnt_t = ffi.c_ulong
@@ -133,8 +133,8 @@ alias __syscall_ulong_t = ffi.c_ulong
 alias __loff_t = __off64_t
 alias __caddr_t = UnsafePointer[Int8]
 alias __intptr_t = ffi.c_long
-alias __socklen_t = UInt32
-alias __sig_atomic_t = Int32
+alias __socklen_t = ffi.c_int
+alias __sig_atomic_t = ffi.c_int
 alias int8_t = __int8_t
 alias int16_t = __int16_t
 alias int32_t = __int32_t
@@ -163,9 +163,9 @@ alias intptr_t = ffi.c_long
 alias uintptr_t = ffi.c_ulong
 alias intmax_t = __intmax_t
 alias uintmax_t = __uintmax_t
-alias __assert_fail = fn (UnsafePointer[Int8], UnsafePointer[Int8], UInt32, UnsafePointer[Int8]) -> NoneType
-alias __assert_perror_fail = fn (Int32, UnsafePointer[Int8], UInt32, UnsafePointer[Int8]) -> NoneType
-alias __assert = fn (UnsafePointer[Int8], UnsafePointer[Int8], Int32) -> NoneType
+alias __assert_fail = fn (UnsafePointer[Int8], UnsafePointer[Int8], ffi.c_int, UnsafePointer[Int8]) -> NoneType
+alias __assert_perror_fail = fn (ffi.c_int, UnsafePointer[Int8], ffi.c_int, UnsafePointer[Int8]) -> NoneType
+alias __assert = fn (UnsafePointer[Int8], UnsafePointer[Int8], ffi.c_int) -> NoneType
 alias size_t = ffi.c_ulong
 alias alloca = fn (ffi.c_ulong) -> OpaquePointer
 alias time_t = __time_t
@@ -184,21 +184,21 @@ struct anonomous_record_648(Copyable & Movable):
 
 alias cpu_set_t = anonomous_record_648
 
-alias __sched_cpucount = fn (size_t, UnsafePointer[cpu_set_t]) -> Int32
+alias __sched_cpucount = fn (size_t, UnsafePointer[cpu_set_t]) -> ffi.c_int
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
 alias __sched_cpufree = fn (UnsafePointer[cpu_set_t]) -> NoneType
-alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
-alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
-alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param]) -> Int32
-alias sched_getscheduler = fn (__pid_t) -> Int32
-alias sched_yield = fn () -> Int32
-alias sched_get_priority_max = fn (Int32) -> Int32
-alias sched_get_priority_min = fn (Int32) -> Int32
-alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec]) -> Int32
+alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param]) -> ffi.c_int
+alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param]) -> ffi.c_int
+alias sched_setscheduler = fn (__pid_t, ffi.c_int, UnsafePointer[sched_param]) -> ffi.c_int
+alias sched_getscheduler = fn (__pid_t) -> ffi.c_int
+alias sched_yield = fn () -> ffi.c_int
+alias sched_get_priority_max = fn (ffi.c_int) -> ffi.c_int
+alias sched_get_priority_min = fn (ffi.c_int) -> ffi.c_int
+alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec]) -> ffi.c_int
 alias unaligned_uint64_t = uint64_t
 alias unaligned_uint32_t = uint32_t
 alias unaligned_uint16_t = uint16_t
-alias rte_is_aligned = fn (OpaquePointer, UInt32) -> Int32
+alias rte_is_aligned = fn (OpaquePointer, ffi.c_int) -> ffi.c_int
 alias phys_addr_t = uint64_t
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -249,9 +249,9 @@ alias RTE_MARKER64 = InlineArray[uint64_t, 0]
 # Node: TextComment()
 #  Marker for 8B alignment in a structure. 
 
-alias rte_str_to_size = fn (UnsafePointer[Int8]) -> ffi.c_ulong
-alias rte_size_to_str = fn (UnsafePointer[Int8], Int32, ffi.c_ulong, Bool, UnsafePointer[Int8]) -> UnsafePointer[Int8]
-alias rte_exit = fn (Int32, UnsafePointer[Int8]) -> NoneType
+alias rte_str_to_size = fn (UnsafePointer[Int8]) -> ffi.c_ulong_long
+alias rte_size_to_str = fn (UnsafePointer[Int8], ffi.c_int, ffi.c_ulong_long, Bool, UnsafePointer[Int8]) -> UnsafePointer[Int8]
+alias rte_exit = fn (ffi.c_int, UnsafePointer[Int8]) -> NoneType
 alias va_list = __builtin_va_list
 alias __gnuc_va_list = __builtin_va_list
 alias anonomous_record_649 = C_Union[UInt32, InlineArray[Int8, 4]]
@@ -296,96 +296,96 @@ alias fpos_t = __fpos_t
 alias stdin = UnsafePointer[FILE]
 alias stdout = UnsafePointer[FILE]
 alias stderr = UnsafePointer[FILE]
-alias remove = fn (UnsafePointer[Int8]) -> Int32
-alias rename = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
-alias renameat = fn (Int32, UnsafePointer[Int8], Int32, UnsafePointer[Int8]) -> Int32
-alias fclose = fn (UnsafePointer[FILE]) -> Int32
+alias remove = fn (UnsafePointer[Int8]) -> ffi.c_int
+alias rename = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> ffi.c_int
+alias renameat = fn (ffi.c_int, UnsafePointer[Int8], ffi.c_int, UnsafePointer[Int8]) -> ffi.c_int
+alias fclose = fn (UnsafePointer[FILE]) -> ffi.c_int
 alias tmpfile = fn () -> UnsafePointer[FILE]
 alias tmpnam = fn (UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias tmpnam_r = fn (UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias tempnam = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[Int8]
-alias fflush = fn (UnsafePointer[FILE]) -> Int32
-alias fflush_unlocked = fn (UnsafePointer[FILE]) -> Int32
+alias fflush = fn (UnsafePointer[FILE]) -> ffi.c_int
+alias fflush_unlocked = fn (UnsafePointer[FILE]) -> ffi.c_int
 alias fopen = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[FILE]
 alias freopen = fn (UnsafePointer[Int8], UnsafePointer[Int8], UnsafePointer[FILE]) -> UnsafePointer[FILE]
-alias fdopen = fn (Int32, UnsafePointer[Int8]) -> UnsafePointer[FILE]
+alias fdopen = fn (ffi.c_int, UnsafePointer[Int8]) -> UnsafePointer[FILE]
 alias fmemopen = fn (OpaquePointer, size_t, UnsafePointer[Int8]) -> UnsafePointer[FILE]
 alias open_memstream = fn (UnsafePointer[UnsafePointer[Int8]], UnsafePointer[size_t]) -> UnsafePointer[FILE]
 alias setbuf = fn (UnsafePointer[FILE], UnsafePointer[Int8]) -> NoneType
-alias setvbuf = fn (UnsafePointer[FILE], UnsafePointer[Int8], Int32, size_t) -> Int32
+alias setvbuf = fn (UnsafePointer[FILE], UnsafePointer[Int8], ffi.c_int, size_t) -> ffi.c_int
 alias setbuffer = fn (UnsafePointer[FILE], UnsafePointer[Int8], size_t) -> NoneType
 alias setlinebuf = fn (UnsafePointer[FILE]) -> NoneType
-alias fprintf = fn (UnsafePointer[FILE], UnsafePointer[Int8]) -> Int32
-alias printf = fn (UnsafePointer[Int8]) -> Int32
-alias sprintf = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
-alias vfprintf = fn (UnsafePointer[FILE], UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias vprintf = fn (UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias vsprintf = fn (UnsafePointer[Int8], UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias snprintf = fn (UnsafePointer[Int8], ffi.c_ulong, UnsafePointer[Int8]) -> Int32
-alias vsnprintf = fn (UnsafePointer[Int8], ffi.c_ulong, UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias vdprintf = fn (Int32, UnsafePointer[Int8], __gnuc_va_list) -> Int32
-alias dprintf = fn (Int32, UnsafePointer[Int8]) -> Int32
-alias fscanf = fn (UnsafePointer[FILE], UnsafePointer[Int8]) -> Int32
-alias scanf = fn (UnsafePointer[Int8]) -> Int32
-alias sscanf = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
+alias fprintf = fn (UnsafePointer[FILE], UnsafePointer[Int8]) -> ffi.c_int
+alias printf = fn (UnsafePointer[Int8]) -> ffi.c_int
+alias sprintf = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> ffi.c_int
+alias vfprintf = fn (UnsafePointer[FILE], UnsafePointer[Int8], __builtin_va_list) -> ffi.c_int
+alias vprintf = fn (UnsafePointer[Int8], __builtin_va_list) -> ffi.c_int
+alias vsprintf = fn (UnsafePointer[Int8], UnsafePointer[Int8], __builtin_va_list) -> ffi.c_int
+alias snprintf = fn (UnsafePointer[Int8], ffi.c_ulong, UnsafePointer[Int8]) -> ffi.c_int
+alias vsnprintf = fn (UnsafePointer[Int8], ffi.c_ulong, UnsafePointer[Int8], __builtin_va_list) -> ffi.c_int
+alias vdprintf = fn (ffi.c_int, UnsafePointer[Int8], __gnuc_va_list) -> ffi.c_int
+alias dprintf = fn (ffi.c_int, UnsafePointer[Int8]) -> ffi.c_int
+alias fscanf = fn (UnsafePointer[FILE], UnsafePointer[Int8]) -> ffi.c_int
+alias scanf = fn (UnsafePointer[Int8]) -> ffi.c_int
+alias sscanf = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> ffi.c_int
 alias _Float128 = Float64
 alias _Float32 = Float32
 alias _Float64 = Float64
 alias _Float32x = Float64
 alias _Float64x = Float64
-alias vfscanf = fn (UnsafePointer[FILE], UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias vscanf = fn (UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias vsscanf = fn (UnsafePointer[Int8], UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias fgetc = fn (UnsafePointer[FILE]) -> Int32
-alias getc = fn (UnsafePointer[FILE]) -> Int32
-alias getchar = fn () -> Int32
-alias getc_unlocked = fn (UnsafePointer[FILE]) -> Int32
-alias getchar_unlocked = fn () -> Int32
-alias fgetc_unlocked = fn (UnsafePointer[FILE]) -> Int32
-alias fputc = fn (Int32, UnsafePointer[FILE]) -> Int32
-alias putc = fn (Int32, UnsafePointer[FILE]) -> Int32
-alias putchar = fn (Int32) -> Int32
-alias fputc_unlocked = fn (Int32, UnsafePointer[FILE]) -> Int32
-alias putc_unlocked = fn (Int32, UnsafePointer[FILE]) -> Int32
-alias putchar_unlocked = fn (Int32) -> Int32
-alias getw = fn (UnsafePointer[FILE]) -> Int32
-alias putw = fn (Int32, UnsafePointer[FILE]) -> Int32
-alias fgets = fn (UnsafePointer[Int8], Int32, UnsafePointer[FILE]) -> UnsafePointer[Int8]
-alias __getdelim = fn (UnsafePointer[UnsafePointer[Int8]], UnsafePointer[size_t], Int32, UnsafePointer[FILE]) -> __ssize_t
-alias getdelim = fn (UnsafePointer[UnsafePointer[Int8]], UnsafePointer[size_t], Int32, UnsafePointer[FILE]) -> __ssize_t
+alias vfscanf = fn (UnsafePointer[FILE], UnsafePointer[Int8], __builtin_va_list) -> ffi.c_int
+alias vscanf = fn (UnsafePointer[Int8], __builtin_va_list) -> ffi.c_int
+alias vsscanf = fn (UnsafePointer[Int8], UnsafePointer[Int8], __builtin_va_list) -> ffi.c_int
+alias fgetc = fn (UnsafePointer[FILE]) -> ffi.c_int
+alias getc = fn (UnsafePointer[FILE]) -> ffi.c_int
+alias getchar = fn () -> ffi.c_int
+alias getc_unlocked = fn (UnsafePointer[FILE]) -> ffi.c_int
+alias getchar_unlocked = fn () -> ffi.c_int
+alias fgetc_unlocked = fn (UnsafePointer[FILE]) -> ffi.c_int
+alias fputc = fn (ffi.c_int, UnsafePointer[FILE]) -> ffi.c_int
+alias putc = fn (ffi.c_int, UnsafePointer[FILE]) -> ffi.c_int
+alias putchar = fn (ffi.c_int) -> ffi.c_int
+alias fputc_unlocked = fn (ffi.c_int, UnsafePointer[FILE]) -> ffi.c_int
+alias putc_unlocked = fn (ffi.c_int, UnsafePointer[FILE]) -> ffi.c_int
+alias putchar_unlocked = fn (ffi.c_int) -> ffi.c_int
+alias getw = fn (UnsafePointer[FILE]) -> ffi.c_int
+alias putw = fn (ffi.c_int, UnsafePointer[FILE]) -> ffi.c_int
+alias fgets = fn (UnsafePointer[Int8], ffi.c_int, UnsafePointer[FILE]) -> UnsafePointer[Int8]
+alias __getdelim = fn (UnsafePointer[UnsafePointer[Int8]], UnsafePointer[size_t], ffi.c_int, UnsafePointer[FILE]) -> __ssize_t
+alias getdelim = fn (UnsafePointer[UnsafePointer[Int8]], UnsafePointer[size_t], ffi.c_int, UnsafePointer[FILE]) -> __ssize_t
 alias getline = fn (UnsafePointer[UnsafePointer[Int8]], UnsafePointer[size_t], UnsafePointer[FILE]) -> __ssize_t
-alias fputs = fn (UnsafePointer[Int8], UnsafePointer[FILE]) -> Int32
-alias puts = fn (UnsafePointer[Int8]) -> Int32
-alias ungetc = fn (Int32, UnsafePointer[FILE]) -> Int32
+alias fputs = fn (UnsafePointer[Int8], UnsafePointer[FILE]) -> ffi.c_int
+alias puts = fn (UnsafePointer[Int8]) -> ffi.c_int
+alias ungetc = fn (ffi.c_int, UnsafePointer[FILE]) -> ffi.c_int
 alias fread = fn (OpaquePointer, ffi.c_ulong, ffi.c_ulong, UnsafePointer[FILE]) -> ffi.c_ulong
 alias fwrite = fn (OpaquePointer, ffi.c_ulong, ffi.c_ulong, UnsafePointer[FILE]) -> ffi.c_ulong
 alias fread_unlocked = fn (OpaquePointer, size_t, size_t, UnsafePointer[FILE]) -> size_t
 alias fwrite_unlocked = fn (OpaquePointer, size_t, size_t, UnsafePointer[FILE]) -> size_t
-alias fseek = fn (UnsafePointer[FILE], ffi.c_long, Int32) -> Int32
+alias fseek = fn (UnsafePointer[FILE], ffi.c_long, ffi.c_int) -> ffi.c_int
 alias ftell = fn (UnsafePointer[FILE]) -> ffi.c_long
 alias rewind = fn (UnsafePointer[FILE]) -> NoneType
-alias fseeko = fn (UnsafePointer[FILE], __off_t, Int32) -> Int32
+alias fseeko = fn (UnsafePointer[FILE], __off_t, ffi.c_int) -> ffi.c_int
 alias ftello = fn (UnsafePointer[FILE]) -> __off_t
-alias fgetpos = fn (UnsafePointer[FILE], UnsafePointer[fpos_t]) -> Int32
-alias fsetpos = fn (UnsafePointer[FILE], UnsafePointer[fpos_t]) -> Int32
+alias fgetpos = fn (UnsafePointer[FILE], UnsafePointer[fpos_t]) -> ffi.c_int
+alias fsetpos = fn (UnsafePointer[FILE], UnsafePointer[fpos_t]) -> ffi.c_int
 alias clearerr = fn (UnsafePointer[FILE]) -> NoneType
-alias feof = fn (UnsafePointer[FILE]) -> Int32
-alias ferror = fn (UnsafePointer[FILE]) -> Int32
+alias feof = fn (UnsafePointer[FILE]) -> ffi.c_int
+alias ferror = fn (UnsafePointer[FILE]) -> ffi.c_int
 alias clearerr_unlocked = fn (UnsafePointer[FILE]) -> NoneType
-alias feof_unlocked = fn (UnsafePointer[FILE]) -> Int32
-alias ferror_unlocked = fn (UnsafePointer[FILE]) -> Int32
+alias feof_unlocked = fn (UnsafePointer[FILE]) -> ffi.c_int
+alias ferror_unlocked = fn (UnsafePointer[FILE]) -> ffi.c_int
 alias perror = fn (UnsafePointer[Int8]) -> NoneType
-alias fileno = fn (UnsafePointer[FILE]) -> Int32
-alias fileno_unlocked = fn (UnsafePointer[FILE]) -> Int32
-alias pclose = fn (UnsafePointer[FILE]) -> Int32
+alias fileno = fn (UnsafePointer[FILE]) -> ffi.c_int
+alias fileno_unlocked = fn (UnsafePointer[FILE]) -> ffi.c_int
+alias pclose = fn (UnsafePointer[FILE]) -> ffi.c_int
 alias popen = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[FILE]
 alias ctermid = fn (UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias flockfile = fn (UnsafePointer[FILE]) -> NoneType
-alias ftrylockfile = fn (UnsafePointer[FILE]) -> Int32
+alias ftrylockfile = fn (UnsafePointer[FILE]) -> ffi.c_int
 alias funlockfile = fn (UnsafePointer[FILE]) -> NoneType
-alias __uflow = fn (UnsafePointer[FILE]) -> Int32
-alias __overflow = fn (UnsafePointer[FILE], Int32) -> Int32
-alias __gwchar_t = UInt32
+alias __uflow = fn (UnsafePointer[FILE]) -> ffi.c_int
+alias __overflow = fn (UnsafePointer[FILE], ffi.c_int) -> ffi.c_int
+alias __gwchar_t = ffi.c_int
 struct anonomous_record_651(Copyable & Movable):
 	var quot : ffi.c_long
 
@@ -395,10 +395,10 @@ alias imaxdiv_t = anonomous_record_651
 
 alias imaxabs = fn (intmax_t) -> intmax_t
 alias imaxdiv = fn (intmax_t, intmax_t) -> imaxdiv_t
-alias strtoimax = fn (UnsafePointer[Int8], UnsafePointer[UnsafePointer[Int8]], Int32) -> intmax_t
-alias strtoumax = fn (UnsafePointer[Int8], UnsafePointer[UnsafePointer[Int8]], Int32) -> uintmax_t
-alias wcstoimax = fn (UnsafePointer[__gwchar_t], UnsafePointer[UnsafePointer[__gwchar_t]], Int32) -> intmax_t
-alias wcstoumax = fn (UnsafePointer[__gwchar_t], UnsafePointer[UnsafePointer[__gwchar_t]], Int32) -> uintmax_t
+alias strtoimax = fn (UnsafePointer[Int8], UnsafePointer[UnsafePointer[Int8]], ffi.c_int) -> intmax_t
+alias strtoumax = fn (UnsafePointer[Int8], UnsafePointer[UnsafePointer[Int8]], ffi.c_int) -> uintmax_t
+alias wcstoimax = fn (UnsafePointer[__gwchar_t], UnsafePointer[UnsafePointer[__gwchar_t]], ffi.c_int) -> intmax_t
+alias wcstoumax = fn (UnsafePointer[__gwchar_t], UnsafePointer[UnsafePointer[__gwchar_t]], ffi.c_int) -> uintmax_t
 alias clock_t = __clock_t
 struct tm(Copyable & Movable):
 	var tm_sec : Int32
@@ -471,21 +471,21 @@ alias daylight = Int32
 alias timezone = ffi.c_long
 alias timegm = fn (UnsafePointer[tm]) -> time_t
 alias timelocal = fn (UnsafePointer[tm]) -> time_t
-alias dysize = fn (Int32) -> Int32
-alias nanosleep = fn (UnsafePointer[timespec], UnsafePointer[timespec]) -> Int32
-alias clock_getres = fn (clockid_t, UnsafePointer[timespec]) -> Int32
-alias clock_gettime = fn (clockid_t, UnsafePointer[timespec]) -> Int32
-alias clock_settime = fn (clockid_t, UnsafePointer[timespec]) -> Int32
-alias clock_nanosleep = fn (clockid_t, Int32, UnsafePointer[timespec], UnsafePointer[timespec]) -> Int32
-alias clock_getcpuclockid = fn (pid_t, UnsafePointer[clockid_t]) -> Int32
-alias timer_create = fn (clockid_t, UnsafePointer[sigevent], UnsafePointer[timer_t]) -> Int32
-alias timer_delete = fn (timer_t) -> Int32
-alias timer_settime = fn (timer_t, Int32, UnsafePointer[itimerspec], UnsafePointer[itimerspec]) -> Int32
-alias timer_gettime = fn (timer_t, UnsafePointer[itimerspec]) -> Int32
-alias timer_getoverrun = fn (timer_t) -> Int32
-alias timespec_get = fn (UnsafePointer[timespec], Int32) -> Int32
+alias dysize = fn (ffi.c_int) -> ffi.c_int
+alias nanosleep = fn (UnsafePointer[timespec], UnsafePointer[timespec]) -> ffi.c_int
+alias clock_getres = fn (clockid_t, UnsafePointer[timespec]) -> ffi.c_int
+alias clock_gettime = fn (clockid_t, UnsafePointer[timespec]) -> ffi.c_int
+alias clock_settime = fn (clockid_t, UnsafePointer[timespec]) -> ffi.c_int
+alias clock_nanosleep = fn (clockid_t, ffi.c_int, UnsafePointer[timespec], UnsafePointer[timespec]) -> ffi.c_int
+alias clock_getcpuclockid = fn (pid_t, UnsafePointer[clockid_t]) -> ffi.c_int
+alias timer_create = fn (clockid_t, UnsafePointer[sigevent], UnsafePointer[timer_t]) -> ffi.c_int
+alias timer_delete = fn (timer_t) -> ffi.c_int
+alias timer_settime = fn (timer_t, ffi.c_int, UnsafePointer[itimerspec], UnsafePointer[itimerspec]) -> ffi.c_int
+alias timer_gettime = fn (timer_t, UnsafePointer[itimerspec]) -> ffi.c_int
+alias timer_getoverrun = fn (timer_t) -> ffi.c_int
+alias timespec_get = fn (UnsafePointer[timespec], ffi.c_int) -> ffi.c_int
 alias ptrdiff_t = ffi.c_long
-alias wchar_t = UInt32
+alias wchar_t = ffi.c_int
 struct anonomous_record_652(Copyable & Movable):
 	var __clang_max_align_nonce1 : ffi.c_long_long
 
@@ -495,25 +495,25 @@ alias max_align_t = anonomous_record_652
 
 alias memcpy = fn (OpaquePointer, OpaquePointer, ffi.c_ulong) -> OpaquePointer
 alias memmove = fn (OpaquePointer, OpaquePointer, ffi.c_ulong) -> OpaquePointer
-alias memccpy = fn (OpaquePointer, OpaquePointer, Int32, ffi.c_ulong) -> OpaquePointer
-alias memset = fn (OpaquePointer, Int32, ffi.c_ulong) -> OpaquePointer
-alias memcmp = fn (OpaquePointer, OpaquePointer, ffi.c_ulong) -> Int32
-alias __memcmpeq = fn (OpaquePointer, OpaquePointer, size_t) -> Int32
-alias memchr = fn (OpaquePointer, Int32, ffi.c_ulong) -> OpaquePointer
+alias memccpy = fn (OpaquePointer, OpaquePointer, ffi.c_int, ffi.c_ulong) -> OpaquePointer
+alias memset = fn (OpaquePointer, ffi.c_int, ffi.c_ulong) -> OpaquePointer
+alias memcmp = fn (OpaquePointer, OpaquePointer, ffi.c_ulong) -> ffi.c_int
+alias __memcmpeq = fn (OpaquePointer, OpaquePointer, size_t) -> ffi.c_int
+alias memchr = fn (OpaquePointer, ffi.c_int, ffi.c_ulong) -> OpaquePointer
 alias strcpy = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias strncpy = fn (UnsafePointer[Int8], UnsafePointer[Int8], ffi.c_ulong) -> UnsafePointer[Int8]
 alias strcat = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias strncat = fn (UnsafePointer[Int8], UnsafePointer[Int8], ffi.c_ulong) -> UnsafePointer[Int8]
-alias strcmp = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
-alias strncmp = fn (UnsafePointer[Int8], UnsafePointer[Int8], ffi.c_ulong) -> Int32
-alias strcoll = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
+alias strcmp = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> ffi.c_int
+alias strncmp = fn (UnsafePointer[Int8], UnsafePointer[Int8], ffi.c_ulong) -> ffi.c_int
+alias strcoll = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> ffi.c_int
 alias strxfrm = fn (UnsafePointer[Int8], UnsafePointer[Int8], ffi.c_ulong) -> ffi.c_ulong
-alias strcoll_l = fn (UnsafePointer[Int8], UnsafePointer[Int8], locale_t) -> Int32
+alias strcoll_l = fn (UnsafePointer[Int8], UnsafePointer[Int8], locale_t) -> ffi.c_int
 alias strxfrm_l = fn (UnsafePointer[Int8], UnsafePointer[Int8], size_t, locale_t) -> size_t
 alias strdup = fn (UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias strndup = fn (UnsafePointer[Int8], ffi.c_ulong) -> UnsafePointer[Int8]
-alias strchr = fn (UnsafePointer[Int8], Int32) -> UnsafePointer[Int8]
-alias strrchr = fn (UnsafePointer[Int8], Int32) -> UnsafePointer[Int8]
+alias strchr = fn (UnsafePointer[Int8], ffi.c_int) -> UnsafePointer[Int8]
+alias strrchr = fn (UnsafePointer[Int8], ffi.c_int) -> UnsafePointer[Int8]
 alias strcspn = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> ffi.c_ulong
 alias strspn = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> ffi.c_ulong
 alias strpbrk = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[Int8]
@@ -523,24 +523,24 @@ alias __strtok_r = fn (UnsafePointer[Int8], UnsafePointer[Int8], UnsafePointer[U
 alias strtok_r = fn (UnsafePointer[Int8], UnsafePointer[Int8], UnsafePointer[UnsafePointer[Int8]]) -> UnsafePointer[Int8]
 alias strlen = fn (UnsafePointer[Int8]) -> ffi.c_ulong
 alias strnlen = fn (UnsafePointer[Int8], size_t) -> size_t
-alias strerror = fn (Int32) -> UnsafePointer[Int8]
-alias strerror_r = fn (Int32, UnsafePointer[Int8], size_t) -> Int32
-alias strerror_l = fn (Int32, locale_t) -> UnsafePointer[Int8]
-alias bcmp = fn (OpaquePointer, OpaquePointer, ffi.c_ulong) -> Int32
+alias strerror = fn (ffi.c_int) -> UnsafePointer[Int8]
+alias strerror_r = fn (ffi.c_int, UnsafePointer[Int8], size_t) -> ffi.c_int
+alias strerror_l = fn (ffi.c_int, locale_t) -> UnsafePointer[Int8]
+alias bcmp = fn (OpaquePointer, OpaquePointer, ffi.c_ulong) -> ffi.c_int
 alias bcopy = fn (OpaquePointer, OpaquePointer, size_t) -> NoneType
 alias bzero = fn (OpaquePointer, ffi.c_ulong) -> NoneType
-alias index = fn (UnsafePointer[Int8], Int32) -> UnsafePointer[Int8]
-alias rindex = fn (UnsafePointer[Int8], Int32) -> UnsafePointer[Int8]
-alias ffs = fn (Int32) -> Int32
-alias ffsl = fn (ffi.c_long) -> Int32
-alias ffsll = fn (ffi.c_long_long) -> Int32
-alias strcasecmp = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
-alias strncasecmp = fn (UnsafePointer[Int8], UnsafePointer[Int8], ffi.c_ulong) -> Int32
-alias strcasecmp_l = fn (UnsafePointer[Int8], UnsafePointer[Int8], locale_t) -> Int32
-alias strncasecmp_l = fn (UnsafePointer[Int8], UnsafePointer[Int8], size_t, locale_t) -> Int32
+alias index = fn (UnsafePointer[Int8], ffi.c_int) -> UnsafePointer[Int8]
+alias rindex = fn (UnsafePointer[Int8], ffi.c_int) -> UnsafePointer[Int8]
+alias ffs = fn (ffi.c_int) -> ffi.c_int
+alias ffsl = fn (ffi.c_long) -> ffi.c_int
+alias ffsll = fn (ffi.c_long_long) -> ffi.c_int
+alias strcasecmp = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> ffi.c_int
+alias strncasecmp = fn (UnsafePointer[Int8], UnsafePointer[Int8], ffi.c_ulong) -> ffi.c_int
+alias strcasecmp_l = fn (UnsafePointer[Int8], UnsafePointer[Int8], locale_t) -> ffi.c_int
+alias strncasecmp_l = fn (UnsafePointer[Int8], UnsafePointer[Int8], size_t, locale_t) -> ffi.c_int
 alias explicit_bzero = fn (OpaquePointer, size_t) -> NoneType
 alias strsep = fn (UnsafePointer[UnsafePointer[Int8]], UnsafePointer[Int8]) -> UnsafePointer[Int8]
-alias strsignal = fn (Int32) -> UnsafePointer[Int8]
+alias strsignal = fn (ffi.c_int) -> UnsafePointer[Int8]
 alias __stpcpy = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias stpcpy = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias __stpncpy = fn (UnsafePointer[Int8], UnsafePointer[Int8], size_t) -> UnsafePointer[Int8]
@@ -553,8 +553,8 @@ alias rte_uuid_t = InlineArray[UInt8, 16]
 
 alias rte_uuid_is_null = fn (UnsafePointer[UInt8]) -> Bool
 alias rte_uuid_copy = fn (UnsafePointer[UInt8], UnsafePointer[UInt8]) -> NoneType
-alias rte_uuid_compare = fn (UnsafePointer[UInt8], UnsafePointer[UInt8]) -> Int32
-alias rte_uuid_parse = fn (UnsafePointer[Int8], UnsafePointer[UInt8]) -> Int32
+alias rte_uuid_compare = fn (UnsafePointer[UInt8], UnsafePointer[UInt8]) -> ffi.c_int
+alias rte_uuid_parse = fn (UnsafePointer[Int8], UnsafePointer[UInt8]) -> ffi.c_int
 alias rte_uuid_unparse = fn (UnsafePointer[UInt8], UnsafePointer[Int8], size_t) -> NoneType
 struct rte_intr_mode(Copyable & Movable):
 
@@ -577,10 +577,10 @@ struct rte_proc_type_t(Copyable & Movable):
 	alias RTE_PROC_INVALID = 2
 
 alias rte_eal_process_type = fn () -> rte_proc_type_t
-alias rte_eal_iopl_init = fn () -> Int32
-alias rte_eal_init = fn (Int32, UnsafePointer[UnsafePointer[Int8]]) -> Int32
-alias rte_eal_cleanup = fn () -> Int32
-alias rte_eal_primary_proc_alive = fn (UnsafePointer[Int8]) -> Int32
+alias rte_eal_iopl_init = fn () -> ffi.c_int
+alias rte_eal_init = fn (ffi.c_int, UnsafePointer[UnsafePointer[Int8]]) -> ffi.c_int
+alias rte_eal_cleanup = fn () -> ffi.c_int
+alias rte_eal_primary_proc_alive = fn (UnsafePointer[Int8]) -> ffi.c_int
 alias rte_mp_disable = fn () -> Bool
 struct rte_mp_msg(Copyable & Movable):
 	var name : InlineArray[Int8, 64]
@@ -602,22 +602,22 @@ struct rte_mp_reply(Copyable & Movable):
 
 alias rte_mp_t = fn(read UnsafePointer[rte_mp_msg], read OpaquePointer) -> Int32
 alias rte_mp_async_reply_t = fn(read UnsafePointer[rte_mp_msg], read UnsafePointer[rte_mp_reply]) -> Int32
-alias rte_mp_action_register = fn (UnsafePointer[Int8], rte_mp_t) -> Int32
+alias rte_mp_action_register = fn (UnsafePointer[Int8], rte_mp_t) -> ffi.c_int
 alias rte_mp_action_unregister = fn (UnsafePointer[Int8]) -> NoneType
-alias rte_mp_sendmsg = fn (UnsafePointer[rte_mp_msg]) -> Int32
-alias rte_mp_request_sync = fn (UnsafePointer[rte_mp_msg], UnsafePointer[rte_mp_reply], UnsafePointer[timespec]) -> Int32
-alias rte_mp_request_async = fn (UnsafePointer[rte_mp_msg], UnsafePointer[timespec], rte_mp_async_reply_t) -> Int32
+alias rte_mp_sendmsg = fn (UnsafePointer[rte_mp_msg]) -> ffi.c_int
+alias rte_mp_request_sync = fn (UnsafePointer[rte_mp_msg], UnsafePointer[rte_mp_reply], UnsafePointer[timespec]) -> ffi.c_int
+alias rte_mp_request_async = fn (UnsafePointer[rte_mp_msg], UnsafePointer[timespec], rte_mp_async_reply_t) -> ffi.c_int
 alias rte_usage_hook_t = fn(read UnsafePointer[Int8]) -> NoneType
 alias rte_set_application_usage_hook = fn (rte_usage_hook_t) -> rte_usage_hook_t
-alias rte_eal_has_hugepages = fn () -> Int32
-alias rte_eal_has_pci = fn () -> Int32
-alias rte_eal_create_uio_dev = fn () -> Int32
+alias rte_eal_has_hugepages = fn () -> ffi.c_int
+alias rte_eal_has_pci = fn () -> ffi.c_int
+alias rte_eal_create_uio_dev = fn () -> ffi.c_int
 alias rte_eal_vfio_intr_mode = fn () -> rte_intr_mode
 alias rte_eal_vfio_get_vf_token = fn (UnsafePointer[UInt8]) -> NoneType
-alias rte_sys_gettid = fn () -> Int32
+alias rte_sys_gettid = fn () -> ffi.c_int
 alias per_lcore__thread_id = Int32
-alias rte_gettid = fn () -> Int32
-alias rte_eal_get_baseaddr = fn () -> ffi.c_ulong
+alias rte_gettid = fn () -> ffi.c_int
+alias rte_eal_get_baseaddr = fn () -> ffi.c_ulong_long
 struct rte_iova_mode(Copyable & Movable):
 
 	alias RTE_IOVA_DC = 0
@@ -629,29 +629,29 @@ struct rte_iova_mode(Copyable & Movable):
 alias rte_eal_iova_mode = fn () -> rte_iova_mode
 alias rte_eal_mbuf_user_pool_ops = fn () -> UnsafePointer[Int8]
 alias rte_eal_get_runtime_dir = fn () -> UnsafePointer[Int8]
-alias rte_eal_parse_coremask = fn (UnsafePointer[Int8], UnsafePointer[Int32]) -> Int32
+alias rte_eal_parse_coremask = fn (UnsafePointer[Int8], UnsafePointer[ffi.c_int]) -> ffi.c_int
 struct rte_lcore_state_t(Copyable & Movable):
 
 	alias WAIT = 0
 
 	alias RUNNING = 1
 
-alias lcore_function_t = UnsafePointer[fn (OpaquePointer) -> Int32]
+alias lcore_function_t = UnsafePointer[fn (OpaquePointer) -> ffi.c_int]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Definition of a remote launch function.
 
-alias rte_eal_remote_launch = fn (UnsafePointer[lcore_function_t], OpaquePointer, UInt32) -> Int32
+alias rte_eal_remote_launch = fn (UnsafePointer[lcore_function_t], OpaquePointer, ffi.c_int) -> ffi.c_int
 struct rte_rmt_call_main_t(Copyable & Movable):
 
 	alias SKIP_MAIN = 0
 
 	alias CALL_MAIN = 1
 
-alias rte_eal_mp_remote_launch = fn (UnsafePointer[lcore_function_t], OpaquePointer, rte_rmt_call_main_t) -> Int32
-alias rte_eal_get_lcore_state = fn (UInt32) -> rte_lcore_state_t
-alias rte_eal_wait_lcore = fn (UInt32) -> Int32
+alias rte_eal_mp_remote_launch = fn (UnsafePointer[lcore_function_t], OpaquePointer, rte_rmt_call_main_t) -> ffi.c_int
+alias rte_eal_get_lcore_state = fn (ffi.c_int) -> rte_lcore_state_t
+alias rte_eal_wait_lcore = fn (ffi.c_int) -> ffi.c_int
 alias rte_eal_mp_wait_lcore = fn () -> NoneType
 struct anonomous_record_653(Copyable & Movable):
 
@@ -691,22 +691,22 @@ alias rte_thread_key = UnsafePointer[eal_tls_key
 # Node: TextComment()
 #  TLS key type, an opaque pointer.
 
-alias rte_thread_create = fn (UnsafePointer[rte_thread_t], UnsafePointer[rte_thread_attr_t], rte_thread_func, OpaquePointer) -> Int32
-alias rte_thread_create_control = fn (UnsafePointer[rte_thread_t], UnsafePointer[Int8], rte_thread_func, OpaquePointer) -> Int32
-alias rte_thread_create_internal_control = fn (UnsafePointer[rte_thread_t], UnsafePointer[Int8], rte_thread_func, OpaquePointer) -> Int32
-alias rte_thread_join = fn (rte_thread_t, UnsafePointer[UInt32]) -> Int32
-alias rte_thread_detach = fn (rte_thread_t) -> Int32
+alias rte_thread_create = fn (UnsafePointer[rte_thread_t], UnsafePointer[rte_thread_attr_t], rte_thread_func, OpaquePointer) -> ffi.c_int
+alias rte_thread_create_control = fn (UnsafePointer[rte_thread_t], UnsafePointer[Int8], rte_thread_func, OpaquePointer) -> ffi.c_int
+alias rte_thread_create_internal_control = fn (UnsafePointer[rte_thread_t], UnsafePointer[Int8], rte_thread_func, OpaquePointer) -> ffi.c_int
+alias rte_thread_join = fn (rte_thread_t, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_thread_detach = fn (rte_thread_t) -> ffi.c_int
 alias rte_thread_self = fn () -> rte_thread_t
 alias rte_thread_set_name = fn (rte_thread_t, UnsafePointer[Int8]) -> NoneType
 alias rte_thread_set_prefixed_name = fn (rte_thread_t, UnsafePointer[Int8]) -> NoneType
-alias rte_thread_equal = fn (rte_thread_t, rte_thread_t) -> Int32
-alias rte_thread_attr_init = fn (UnsafePointer[rte_thread_attr_t]) -> Int32
-alias rte_thread_attr_set_priority = fn (UnsafePointer[rte_thread_attr_t], rte_thread_priority) -> Int32
-alias rte_thread_get_priority = fn (rte_thread_t, UnsafePointer[rte_thread_priority]) -> Int32
-alias rte_thread_set_priority = fn (rte_thread_t, rte_thread_priority) -> Int32
-alias rte_thread_key_create = fn (UnsafePointer[rte_thread_key], fn (OpaquePointer) -> NoneType) -> Int32
-alias rte_thread_key_delete = fn (rte_thread_key) -> Int32
-alias rte_thread_value_set = fn (rte_thread_key, OpaquePointer) -> Int32
+alias rte_thread_equal = fn (rte_thread_t, rte_thread_t) -> ffi.c_int
+alias rte_thread_attr_init = fn (UnsafePointer[rte_thread_attr_t]) -> ffi.c_int
+alias rte_thread_attr_set_priority = fn (UnsafePointer[rte_thread_attr_t], rte_thread_priority) -> ffi.c_int
+alias rte_thread_get_priority = fn (rte_thread_t, UnsafePointer[rte_thread_priority]) -> ffi.c_int
+alias rte_thread_set_priority = fn (rte_thread_t, rte_thread_priority) -> ffi.c_int
+alias rte_thread_key_create = fn (UnsafePointer[rte_thread_key], fn (OpaquePointer) -> NoneType) -> ffi.c_int
+alias rte_thread_key_delete = fn (rte_thread_key) -> ffi.c_int
+alias rte_thread_value_set = fn (rte_thread_key, OpaquePointer) -> ffi.c_int
 alias rte_thread_value_get = fn (rte_thread_key) -> OpaquePointer
 alias per_lcore__lcore_id = UInt32
 struct rte_lcore_role_t(Copyable & Movable):
@@ -719,25 +719,25 @@ struct rte_lcore_role_t(Copyable & Movable):
 
 	alias ROLE_NON_EAL = 3
 
-alias rte_eal_lcore_role = fn (UInt32) -> rte_lcore_role_t
-alias rte_lcore_has_role = fn (UInt32, rte_lcore_role_t) -> Int32
-alias rte_lcore_id = fn () -> UInt32
-alias rte_get_main_lcore = fn () -> UInt32
-alias rte_lcore_count = fn () -> UInt32
-alias rte_lcore_index = fn (Int32) -> Int32
-alias rte_socket_id = fn () -> UInt32
-alias rte_socket_count = fn () -> UInt32
-alias rte_socket_id_by_idx = fn (UInt32) -> Int32
-alias rte_lcore_to_socket_id = fn (UInt32) -> UInt32
-alias rte_lcore_to_cpu_id = fn (Int32) -> Int32
-alias rte_lcore_is_enabled = fn (UInt32) -> Int32
-alias rte_get_next_lcore = fn (UInt32, Int32, Int32) -> UInt32
+alias rte_eal_lcore_role = fn (ffi.c_int) -> rte_lcore_role_t
+alias rte_lcore_has_role = fn (ffi.c_int, rte_lcore_role_t) -> ffi.c_int
+alias rte_lcore_id = fn () -> ffi.c_int
+alias rte_get_main_lcore = fn () -> ffi.c_int
+alias rte_lcore_count = fn () -> ffi.c_int
+alias rte_lcore_index = fn (ffi.c_int) -> ffi.c_int
+alias rte_socket_id = fn () -> ffi.c_int
+alias rte_socket_count = fn () -> ffi.c_int
+alias rte_socket_id_by_idx = fn (ffi.c_int) -> ffi.c_int
+alias rte_lcore_to_socket_id = fn (ffi.c_int) -> ffi.c_int
+alias rte_lcore_to_cpu_id = fn (ffi.c_int) -> ffi.c_int
+alias rte_lcore_is_enabled = fn (ffi.c_int) -> ffi.c_int
+alias rte_get_next_lcore = fn (ffi.c_int, ffi.c_int, ffi.c_int) -> ffi.c_int
 alias rte_lcore_init_cb = fn(UInt32, OpaquePointer) -> Int32
 alias rte_lcore_uninit_cb = fn(UInt32, OpaquePointer) -> NoneType
 alias rte_lcore_callback_register = fn (UnsafePointer[Int8], rte_lcore_init_cb, rte_lcore_uninit_cb, OpaquePointer) -> OpaquePointer
 alias rte_lcore_callback_unregister = fn (OpaquePointer) -> NoneType
 alias rte_lcore_iterate_cb = fn(UInt32, OpaquePointer) -> Int32
-alias rte_lcore_iterate = fn (rte_lcore_iterate_cb, OpaquePointer) -> Int32
+alias rte_lcore_iterate = fn (rte_lcore_iterate_cb, OpaquePointer) -> ffi.c_int
 struct rte_lcore_usage(Copyable & Movable):
 
 	var total_cycles : ffi.c_ulong
@@ -747,9 +747,9 @@ struct rte_lcore_usage(Copyable & Movable):
 alias rte_lcore_usage_cb = fn(UInt32, UnsafePointer[rte_lcore_usage]) -> Int32
 alias rte_lcore_register_usage_cb = fn (rte_lcore_usage_cb) -> NoneType
 alias rte_lcore_dump = fn (UnsafePointer[FILE]) -> NoneType
-alias rte_thread_register = fn () -> Int32
+alias rte_thread_register = fn () -> ffi.c_int
 alias rte_thread_unregister = fn () -> NoneType
-alias rte_memory_order = Int32
+alias rte_memory_order = ffi.c_int
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
@@ -758,7 +758,7 @@ alias rte_memory_order = Int32
 #  not an enumerated type like in C11.
 
 alias rte_atomic_thread_fence = fn (rte_memory_order) -> NoneType
-alias rte_atomic16_cmpset = fn (UnsafePointer[Int16], UInt16, UInt16) -> Int32
+alias rte_atomic16_cmpset = fn (UnsafePointer[Int16], UInt16, UInt16) -> ffi.c_int
 alias __sync_bool_compare_and_swap = fn () -> NoneType
 alias __sync_bool_compare_and_swap_2 = fn (UnsafePointer[Int16], Int16, Int16) -> Bool
 alias rte_atomic16_exchange = fn (UnsafePointer[Int16], UInt16) -> UInt16
@@ -785,13 +785,13 @@ alias rte_atomic16_inc = fn (UnsafePointer[rte_atomic16_t]) -> NoneType
 alias rte_atomic16_dec = fn (UnsafePointer[rte_atomic16_t]) -> NoneType
 alias rte_atomic16_add_return = fn (UnsafePointer[rte_atomic16_t], Int16) -> Int16
 alias rte_atomic16_sub_return = fn (UnsafePointer[rte_atomic16_t], Int16) -> Int16
-alias rte_atomic16_inc_and_test = fn (UnsafePointer[rte_atomic16_t]) -> Int32
-alias rte_atomic16_dec_and_test = fn (UnsafePointer[rte_atomic16_t]) -> Int32
-alias rte_atomic16_test_and_set = fn (UnsafePointer[rte_atomic16_t]) -> Int32
+alias rte_atomic16_inc_and_test = fn (UnsafePointer[rte_atomic16_t]) -> ffi.c_int
+alias rte_atomic16_dec_and_test = fn (UnsafePointer[rte_atomic16_t]) -> ffi.c_int
+alias rte_atomic16_test_and_set = fn (UnsafePointer[rte_atomic16_t]) -> ffi.c_int
 alias rte_atomic16_clear = fn (UnsafePointer[rte_atomic16_t]) -> NoneType
-alias rte_atomic32_cmpset = fn (UnsafePointer[Int32], UInt32, UInt32) -> Int32
-alias __sync_bool_compare_and_swap_4 = fn (UnsafePointer[Int32], Int32, Int32) -> Bool
-alias rte_atomic32_exchange = fn (UnsafePointer[Int32], UInt32) -> UInt32
+alias rte_atomic32_cmpset = fn (UnsafePointer[ffi.c_int], ffi.c_int, ffi.c_int) -> ffi.c_int
+alias __sync_bool_compare_and_swap_4 = fn (UnsafePointer[ffi.c_int], ffi.c_int, ffi.c_int) -> Bool
+alias rte_atomic32_exchange = fn (UnsafePointer[ffi.c_int], ffi.c_int) -> ffi.c_int
 struct anonomous_record_656(Copyable & Movable):
 
 	var cnt : Int32
@@ -804,21 +804,21 @@ alias rte_atomic32_t = anonomous_record_656
 #  The atomic counter structure.
 
 alias rte_atomic32_init = fn (UnsafePointer[rte_atomic32_t]) -> NoneType
-alias rte_atomic32_read = fn (UnsafePointer[rte_atomic32_t]) -> Int32
-alias rte_atomic32_set = fn (UnsafePointer[rte_atomic32_t], Int32) -> NoneType
-alias rte_atomic32_add = fn (UnsafePointer[rte_atomic32_t], Int32) -> NoneType
-alias rte_atomic32_sub = fn (UnsafePointer[rte_atomic32_t], Int32) -> NoneType
+alias rte_atomic32_read = fn (UnsafePointer[rte_atomic32_t]) -> ffi.c_int
+alias rte_atomic32_set = fn (UnsafePointer[rte_atomic32_t], ffi.c_int) -> NoneType
+alias rte_atomic32_add = fn (UnsafePointer[rte_atomic32_t], ffi.c_int) -> NoneType
+alias rte_atomic32_sub = fn (UnsafePointer[rte_atomic32_t], ffi.c_int) -> NoneType
 alias rte_atomic32_inc = fn (UnsafePointer[rte_atomic32_t]) -> NoneType
 alias rte_atomic32_dec = fn (UnsafePointer[rte_atomic32_t]) -> NoneType
-alias rte_atomic32_add_return = fn (UnsafePointer[rte_atomic32_t], Int32) -> Int32
-alias rte_atomic32_sub_return = fn (UnsafePointer[rte_atomic32_t], Int32) -> Int32
-alias rte_atomic32_inc_and_test = fn (UnsafePointer[rte_atomic32_t]) -> Int32
-alias rte_atomic32_dec_and_test = fn (UnsafePointer[rte_atomic32_t]) -> Int32
-alias rte_atomic32_test_and_set = fn (UnsafePointer[rte_atomic32_t]) -> Int32
+alias rte_atomic32_add_return = fn (UnsafePointer[rte_atomic32_t], ffi.c_int) -> ffi.c_int
+alias rte_atomic32_sub_return = fn (UnsafePointer[rte_atomic32_t], ffi.c_int) -> ffi.c_int
+alias rte_atomic32_inc_and_test = fn (UnsafePointer[rte_atomic32_t]) -> ffi.c_int
+alias rte_atomic32_dec_and_test = fn (UnsafePointer[rte_atomic32_t]) -> ffi.c_int
+alias rte_atomic32_test_and_set = fn (UnsafePointer[rte_atomic32_t]) -> ffi.c_int
 alias rte_atomic32_clear = fn (UnsafePointer[rte_atomic32_t]) -> NoneType
-alias rte_atomic64_cmpset = fn (UnsafePointer[ffi.c_long], ffi.c_ulong, ffi.c_ulong) -> Int32
+alias rte_atomic64_cmpset = fn (UnsafePointer[ffi.c_long_long], ffi.c_ulong_long, ffi.c_ulong_long) -> ffi.c_int
 alias __sync_bool_compare_and_swap_8 = fn (UnsafePointer[ffi.c_long_long], ffi.c_long_long, ffi.c_long_long) -> Bool
-alias rte_atomic64_exchange = fn (UnsafePointer[ffi.c_long], ffi.c_ulong) -> ffi.c_ulong
+alias rte_atomic64_exchange = fn (UnsafePointer[ffi.c_long_long], ffi.c_ulong_long) -> ffi.c_ulong_long
 struct anonomous_record_657(Copyable & Movable):
 
 	var cnt : ffi.c_long
@@ -831,17 +831,17 @@ alias rte_atomic64_t = anonomous_record_657
 #  The atomic counter structure.
 
 alias rte_atomic64_init = fn (UnsafePointer[rte_atomic64_t]) -> NoneType
-alias rte_atomic64_read = fn (UnsafePointer[rte_atomic64_t]) -> ffi.c_long
-alias rte_atomic64_set = fn (UnsafePointer[rte_atomic64_t], ffi.c_long) -> NoneType
-alias rte_atomic64_add = fn (UnsafePointer[rte_atomic64_t], ffi.c_long) -> NoneType
-alias rte_atomic64_sub = fn (UnsafePointer[rte_atomic64_t], ffi.c_long) -> NoneType
+alias rte_atomic64_read = fn (UnsafePointer[rte_atomic64_t]) -> ffi.c_long_long
+alias rte_atomic64_set = fn (UnsafePointer[rte_atomic64_t], ffi.c_long_long) -> NoneType
+alias rte_atomic64_add = fn (UnsafePointer[rte_atomic64_t], ffi.c_long_long) -> NoneType
+alias rte_atomic64_sub = fn (UnsafePointer[rte_atomic64_t], ffi.c_long_long) -> NoneType
 alias rte_atomic64_inc = fn (UnsafePointer[rte_atomic64_t]) -> NoneType
 alias rte_atomic64_dec = fn (UnsafePointer[rte_atomic64_t]) -> NoneType
-alias rte_atomic64_add_return = fn (UnsafePointer[rte_atomic64_t], ffi.c_long) -> ffi.c_long
-alias rte_atomic64_sub_return = fn (UnsafePointer[rte_atomic64_t], ffi.c_long) -> ffi.c_long
-alias rte_atomic64_inc_and_test = fn (UnsafePointer[rte_atomic64_t]) -> Int32
-alias rte_atomic64_dec_and_test = fn (UnsafePointer[rte_atomic64_t]) -> Int32
-alias rte_atomic64_test_and_set = fn (UnsafePointer[rte_atomic64_t]) -> Int32
+alias rte_atomic64_add_return = fn (UnsafePointer[rte_atomic64_t], ffi.c_long_long) -> ffi.c_long_long
+alias rte_atomic64_sub_return = fn (UnsafePointer[rte_atomic64_t], ffi.c_long_long) -> ffi.c_long_long
+alias rte_atomic64_inc_and_test = fn (UnsafePointer[rte_atomic64_t]) -> ffi.c_int
+alias rte_atomic64_dec_and_test = fn (UnsafePointer[rte_atomic64_t]) -> ffi.c_int
+alias rte_atomic64_test_and_set = fn (UnsafePointer[rte_atomic64_t]) -> ffi.c_int
 alias rte_atomic64_clear = fn (UnsafePointer[rte_atomic64_t]) -> NoneType
 alias anonomous_record_658 = C_Union[InlineArray[ffi.c_ulong_long, 2], ffi.c_long_long]
 
@@ -860,32 +860,32 @@ alias rte_int128_t = anonomous_record_659
 # Node: TextComment()
 #  128-bit integer structure.
 
-alias rte_openlog_stream = fn (UnsafePointer[FILE]) -> Int32
+alias rte_openlog_stream = fn (UnsafePointer[FILE]) -> ffi.c_int
 alias rte_log_get_stream = fn () -> UnsafePointer[FILE]
-alias rte_log_set_global_level = fn (UInt32) -> NoneType
-alias rte_log_get_global_level = fn () -> UInt32
-alias rte_log_get_level = fn (UInt32) -> Int32
-alias rte_log_can_log = fn (UInt32, UInt32) -> Bool
-alias rte_log_set_level_pattern = fn (UnsafePointer[Int8], UInt32) -> Int32
-alias rte_log_set_level_regexp = fn (UnsafePointer[Int8], UInt32) -> Int32
-alias rte_log_set_level = fn (UInt32, UInt32) -> Int32
-alias rte_log_cur_msg_loglevel = fn () -> Int32
-alias rte_log_cur_msg_logtype = fn () -> Int32
-alias rte_log_register = fn (UnsafePointer[Int8]) -> Int32
-alias rte_log_register_type_and_pick_level = fn (UnsafePointer[Int8], UInt32) -> Int32
+alias rte_log_set_global_level = fn (ffi.c_int) -> NoneType
+alias rte_log_get_global_level = fn () -> ffi.c_int
+alias rte_log_get_level = fn (ffi.c_int) -> ffi.c_int
+alias rte_log_can_log = fn (ffi.c_int, ffi.c_int) -> Bool
+alias rte_log_set_level_pattern = fn (UnsafePointer[Int8], ffi.c_int) -> ffi.c_int
+alias rte_log_set_level_regexp = fn (UnsafePointer[Int8], ffi.c_int) -> ffi.c_int
+alias rte_log_set_level = fn (ffi.c_int, ffi.c_int) -> ffi.c_int
+alias rte_log_cur_msg_loglevel = fn () -> ffi.c_int
+alias rte_log_cur_msg_logtype = fn () -> ffi.c_int
+alias rte_log_register = fn (UnsafePointer[Int8]) -> ffi.c_int
+alias rte_log_register_type_and_pick_level = fn (UnsafePointer[Int8], ffi.c_int) -> ffi.c_int
 alias rte_log_list_types = fn (UnsafePointer[FILE], UnsafePointer[Int8]) -> NoneType
 alias rte_log_dump = fn (UnsafePointer[FILE]) -> NoneType
-alias rte_log = fn (UInt32, UInt32, UnsafePointer[Int8]) -> Int32
-alias rte_vlog = fn (UInt32, UInt32, UnsafePointer[Int8], va_list) -> Int32
+alias rte_log = fn (ffi.c_int, ffi.c_int, UnsafePointer[Int8]) -> ffi.c_int
+alias rte_vlog = fn (ffi.c_int, ffi.c_int, UnsafePointer[Int8], va_list) -> ffi.c_int
 alias rte_dump_stack = fn () -> NoneType
 alias __rte_panic = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> NoneType
-alias __atomic_thread_fence = fn (Int32) -> NoneType
-alias rte_atomic128_cmp_exchange = fn (UnsafePointer[ffi.c_long_long], UnsafePointer[ffi.c_long_long], UnsafePointer[ffi.c_long_long], UInt32, Int32, Int32) -> Int32
+alias __atomic_thread_fence = fn (ffi.c_int) -> NoneType
+alias rte_atomic128_cmp_exchange = fn (UnsafePointer[ffi.c_long_long], UnsafePointer[ffi.c_long_long], UnsafePointer[ffi.c_long_long], ffi.c_int, ffi.c_int, ffi.c_int) -> ffi.c_int
 alias __builtin_expect = fn (ffi.c_long, ffi.c_long) -> ffi.c_long
 alias rte_pause = fn () -> NoneType
 alias rte_wait_until_equal_16 = fn (UnsafePointer[Int16], UInt16, rte_memory_order) -> NoneType
-alias rte_wait_until_equal_32 = fn (UnsafePointer[Int32], UInt32, rte_memory_order) -> NoneType
-alias rte_wait_until_equal_64 = fn (UnsafePointer[ffi.c_long], ffi.c_ulong, rte_memory_order) -> NoneType
+alias rte_wait_until_equal_32 = fn (UnsafePointer[ffi.c_int], ffi.c_int, rte_memory_order) -> NoneType
+alias rte_wait_until_equal_64 = fn (UnsafePointer[ffi.c_long_long], ffi.c_ulong_long, rte_memory_order) -> NoneType
 alias __atomic_load_n = fn () -> NoneType
 struct anonomous_record_660(Copyable & Movable):
 
@@ -903,12 +903,12 @@ alias rte_spinlock_lock = fn (UnsafePointer[rte_spinlock_t]) -> NoneType
 alias __atomic_compare_exchange_n = fn () -> NoneType
 alias rte_spinlock_unlock = fn (UnsafePointer[rte_spinlock_t]) -> NoneType
 alias __atomic_store_n = fn () -> NoneType
-alias rte_spinlock_trylock = fn (UnsafePointer[rte_spinlock_t]) -> Int32
-alias rte_spinlock_is_locked = fn (UnsafePointer[rte_spinlock_t]) -> Int32
-alias rte_tm_supported = fn () -> Int32
+alias rte_spinlock_trylock = fn (UnsafePointer[rte_spinlock_t]) -> ffi.c_int
+alias rte_spinlock_is_locked = fn (UnsafePointer[rte_spinlock_t]) -> ffi.c_int
+alias rte_tm_supported = fn () -> ffi.c_int
 alias rte_spinlock_lock_tm = fn (UnsafePointer[rte_spinlock_t]) -> NoneType
 alias rte_spinlock_unlock_tm = fn (UnsafePointer[rte_spinlock_t]) -> NoneType
-alias rte_spinlock_trylock_tm = fn (UnsafePointer[rte_spinlock_t]) -> Int32
+alias rte_spinlock_trylock_tm = fn (UnsafePointer[rte_spinlock_t]) -> ffi.c_int
 struct anonomous_record_661(Copyable & Movable):
 
 	var sl : rte_spinlock_t
@@ -927,52 +927,52 @@ alias rte_spinlock_recursive_t = anonomous_record_661
 alias rte_spinlock_recursive_init = fn (UnsafePointer[rte_spinlock_recursive_t]) -> NoneType
 alias rte_spinlock_recursive_lock = fn (UnsafePointer[rte_spinlock_recursive_t]) -> NoneType
 alias rte_spinlock_recursive_unlock = fn (UnsafePointer[rte_spinlock_recursive_t]) -> NoneType
-alias rte_spinlock_recursive_trylock = fn (UnsafePointer[rte_spinlock_recursive_t]) -> Int32
+alias rte_spinlock_recursive_trylock = fn (UnsafePointer[rte_spinlock_recursive_t]) -> ffi.c_int
 alias rte_spinlock_recursive_lock_tm = fn (UnsafePointer[rte_spinlock_recursive_t]) -> NoneType
 alias rte_spinlock_recursive_unlock_tm = fn (UnsafePointer[rte_spinlock_recursive_t]) -> NoneType
-alias rte_spinlock_recursive_trylock_tm = fn (UnsafePointer[rte_spinlock_recursive_t]) -> Int32
-alias __errno_location = fn () -> UnsafePointer[Int32]
-alias rte_bit_relaxed_get32 = fn (UInt32, UnsafePointer[Int32]) -> UInt32
-alias rte_bit_relaxed_set32 = fn (UInt32, UnsafePointer[Int32]) -> NoneType
-alias rte_bit_relaxed_clear32 = fn (UInt32, UnsafePointer[Int32]) -> NoneType
-alias rte_bit_relaxed_test_and_set32 = fn (UInt32, UnsafePointer[Int32]) -> UInt32
-alias rte_bit_relaxed_test_and_clear32 = fn (UInt32, UnsafePointer[Int32]) -> UInt32
-alias rte_bit_relaxed_get64 = fn (UInt32, UnsafePointer[ffi.c_long]) -> ffi.c_ulong
-alias rte_bit_relaxed_set64 = fn (UInt32, UnsafePointer[ffi.c_long]) -> NoneType
-alias rte_bit_relaxed_clear64 = fn (UInt32, UnsafePointer[ffi.c_long]) -> NoneType
-alias rte_bit_relaxed_test_and_set64 = fn (UInt32, UnsafePointer[ffi.c_long]) -> ffi.c_ulong
-alias rte_bit_relaxed_test_and_clear64 = fn (UInt32, UnsafePointer[ffi.c_long]) -> ffi.c_ulong
-alias rte_clz32 = fn (UInt32) -> UInt32
-alias __builtin_clz = fn (UInt32) -> Int32
-alias rte_clz64 = fn (ffi.c_ulong) -> UInt32
-alias __builtin_clzll = fn (ffi.c_ulong_long) -> Int32
-alias rte_ctz32 = fn (UInt32) -> UInt32
-alias __builtin_ctz = fn (UInt32) -> Int32
-alias rte_ctz64 = fn (ffi.c_ulong) -> UInt32
-alias __builtin_ctzll = fn (ffi.c_ulong_long) -> Int32
-alias rte_popcount32 = fn (UInt32) -> UInt32
-alias __builtin_popcount = fn (UInt32) -> Int32
-alias rte_popcount64 = fn (ffi.c_ulong) -> UInt32
-alias __builtin_popcountll = fn (ffi.c_ulong_long) -> Int32
-alias rte_ffs32 = fn (UInt32) -> UInt32
-alias __builtin_ffs = fn (Int32) -> Int32
-alias rte_ffs64 = fn (ffi.c_ulong) -> UInt32
-alias __builtin_ffsll = fn (ffi.c_long_long) -> Int32
-alias rte_combine32ms1b = fn (UInt32) -> UInt32
-alias rte_combine64ms1b = fn (ffi.c_ulong) -> ffi.c_ulong
-alias rte_bsf32 = fn (UInt32) -> UInt32
-alias rte_bsf32_safe = fn (UInt32, UnsafePointer[UInt32]) -> Int32
-alias rte_bsf64 = fn (ffi.c_ulong) -> UInt32
-alias rte_bsf64_safe = fn (ffi.c_ulong, UnsafePointer[UInt32]) -> Int32
-alias rte_fls_u32 = fn (UInt32) -> UInt32
-alias rte_fls_u64 = fn (ffi.c_ulong) -> UInt32
-alias rte_is_power_of_2 = fn (UInt32) -> Int32
-alias rte_align32pow2 = fn (UInt32) -> UInt32
-alias rte_align32prevpow2 = fn (UInt32) -> UInt32
-alias rte_align64pow2 = fn (ffi.c_ulong) -> ffi.c_ulong
-alias rte_align64prevpow2 = fn (ffi.c_ulong) -> ffi.c_ulong
-alias rte_log2_u32 = fn (UInt32) -> UInt32
-alias rte_log2_u64 = fn (ffi.c_ulong) -> UInt32
+alias rte_spinlock_recursive_trylock_tm = fn (UnsafePointer[rte_spinlock_recursive_t]) -> ffi.c_int
+alias __errno_location = fn () -> UnsafePointer[ffi.c_int]
+alias rte_bit_relaxed_get32 = fn (ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_bit_relaxed_set32 = fn (ffi.c_int, UnsafePointer[ffi.c_int]) -> NoneType
+alias rte_bit_relaxed_clear32 = fn (ffi.c_int, UnsafePointer[ffi.c_int]) -> NoneType
+alias rte_bit_relaxed_test_and_set32 = fn (ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_bit_relaxed_test_and_clear32 = fn (ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_bit_relaxed_get64 = fn (ffi.c_int, UnsafePointer[ffi.c_long_long]) -> ffi.c_ulong_long
+alias rte_bit_relaxed_set64 = fn (ffi.c_int, UnsafePointer[ffi.c_long_long]) -> NoneType
+alias rte_bit_relaxed_clear64 = fn (ffi.c_int, UnsafePointer[ffi.c_long_long]) -> NoneType
+alias rte_bit_relaxed_test_and_set64 = fn (ffi.c_int, UnsafePointer[ffi.c_long_long]) -> ffi.c_ulong_long
+alias rte_bit_relaxed_test_and_clear64 = fn (ffi.c_int, UnsafePointer[ffi.c_long_long]) -> ffi.c_ulong_long
+alias rte_clz32 = fn (ffi.c_int) -> ffi.c_int
+alias __builtin_clz = fn (ffi.c_int) -> ffi.c_int
+alias rte_clz64 = fn (ffi.c_ulong_long) -> ffi.c_int
+alias __builtin_clzll = fn (ffi.c_ulong_long) -> ffi.c_int
+alias rte_ctz32 = fn (ffi.c_int) -> ffi.c_int
+alias __builtin_ctz = fn (ffi.c_int) -> ffi.c_int
+alias rte_ctz64 = fn (ffi.c_ulong_long) -> ffi.c_int
+alias __builtin_ctzll = fn (ffi.c_ulong_long) -> ffi.c_int
+alias rte_popcount32 = fn (ffi.c_int) -> ffi.c_int
+alias __builtin_popcount = fn (ffi.c_int) -> ffi.c_int
+alias rte_popcount64 = fn (ffi.c_ulong_long) -> ffi.c_int
+alias __builtin_popcountll = fn (ffi.c_ulong_long) -> ffi.c_int
+alias rte_ffs32 = fn (ffi.c_int) -> ffi.c_int
+alias __builtin_ffs = fn (ffi.c_int) -> ffi.c_int
+alias rte_ffs64 = fn (ffi.c_ulong_long) -> ffi.c_int
+alias __builtin_ffsll = fn (ffi.c_long_long) -> ffi.c_int
+alias rte_combine32ms1b = fn (ffi.c_int) -> ffi.c_int
+alias rte_combine64ms1b = fn (ffi.c_ulong_long) -> ffi.c_ulong_long
+alias rte_bsf32 = fn (ffi.c_int) -> ffi.c_int
+alias rte_bsf32_safe = fn (ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_bsf64 = fn (ffi.c_ulong_long) -> ffi.c_int
+alias rte_bsf64_safe = fn (ffi.c_ulong_long, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_fls_u32 = fn (ffi.c_int) -> ffi.c_int
+alias rte_fls_u64 = fn (ffi.c_ulong_long) -> ffi.c_int
+alias rte_is_power_of_2 = fn (ffi.c_int) -> ffi.c_int
+alias rte_align32pow2 = fn (ffi.c_int) -> ffi.c_int
+alias rte_align32prevpow2 = fn (ffi.c_int) -> ffi.c_int
+alias rte_align64pow2 = fn (ffi.c_ulong_long) -> ffi.c_ulong_long
+alias rte_align64prevpow2 = fn (ffi.c_ulong_long) -> ffi.c_ulong_long
+alias rte_log2_u32 = fn (ffi.c_int) -> ffi.c_int
+alias rte_log2_u64 = fn (ffi.c_ulong_long) -> ffi.c_int
 struct anonomous_record_662(Copyable & Movable):
 	var cnt : Int32
 
@@ -980,13 +980,13 @@ alias rte_rwlock_t = anonomous_record_662
 
 alias rte_rwlock_init = fn (UnsafePointer[rte_rwlock_t]) -> NoneType
 alias rte_rwlock_read_lock = fn (UnsafePointer[rte_rwlock_t]) -> NoneType
-alias rte_rwlock_read_trylock = fn (UnsafePointer[rte_rwlock_t]) -> Int32
+alias rte_rwlock_read_trylock = fn (UnsafePointer[rte_rwlock_t]) -> ffi.c_int
 alias rte_rwlock_read_unlock = fn (UnsafePointer[rte_rwlock_t]) -> NoneType
-alias rte_rwlock_write_trylock = fn (UnsafePointer[rte_rwlock_t]) -> Int32
+alias rte_rwlock_write_trylock = fn (UnsafePointer[rte_rwlock_t]) -> ffi.c_int
 alias rte_rwlock_write_lock = fn (UnsafePointer[rte_rwlock_t]) -> NoneType
 alias __atomic_fetch_or = fn () -> NoneType
 alias rte_rwlock_write_unlock = fn (UnsafePointer[rte_rwlock_t]) -> NoneType
-alias rte_rwlock_write_is_locked = fn (UnsafePointer[rte_rwlock_t]) -> Int32
+alias rte_rwlock_write_is_locked = fn (UnsafePointer[rte_rwlock_t]) -> ffi.c_int
 alias rte_rwlock_read_lock_tm = fn (UnsafePointer[rte_rwlock_t]) -> NoneType
 alias rte_rwlock_read_unlock_tm = fn (UnsafePointer[rte_rwlock_t]) -> NoneType
 alias rte_rwlock_write_lock_tm = fn (UnsafePointer[rte_rwlock_t]) -> NoneType
@@ -1024,31 +1024,31 @@ struct rte_fbarray(Copyable & Movable):
 
 	var rwlock : rte_rwlock_t
 
-alias rte_fbarray_init = fn (UnsafePointer[rte_fbarray], UnsafePointer[Int8], UInt32, UInt32) -> Int32
-alias rte_fbarray_attach = fn (UnsafePointer[rte_fbarray]) -> Int32
-alias rte_fbarray_destroy = fn (UnsafePointer[rte_fbarray]) -> Int32
-alias rte_fbarray_detach = fn (UnsafePointer[rte_fbarray]) -> Int32
-alias rte_fbarray_get = fn (UnsafePointer[rte_fbarray], UInt32) -> OpaquePointer
-alias rte_fbarray_find_idx = fn (UnsafePointer[rte_fbarray], OpaquePointer) -> Int32
-alias rte_fbarray_set_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_set_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_is_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_find_next_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_find_next_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_find_next_n_free = fn (UnsafePointer[rte_fbarray], UInt32, UInt32) -> Int32
-alias rte_fbarray_find_next_n_used = fn (UnsafePointer[rte_fbarray], UInt32, UInt32) -> Int32
-alias rte_fbarray_find_contig_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_find_contig_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_find_prev_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_find_prev_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_find_prev_n_free = fn (UnsafePointer[rte_fbarray], UInt32, UInt32) -> Int32
-alias rte_fbarray_find_prev_n_used = fn (UnsafePointer[rte_fbarray], UInt32, UInt32) -> Int32
-alias rte_fbarray_find_rev_contig_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_find_rev_contig_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_find_biggest_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_find_biggest_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_find_rev_biggest_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
-alias rte_fbarray_find_rev_biggest_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_init = fn (UnsafePointer[rte_fbarray], UnsafePointer[Int8], ffi.c_int, ffi.c_int) -> ffi.c_int
+alias rte_fbarray_attach = fn (UnsafePointer[rte_fbarray]) -> ffi.c_int
+alias rte_fbarray_destroy = fn (UnsafePointer[rte_fbarray]) -> ffi.c_int
+alias rte_fbarray_detach = fn (UnsafePointer[rte_fbarray]) -> ffi.c_int
+alias rte_fbarray_get = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> OpaquePointer
+alias rte_fbarray_find_idx = fn (UnsafePointer[rte_fbarray], OpaquePointer) -> ffi.c_int
+alias rte_fbarray_set_used = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_set_free = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_is_used = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_next_free = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_next_used = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_next_n_free = fn (UnsafePointer[rte_fbarray], ffi.c_int, ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_next_n_used = fn (UnsafePointer[rte_fbarray], ffi.c_int, ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_contig_free = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_contig_used = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_prev_free = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_prev_used = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_prev_n_free = fn (UnsafePointer[rte_fbarray], ffi.c_int, ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_prev_n_used = fn (UnsafePointer[rte_fbarray], ffi.c_int, ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_rev_contig_free = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_rev_contig_used = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_biggest_free = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_biggest_used = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_rev_biggest_free = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
+alias rte_fbarray_find_rev_biggest_used = fn (UnsafePointer[rte_fbarray], ffi.c_int) -> ffi.c_int
 alias rte_fbarray_dump_metadata = fn (UnsafePointer[rte_fbarray], UnsafePointer[FILE]) -> NoneType
 alias anonomous_record_663 = C_Union[OpaquePointer, ffi.c_ulong]
 
@@ -1095,7 +1095,7 @@ struct rte_memseg_list(Copyable & Movable):
 
 	var memseg_arr : rte_fbarray
 
-alias rte_mem_lock_page = fn (OpaquePointer) -> Int32
+alias rte_mem_lock_page = fn (OpaquePointer) -> ffi.c_int
 alias rte_mem_virt2phy = fn (OpaquePointer) -> phys_addr_t
 alias rte_mem_virt2iova = fn (OpaquePointer) -> rte_iova_t
 alias rte_mem_iova2virt = fn (rte_iova_t) -> OpaquePointer
@@ -1104,28 +1104,28 @@ alias rte_mem_virt2memseg_list = fn (OpaquePointer) -> UnsafePointer[rte_memseg_
 alias rte_memseg_walk_t = fn(read UnsafePointer[rte_memseg_list], read UnsafePointer[rte_memseg], OpaquePointer) -> Int32
 alias rte_memseg_contig_walk_t = fn(read UnsafePointer[rte_memseg_list], read UnsafePointer[rte_memseg], size_t, OpaquePointer) -> Int32
 alias rte_memseg_list_walk_t = fn(read UnsafePointer[rte_memseg_list], OpaquePointer) -> Int32
-alias rte_memseg_walk = fn (rte_memseg_walk_t, OpaquePointer) -> Int32
-alias rte_memseg_contig_walk = fn (rte_memseg_contig_walk_t, OpaquePointer) -> Int32
-alias rte_memseg_list_walk = fn (rte_memseg_list_walk_t, OpaquePointer) -> Int32
-alias rte_memseg_walk_thread_unsafe = fn (rte_memseg_walk_t, OpaquePointer) -> Int32
-alias rte_memseg_contig_walk_thread_unsafe = fn (rte_memseg_contig_walk_t, OpaquePointer) -> Int32
-alias rte_memseg_list_walk_thread_unsafe = fn (rte_memseg_list_walk_t, OpaquePointer) -> Int32
-alias rte_memseg_get_fd = fn (UnsafePointer[rte_memseg]) -> Int32
-alias rte_memseg_get_fd_thread_unsafe = fn (UnsafePointer[rte_memseg]) -> Int32
-alias rte_memseg_get_fd_offset = fn (UnsafePointer[rte_memseg], UnsafePointer[size_t]) -> Int32
-alias rte_memseg_get_fd_offset_thread_unsafe = fn (UnsafePointer[rte_memseg], UnsafePointer[size_t]) -> Int32
-alias rte_extmem_register = fn (OpaquePointer, size_t, UnsafePointer[rte_iova_t], UInt32, size_t) -> Int32
-alias rte_extmem_unregister = fn (OpaquePointer, size_t) -> Int32
-alias rte_extmem_attach = fn (OpaquePointer, size_t) -> Int32
-alias rte_extmem_detach = fn (OpaquePointer, size_t) -> Int32
+alias rte_memseg_walk = fn (rte_memseg_walk_t, OpaquePointer) -> ffi.c_int
+alias rte_memseg_contig_walk = fn (rte_memseg_contig_walk_t, OpaquePointer) -> ffi.c_int
+alias rte_memseg_list_walk = fn (rte_memseg_list_walk_t, OpaquePointer) -> ffi.c_int
+alias rte_memseg_walk_thread_unsafe = fn (rte_memseg_walk_t, OpaquePointer) -> ffi.c_int
+alias rte_memseg_contig_walk_thread_unsafe = fn (rte_memseg_contig_walk_t, OpaquePointer) -> ffi.c_int
+alias rte_memseg_list_walk_thread_unsafe = fn (rte_memseg_list_walk_t, OpaquePointer) -> ffi.c_int
+alias rte_memseg_get_fd = fn (UnsafePointer[rte_memseg]) -> ffi.c_int
+alias rte_memseg_get_fd_thread_unsafe = fn (UnsafePointer[rte_memseg]) -> ffi.c_int
+alias rte_memseg_get_fd_offset = fn (UnsafePointer[rte_memseg], UnsafePointer[size_t]) -> ffi.c_int
+alias rte_memseg_get_fd_offset_thread_unsafe = fn (UnsafePointer[rte_memseg], UnsafePointer[size_t]) -> ffi.c_int
+alias rte_extmem_register = fn (OpaquePointer, size_t, UnsafePointer[rte_iova_t], ffi.c_int, size_t) -> ffi.c_int
+alias rte_extmem_unregister = fn (OpaquePointer, size_t) -> ffi.c_int
+alias rte_extmem_attach = fn (OpaquePointer, size_t) -> ffi.c_int
+alias rte_extmem_detach = fn (OpaquePointer, size_t) -> ffi.c_int
 alias rte_dump_physmem_layout = fn (UnsafePointer[FILE]) -> NoneType
-alias rte_eal_get_physmem_size = fn () -> ffi.c_ulong
-alias rte_memory_get_nchannel = fn () -> UInt32
-alias rte_memory_get_nrank = fn () -> UInt32
-alias rte_mem_check_dma_mask = fn (UInt8) -> Int32
-alias rte_mem_check_dma_mask_thread_unsafe = fn (UInt8) -> Int32
+alias rte_eal_get_physmem_size = fn () -> ffi.c_ulong_long
+alias rte_memory_get_nchannel = fn () -> ffi.c_int
+alias rte_memory_get_nrank = fn () -> ffi.c_int
+alias rte_mem_check_dma_mask = fn (UInt8) -> ffi.c_int
+alias rte_mem_check_dma_mask_thread_unsafe = fn (UInt8) -> ffi.c_int
 alias rte_mem_set_dma_mask = fn (UInt8) -> NoneType
-alias rte_eal_using_phys_addrs = fn () -> Int32
+alias rte_eal_using_phys_addrs = fn () -> ffi.c_int
 struct rte_mem_event(Copyable & Movable):
 
 	alias RTE_MEM_EVENT_ALLOC = 0
@@ -1133,11 +1133,11 @@ struct rte_mem_event(Copyable & Movable):
 	alias RTE_MEM_EVENT_FREE = 1
 
 alias rte_mem_event_callback_t = fn(rte_mem_event, read OpaquePointer, size_t, OpaquePointer) -> NoneType
-alias rte_mem_event_callback_register = fn (UnsafePointer[Int8], rte_mem_event_callback_t, OpaquePointer) -> Int32
-alias rte_mem_event_callback_unregister = fn (UnsafePointer[Int8], OpaquePointer) -> Int32
+alias rte_mem_event_callback_register = fn (UnsafePointer[Int8], rte_mem_event_callback_t, OpaquePointer) -> ffi.c_int
+alias rte_mem_event_callback_unregister = fn (UnsafePointer[Int8], OpaquePointer) -> ffi.c_int
 alias rte_mem_alloc_validator_t = fn(Int32, size_t, size_t) -> Int32
-alias rte_mem_alloc_validator_register = fn (UnsafePointer[Int8], rte_mem_alloc_validator_t, Int32, size_t) -> Int32
-alias rte_mem_alloc_validator_unregister = fn (UnsafePointer[Int8], Int32) -> Int32
+alias rte_mem_alloc_validator_register = fn (UnsafePointer[Int8], rte_mem_alloc_validator_t, ffi.c_int, size_t) -> ffi.c_int
+alias rte_mem_alloc_validator_unregister = fn (UnsafePointer[Int8], ffi.c_int) -> ffi.c_int
 alias rte_memzero_explicit = fn (OpaquePointer, size_t) -> NoneType
 alias anonomous_record_665 = C_Union[OpaquePointer, ffi.c_ulong]
 
@@ -1160,12 +1160,12 @@ struct rte_memzone(Copyable & Movable):
 
 	var flags : UInt32
 
-alias rte_memzone_max_set = fn (size_t) -> Int32
+alias rte_memzone_max_set = fn (size_t) -> ffi.c_int
 alias rte_memzone_max_get = fn () -> size_t
-alias rte_memzone_reserve = fn (UnsafePointer[Int8], size_t, Int32, UInt32) -> UnsafePointer[rte_memzone]
-alias rte_memzone_reserve_aligned = fn (UnsafePointer[Int8], size_t, Int32, UInt32, UInt32) -> UnsafePointer[rte_memzone]
-alias rte_memzone_reserve_bounded = fn (UnsafePointer[Int8], size_t, Int32, UInt32, UInt32, UInt32) -> UnsafePointer[rte_memzone]
-alias rte_memzone_free = fn (UnsafePointer[rte_memzone]) -> Int32
+alias rte_memzone_reserve = fn (UnsafePointer[Int8], size_t, ffi.c_int, ffi.c_int) -> UnsafePointer[rte_memzone]
+alias rte_memzone_reserve_aligned = fn (UnsafePointer[Int8], size_t, ffi.c_int, ffi.c_int, ffi.c_int) -> UnsafePointer[rte_memzone]
+alias rte_memzone_reserve_bounded = fn (UnsafePointer[Int8], size_t, ffi.c_int, ffi.c_int, ffi.c_int, ffi.c_int) -> UnsafePointer[rte_memzone]
+alias rte_memzone_free = fn (UnsafePointer[rte_memzone]) -> ffi.c_int
 alias rte_memzone_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_memzone]
 alias rte_memzone_dump = fn (UnsafePointer[FILE]) -> NoneType
 alias rte_memzone_walk = fn (fn (UnsafePointer[rte_memzone], OpaquePointer) -> NoneType, OpaquePointer) -> NoneType
@@ -1261,94 +1261,94 @@ struct rte_ring(Copyable & Movable):
 
 	var cache_guard_2 : InlineArray[Int8, 128]
 
-alias __rte_ring_enqueue_elems_32 = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_enqueue_elems_64 = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_enqueue_elems_128 = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_do_enqueue_elems = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_enqueue_elems = fn (UnsafePointer[rte_ring], UInt32, OpaquePointer, UInt32, UInt32) -> NoneType
-alias __rte_ring_dequeue_elems_32 = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_dequeue_elems_64 = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_dequeue_elems_128 = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_do_dequeue_elems = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_dequeue_elems = fn (UnsafePointer[rte_ring], UInt32, OpaquePointer, UInt32, UInt32) -> NoneType
-alias __rte_ring_update_tail = fn (UnsafePointer[rte_ring_headtail], UInt32, UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_headtail_move_head = fn (UnsafePointer[rte_ring_headtail], UnsafePointer[rte_ring_headtail], UInt32, UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_move_prod_head = fn (UnsafePointer[rte_ring], UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_move_cons_head = fn (UnsafePointer[rte_ring], UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_get_memsize_elem = fn (UInt32, UInt32) -> ssize_t
-alias rte_ring_create_elem = fn (UnsafePointer[Int8], UInt32, UInt32, Int32, UInt32) -> UnsafePointer[rte_ring]
-alias rte_ring_mp_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sp_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_hts_update_tail = fn (UnsafePointer[rte_ring_hts_headtail], UInt32, UInt32, UInt32) -> NoneType
+alias __rte_ring_enqueue_elems_32 = fn (OpaquePointer, OpaquePointer, ffi.c_int, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_enqueue_elems_64 = fn (OpaquePointer, OpaquePointer, ffi.c_int, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_enqueue_elems_128 = fn (OpaquePointer, OpaquePointer, ffi.c_int, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_do_enqueue_elems = fn (OpaquePointer, OpaquePointer, ffi.c_int, ffi.c_int, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_enqueue_elems = fn (UnsafePointer[rte_ring], ffi.c_int, OpaquePointer, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_dequeue_elems_32 = fn (OpaquePointer, OpaquePointer, ffi.c_int, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_dequeue_elems_64 = fn (OpaquePointer, OpaquePointer, ffi.c_int, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_dequeue_elems_128 = fn (OpaquePointer, OpaquePointer, ffi.c_int, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_do_dequeue_elems = fn (OpaquePointer, OpaquePointer, ffi.c_int, ffi.c_int, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_dequeue_elems = fn (UnsafePointer[rte_ring], ffi.c_int, OpaquePointer, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_update_tail = fn (UnsafePointer[rte_ring_headtail], ffi.c_int, ffi.c_int, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_headtail_move_head = fn (UnsafePointer[rte_ring_headtail], UnsafePointer[rte_ring_headtail], ffi.c_int, ffi.c_int, ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int], UnsafePointer[ffi.c_int], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_move_prod_head = fn (UnsafePointer[rte_ring], ffi.c_int, ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int], UnsafePointer[ffi.c_int], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_move_cons_head = fn (UnsafePointer[rte_ring], ffi.c_int, ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int], UnsafePointer[ffi.c_int], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_do_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, rte_ring_queue_behavior, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_do_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, rte_ring_queue_behavior, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_get_memsize_elem = fn (ffi.c_int, ffi.c_int) -> ssize_t
+alias rte_ring_create_elem = fn (UnsafePointer[Int8], ffi.c_int, ffi.c_int, ffi.c_int, ffi.c_int) -> UnsafePointer[rte_ring]
+alias rte_ring_mp_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_sp_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_hts_update_tail = fn (UnsafePointer[rte_ring_hts_headtail], ffi.c_int, ffi.c_int, ffi.c_int) -> NoneType
 alias __rte_ring_hts_head_wait = fn (UnsafePointer[rte_ring_hts_headtail], UnsafePointer[__rte_ring_hts_pos]) -> NoneType
-alias __rte_ring_hts_move_head = fn (UnsafePointer[rte_ring_hts_headtail], UnsafePointer[rte_ring_headtail], UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_hts_move_prod_head = fn (UnsafePointer[rte_ring], UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_hts_move_cons_head = fn (UnsafePointer[rte_ring], UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_hts_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_hts_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_hts_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_hts_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_hts_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_hts_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_hts_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_hts_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_hts_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_hts_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_hts_move_head = fn (UnsafePointer[rte_ring_hts_headtail], UnsafePointer[rte_ring_headtail], ffi.c_int, ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_hts_move_prod_head = fn (UnsafePointer[rte_ring], ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_hts_move_cons_head = fn (UnsafePointer[rte_ring], ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_do_hts_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_do_hts_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mp_hts_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mc_hts_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mp_hts_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mc_hts_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mp_hts_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mc_hts_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mp_hts_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mc_hts_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
 alias __rte_ring_rts_update_tail = fn (UnsafePointer[rte_ring_rts_headtail]) -> NoneType
 alias __rte_ring_rts_head_wait = fn (UnsafePointer[rte_ring_rts_headtail], UnsafePointer[__rte_ring_rts_poscnt]) -> NoneType
-alias __rte_ring_rts_move_head = fn (UnsafePointer[rte_ring_rts_headtail], UnsafePointer[rte_ring_headtail], UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_rts_move_prod_head = fn (UnsafePointer[rte_ring], UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_rts_move_cons_head = fn (UnsafePointer[rte_ring], UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_rts_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_rts_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_rts_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_rts_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_rts_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_rts_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_rts_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_rts_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_rts_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_rts_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_get_prod_htd_max = fn (UnsafePointer[rte_ring]) -> UInt32
-alias rte_ring_set_prod_htd_max = fn (UnsafePointer[rte_ring], UInt32) -> Int32
-alias rte_ring_get_cons_htd_max = fn (UnsafePointer[rte_ring]) -> UInt32
-alias rte_ring_set_cons_htd_max = fn (UnsafePointer[rte_ring], UInt32) -> Int32
-alias rte_ring_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32) -> Int32
-alias rte_ring_sp_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32) -> Int32
-alias rte_ring_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32) -> Int32
-alias rte_ring_mc_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sc_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32) -> Int32
-alias rte_ring_sc_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32) -> Int32
-alias rte_ring_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32) -> Int32
-alias rte_ring_mp_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sp_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sc_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_st_get_tail = fn (UnsafePointer[rte_ring_headtail], UnsafePointer[UInt32], UInt32) -> UInt32
-alias __rte_ring_st_set_head_tail = fn (UnsafePointer[rte_ring_headtail], UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_hts_get_tail = fn (UnsafePointer[rte_ring_hts_headtail], UnsafePointer[UInt32], UInt32) -> UInt32
-alias __rte_ring_hts_set_head_tail = fn (UnsafePointer[rte_ring_hts_headtail], UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_do_enqueue_start = fn (UnsafePointer[rte_ring], UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_dequeue_start = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_bulk_elem_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_bulk_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_burst_elem_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_burst_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_elem_finish = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32) -> NoneType
-alias rte_ring_enqueue_finish = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32) -> NoneType
-alias rte_ring_dequeue_bulk_elem_start = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_bulk_start = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_burst_elem_start = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_burst_start = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_elem_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
-alias rte_ring_dequeue_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
+alias __rte_ring_rts_move_head = fn (UnsafePointer[rte_ring_rts_headtail], UnsafePointer[rte_ring_headtail], ffi.c_int, ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_rts_move_prod_head = fn (UnsafePointer[rte_ring], ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_rts_move_cons_head = fn (UnsafePointer[rte_ring], ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_do_rts_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_do_rts_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mp_rts_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mc_rts_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mp_rts_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mc_rts_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mp_rts_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mc_rts_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mp_rts_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mc_rts_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_get_prod_htd_max = fn (UnsafePointer[rte_ring]) -> ffi.c_int
+alias rte_ring_set_prod_htd_max = fn (UnsafePointer[rte_ring], ffi.c_int) -> ffi.c_int
+alias rte_ring_get_cons_htd_max = fn (UnsafePointer[rte_ring]) -> ffi.c_int
+alias rte_ring_set_cons_htd_max = fn (UnsafePointer[rte_ring], ffi.c_int) -> ffi.c_int
+alias rte_ring_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mp_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int) -> ffi.c_int
+alias rte_ring_sp_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int) -> ffi.c_int
+alias rte_ring_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int) -> ffi.c_int
+alias rte_ring_mc_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_sc_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mc_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int) -> ffi.c_int
+alias rte_ring_sc_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int) -> ffi.c_int
+alias rte_ring_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int) -> ffi.c_int
+alias rte_ring_mp_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_sp_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mc_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_sc_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_st_get_tail = fn (UnsafePointer[rte_ring_headtail], UnsafePointer[ffi.c_int], ffi.c_int) -> ffi.c_int
+alias __rte_ring_st_set_head_tail = fn (UnsafePointer[rte_ring_headtail], ffi.c_int, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_hts_get_tail = fn (UnsafePointer[rte_ring_hts_headtail], UnsafePointer[ffi.c_int], ffi.c_int) -> ffi.c_int
+alias __rte_ring_hts_set_head_tail = fn (UnsafePointer[rte_ring_hts_headtail], ffi.c_int, ffi.c_int, ffi.c_int) -> NoneType
+alias __rte_ring_do_enqueue_start = fn (UnsafePointer[rte_ring], ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias __rte_ring_do_dequeue_start = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, rte_ring_queue_behavior, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_bulk_elem_start = fn (UnsafePointer[rte_ring], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_bulk_start = fn (UnsafePointer[rte_ring], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_burst_elem_start = fn (UnsafePointer[rte_ring], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_burst_start = fn (UnsafePointer[rte_ring], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_elem_finish = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int) -> NoneType
+alias rte_ring_enqueue_finish = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], ffi.c_int) -> NoneType
+alias rte_ring_dequeue_bulk_elem_start = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_bulk_start = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_burst_elem_start = fn (UnsafePointer[rte_ring], OpaquePointer, ffi.c_int, ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_burst_start = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_elem_finish = fn (UnsafePointer[rte_ring], ffi.c_int) -> NoneType
+alias rte_ring_dequeue_finish = fn (UnsafePointer[rte_ring], ffi.c_int) -> NoneType
 struct rte_ring_zc_data(Copyable & Movable):
 # Alignment: 128 
 
@@ -1359,58 +1359,58 @@ struct rte_ring_zc_data(Copyable & Movable):
 
 	var n1 : UInt32
 
-alias __rte_ring_get_elem_addr = fn (UnsafePointer[rte_ring], UInt32, UInt32, UInt32, UnsafePointer[OpaquePointer], UnsafePointer[UInt32], UnsafePointer[OpaquePointer]) -> NoneType
-alias __rte_ring_do_enqueue_zc_elem_start = fn (UnsafePointer[rte_ring], UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_zc_bulk_elem_start = fn (UnsafePointer[rte_ring], UInt32, UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_zc_bulk_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_zc_burst_elem_start = fn (UnsafePointer[rte_ring], UInt32, UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_zc_burst_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_zc_elem_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
-alias rte_ring_enqueue_zc_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
-alias __rte_ring_do_dequeue_zc_elem_start = fn (UnsafePointer[rte_ring], UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_zc_bulk_elem_start = fn (UnsafePointer[rte_ring], UInt32, UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_zc_bulk_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_zc_burst_elem_start = fn (UnsafePointer[rte_ring], UInt32, UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_zc_burst_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_zc_elem_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
-alias rte_ring_dequeue_zc_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
-alias rte_ring_get_memsize = fn (UInt32) -> ssize_t
-alias rte_ring_init = fn (UnsafePointer[rte_ring], UnsafePointer[Int8], UInt32, UInt32) -> Int32
+alias __rte_ring_get_elem_addr = fn (UnsafePointer[rte_ring], ffi.c_int, ffi.c_int, ffi.c_int, UnsafePointer[OpaquePointer], UnsafePointer[ffi.c_int], UnsafePointer[OpaquePointer]) -> NoneType
+alias __rte_ring_do_enqueue_zc_elem_start = fn (UnsafePointer[rte_ring], ffi.c_int, ffi.c_int, rte_ring_queue_behavior, UnsafePointer[rte_ring_zc_data], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_zc_bulk_elem_start = fn (UnsafePointer[rte_ring], ffi.c_int, ffi.c_int, UnsafePointer[rte_ring_zc_data], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_zc_bulk_start = fn (UnsafePointer[rte_ring], ffi.c_int, UnsafePointer[rte_ring_zc_data], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_zc_burst_elem_start = fn (UnsafePointer[rte_ring], ffi.c_int, ffi.c_int, UnsafePointer[rte_ring_zc_data], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_zc_burst_start = fn (UnsafePointer[rte_ring], ffi.c_int, UnsafePointer[rte_ring_zc_data], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_zc_elem_finish = fn (UnsafePointer[rte_ring], ffi.c_int) -> NoneType
+alias rte_ring_enqueue_zc_finish = fn (UnsafePointer[rte_ring], ffi.c_int) -> NoneType
+alias __rte_ring_do_dequeue_zc_elem_start = fn (UnsafePointer[rte_ring], ffi.c_int, ffi.c_int, rte_ring_queue_behavior, UnsafePointer[rte_ring_zc_data], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_zc_bulk_elem_start = fn (UnsafePointer[rte_ring], ffi.c_int, ffi.c_int, UnsafePointer[rte_ring_zc_data], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_zc_bulk_start = fn (UnsafePointer[rte_ring], ffi.c_int, UnsafePointer[rte_ring_zc_data], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_zc_burst_elem_start = fn (UnsafePointer[rte_ring], ffi.c_int, ffi.c_int, UnsafePointer[rte_ring_zc_data], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_zc_burst_start = fn (UnsafePointer[rte_ring], ffi.c_int, UnsafePointer[rte_ring_zc_data], UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_zc_elem_finish = fn (UnsafePointer[rte_ring], ffi.c_int) -> NoneType
+alias rte_ring_dequeue_zc_finish = fn (UnsafePointer[rte_ring], ffi.c_int) -> NoneType
+alias rte_ring_get_memsize = fn (ffi.c_int) -> ssize_t
+alias rte_ring_init = fn (UnsafePointer[rte_ring], UnsafePointer[Int8], ffi.c_int, ffi.c_int) -> ffi.c_int
 alias rte_ring_free = fn (UnsafePointer[rte_ring]) -> NoneType
-alias rte_ring_create = fn (UnsafePointer[Int8], UInt32, Int32, UInt32) -> UnsafePointer[rte_ring]
+alias rte_ring_create = fn (UnsafePointer[Int8], ffi.c_int, ffi.c_int, ffi.c_int) -> UnsafePointer[rte_ring]
 alias rte_ring_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_ring]) -> NoneType
 alias rte_ring_headtail_dump = fn (UnsafePointer[FILE], UnsafePointer[Int8], UnsafePointer[rte_ring_headtail]) -> NoneType
-alias rte_ring_mp_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sp_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_enqueue = fn (UnsafePointer[rte_ring], OpaquePointer) -> Int32
-alias rte_ring_sp_enqueue = fn (UnsafePointer[rte_ring], OpaquePointer) -> Int32
-alias rte_ring_enqueue = fn (UnsafePointer[rte_ring], OpaquePointer) -> Int32
-alias rte_ring_mc_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sc_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_dequeue = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer]) -> Int32
-alias rte_ring_sc_dequeue = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer]) -> Int32
-alias rte_ring_dequeue = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer]) -> Int32
+alias rte_ring_mp_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_sp_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mp_enqueue = fn (UnsafePointer[rte_ring], OpaquePointer) -> ffi.c_int
+alias rte_ring_sp_enqueue = fn (UnsafePointer[rte_ring], OpaquePointer) -> ffi.c_int
+alias rte_ring_enqueue = fn (UnsafePointer[rte_ring], OpaquePointer) -> ffi.c_int
+alias rte_ring_mc_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_sc_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mc_dequeue = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer]) -> ffi.c_int
+alias rte_ring_sc_dequeue = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer]) -> ffi.c_int
+alias rte_ring_dequeue = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer]) -> ffi.c_int
 alias rte_ring_reset = fn (UnsafePointer[rte_ring]) -> NoneType
-alias rte_ring_count = fn (UnsafePointer[rte_ring]) -> UInt32
-alias rte_ring_free_count = fn (UnsafePointer[rte_ring]) -> UInt32
-alias rte_ring_full = fn (UnsafePointer[rte_ring]) -> Int32
-alias rte_ring_empty = fn (UnsafePointer[rte_ring]) -> Int32
-alias rte_ring_get_size = fn (UnsafePointer[rte_ring]) -> UInt32
-alias rte_ring_get_capacity = fn (UnsafePointer[rte_ring]) -> UInt32
+alias rte_ring_count = fn (UnsafePointer[rte_ring]) -> ffi.c_int
+alias rte_ring_free_count = fn (UnsafePointer[rte_ring]) -> ffi.c_int
+alias rte_ring_full = fn (UnsafePointer[rte_ring]) -> ffi.c_int
+alias rte_ring_empty = fn (UnsafePointer[rte_ring]) -> ffi.c_int
+alias rte_ring_get_size = fn (UnsafePointer[rte_ring]) -> ffi.c_int
+alias rte_ring_get_capacity = fn (UnsafePointer[rte_ring]) -> ffi.c_int
 alias rte_ring_get_prod_sync_type = fn (UnsafePointer[rte_ring]) -> rte_ring_sync_type
-alias rte_ring_is_prod_single = fn (UnsafePointer[rte_ring]) -> Int32
+alias rte_ring_is_prod_single = fn (UnsafePointer[rte_ring]) -> ffi.c_int
 alias rte_ring_get_cons_sync_type = fn (UnsafePointer[rte_ring]) -> rte_ring_sync_type
-alias rte_ring_is_cons_single = fn (UnsafePointer[rte_ring]) -> Int32
+alias rte_ring_is_cons_single = fn (UnsafePointer[rte_ring]) -> ffi.c_int
 alias rte_ring_list_dump = fn (UnsafePointer[FILE]) -> NoneType
 alias rte_ring_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_ring]
-alias rte_ring_mp_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sp_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sc_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mp_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_sp_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_mc_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_sc_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
+alias rte_ring_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[ffi.c_int]) -> ffi.c_int
 alias rte_mov16 = fn (UnsafePointer[UInt8], UnsafePointer[UInt8]) -> NoneType
 alias rte_mov32 = fn (UnsafePointer[UInt8], UnsafePointer[UInt8]) -> NoneType
 alias rte_mov64 = fn (UnsafePointer[UInt8], UnsafePointer[UInt8]) -> NoneType
@@ -1423,20 +1423,20 @@ struct timer_source(Copyable & Movable):
 	alias EAL_TIMER_HPET = 1
 
 alias eal_timer_source = timer_source
-alias rte_get_tsc_hz = fn () -> ffi.c_ulong
-alias rte_get_tsc_cycles = fn () -> ffi.c_ulong
-alias rte_get_timer_cycles = fn () -> ffi.c_ulong
-alias rte_get_timer_hz = fn () -> ffi.c_ulong
+alias rte_get_tsc_hz = fn () -> ffi.c_ulong_long
+alias rte_get_tsc_cycles = fn () -> ffi.c_ulong_long
+alias rte_get_timer_cycles = fn () -> ffi.c_ulong_long
+alias rte_get_timer_hz = fn () -> ffi.c_ulong_long
 alias rte_delay_us = fn(UInt32) -> NoneType
-alias rte_delay_ms = fn (UInt32) -> NoneType
-alias rte_delay_us_block = fn (UInt32) -> NoneType
-alias rte_delay_us_sleep = fn (UInt32) -> NoneType
-alias rte_delay_us_callback_register = fn (fn (UInt32) -> NoneType) -> NoneType
-alias __rte_arm64_cntfrq = fn () -> ffi.c_ulong
-alias __rte_arm64_cntvct = fn () -> ffi.c_ulong
-alias __rte_arm64_cntvct_precise = fn () -> ffi.c_ulong
-alias rte_rdtsc = fn () -> ffi.c_ulong
-alias rte_rdtsc_precise = fn () -> ffi.c_ulong
+alias rte_delay_ms = fn (ffi.c_int) -> NoneType
+alias rte_delay_us_block = fn (ffi.c_int) -> NoneType
+alias rte_delay_us_sleep = fn (ffi.c_int) -> NoneType
+alias rte_delay_us_callback_register = fn (fn (ffi.c_int) -> NoneType) -> NoneType
+alias __rte_arm64_cntfrq = fn () -> ffi.c_ulong_long
+alias __rte_arm64_cntvct = fn () -> ffi.c_ulong_long
+alias __rte_arm64_cntvct_precise = fn () -> ffi.c_ulong_long
+alias rte_rdtsc = fn () -> ffi.c_ulong_long
+alias rte_rdtsc_precise = fn () -> ffi.c_ulong_long
 alias _ISupper = 256
 
 alias _ISlower = 512
@@ -1462,43 +1462,43 @@ alias _ISpunct = 4
 alias _ISalnum = 8
 
 alias __ctype_b_loc = fn () -> UnsafePointer[UnsafePointer[UInt16]]
-alias __ctype_tolower_loc = fn () -> UnsafePointer[UnsafePointer[Int32]]
-alias __ctype_toupper_loc = fn () -> UnsafePointer[UnsafePointer[Int32]]
-alias isalnum = fn (Int32) -> Int32
-alias isalpha = fn (Int32) -> Int32
-alias iscntrl = fn (Int32) -> Int32
-alias isdigit = fn (Int32) -> Int32
-alias islower = fn (Int32) -> Int32
-alias isgraph = fn (Int32) -> Int32
-alias isprint = fn (Int32) -> Int32
-alias ispunct = fn (Int32) -> Int32
-alias isspace = fn (Int32) -> Int32
-alias isupper = fn (Int32) -> Int32
-alias isxdigit = fn (Int32) -> Int32
-alias tolower = fn (Int32) -> Int32
-alias toupper = fn (Int32) -> Int32
-alias isblank = fn (Int32) -> Int32
-alias isascii = fn (Int32) -> Int32
-alias toascii = fn (Int32) -> Int32
-alias _toupper = fn (Int32) -> Int32
-alias _tolower = fn (Int32) -> Int32
-alias isalnum_l = fn (Int32, locale_t) -> Int32
-alias isalpha_l = fn (Int32, locale_t) -> Int32
-alias iscntrl_l = fn (Int32, locale_t) -> Int32
-alias isdigit_l = fn (Int32, locale_t) -> Int32
-alias islower_l = fn (Int32, locale_t) -> Int32
-alias isgraph_l = fn (Int32, locale_t) -> Int32
-alias isprint_l = fn (Int32, locale_t) -> Int32
-alias ispunct_l = fn (Int32, locale_t) -> Int32
-alias isspace_l = fn (Int32, locale_t) -> Int32
-alias isupper_l = fn (Int32, locale_t) -> Int32
-alias isxdigit_l = fn (Int32, locale_t) -> Int32
-alias isblank_l = fn (Int32, locale_t) -> Int32
-alias __tolower_l = fn (Int32, locale_t) -> Int32
-alias tolower_l = fn (Int32, locale_t) -> Int32
-alias __toupper_l = fn (Int32, locale_t) -> Int32
-alias toupper_l = fn (Int32, locale_t) -> Int32
-alias rte_strsplit = fn (UnsafePointer[Int8], Int32, UnsafePointer[UnsafePointer[Int8]], Int32, Int8) -> Int32
+alias __ctype_tolower_loc = fn () -> UnsafePointer[UnsafePointer[ffi.c_int]]
+alias __ctype_toupper_loc = fn () -> UnsafePointer[UnsafePointer[ffi.c_int]]
+alias isalnum = fn (ffi.c_int) -> ffi.c_int
+alias isalpha = fn (ffi.c_int) -> ffi.c_int
+alias iscntrl = fn (ffi.c_int) -> ffi.c_int
+alias isdigit = fn (ffi.c_int) -> ffi.c_int
+alias islower = fn (ffi.c_int) -> ffi.c_int
+alias isgraph = fn (ffi.c_int) -> ffi.c_int
+alias isprint = fn (ffi.c_int) -> ffi.c_int
+alias ispunct = fn (ffi.c_int) -> ffi.c_int
+alias isspace = fn (ffi.c_int) -> ffi.c_int
+alias isupper = fn (ffi.c_int) -> ffi.c_int
+alias isxdigit = fn (ffi.c_int) -> ffi.c_int
+alias tolower = fn (ffi.c_int) -> ffi.c_int
+alias toupper = fn (ffi.c_int) -> ffi.c_int
+alias isblank = fn (ffi.c_int) -> ffi.c_int
+alias isascii = fn (ffi.c_int) -> ffi.c_int
+alias toascii = fn (ffi.c_int) -> ffi.c_int
+alias _toupper = fn (ffi.c_int) -> ffi.c_int
+alias _tolower = fn (ffi.c_int) -> ffi.c_int
+alias isalnum_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias isalpha_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias iscntrl_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias isdigit_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias islower_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias isgraph_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias isprint_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias ispunct_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias isspace_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias isupper_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias isxdigit_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias isblank_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias __tolower_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias tolower_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias __toupper_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias toupper_l = fn (ffi.c_int, locale_t) -> ffi.c_int
+alias rte_strsplit = fn (UnsafePointer[Int8], ffi.c_int, UnsafePointer[UnsafePointer[Int8]], ffi.c_int, Int8) -> ffi.c_int
 alias rte_strlcpy = fn (UnsafePointer[Int8], UnsafePointer[Int8], size_t) -> size_t
 alias rte_strlcat = fn (UnsafePointer[Int8], UnsafePointer[Int8], size_t) -> size_t
 alias rte_strscpy = fn (UnsafePointer[Int8], UnsafePointer[Int8], size_t) -> ssize_t
@@ -1513,10 +1513,10 @@ struct rte_trace_mode(Copyable & Movable):
 
 alias rte_trace_mode_set = fn (rte_trace_mode) -> NoneType
 alias rte_trace_mode_get = fn () -> rte_trace_mode
-alias rte_trace_pattern = fn (UnsafePointer[Int8], Bool) -> Int32
-alias rte_trace_regexp = fn (UnsafePointer[Int8], Bool) -> Int32
-alias rte_trace_save = fn () -> Int32
-alias rte_trace_metadata_dump = fn (UnsafePointer[FILE]) -> Int32
+alias rte_trace_pattern = fn (UnsafePointer[Int8], Bool) -> ffi.c_int
+alias rte_trace_regexp = fn (UnsafePointer[Int8], Bool) -> ffi.c_int
+alias rte_trace_save = fn () -> ffi.c_int
+alias rte_trace_metadata_dump = fn (UnsafePointer[FILE]) -> ffi.c_int
 alias rte_trace_dump = fn (UnsafePointer[FILE]) -> NoneType
 alias rte_trace_point_t = uint64_t
 # Node: FullComment()
@@ -1524,32 +1524,32 @@ alias rte_trace_point_t = uint64_t
 # Node: TextComment()
 #  The tracepoint object. 
 
-alias rte_trace_point_enable = fn (UnsafePointer[rte_trace_point_t]) -> Int32
-alias rte_trace_point_disable = fn (UnsafePointer[rte_trace_point_t]) -> Int32
+alias rte_trace_point_enable = fn (UnsafePointer[rte_trace_point_t]) -> ffi.c_int
+alias rte_trace_point_disable = fn (UnsafePointer[rte_trace_point_t]) -> ffi.c_int
 alias rte_trace_point_is_enabled = fn (UnsafePointer[rte_trace_point_t]) -> Bool
 alias rte_trace_point_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_trace_point_t]
 alias __rte_trace_point_fp_is_enabled = fn () -> Bool
 alias __rte_trace_mem_per_thread_alloc = fn () -> NoneType
 alias __rte_trace_point_emit_field = fn (size_t, UnsafePointer[Int8], UnsafePointer[Int8]) -> NoneType
-alias __rte_trace_point_register = fn (UnsafePointer[rte_trace_point_t], UnsafePointer[Int8], fn (NoneType) -> NoneType) -> Int32
+alias __rte_trace_point_register = fn (UnsafePointer[rte_trace_point_t], UnsafePointer[Int8], fn (NoneType) -> NoneType) -> ffi.c_int
 alias __rte_mempool_trace_ops_dequeue_bulk = rte_trace_point_t
-alias rte_mempool_trace_ops_dequeue_bulk = fn (OpaquePointer, UnsafePointer[OpaquePointer], UInt32) -> NoneType
+alias rte_mempool_trace_ops_dequeue_bulk = fn (OpaquePointer, UnsafePointer[OpaquePointer], ffi.c_int) -> NoneType
 alias __rte_mempool_trace_ops_dequeue_contig_blocks = rte_trace_point_t
-alias rte_mempool_trace_ops_dequeue_contig_blocks = fn (OpaquePointer, UnsafePointer[OpaquePointer], UInt32) -> NoneType
+alias rte_mempool_trace_ops_dequeue_contig_blocks = fn (OpaquePointer, UnsafePointer[OpaquePointer], ffi.c_int) -> NoneType
 alias __rte_mempool_trace_ops_enqueue_bulk = rte_trace_point_t
-alias rte_mempool_trace_ops_enqueue_bulk = fn (OpaquePointer, UnsafePointer[OpaquePointer, mut=False], UInt32) -> NoneType
+alias rte_mempool_trace_ops_enqueue_bulk = fn (OpaquePointer, UnsafePointer[OpaquePointer, mut=False], ffi.c_int) -> NoneType
 alias __rte_mempool_trace_generic_put = rte_trace_point_t
-alias rte_mempool_trace_generic_put = fn (OpaquePointer, UnsafePointer[OpaquePointer, mut=False], UInt32, OpaquePointer) -> NoneType
+alias rte_mempool_trace_generic_put = fn (OpaquePointer, UnsafePointer[OpaquePointer, mut=False], ffi.c_int, OpaquePointer) -> NoneType
 alias __rte_mempool_trace_put_bulk = rte_trace_point_t
-alias rte_mempool_trace_put_bulk = fn (OpaquePointer, UnsafePointer[OpaquePointer, mut=False], UInt32, OpaquePointer) -> NoneType
+alias rte_mempool_trace_put_bulk = fn (OpaquePointer, UnsafePointer[OpaquePointer, mut=False], ffi.c_int, OpaquePointer) -> NoneType
 alias __rte_mempool_trace_generic_get = rte_trace_point_t
-alias rte_mempool_trace_generic_get = fn (OpaquePointer, UnsafePointer[OpaquePointer, mut=False], UInt32, OpaquePointer) -> NoneType
+alias rte_mempool_trace_generic_get = fn (OpaquePointer, UnsafePointer[OpaquePointer, mut=False], ffi.c_int, OpaquePointer) -> NoneType
 alias __rte_mempool_trace_get_bulk = rte_trace_point_t
-alias rte_mempool_trace_get_bulk = fn (OpaquePointer, UnsafePointer[OpaquePointer], UInt32, OpaquePointer) -> NoneType
+alias rte_mempool_trace_get_bulk = fn (OpaquePointer, UnsafePointer[OpaquePointer], ffi.c_int, OpaquePointer) -> NoneType
 alias __rte_mempool_trace_get_contig_blocks = rte_trace_point_t
-alias rte_mempool_trace_get_contig_blocks = fn (OpaquePointer, UnsafePointer[OpaquePointer], UInt32) -> NoneType
+alias rte_mempool_trace_get_contig_blocks = fn (OpaquePointer, UnsafePointer[OpaquePointer], ffi.c_int) -> NoneType
 alias __rte_mempool_trace_default_cache = rte_trace_point_t
-alias rte_mempool_trace_default_cache = fn (OpaquePointer, UInt32, OpaquePointer) -> NoneType
+alias rte_mempool_trace_default_cache = fn (OpaquePointer, ffi.c_int, OpaquePointer) -> NoneType
 alias __rte_mempool_trace_cache_flush = rte_trace_point_t
 alias rte_mempool_trace_cache_flush = fn (OpaquePointer, OpaquePointer) -> NoneType
 struct rte_mempool_cache(Copyable & Movable):
@@ -1625,8 +1625,8 @@ alias rte_mempool_from_obj = fn (OpaquePointer) -> UnsafePointer[rte_mempool]
 struct rte_mempool_objtlr(Copyable & Movable):
 	pass
 alias rte_mempool_get_trailer = fn (OpaquePointer) -> UnsafePointer[rte_mempool_objtlr]
-alias rte_mempool_check_cookies = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], UInt32, Int32) -> NoneType
-alias rte_mempool_contig_blocks_check_cookies = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], UInt32, Int32) -> NoneType
+alias rte_mempool_check_cookies = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, ffi.c_int) -> NoneType
+alias rte_mempool_contig_blocks_check_cookies = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, ffi.c_int) -> NoneType
 alias rte_mempool_alloc_t = fn(UnsafePointer[rte_mempool]) -> Int32
 alias rte_mempool_free_t = fn(UnsafePointer[rte_mempool]) -> NoneType
 alias rte_mempool_enqueue_t = fn(UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
@@ -1634,8 +1634,8 @@ alias rte_mempool_dequeue_t = fn(UnsafePointer[rte_mempool], UnsafePointer[Opaqu
 alias rte_mempool_dequeue_contig_blocks_t = fn(UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
 alias rte_mempool_get_count = fn(read UnsafePointer[rte_mempool]) -> UInt32
 alias rte_mempool_calc_mem_size_t = fn(read UnsafePointer[rte_mempool], ffi.c_ulong, ffi.c_ulong, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
-alias rte_mempool_op_calc_mem_size_helper = fn (UnsafePointer[rte_mempool], UInt32, UInt32, size_t, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
-alias rte_mempool_op_calc_mem_size_default = fn (UnsafePointer[rte_mempool], UInt32, UInt32, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
+alias rte_mempool_op_calc_mem_size_helper = fn (UnsafePointer[rte_mempool], ffi.c_int, ffi.c_int, size_t, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
+alias rte_mempool_op_calc_mem_size_default = fn (UnsafePointer[rte_mempool], ffi.c_int, ffi.c_int, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
 alias rte_mempool_populate_obj_cb_t = UnsafePointer[fn (UnsafePointer[rte_mempool
 ], OpaquePointer, OpaquePointer, rte_iova_t) -> NoneType]
 # Node: FullComment()
@@ -1665,8 +1665,8 @@ alias rte_mempool_populate_obj_cb_t = UnsafePointer[fn (UnsafePointer[rte_mempoo
 	#    Input/output virtual address of the object or RTE_BAD_IOVA.
 
 alias rte_mempool_populate_t = fn(UnsafePointer[rte_mempool], UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
-alias rte_mempool_op_populate_helper = fn (UnsafePointer[rte_mempool], UInt32, UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
-alias rte_mempool_op_populate_default = fn (UnsafePointer[rte_mempool], UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
+alias rte_mempool_op_populate_helper = fn (UnsafePointer[rte_mempool], ffi.c_int, ffi.c_int, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> ffi.c_int
+alias rte_mempool_op_populate_default = fn (UnsafePointer[rte_mempool], ffi.c_int, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> ffi.c_int
 alias rte_mempool_get_info_t = fn(read UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_info]) -> Int32
 struct rte_mempool_ops(Copyable & Movable):
 # Alignment: 128 
@@ -1702,20 +1702,20 @@ struct rte_mempool_ops_table(Copyable & Movable):
 
 	var ops : InlineArray[rte_mempool_ops, 16]
 
-alias rte_mempool_get_ops = fn (Int32) -> UnsafePointer[rte_mempool_ops]
-alias rte_mempool_ops_alloc = fn (UnsafePointer[rte_mempool]) -> Int32
-alias rte_mempool_ops_dequeue_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
-alias rte_mempool_ops_dequeue_contig_blocks = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
-alias rte_mempool_ops_enqueue_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], UInt32) -> Int32
-alias rte_mempool_ops_get_count = fn (UnsafePointer[rte_mempool]) -> UInt32
-alias rte_mempool_ops_calc_mem_size = fn (UnsafePointer[rte_mempool], UInt32, UInt32, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
-alias rte_mempool_ops_populate = fn (UnsafePointer[rte_mempool], UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
-alias rte_mempool_ops_get_info = fn (UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_info]) -> Int32
+alias rte_mempool_get_ops = fn (ffi.c_int) -> UnsafePointer[rte_mempool_ops]
+alias rte_mempool_ops_alloc = fn (UnsafePointer[rte_mempool]) -> ffi.c_int
+alias rte_mempool_ops_dequeue_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], ffi.c_int) -> ffi.c_int
+alias rte_mempool_ops_dequeue_contig_blocks = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], ffi.c_int) -> ffi.c_int
+alias rte_mempool_ops_enqueue_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], ffi.c_int) -> ffi.c_int
+alias rte_mempool_ops_get_count = fn (UnsafePointer[rte_mempool]) -> ffi.c_int
+alias rte_mempool_ops_calc_mem_size = fn (UnsafePointer[rte_mempool], ffi.c_int, ffi.c_int, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
+alias rte_mempool_ops_populate = fn (UnsafePointer[rte_mempool], ffi.c_int, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> ffi.c_int
+alias rte_mempool_ops_get_info = fn (UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_info]) -> ffi.c_int
 alias rte_mempool_ops_free = fn (UnsafePointer[rte_mempool]) -> NoneType
-alias rte_mempool_set_ops_byname = fn (UnsafePointer[rte_mempool], UnsafePointer[Int8], OpaquePointer) -> Int32
-alias rte_mempool_register_ops = fn (UnsafePointer[rte_mempool_ops]) -> Int32
+alias rte_mempool_set_ops_byname = fn (UnsafePointer[rte_mempool], UnsafePointer[Int8], OpaquePointer) -> ffi.c_int
+alias rte_mempool_register_ops = fn (UnsafePointer[rte_mempool_ops]) -> ffi.c_int
 alias rte_mempool_obj_cb_t = UnsafePointer[fn (UnsafePointer[rte_mempool
-], OpaquePointer, OpaquePointer, UInt32) -> NoneType]
+], OpaquePointer, OpaquePointer, ffi.c_int) -> NoneType]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
@@ -1727,7 +1727,7 @@ alias rte_mempool_obj_cb_t = UnsafePointer[fn (UnsafePointer[rte_mempool
 alias rte_mempool_obj_ctor_t = rte_mempool_obj_cb_t
 alias rte_mempool_mem_cb_t = UnsafePointer[fn (UnsafePointer[rte_mempool
 ], OpaquePointer, UnsafePointer[rte_mempool_memhdr
-], UInt32) -> NoneType]
+], ffi.c_int) -> NoneType]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
@@ -1749,40 +1749,40 @@ alias rte_mempool_ctor_t = UnsafePointer[fn (UnsafePointer[rte_mempool
 #  rte_mempool_create().
 
 alias rte_mempool_free = fn (UnsafePointer[rte_mempool]) -> NoneType
-alias rte_mempool_create = fn (UnsafePointer[Int8], UInt32, UInt32, UInt32, UInt32, UnsafePointer[rte_mempool_ctor_t], OpaquePointer, UnsafePointer[rte_mempool_obj_cb_t], OpaquePointer, Int32, UInt32) -> UnsafePointer[rte_mempool]
-alias rte_mempool_create_empty = fn (UnsafePointer[Int8], UInt32, UInt32, UInt32, UInt32, Int32, UInt32) -> UnsafePointer[rte_mempool]
-alias rte_mempool_populate_iova = fn (UnsafePointer[rte_mempool], UnsafePointer[Int8], rte_iova_t, size_t, UnsafePointer[rte_mempool_memchunk_free_cb_t], OpaquePointer) -> Int32
-alias rte_mempool_populate_virt = fn (UnsafePointer[rte_mempool], UnsafePointer[Int8], size_t, size_t, UnsafePointer[rte_mempool_memchunk_free_cb_t], OpaquePointer) -> Int32
-alias rte_mempool_populate_default = fn (UnsafePointer[rte_mempool]) -> Int32
-alias rte_mempool_populate_anon = fn (UnsafePointer[rte_mempool]) -> Int32
-alias rte_mempool_obj_iter = fn (UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_obj_cb_t], OpaquePointer) -> UInt32
-alias rte_mempool_mem_iter = fn (UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_mem_cb_t], OpaquePointer) -> UInt32
+alias rte_mempool_create = fn (UnsafePointer[Int8], ffi.c_int, ffi.c_int, ffi.c_int, ffi.c_int, UnsafePointer[rte_mempool_ctor_t], OpaquePointer, UnsafePointer[rte_mempool_obj_cb_t], OpaquePointer, ffi.c_int, ffi.c_int) -> UnsafePointer[rte_mempool]
+alias rte_mempool_create_empty = fn (UnsafePointer[Int8], ffi.c_int, ffi.c_int, ffi.c_int, ffi.c_int, ffi.c_int, ffi.c_int) -> UnsafePointer[rte_mempool]
+alias rte_mempool_populate_iova = fn (UnsafePointer[rte_mempool], UnsafePointer[Int8], rte_iova_t, size_t, UnsafePointer[rte_mempool_memchunk_free_cb_t], OpaquePointer) -> ffi.c_int
+alias rte_mempool_populate_virt = fn (UnsafePointer[rte_mempool], UnsafePointer[Int8], size_t, size_t, UnsafePointer[rte_mempool_memchunk_free_cb_t], OpaquePointer) -> ffi.c_int
+alias rte_mempool_populate_default = fn (UnsafePointer[rte_mempool]) -> ffi.c_int
+alias rte_mempool_populate_anon = fn (UnsafePointer[rte_mempool]) -> ffi.c_int
+alias rte_mempool_obj_iter = fn (UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_obj_cb_t], OpaquePointer) -> ffi.c_int
+alias rte_mempool_mem_iter = fn (UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_mem_cb_t], OpaquePointer) -> ffi.c_int
 alias rte_mempool_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_mempool]) -> NoneType
-alias rte_mempool_cache_create = fn (UInt32, Int32) -> UnsafePointer[rte_mempool_cache]
+alias rte_mempool_cache_create = fn (ffi.c_int, ffi.c_int) -> UnsafePointer[rte_mempool_cache]
 alias rte_mempool_cache_free = fn (UnsafePointer[rte_mempool_cache]) -> NoneType
-alias rte_mempool_default_cache = fn (UnsafePointer[rte_mempool], UInt32) -> UnsafePointer[rte_mempool_cache]
+alias rte_mempool_default_cache = fn (UnsafePointer[rte_mempool], ffi.c_int) -> UnsafePointer[rte_mempool_cache]
 alias rte_mempool_cache_flush = fn (UnsafePointer[rte_mempool_cache], UnsafePointer[rte_mempool]) -> NoneType
-alias rte_mempool_do_generic_put = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[rte_mempool_cache]) -> NoneType
+alias rte_mempool_do_generic_put = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, UnsafePointer[rte_mempool_cache]) -> NoneType
 alias __builtin_assume = fn (Bool) -> NoneType
-alias rte_mempool_generic_put = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[rte_mempool_cache]) -> NoneType
-alias rte_mempool_put_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], UInt32) -> NoneType
+alias rte_mempool_generic_put = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], ffi.c_int, UnsafePointer[rte_mempool_cache]) -> NoneType
+alias rte_mempool_put_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], ffi.c_int) -> NoneType
 alias rte_mempool_put = fn (UnsafePointer[rte_mempool], OpaquePointer) -> NoneType
-alias rte_mempool_do_generic_get = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[rte_mempool_cache]) -> Int32
-alias __builtin_constant_p = fn () -> Int32
-alias rte_mempool_generic_get = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[rte_mempool_cache]) -> Int32
-alias rte_mempool_get_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
-alias rte_mempool_get = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer]) -> Int32
-alias rte_mempool_get_contig_blocks = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
-alias rte_mempool_avail_count = fn (UnsafePointer[rte_mempool]) -> UInt32
-alias rte_mempool_in_use_count = fn (UnsafePointer[rte_mempool]) -> UInt32
-alias rte_mempool_full = fn (UnsafePointer[rte_mempool]) -> Int32
-alias rte_mempool_empty = fn (UnsafePointer[rte_mempool]) -> Int32
+alias rte_mempool_do_generic_get = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[rte_mempool_cache]) -> ffi.c_int
+alias __builtin_constant_p = fn () -> ffi.c_int
+alias rte_mempool_generic_get = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], ffi.c_int, UnsafePointer[rte_mempool_cache]) -> ffi.c_int
+alias rte_mempool_get_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], ffi.c_int) -> ffi.c_int
+alias rte_mempool_get = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer]) -> ffi.c_int
+alias rte_mempool_get_contig_blocks = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], ffi.c_int) -> ffi.c_int
+alias rte_mempool_avail_count = fn (UnsafePointer[rte_mempool]) -> ffi.c_int
+alias rte_mempool_in_use_count = fn (UnsafePointer[rte_mempool]) -> ffi.c_int
+alias rte_mempool_full = fn (UnsafePointer[rte_mempool]) -> ffi.c_int
+alias rte_mempool_empty = fn (UnsafePointer[rte_mempool]) -> ffi.c_int
 alias rte_mempool_virt2iova = fn (OpaquePointer) -> rte_iova_t
 alias rte_mempool_audit = fn (UnsafePointer[rte_mempool]) -> NoneType
 alias rte_mempool_get_priv = fn (UnsafePointer[rte_mempool]) -> OpaquePointer
 alias rte_mempool_list_dump = fn (UnsafePointer[FILE]) -> NoneType
 alias rte_mempool_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_mempool]
-alias rte_mempool_calc_obj_size = fn (UInt32, UInt32, UnsafePointer[rte_mempool_objsz]) -> UInt32
+alias rte_mempool_calc_obj_size = fn (ffi.c_int, ffi.c_int, UnsafePointer[rte_mempool_objsz]) -> ffi.c_int
 alias rte_mempool_walk = fn (fn (UnsafePointer[rte_mempool], OpaquePointer) -> NoneType, OpaquePointer) -> NoneType
 struct rte_mempool_mem_range_info(Copyable & Movable):
 
@@ -1792,9 +1792,9 @@ struct rte_mempool_mem_range_info(Copyable & Movable):
 
 	var is_contiguous : Bool
 
-alias rte_mempool_get_mem_range = fn (UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_mem_range_info]) -> Int32
+alias rte_mempool_get_mem_range = fn (UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_mem_range_info]) -> ffi.c_int
 alias rte_mempool_get_obj_alignment = fn (UnsafePointer[rte_mempool]) -> size_t
-alias rte_mempool_get_page_size = fn (UnsafePointer[rte_mempool], UnsafePointer[size_t]) -> Int32
+alias rte_mempool_get_page_size = fn (UnsafePointer[rte_mempool], UnsafePointer[size_t]) -> ffi.c_int
 struct rte_mempool_event(Copyable & Movable):
 # #  # 
 	alias RTE_MEMPOOL_EVENT_READY = 0
@@ -1808,8 +1808,8 @@ alias rte_mempool_event_callback = UnsafePointer[fn (rte_mempool_event, UnsafePo
 # Node: TextComment()
 #  
 # #  Mempool event callback.# #  rte_mempool_event_callback_register() may be called from within the callback,#  but the callbacks registered this way will not be invoked for the same event.#  rte_mempool_event_callback_unregister() may only be safely called#  to remove the running callback.#  # 
-alias rte_mempool_event_callback_register = fn (UnsafePointer[rte_mempool_event_callback], OpaquePointer) -> Int32
-alias rte_mempool_event_callback_unregister = fn (UnsafePointer[rte_mempool_event_callback], OpaquePointer) -> Int32
+alias rte_mempool_event_callback_register = fn (UnsafePointer[rte_mempool_event_callback], OpaquePointer) -> ffi.c_int
+alias rte_mempool_event_callback_unregister = fn (UnsafePointer[rte_mempool_event_callback], OpaquePointer) -> ffi.c_int
 alias rte_prefetch0 = fn (OpaquePointer) -> NoneType
 alias rte_prefetch1 = fn (OpaquePointer) -> NoneType
 alias rte_prefetch2 = fn (OpaquePointer) -> NoneType
@@ -1819,20 +1819,20 @@ alias __builtin_prefetch = fn (OpaquePointer) -> NoneType
 alias rte_prefetch1_write = fn (OpaquePointer) -> NoneType
 alias rte_prefetch2_write = fn (OpaquePointer) -> NoneType
 alias rte_cldemote = fn (OpaquePointer) -> NoneType
-alias rte_get_ptype_l2_name = fn (UInt32) -> UnsafePointer[Int8]
-alias rte_get_ptype_l3_name = fn (UInt32) -> UnsafePointer[Int8]
-alias rte_get_ptype_l4_name = fn (UInt32) -> UnsafePointer[Int8]
-alias rte_get_ptype_tunnel_name = fn (UInt32) -> UnsafePointer[Int8]
-alias rte_get_ptype_inner_l2_name = fn (UInt32) -> UnsafePointer[Int8]
-alias rte_get_ptype_inner_l3_name = fn (UInt32) -> UnsafePointer[Int8]
-alias rte_get_ptype_inner_l4_name = fn (UInt32) -> UnsafePointer[Int8]
-alias rte_get_ptype_name = fn (UInt32, UnsafePointer[Int8], size_t) -> Int32
+alias rte_get_ptype_l2_name = fn (ffi.c_int) -> UnsafePointer[Int8]
+alias rte_get_ptype_l3_name = fn (ffi.c_int) -> UnsafePointer[Int8]
+alias rte_get_ptype_l4_name = fn (ffi.c_int) -> UnsafePointer[Int8]
+alias rte_get_ptype_tunnel_name = fn (ffi.c_int) -> UnsafePointer[Int8]
+alias rte_get_ptype_inner_l2_name = fn (ffi.c_int) -> UnsafePointer[Int8]
+alias rte_get_ptype_inner_l3_name = fn (ffi.c_int) -> UnsafePointer[Int8]
+alias rte_get_ptype_inner_l4_name = fn (ffi.c_int) -> UnsafePointer[Int8]
+alias rte_get_ptype_name = fn (ffi.c_int, UnsafePointer[Int8], size_t) -> ffi.c_int
 alias __bswap_16 = fn (Int16) -> Int16
-alias __bswap_32 = fn (Int32) -> Int32
-alias __bswap_64 = fn (ffi.c_long) -> ffi.c_long
+alias __bswap_32 = fn (ffi.c_int) -> ffi.c_int
+alias __bswap_64 = fn (ffi.c_long_long) -> ffi.c_long_long
 alias __uint16_identity = fn (Int16) -> Int16
-alias __uint32_identity = fn (Int32) -> Int32
-alias __uint64_identity = fn (ffi.c_long) -> ffi.c_long
+alias __uint32_identity = fn (ffi.c_int) -> ffi.c_int
+alias __uint64_identity = fn (ffi.c_long_long) -> ffi.c_long_long
 alias rte_be16_t = uint16_t
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -1852,8 +1852,8 @@ alias rte_le16_t = uint16_t
 alias rte_le32_t = uint32_t
 alias rte_le64_t = uint64_t
 alias rte_constant_bswap16 = fn (UInt16) -> UInt16
-alias rte_constant_bswap32 = fn (UInt32) -> UInt32
-alias rte_constant_bswap64 = fn (ffi.c_ulong) -> ffi.c_ulong
+alias rte_constant_bswap32 = fn (ffi.c_int) -> ffi.c_int
+alias rte_constant_bswap64 = fn (ffi.c_ulong_long) -> ffi.c_ulong_long
 struct rte_mbuf_sched(Copyable & Movable):
 	var queue_id : UInt32
 
@@ -2055,10 +2055,10 @@ struct rte_mbuf(Copyable & Movable):
 	var dynfield1 : InlineArray[ffi.c_ulong, 9]
 
 alias rte_mbuf_extbuf_free_callback_t = fn(OpaquePointer, OpaquePointer) -> NoneType
-alias rte_get_rx_ol_flag_name = fn (ffi.c_ulong) -> UnsafePointer[Int8]
-alias rte_get_rx_ol_flag_list = fn (ffi.c_ulong, UnsafePointer[Int8], size_t) -> Int32
-alias rte_get_tx_ol_flag_name = fn (ffi.c_ulong) -> UnsafePointer[Int8]
-alias rte_get_tx_ol_flag_list = fn (ffi.c_ulong, UnsafePointer[Int8], size_t) -> Int32
+alias rte_get_rx_ol_flag_name = fn (ffi.c_ulong_long) -> UnsafePointer[Int8]
+alias rte_get_rx_ol_flag_list = fn (ffi.c_ulong_long, UnsafePointer[Int8], size_t) -> ffi.c_int
+alias rte_get_tx_ol_flag_name = fn (ffi.c_ulong_long) -> UnsafePointer[Int8]
+alias rte_get_tx_ol_flag_list = fn (ffi.c_ulong_long, UnsafePointer[Int8], size_t) -> ffi.c_int
 alias rte_mbuf_prefetch_part1 = fn (UnsafePointer[rte_mbuf]) -> NoneType
 alias rte_mbuf_prefetch_part2 = fn (UnsafePointer[rte_mbuf]) -> NoneType
 alias rte_pktmbuf_priv_size = fn (UnsafePointer[rte_mempool]) -> UInt16
@@ -2079,7 +2079,7 @@ struct rte_pktmbuf_pool_private(Copyable & Movable):
 
 	var flags : UInt32
 
-alias rte_pktmbuf_priv_flags = fn (UnsafePointer[rte_mempool]) -> UInt32
+alias rte_pktmbuf_priv_flags = fn (UnsafePointer[rte_mempool]) -> ffi.c_int
 alias rte_mbuf_refcnt_read = fn (UnsafePointer[rte_mbuf]) -> UInt16
 alias rte_mbuf_refcnt_set = fn (UnsafePointer[rte_mbuf], UInt16) -> NoneType
 alias __rte_mbuf_refcnt_update = fn (UnsafePointer[rte_mbuf], Int16) -> UInt16
@@ -2087,17 +2087,17 @@ alias rte_mbuf_refcnt_update = fn (UnsafePointer[rte_mbuf], Int16) -> UInt16
 alias rte_mbuf_ext_refcnt_read = fn (UnsafePointer[rte_mbuf_ext_shared_info]) -> UInt16
 alias rte_mbuf_ext_refcnt_set = fn (UnsafePointer[rte_mbuf_ext_shared_info], UInt16) -> NoneType
 alias rte_mbuf_ext_refcnt_update = fn (UnsafePointer[rte_mbuf_ext_shared_info], Int16) -> UInt16
-alias rte_mbuf_sanity_check = fn (UnsafePointer[rte_mbuf], Int32) -> NoneType
-alias rte_mbuf_check = fn (UnsafePointer[rte_mbuf], Int32, UnsafePointer[UnsafePointer[Int8]]) -> Int32
+alias rte_mbuf_sanity_check = fn (UnsafePointer[rte_mbuf], ffi.c_int) -> NoneType
+alias rte_mbuf_check = fn (UnsafePointer[rte_mbuf], ffi.c_int, UnsafePointer[UnsafePointer[Int8]]) -> ffi.c_int
 alias __rte_mbuf_raw_sanity_check = fn (UnsafePointer[rte_mbuf]) -> NoneType
 alias rte_mbuf_raw_alloc = fn (UnsafePointer[rte_mempool]) -> UnsafePointer[rte_mbuf]
-alias rte_mbuf_raw_alloc_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> Int32
+alias rte_mbuf_raw_alloc_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[UnsafePointer[rte_mbuf]], ffi.c_int) -> ffi.c_int
 alias rte_mbuf_raw_free = fn (UnsafePointer[rte_mbuf]) -> NoneType
-alias rte_mbuf_raw_free_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> NoneType
-alias rte_pktmbuf_init = fn (UnsafePointer[rte_mempool], OpaquePointer, OpaquePointer, UInt32) -> NoneType
+alias rte_mbuf_raw_free_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[UnsafePointer[rte_mbuf]], ffi.c_int) -> NoneType
+alias rte_pktmbuf_init = fn (UnsafePointer[rte_mempool], OpaquePointer, OpaquePointer, ffi.c_int) -> NoneType
 alias rte_pktmbuf_pool_init = fn (UnsafePointer[rte_mempool], OpaquePointer) -> NoneType
-alias rte_pktmbuf_pool_create = fn (UnsafePointer[Int8], UInt32, UInt32, UInt16, UInt16, Int32) -> UnsafePointer[rte_mempool]
-alias rte_pktmbuf_pool_create_by_ops = fn (UnsafePointer[Int8], UInt32, UInt32, UInt16, UInt16, Int32, UnsafePointer[Int8]) -> UnsafePointer[rte_mempool]
+alias rte_pktmbuf_pool_create = fn (UnsafePointer[Int8], ffi.c_int, ffi.c_int, UInt16, UInt16, ffi.c_int) -> UnsafePointer[rte_mempool]
+alias rte_pktmbuf_pool_create_by_ops = fn (UnsafePointer[Int8], ffi.c_int, ffi.c_int, UInt16, UInt16, ffi.c_int, UnsafePointer[Int8]) -> UnsafePointer[rte_mempool]
 struct rte_pktmbuf_extmem(Copyable & Movable):
 
 	var buf_ptr : OpaquePointer
@@ -2108,12 +2108,12 @@ struct rte_pktmbuf_extmem(Copyable & Movable):
 
 	var elt_size : UInt16
 
-alias rte_pktmbuf_pool_create_extbuf = fn (UnsafePointer[Int8], UInt32, UInt32, UInt16, UInt16, Int32, UnsafePointer[rte_pktmbuf_extmem], UInt32) -> UnsafePointer[rte_mempool]
+alias rte_pktmbuf_pool_create_extbuf = fn (UnsafePointer[Int8], ffi.c_int, ffi.c_int, UInt16, UInt16, ffi.c_int, UnsafePointer[rte_pktmbuf_extmem], ffi.c_int) -> UnsafePointer[rte_mempool]
 alias rte_pktmbuf_data_room_size = fn (UnsafePointer[rte_mempool]) -> UInt16
 alias rte_pktmbuf_reset_headroom = fn (UnsafePointer[rte_mbuf]) -> NoneType
 alias rte_pktmbuf_reset = fn (UnsafePointer[rte_mbuf]) -> NoneType
 alias rte_pktmbuf_alloc = fn (UnsafePointer[rte_mempool]) -> UnsafePointer[rte_mbuf]
-alias rte_pktmbuf_alloc_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> Int32
+alias rte_pktmbuf_alloc_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[UnsafePointer[rte_mbuf]], ffi.c_int) -> ffi.c_int
 alias rte_pktmbuf_ext_shinfo_init_helper = fn (OpaquePointer, UnsafePointer[UInt16], rte_mbuf_extbuf_free_callback_t, OpaquePointer) -> UnsafePointer[rte_mbuf_ext_shared_info]
 alias rte_pktmbuf_attach_extbuf = fn (UnsafePointer[rte_mbuf], OpaquePointer, rte_iova_t, UInt16, UnsafePointer[rte_mbuf_ext_shared_info]) -> NoneType
 alias rte_mbuf_dynfield_copy = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mbuf]) -> NoneType
@@ -2122,13 +2122,13 @@ alias rte_pktmbuf_attach = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mbuf])
 alias __rte_pktmbuf_free_extbuf = fn (UnsafePointer[rte_mbuf]) -> NoneType
 alias __rte_pktmbuf_free_direct = fn (UnsafePointer[rte_mbuf]) -> NoneType
 alias rte_pktmbuf_detach = fn (UnsafePointer[rte_mbuf]) -> NoneType
-alias __rte_pktmbuf_pinned_extbuf_decref = fn (UnsafePointer[rte_mbuf]) -> Int32
+alias __rte_pktmbuf_pinned_extbuf_decref = fn (UnsafePointer[rte_mbuf]) -> ffi.c_int
 alias rte_pktmbuf_prefree_seg = fn (UnsafePointer[rte_mbuf]) -> UnsafePointer[rte_mbuf]
 alias rte_pktmbuf_free_seg = fn (UnsafePointer[rte_mbuf]) -> NoneType
 alias rte_pktmbuf_free = fn (UnsafePointer[rte_mbuf]) -> NoneType
-alias rte_pktmbuf_free_bulk = fn (UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> NoneType
+alias rte_pktmbuf_free_bulk = fn (UnsafePointer[UnsafePointer[rte_mbuf]], ffi.c_int) -> NoneType
 alias rte_pktmbuf_clone = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mempool]) -> UnsafePointer[rte_mbuf]
-alias rte_pktmbuf_copy = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mempool], UInt32, UInt32) -> UnsafePointer[rte_mbuf]
+alias rte_pktmbuf_copy = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mempool], ffi.c_int, ffi.c_int) -> UnsafePointer[rte_mbuf]
 alias rte_pktmbuf_refcnt_update = fn (UnsafePointer[rte_mbuf], Int16) -> NoneType
 alias rte_pktmbuf_headroom = fn (UnsafePointer[rte_mbuf]) -> UInt16
 alias rte_pktmbuf_tailroom = fn (UnsafePointer[rte_mbuf]) -> UInt16
@@ -2136,24 +2136,24 @@ alias rte_pktmbuf_lastseg = fn (UnsafePointer[rte_mbuf]) -> UnsafePointer[rte_mb
 alias rte_pktmbuf_prepend = fn (UnsafePointer[rte_mbuf], UInt16) -> UnsafePointer[Int8]
 alias rte_pktmbuf_append = fn (UnsafePointer[rte_mbuf], UInt16) -> UnsafePointer[Int8]
 alias rte_pktmbuf_adj = fn (UnsafePointer[rte_mbuf], UInt16) -> UnsafePointer[Int8]
-alias rte_pktmbuf_trim = fn (UnsafePointer[rte_mbuf], UInt16) -> Int32
-alias rte_pktmbuf_is_contiguous = fn (UnsafePointer[rte_mbuf]) -> Int32
-alias __rte_pktmbuf_read = fn (UnsafePointer[rte_mbuf], UInt32, UInt32, OpaquePointer) -> OpaquePointer
-alias rte_pktmbuf_read = fn (UnsafePointer[rte_mbuf], UInt32, UInt32, OpaquePointer) -> OpaquePointer
-alias rte_pktmbuf_chain = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mbuf]) -> Int32
-alias rte_mbuf_tx_offload = fn (ffi.c_ulong, ffi.c_ulong, ffi.c_ulong, ffi.c_ulong, ffi.c_ulong, ffi.c_ulong, ffi.c_ulong) -> ffi.c_ulong
-alias rte_validate_tx_offload = fn (UnsafePointer[rte_mbuf]) -> Int32
-alias __rte_pktmbuf_linearize = fn (UnsafePointer[rte_mbuf]) -> Int32
-alias rte_pktmbuf_linearize = fn (UnsafePointer[rte_mbuf]) -> Int32
-alias rte_pktmbuf_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_mbuf], UInt32) -> NoneType
-alias rte_mbuf_sched_queue_get = fn (UnsafePointer[rte_mbuf]) -> UInt32
+alias rte_pktmbuf_trim = fn (UnsafePointer[rte_mbuf], UInt16) -> ffi.c_int
+alias rte_pktmbuf_is_contiguous = fn (UnsafePointer[rte_mbuf]) -> ffi.c_int
+alias __rte_pktmbuf_read = fn (UnsafePointer[rte_mbuf], ffi.c_int, ffi.c_int, OpaquePointer) -> OpaquePointer
+alias rte_pktmbuf_read = fn (UnsafePointer[rte_mbuf], ffi.c_int, ffi.c_int, OpaquePointer) -> OpaquePointer
+alias rte_pktmbuf_chain = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mbuf]) -> ffi.c_int
+alias rte_mbuf_tx_offload = fn (ffi.c_ulong_long, ffi.c_ulong_long, ffi.c_ulong_long, ffi.c_ulong_long, ffi.c_ulong_long, ffi.c_ulong_long, ffi.c_ulong_long) -> ffi.c_ulong_long
+alias rte_validate_tx_offload = fn (UnsafePointer[rte_mbuf]) -> ffi.c_int
+alias __rte_pktmbuf_linearize = fn (UnsafePointer[rte_mbuf]) -> ffi.c_int
+alias rte_pktmbuf_linearize = fn (UnsafePointer[rte_mbuf]) -> ffi.c_int
+alias rte_pktmbuf_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_mbuf], ffi.c_int) -> NoneType
+alias rte_mbuf_sched_queue_get = fn (UnsafePointer[rte_mbuf]) -> ffi.c_int
 alias rte_mbuf_sched_traffic_class_get = fn (UnsafePointer[rte_mbuf]) -> UInt8
 alias rte_mbuf_sched_color_get = fn (UnsafePointer[rte_mbuf]) -> UInt8
-alias rte_mbuf_sched_get = fn (UnsafePointer[rte_mbuf], UnsafePointer[UInt32], UnsafePointer[UInt8], UnsafePointer[UInt8]) -> NoneType
-alias rte_mbuf_sched_queue_set = fn (UnsafePointer[rte_mbuf], UInt32) -> NoneType
+alias rte_mbuf_sched_get = fn (UnsafePointer[rte_mbuf], UnsafePointer[ffi.c_int], UnsafePointer[UInt8], UnsafePointer[UInt8]) -> NoneType
+alias rte_mbuf_sched_queue_set = fn (UnsafePointer[rte_mbuf], ffi.c_int) -> NoneType
 alias rte_mbuf_sched_traffic_class_set = fn (UnsafePointer[rte_mbuf], UInt8) -> NoneType
 alias rte_mbuf_sched_color_set = fn (UnsafePointer[rte_mbuf], UInt8) -> NoneType
-alias rte_mbuf_sched_set = fn (UnsafePointer[rte_mbuf], UInt32, UInt8, UInt8) -> NoneType
+alias rte_mbuf_sched_set = fn (UnsafePointer[rte_mbuf], ffi.c_int, UInt8, UInt8) -> NoneType
 struct rte_gro_param(Copyable & Movable):
 
 	var gro_types : ffi.c_ulong
@@ -2168,8 +2168,8 @@ alias rte_gro_ctx_create = fn (UnsafePointer[rte_gro_param]) -> OpaquePointer
 alias rte_gro_ctx_destroy = fn (OpaquePointer) -> NoneType
 alias rte_gro_reassemble_burst = fn (UnsafePointer[UnsafePointer[rte_mbuf]], UInt16, UnsafePointer[rte_gro_param]) -> UInt16
 alias rte_gro_reassemble = fn (UnsafePointer[UnsafePointer[rte_mbuf]], UInt16, OpaquePointer) -> UInt16
-alias rte_gro_timeout_flush = fn (OpaquePointer, ffi.c_ulong, ffi.c_ulong, UnsafePointer[UnsafePointer[rte_mbuf]], UInt16) -> UInt16
-alias rte_gro_get_pkt_count = fn (OpaquePointer) -> ffi.c_ulong
+alias rte_gro_timeout_flush = fn (OpaquePointer, ffi.c_ulong_long, ffi.c_ulong_long, UnsafePointer[UnsafePointer[rte_mbuf]], UInt16) -> UInt16
+alias rte_gro_get_pkt_count = fn (OpaquePointer) -> ffi.c_ulong_long
 
 
 alias rte_gro_alloca = ExternalFunction['alloca', alloca]
