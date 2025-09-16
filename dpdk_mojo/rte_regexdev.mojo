@@ -1127,8 +1127,6 @@ alias rte_fbarray_dump_metadata = fn (UnsafePointer[rte_fbarray], UnsafePointer[
 alias anonomous_record_937 = C_Union[OpaquePointer, ffi.c_ulong]
 
 struct rte_memseg(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30250f48","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var iova : ffi.c_ulong
@@ -1218,8 +1216,6 @@ alias rte_memzero_explicit = fn (OpaquePointer, size_t) -> NoneType
 alias anonomous_record_939 = C_Union[OpaquePointer, ffi.c_ulong]
 
 struct rte_memzone(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x3025e3b8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var name : InlineArray[Int8, 32]
@@ -2370,7 +2366,7 @@ alias anonomous_record_967 = C_Union[ffi.c_ulong, OpaquePointer]
 
 struct rte_regexdev(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x304e70a0","kind":"VerbatimLineComment","loc":{"col":5,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":154,"tokLen":4},"range":{"begin":{"col":4,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":153,"tokLen":1},"end":{"col":9,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":158,"tokLen":0}},"text":""}
+# {"id":"0x1cad60a0","kind":"VerbatimLineComment","loc":{"col":5,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":154,"tokLen":4},"range":{"begin":{"col":4,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":153,"tokLen":1},"end":{"col":9,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":158,"tokLen":0}},"text":""}
 
 	pass
 alias regexdev_info_get_t = fn(UnsafePointer[rte_regexdev], UnsafePointer[rte_regexdev_info]) -> Int32

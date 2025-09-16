@@ -1049,8 +1049,6 @@ alias rte_fbarray_dump_metadata = fn (UnsafePointer[rte_fbarray], UnsafePointer[
 alias anonomous_record_1263 = C_Union[OpaquePointer, ffi.c_ulong]
 
 struct rte_memseg(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x18a2c988","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/vhost/rte_vhost.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/vhost/rte_vhost.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var iova : ffi.c_ulong
@@ -1154,8 +1152,6 @@ alias wcstoumax = fn (UnsafePointer[__gwchar_t], UnsafePointer[UnsafePointer[__g
 alias anonomous_record_1266 = C_Union[OpaquePointer, ffi.c_ulong]
 
 struct rte_memzone(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x18a53fc8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var name : InlineArray[Int8, 32]
@@ -2056,8 +2052,6 @@ struct vhost_vdpa_iova_range(Copyable & Movable):
 	var last : ffi.c_ulong_long
 
 struct ethhdr(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x18b7ca40","kind":"PackedAttr","range":{"begin":{"col":18,"includedFrom":{"file":"/usr/include/linux/virtio_net.h"},"offset":8392,"tokLen":6},"end":{"col":18,"includedFrom":{"file":"/usr/include/linux/virtio_net.h"},"offset":8392,"tokLen":6}}}
 
 	var h_dest : InlineArray[UInt8, 6]
 
@@ -2066,8 +2060,6 @@ struct ethhdr(Copyable & Movable):
 	var h_proto : UInt16
 
 struct virtio_net_config(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x18b7cf28","kind":"PackedAttr","range":{"begin":{"col":18,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/vhost/rte_vhost.h"},"offset":5441,"tokLen":6},"end":{"col":18,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/vhost/rte_vhost.h"},"offset":5441,"tokLen":6}}}
 
 	var mac : InlineArray[__u8, 6]
 
@@ -2149,8 +2141,6 @@ struct virtio_net_hdr_mrg_rxbuf(Copyable & Movable):
 	var num_buffers : UInt16
 
 struct virtio_net_ctrl_hdr(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x18ba8cd0","kind":"PackedAttr","range":{"begin":{"col":18,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/vhost/rte_vhost.h"},"offset":8688,"tokLen":6},"end":{"col":18,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/vhost/rte_vhost.h"},"offset":8688,"tokLen":6}}}
 
 	var class : UInt8
 
@@ -2158,8 +2148,6 @@ struct virtio_net_ctrl_hdr(Copyable & Movable):
 
 alias virtio_net_ctrl_ack = __u8
 struct virtio_net_ctrl_mac(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x18ba8fa8","kind":"PackedAttr","range":{"begin":{"col":18,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/vhost/rte_vhost.h"},"offset":10342,"tokLen":6},"end":{"col":18,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/vhost/rte_vhost.h"},"offset":10342,"tokLen":6}}}
 
 	var entries : UInt32
 

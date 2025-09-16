@@ -1053,8 +1053,6 @@ alias rte_fbarray_dump_metadata = fn (UnsafePointer[rte_fbarray], UnsafePointer[
 alias anonomous_record_663 = C_Union[OpaquePointer, ffi.c_ulong]
 
 struct rte_memseg(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x36204728","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var iova : ffi.c_ulong
@@ -1144,8 +1142,6 @@ alias rte_memzero_explicit = fn (OpaquePointer, size_t) -> NoneType
 alias anonomous_record_665 = C_Union[OpaquePointer, ffi.c_ulong]
 
 struct rte_memzone(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x361421d0","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var name : InlineArray[Int8, 32]
