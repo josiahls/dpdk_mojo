@@ -44,7 +44,6 @@ fn main() raises:
     for entry in compilation_database:
         if entry:
             ref value = entry.value()
-            print('value.parent_path: ', value.parent_path().name())
             if value.parent_path().name() == "drivers":
                 # Skip drivers. They have a different naming convention e.g.:
                 # librte_net_octeon_ep -> drivers/net/octeon_ep/otx_ep_common.h
