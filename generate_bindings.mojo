@@ -45,6 +45,8 @@ fn main() raises:
         if entry:
             ref value = entry.value()
             if value.has_so_file():
+                # if 'librte_mempool' != value.libname():
+                #     continue
                 if value.libname() in [
                     String('librte_acl'),
                     String('librte_lpm'),

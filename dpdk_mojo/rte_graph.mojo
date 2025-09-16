@@ -8,8 +8,8 @@ from c_binder_mojo.stdlib_ext import C_Union
 from utils import StaticTuple
 
 # # Node: TranslationUnitDecl()
-alias __int128_t = Int128
-alias __uint128_t = UInt128
+alias __int128_t = ffi.c_long_long
+alias __uint128_t = ffi.c_ulong_long
 struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
@@ -17,51 +17,51 @@ alias __NSConstantString = __NSConstantString_tag
 alias __SVInt8_t = Int8
 alias __SVInt16_t = Int16
 alias __SVInt32_t = Int32
-alias __SVInt64_t = Int64
+alias __SVInt64_t = ffi.c_long
 alias __SVUint8_t = UInt8
 alias __SVUint16_t = UInt16
 alias __SVUint32_t = UInt32
-alias __SVUint64_t = UInt64
+alias __SVUint64_t = ffi.c_ulong
 alias __SVFloat16_t = Float16
 alias __SVFloat32_t = Float32
 alias __SVFloat64_t = Float64
 alias __SVBFloat16_t = BFloat16
-alias __clang_svint8x2_t = UnsafePointer[Int8]
-alias __clang_svint16x2_t = UnsafePointer[Int16]
-alias __clang_svint32x2_t = UnsafePointer[Int32]
-alias __clang_svint64x2_t = UnsafePointer[Int64]
-alias __clang_svuint8x2_t = UnsafePointer[UInt8]
-alias __clang_svuint16x2_t = UnsafePointer[UInt16]
-alias __clang_svuint32x2_t = UnsafePointer[UInt32]
-alias __clang_svuint64x2_t = UnsafePointer[UInt64]
-alias __clang_svfloat16x2_t = UnsafePointer[Float16]
-alias __clang_svfloat32x2_t = UnsafePointer[Float32]
-alias __clang_svfloat64x2_t = UnsafePointer[Float64]
-alias __clang_svbfloat16x2_t = UnsafePointer[BFloat16]
-alias __clang_svint8x3_t = UnsafePointer[Int8]
-alias __clang_svint16x3_t = UnsafePointer[Int16]
-alias __clang_svint32x3_t = UnsafePointer[Int32]
-alias __clang_svint64x3_t = UnsafePointer[Int64]
-alias __clang_svuint8x3_t = UnsafePointer[UInt8]
-alias __clang_svuint16x3_t = UnsafePointer[UInt16]
-alias __clang_svuint32x3_t = UnsafePointer[UInt32]
-alias __clang_svuint64x3_t = UnsafePointer[UInt64]
-alias __clang_svfloat16x3_t = UnsafePointer[Float16]
-alias __clang_svfloat32x3_t = UnsafePointer[Float32]
-alias __clang_svfloat64x3_t = UnsafePointer[Float64]
-alias __clang_svbfloat16x3_t = UnsafePointer[BFloat16]
-alias __clang_svint8x4_t = UnsafePointer[Int8]
-alias __clang_svint16x4_t = UnsafePointer[Int16]
-alias __clang_svint32x4_t = UnsafePointer[Int32]
-alias __clang_svint64x4_t = UnsafePointer[Int64]
-alias __clang_svuint8x4_t = UnsafePointer[UInt8]
-alias __clang_svuint16x4_t = UnsafePointer[UInt16]
-alias __clang_svuint32x4_t = UnsafePointer[UInt32]
-alias __clang_svuint64x4_t = UnsafePointer[UInt64]
-alias __clang_svfloat16x4_t = UnsafePointer[Float16]
-alias __clang_svfloat32x4_t = UnsafePointer[Float32]
-alias __clang_svfloat64x4_t = UnsafePointer[Float64]
-alias __clang_svbfloat16x4_t = UnsafePointer[BFloat16]
+alias __clang_svint8x2_t = SIMD[Int8.dtype, 2]
+alias __clang_svint16x2_t = SIMD[Int16.dtype, 2]
+alias __clang_svint32x2_t = SIMD[Int32.dtype, 2]
+alias __clang_svint64x2_t = SIMD[ffi.c_long.dtype, 2]
+alias __clang_svuint8x2_t = SIMD[UInt8.dtype, 2]
+alias __clang_svuint16x2_t = SIMD[UInt16.dtype, 2]
+alias __clang_svuint32x2_t = SIMD[UInt32.dtype, 2]
+alias __clang_svuint64x2_t = SIMD[ffi.c_ulong.dtype, 2]
+alias __clang_svfloat16x2_t = SIMD[Float16.dtype, 2]
+alias __clang_svfloat32x2_t = SIMD[Float32.dtype, 2]
+alias __clang_svfloat64x2_t = SIMD[Float64.dtype, 2]
+alias __clang_svbfloat16x2_t = SIMD[BFloat16.dtype, 2]
+alias __clang_svint8x3_t = SIMD[Int8.dtype, 3]
+alias __clang_svint16x3_t = SIMD[Int16.dtype, 3]
+alias __clang_svint32x3_t = SIMD[Int32.dtype, 3]
+alias __clang_svint64x3_t = SIMD[ffi.c_long.dtype, 3]
+alias __clang_svuint8x3_t = SIMD[UInt8.dtype, 3]
+alias __clang_svuint16x3_t = SIMD[UInt16.dtype, 3]
+alias __clang_svuint32x3_t = SIMD[UInt32.dtype, 3]
+alias __clang_svuint64x3_t = SIMD[ffi.c_ulong.dtype, 3]
+alias __clang_svfloat16x3_t = SIMD[Float16.dtype, 3]
+alias __clang_svfloat32x3_t = SIMD[Float32.dtype, 3]
+alias __clang_svfloat64x3_t = SIMD[Float64.dtype, 3]
+alias __clang_svbfloat16x3_t = SIMD[BFloat16.dtype, 3]
+alias __clang_svint8x4_t = SIMD[Int8.dtype, 4]
+alias __clang_svint16x4_t = SIMD[Int16.dtype, 4]
+alias __clang_svint32x4_t = SIMD[Int32.dtype, 4]
+alias __clang_svint64x4_t = SIMD[ffi.c_long.dtype, 4]
+alias __clang_svuint8x4_t = SIMD[UInt8.dtype, 4]
+alias __clang_svuint16x4_t = SIMD[UInt16.dtype, 4]
+alias __clang_svuint32x4_t = SIMD[UInt32.dtype, 4]
+alias __clang_svuint64x4_t = SIMD[ffi.c_ulong.dtype, 4]
+alias __clang_svfloat16x4_t = SIMD[Float16.dtype, 4]
+alias __clang_svfloat32x4_t = SIMD[Float32.dtype, 4]
+alias __clang_svfloat64x4_t = SIMD[Float64.dtype, 4]
+alias __clang_svbfloat16x4_t = SIMD[BFloat16.dtype, 4]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
 struct __va_list(Copyable & Movable):
@@ -180,51 +180,51 @@ alias fpos_t = __fpos_t
 alias stdin = UnsafePointer[FILE]
 alias stdout = UnsafePointer[FILE]
 alias stderr = UnsafePointer[FILE]
-alias remove = fn (read UnsafePointer[Int8]) -> Int32
-alias rename = fn (read UnsafePointer[Int8], read UnsafePointer[Int8]) -> Int32
-alias renameat = fn (Int32, read UnsafePointer[Int8], Int32, read UnsafePointer[Int8]) -> Int32
+alias remove = fn (UnsafePointer[Int8]) -> Int32
+alias rename = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
+alias renameat = fn (Int32, UnsafePointer[Int8], Int32, UnsafePointer[Int8]) -> Int32
 alias fclose = fn (UnsafePointer[FILE]) -> Int32
-alias tmpfile = fn (NoneType) -> UnsafePointer[FILE]
+alias tmpfile = fn () -> UnsafePointer[FILE]
 alias tmpnam = fn (UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias tmpnam_r = fn (UnsafePointer[Int8]) -> UnsafePointer[Int8]
-alias tempnam = fn (read UnsafePointer[Int8], read UnsafePointer[Int8]) -> UnsafePointer[Int8]
+alias tempnam = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias fflush = fn (UnsafePointer[FILE]) -> Int32
 alias fflush_unlocked = fn (UnsafePointer[FILE]) -> Int32
-alias fopen = fn (read UnsafePointer[Int8], read UnsafePointer[Int8]) -> UnsafePointer[FILE]
-alias freopen = fn (read UnsafePointer[Int8], read UnsafePointer[Int8], UnsafePointer[FILE]) -> UnsafePointer[FILE]
-alias fdopen = fn (Int32, read UnsafePointer[Int8]) -> UnsafePointer[FILE]
-alias fmemopen = fn (OpaquePointer, size_t, read UnsafePointer[Int8]) -> UnsafePointer[FILE]
+alias fopen = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[FILE]
+alias freopen = fn (UnsafePointer[Int8], UnsafePointer[Int8], UnsafePointer[FILE]) -> UnsafePointer[FILE]
+alias fdopen = fn (Int32, UnsafePointer[Int8]) -> UnsafePointer[FILE]
+alias fmemopen = fn (OpaquePointer, size_t, UnsafePointer[Int8]) -> UnsafePointer[FILE]
 alias open_memstream = fn (UnsafePointer[UnsafePointer[Int8]], UnsafePointer[size_t]) -> UnsafePointer[FILE]
 alias setbuf = fn (UnsafePointer[FILE], UnsafePointer[Int8]) -> NoneType
 alias setvbuf = fn (UnsafePointer[FILE], UnsafePointer[Int8], Int32, size_t) -> Int32
 alias setbuffer = fn (UnsafePointer[FILE], UnsafePointer[Int8], size_t) -> NoneType
 alias setlinebuf = fn (UnsafePointer[FILE]) -> NoneType
-alias fprintf = fn (UnsafePointer[FILE], read *UnsafePointer[Int8]) -> Int32
-alias printf = fn (read *UnsafePointer[Int8]) -> Int32
-alias sprintf = fn (UnsafePointer[Int8], read *UnsafePointer[Int8]) -> Int32
-alias vfprintf = fn (UnsafePointer[FILE], read UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias vprintf = fn (read UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias vsprintf = fn (UnsafePointer[Int8], read UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias snprintf = fn (UnsafePointer[Int8], ffi.c_ulong, read *UnsafePointer[Int8]) -> Int32
-alias vsnprintf = fn (UnsafePointer[Int8], ffi.c_ulong, read UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias vdprintf = fn (Int32, read UnsafePointer[Int8], __gnuc_va_list) -> Int32
-alias dprintf = fn (Int32, read *UnsafePointer[Int8]) -> Int32
-alias fscanf = fn (UnsafePointer[FILE], read *UnsafePointer[Int8]) -> Int32
-alias scanf = fn (read *UnsafePointer[Int8]) -> Int32
-alias sscanf = fn (read UnsafePointer[Int8], read *UnsafePointer[Int8]) -> Int32
+alias fprintf = fn (UnsafePointer[FILE], UnsafePointer[Int8]) -> Int32
+alias printf = fn (UnsafePointer[Int8]) -> Int32
+alias sprintf = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
+alias vfprintf = fn (UnsafePointer[FILE], UnsafePointer[Int8], __builtin_va_list) -> Int32
+alias vprintf = fn (UnsafePointer[Int8], __builtin_va_list) -> Int32
+alias vsprintf = fn (UnsafePointer[Int8], UnsafePointer[Int8], __builtin_va_list) -> Int32
+alias snprintf = fn (UnsafePointer[Int8], ffi.c_ulong, UnsafePointer[Int8]) -> Int32
+alias vsnprintf = fn (UnsafePointer[Int8], ffi.c_ulong, UnsafePointer[Int8], __builtin_va_list) -> Int32
+alias vdprintf = fn (Int32, UnsafePointer[Int8], __gnuc_va_list) -> Int32
+alias dprintf = fn (Int32, UnsafePointer[Int8]) -> Int32
+alias fscanf = fn (UnsafePointer[FILE], UnsafePointer[Int8]) -> Int32
+alias scanf = fn (UnsafePointer[Int8]) -> Int32
+alias sscanf = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
 alias _Float128 = Float64
 alias _Float32 = Float32
 alias _Float64 = Float64
 alias _Float32x = Float64
 alias _Float64x = Float64
-alias vfscanf = fn (UnsafePointer[FILE], read UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias vscanf = fn (read UnsafePointer[Int8], __builtin_va_list) -> Int32
-alias vsscanf = fn (read UnsafePointer[Int8], read UnsafePointer[Int8], __builtin_va_list) -> Int32
+alias vfscanf = fn (UnsafePointer[FILE], UnsafePointer[Int8], __builtin_va_list) -> Int32
+alias vscanf = fn (UnsafePointer[Int8], __builtin_va_list) -> Int32
+alias vsscanf = fn (UnsafePointer[Int8], UnsafePointer[Int8], __builtin_va_list) -> Int32
 alias fgetc = fn (UnsafePointer[FILE]) -> Int32
 alias getc = fn (UnsafePointer[FILE]) -> Int32
-alias getchar = fn (NoneType) -> Int32
+alias getchar = fn () -> Int32
 alias getc_unlocked = fn (UnsafePointer[FILE]) -> Int32
-alias getchar_unlocked = fn (NoneType) -> Int32
+alias getchar_unlocked = fn () -> Int32
 alias fgetc_unlocked = fn (UnsafePointer[FILE]) -> Int32
 alias fputc = fn (Int32, UnsafePointer[FILE]) -> Int32
 alias putc = fn (Int32, UnsafePointer[FILE]) -> Int32
@@ -238,40 +238,40 @@ alias fgets = fn (UnsafePointer[Int8], Int32, UnsafePointer[FILE]) -> UnsafePoin
 alias __getdelim = fn (UnsafePointer[UnsafePointer[Int8]], UnsafePointer[size_t], Int32, UnsafePointer[FILE]) -> __ssize_t
 alias getdelim = fn (UnsafePointer[UnsafePointer[Int8]], UnsafePointer[size_t], Int32, UnsafePointer[FILE]) -> __ssize_t
 alias getline = fn (UnsafePointer[UnsafePointer[Int8]], UnsafePointer[size_t], UnsafePointer[FILE]) -> __ssize_t
-alias fputs = fn (read UnsafePointer[Int8], UnsafePointer[FILE]) -> Int32
-alias puts = fn (read UnsafePointer[Int8]) -> Int32
+alias fputs = fn (UnsafePointer[Int8], UnsafePointer[FILE]) -> Int32
+alias puts = fn (UnsafePointer[Int8]) -> Int32
 alias ungetc = fn (Int32, UnsafePointer[FILE]) -> Int32
 alias fread = fn (OpaquePointer, ffi.c_ulong, ffi.c_ulong, UnsafePointer[FILE]) -> ffi.c_ulong
-alias fwrite = fn (read OpaquePointer, ffi.c_ulong, ffi.c_ulong, UnsafePointer[FILE]) -> ffi.c_ulong
+alias fwrite = fn (OpaquePointer, ffi.c_ulong, ffi.c_ulong, UnsafePointer[FILE]) -> ffi.c_ulong
 alias fread_unlocked = fn (OpaquePointer, size_t, size_t, UnsafePointer[FILE]) -> size_t
-alias fwrite_unlocked = fn (read OpaquePointer, size_t, size_t, UnsafePointer[FILE]) -> size_t
+alias fwrite_unlocked = fn (OpaquePointer, size_t, size_t, UnsafePointer[FILE]) -> size_t
 alias fseek = fn (UnsafePointer[FILE], ffi.c_long, Int32) -> Int32
 alias ftell = fn (UnsafePointer[FILE]) -> ffi.c_long
 alias rewind = fn (UnsafePointer[FILE]) -> NoneType
 alias fseeko = fn (UnsafePointer[FILE], __off_t, Int32) -> Int32
 alias ftello = fn (UnsafePointer[FILE]) -> __off_t
 alias fgetpos = fn (UnsafePointer[FILE], UnsafePointer[fpos_t]) -> Int32
-alias fsetpos = fn (UnsafePointer[FILE], read UnsafePointer[fpos_t]) -> Int32
+alias fsetpos = fn (UnsafePointer[FILE], UnsafePointer[fpos_t]) -> Int32
 alias clearerr = fn (UnsafePointer[FILE]) -> NoneType
 alias feof = fn (UnsafePointer[FILE]) -> Int32
 alias ferror = fn (UnsafePointer[FILE]) -> Int32
 alias clearerr_unlocked = fn (UnsafePointer[FILE]) -> NoneType
 alias feof_unlocked = fn (UnsafePointer[FILE]) -> Int32
 alias ferror_unlocked = fn (UnsafePointer[FILE]) -> Int32
-alias perror = fn (read UnsafePointer[Int8]) -> NoneType
+alias perror = fn (UnsafePointer[Int8]) -> NoneType
 alias fileno = fn (UnsafePointer[FILE]) -> Int32
 alias fileno_unlocked = fn (UnsafePointer[FILE]) -> Int32
 alias pclose = fn (UnsafePointer[FILE]) -> Int32
-alias popen = fn (read UnsafePointer[Int8], read UnsafePointer[Int8]) -> UnsafePointer[FILE]
+alias popen = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[FILE]
 alias ctermid = fn (UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias flockfile = fn (UnsafePointer[FILE]) -> NoneType
 alias ftrylockfile = fn (UnsafePointer[FILE]) -> Int32
 alias funlockfile = fn (UnsafePointer[FILE]) -> NoneType
 alias __uflow = fn (UnsafePointer[FILE]) -> Int32
 alias __overflow = fn (UnsafePointer[FILE], Int32) -> Int32
-alias __assert_fail = fn (read UnsafePointer[Int8], read UnsafePointer[Int8], UInt32, read UnsafePointer[Int8]) -> NoneType
-alias __assert_perror_fail = fn (Int32, read UnsafePointer[Int8], UInt32, read UnsafePointer[Int8]) -> NoneType
-alias __assert = fn (read UnsafePointer[Int8], read UnsafePointer[Int8], Int32) -> NoneType
+alias __assert_fail = fn (UnsafePointer[Int8], UnsafePointer[Int8], UInt32, UnsafePointer[Int8]) -> NoneType
+alias __assert_perror_fail = fn (Int32, UnsafePointer[Int8], UInt32, UnsafePointer[Int8]) -> NoneType
+alias __assert = fn (UnsafePointer[Int8], UnsafePointer[Int8], Int32) -> NoneType
 alias int8_t = __int8_t
 alias int16_t = __int16_t
 alias int32_t = __int32_t
@@ -317,21 +317,29 @@ struct anonomous_record_1772(Copyable & Movable):
 
 alias cpu_set_t = anonomous_record_1772
 
-alias __sched_cpucount = fn (size_t, read UnsafePointer[cpu_set_t]) -> Int32
+alias __sched_cpucount = fn (size_t, UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
 alias __sched_cpufree = fn (UnsafePointer[cpu_set_t]) -> NoneType
-alias sched_setparam = fn (__pid_t, read UnsafePointer[sched_param]) -> Int32
-alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
-alias sched_setscheduler = fn (__pid_t, Int32, read UnsafePointer[sched_param]) -> Int32
+alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param
+sched_param
+]) -> Int32
+alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param
+sched_param
+]) -> Int32
+alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param
+sched_param
+]) -> Int32
 alias sched_getscheduler = fn (__pid_t) -> Int32
-alias sched_yield = fn (NoneType) -> Int32
+alias sched_yield = fn () -> Int32
 alias sched_get_priority_max = fn (Int32) -> Int32
 alias sched_get_priority_min = fn (Int32) -> Int32
-alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec]) -> Int32
+alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec
+timespec
+]) -> Int32
 alias unaligned_uint64_t = uint64_t
 alias unaligned_uint32_t = uint32_t
 alias unaligned_uint16_t = uint16_t
-alias rte_is_aligned = fn (read OpaquePointer, read UInt32) -> Int32
+alias rte_is_aligned = fn (OpaquePointer, UInt32) -> Int32
 alias phys_addr_t = uint64_t
 # Node: FullComment()
 # Node: ParagraphComment()
@@ -352,49 +360,39 @@ alias rte_iova_t = uint64_t
 # Node: TextComment()
 #  Otherwise, in virtual mode (IOVA as VA), an IOMMU may do the translation.
 
-alias RTE_MARKER = 	# # Node: PlaceHolder()
-	# {"id":"0x187ef020","inner":[{"id":"0x18627480","inner":[{"id":"0x18626740","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"void *[0]"}}
-
+alias RTE_MARKER = InlineArray[OpaquePointer, 0]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Generic marker for any place in a structure. 
 
-alias RTE_MARKER8 = 	# # Node: PlaceHolder()
-	# {"id":"0x187ef1b0","inner":[{"decl":{"id":"0x18761938","kind":"TypedefDecl","name":"uint8_t"},"id":"0x187ef110","inner":[{"decl":{"id":"0x186caa48","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x1871e070","inner":[{"id":"0x18626840","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"uint8_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint8_t[0]"}}
-
+alias RTE_MARKER8 = InlineArray[uint8_t, 0]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Marker for 1B alignment in a structure. 
 
-alias RTE_MARKER16 = 	# # Node: PlaceHolder()
-	# {"id":"0x187ef310","inner":[{"decl":{"id":"0x187619a0","kind":"TypedefDecl","name":"uint16_t"},"id":"0x187e2bd0","inner":[{"decl":{"id":"0x186cab28","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x1871e190","inner":[{"id":"0x18626860","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"uint16_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint16_t[0]"}}
-
+alias RTE_MARKER16 = InlineArray[uint16_t, 0]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Marker for 2B alignment in a structure. 
 
-alias RTE_MARKER32 = 	# # Node: PlaceHolder()
-	# {"id":"0x187ef470","inner":[{"decl":{"id":"0x18761a08","kind":"TypedefDecl","name":"uint32_t"},"id":"0x187e2b40","inner":[{"decl":{"id":"0x1871dea0","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x1871e2b0","inner":[{"id":"0x18626880","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"uint32_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint32_t[0]"}}
-
+alias RTE_MARKER32 = InlineArray[uint32_t, 0]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Marker for 4B alignment in a structure. 
 
-alias RTE_MARKER64 = 	# # Node: PlaceHolder()
-	# {"id":"0x187ef5d0","inner":[{"decl":{"id":"0x18761a70","kind":"TypedefDecl","name":"uint64_t"},"id":"0x187e2ab0","inner":[{"decl":{"id":"0x1871df80","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x1871e3d0","inner":[{"id":"0x186268a0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"ConstantArrayType","size":0,"type":{"qualType":"uint64_t[0]"}}
-
+alias RTE_MARKER64 = InlineArray[uint64_t, 0]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Marker for 8B alignment in a structure. 
 
-alias rte_str_to_size = fn (read UnsafePointer[Int8]) -> ffi.c_ulong_long
-alias rte_size_to_str = fn (UnsafePointer[Int8], Int32, ffi.c_ulong_long, Bool, read UnsafePointer[Int8]) -> UnsafePointer[Int8]
-alias rte_exit = fn (Int32, read *UnsafePointer[Int8]) -> NoneType
+alias rte_str_to_size = fn (UnsafePointer[Int8]) -> ffi.c_ulong
+alias rte_size_to_str = fn (UnsafePointer[Int8], Int32, ffi.c_ulong, Bool, UnsafePointer[Int8]) -> UnsafePointer[Int8]
+alias rte_exit = fn (Int32, UnsafePointer[Int8]) -> NoneType
 alias rte_graph_off_t = uint32_t
 alias rte_node_t = uint32_t
 alias rte_edge_t = uint16_t
@@ -424,7 +422,7 @@ alias anonomous_record_1775 = C_Union[anonomous_record_1773, anonomous_record_17
 
 struct rte_graph_param(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x188116e0","inner":[{"id":"0x18811740","inner":[{"id":"0x18811710","kind":"TextComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}},"text":" rte_graph_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":4774,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":4773,"tokLen":1},"end":{"col":26,"offset":4795,"tokLen":1}}}
+# {"id":"0x1af7b6e0","inner":[{"id":"0x1af7b740","inner":[{"id":"0x1af7b710","kind":"TextComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}},"text":" rte_graph_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":4774,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":4773,"tokLen":1},"end":{"col":26,"offset":4795,"tokLen":1}}}
 
 	var socket_id : Int32
 
@@ -446,7 +444,7 @@ alias anonomous_record_1776 = C_Union[OpaquePointer, UnsafePointer[FILE]]
 
 struct rte_graph_cluster_stats_param(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x18811f10","inner":[{"id":"0x18811f70","inner":[{"id":"0x18811f40","kind":"TextComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}},"text":" rte_graph_cluster_stats_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":5572,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":5571,"tokLen":1},"end":{"col":40,"offset":5607,"tokLen":1}}}
+# {"id":"0x1af7bf10","inner":[{"id":"0x1af7bf70","inner":[{"id":"0x1af7bf40","kind":"TextComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}},"text":" rte_graph_cluster_stats_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":5572,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":5571,"tokLen":1},"end":{"col":40,"offset":5607,"tokLen":1}}}
 
 	var socket_id : Int32
 
@@ -467,25 +465,47 @@ struct anonomous_record_1777(Copyable & Movable):
 
 alias anonomous_record_1778 = C_Union[anonomous_record_1777]
 
-alias rte_graph_create = fn (read UnsafePointer[Int8], UnsafePointer[rte_graph_param]) -> rte_graph_t
+alias rte_graph_create = fn (UnsafePointer[Int8], UnsafePointer[rte_graph_param
+rte_graph_param
+]) -> rte_graph_t
 alias rte_graph_destroy = fn (rte_graph_t) -> Int32
-alias rte_graph_clone = fn (rte_graph_t, read UnsafePointer[Int8], UnsafePointer[rte_graph_param]) -> rte_graph_t
-alias rte_graph_from_name = fn (read UnsafePointer[Int8]) -> rte_graph_t
+alias rte_graph_clone = fn (rte_graph_t, UnsafePointer[Int8], UnsafePointer[rte_graph_param
+rte_graph_param
+]) -> rte_graph_t
+alias rte_graph_from_name = fn (UnsafePointer[Int8]) -> rte_graph_t
 alias rte_graph_id_to_name = fn (rte_graph_t) -> UnsafePointer[Int8]
-alias rte_graph_export = fn (read UnsafePointer[Int8], UnsafePointer[FILE]) -> Int32
+alias rte_graph_export = fn (UnsafePointer[Int8], UnsafePointer[FILE]) -> Int32
 alias rte_graph_model_mcore_dispatch_core_bind = fn (rte_graph_t, Int32) -> Int32
 alias rte_graph_model_mcore_dispatch_core_unbind = fn (rte_graph_t) -> NoneType
-alias rte_graph_lookup = fn (read UnsafePointer[Int8]) -> UnsafePointer[rte_graph]
-alias rte_graph_max_count = fn (NoneType) -> rte_graph_t
+alias rte_graph_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_graph
+rte_graph
+]
+alias rte_graph_max_count = fn () -> rte_graph_t
 alias rte_graph_dump = fn (UnsafePointer[FILE], rte_graph_t) -> NoneType
 alias rte_graph_list_dump = fn (UnsafePointer[FILE]) -> NoneType
-alias rte_graph_obj_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_graph], Bool) -> NoneType
-alias rte_graph_node_get = fn (rte_graph_t, rte_node_t) -> UnsafePointer[rte_node]
-alias rte_graph_node_get_by_name = fn (read UnsafePointer[Int8], read UnsafePointer[Int8]) -> UnsafePointer[rte_node]
-alias rte_graph_cluster_stats_create = fn (read UnsafePointer[rte_graph_cluster_stats_param]) -> UnsafePointer[rte_graph_cluster_stats]
-alias rte_graph_cluster_stats_destroy = fn (UnsafePointer[rte_graph_cluster_stats]) -> NoneType
-alias rte_graph_cluster_stats_get = fn (UnsafePointer[rte_graph_cluster_stats], Bool) -> NoneType
-alias rte_graph_cluster_stats_reset = fn (UnsafePointer[rte_graph_cluster_stats]) -> NoneType
+alias rte_graph_obj_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_graph
+rte_graph
+], Bool) -> NoneType
+alias rte_graph_node_get = fn (rte_graph_t, rte_node_t) -> UnsafePointer[rte_node
+rte_node
+]
+alias rte_graph_node_get_by_name = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[rte_node
+rte_node
+]
+alias rte_graph_cluster_stats_create = fn (UnsafePointer[rte_graph_cluster_stats_param
+rte_graph_cluster_stats_param
+]) -> UnsafePointer[rte_graph_cluster_stats
+rte_graph_cluster_stats
+]
+alias rte_graph_cluster_stats_destroy = fn (UnsafePointer[rte_graph_cluster_stats
+rte_graph_cluster_stats
+]) -> NoneType
+alias rte_graph_cluster_stats_get = fn (UnsafePointer[rte_graph_cluster_stats
+rte_graph_cluster_stats
+], Bool) -> NoneType
+alias rte_graph_cluster_stats_reset = fn (UnsafePointer[rte_graph_cluster_stats
+rte_graph_cluster_stats
+]) -> NoneType
 struct rte_node_xstats(Copyable & Movable):
 
 	var nb_xstats : UInt16
@@ -494,7 +514,7 @@ struct rte_node_xstats(Copyable & Movable):
 
 struct rte_node_register(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x18816c70","inner":[{"id":"0x18816cd0","inner":[{"id":"0x18816ca0","kind":"TextComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}},"text":" __rte_node_register(), RTE_NODE_REGISTER()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":13323,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":13322,"tokLen":1},"end":{"col":50,"offset":13368,"tokLen":1}}}
+# {"id":"0x1af80c70","inner":[{"id":"0x1af80cd0","inner":[{"id":"0x1af80ca0","kind":"TextComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}},"text":" __rte_node_register(), RTE_NODE_REGISTER()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":13323,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":13322,"tokLen":1},"end":{"col":50,"offset":13368,"tokLen":1}}}
 
 	var name : InlineArray[Int8, 64]
 
@@ -516,22 +536,24 @@ struct rte_node_register(Copyable & Movable):
 
 	var next_nodes : UnsafePointer[UnsafePointer[Int8]] # Failed to parse array size
 
-alias __rte_node_register = fn (read UnsafePointer[rte_node_register]) -> rte_node_t
-alias rte_node_clone = fn (rte_node_t, read UnsafePointer[Int8]) -> rte_node_t
-alias rte_node_from_name = fn (read UnsafePointer[Int8]) -> rte_node_t
+alias __rte_node_register = fn (UnsafePointer[rte_node_register
+rte_node_register
+]) -> rte_node_t
+alias rte_node_clone = fn (rte_node_t, UnsafePointer[Int8]) -> rte_node_t
+alias rte_node_from_name = fn (UnsafePointer[Int8]) -> rte_node_t
 alias rte_node_id_to_name = fn (rte_node_t) -> UnsafePointer[Int8]
 alias rte_node_edge_count = fn (rte_node_t) -> rte_edge_t
-alias rte_node_edge_update = fn (rte_node_t, rte_edge_t, read UnsafePointer[UnsafePointer[Int8]], UInt16) -> rte_edge_t
+alias rte_node_edge_update = fn (rte_node_t, rte_edge_t, UnsafePointer[UnsafePointer[Int8]], UInt16) -> rte_edge_t
 alias rte_node_edge_shrink = fn (rte_node_t, rte_edge_t) -> rte_edge_t
 alias rte_node_edge_get = fn (rte_node_t, UnsafePointer[UnsafePointer[Int8]]) -> rte_node_t
-alias rte_node_max_count = fn (NoneType) -> rte_node_t
+alias rte_node_max_count = fn () -> rte_node_t
 alias rte_node_dump = fn (UnsafePointer[FILE], rte_node_t) -> NoneType
 alias rte_node_list_dump = fn (UnsafePointer[FILE]) -> NoneType
 alias rte_node_is_invalid = fn (rte_node_t) -> Int32
 alias rte_node_free = fn (rte_node_t) -> Int32
 alias rte_edge_is_invalid = fn (rte_edge_t) -> Int32
 alias rte_graph_is_invalid = fn (rte_graph_t) -> Int32
-alias rte_graph_has_stats_feature = fn (NoneType) -> Int32
+alias rte_graph_has_stats_feature = fn () -> Int32
 
 
 alias rte_graph_remove = ExternalFunction['remove', remove]
