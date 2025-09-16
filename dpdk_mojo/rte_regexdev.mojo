@@ -2365,9 +2365,7 @@ alias anonomous_record_968 = C_Union[ffi.c_ulong, OpaquePointer]
 alias anonomous_record_967 = C_Union[ffi.c_ulong, OpaquePointer]
 
 struct rte_regexdev(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x21dd90a0","kind":"VerbatimLineComment","loc":{"col":5,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":154,"tokLen":4},"range":{"begin":{"col":4,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":153,"tokLen":1},"end":{"col":9,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":158,"tokLen":0}},"text":""}
-
+# 
 	pass
 alias regexdev_info_get_t = fn(UnsafePointer[rte_regexdev], UnsafePointer[rte_regexdev_info]) -> Int32
 alias regexdev_configure_t = fn(UnsafePointer[rte_regexdev], read UnsafePointer[rte_regexdev_config]) -> Int32

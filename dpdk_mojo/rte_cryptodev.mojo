@@ -3050,12 +3050,8 @@ alias rte_rcu_qsbr_thread_register = fn (UnsafePointer[rte_rcu_qsbr], UInt32) ->
 alias rte_rcu_qsbr_thread_unregister = fn (UnsafePointer[rte_rcu_qsbr], UInt32) -> Int32
 alias rte_rcu_qsbr_thread_online = fn (UnsafePointer[rte_rcu_qsbr], UInt32) -> NoneType
 alias rte_rcu_qsbr_thread_offline = fn (UnsafePointer[rte_rcu_qsbr], UInt32) -> NoneType
-alias rte_rcu_qsbr_lock = fn (UnsafePointer[rte_rcu_qsbr], # # Node: PlaceHolder()
-# {"id":"0x14581038","kind":"UnusedAttr","range":{"begin":{"expansionLoc":{"col":4,"file":"dpdk/lib/rcu/rte_rcu_qsbr.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/cryptodev/rte_cryptodev.h"},"line":387,"offset":12804,"tokLen":12},"spellingLoc":{"col":37,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":248,"offset":7106,"tokLen":10}},"end":{"expansionLoc":{"col":4,"file":"dpdk/lib/rcu/rte_rcu_qsbr.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/cryptodev/rte_cryptodev.h"},"line":387,"offset":12804,"tokLen":12},"spellingLoc":{"col":37,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":248,"offset":7106,"tokLen":10}}}}
-Int32) -> NoneType
-alias rte_rcu_qsbr_unlock = fn (UnsafePointer[rte_rcu_qsbr], # # Node: PlaceHolder()
-# {"id":"0x145816b8","kind":"UnusedAttr","range":{"begin":{"expansionLoc":{"col":4,"file":"dpdk/lib/rcu/rte_rcu_qsbr.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/cryptodev/rte_cryptodev.h"},"line":420,"offset":13729,"tokLen":12},"spellingLoc":{"col":37,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":248,"offset":7106,"tokLen":10}},"end":{"expansionLoc":{"col":4,"file":"dpdk/lib/rcu/rte_rcu_qsbr.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/cryptodev/rte_cryptodev.h"},"line":420,"offset":13729,"tokLen":12},"spellingLoc":{"col":37,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":248,"offset":7106,"tokLen":10}}}}
-Int32) -> NoneType
+alias rte_rcu_qsbr_lock = fn (UnsafePointer[rte_rcu_qsbr], UInt32) -> NoneType
+alias rte_rcu_qsbr_unlock = fn (UnsafePointer[rte_rcu_qsbr], UInt32) -> NoneType
 alias rte_rcu_qsbr_start = fn (UnsafePointer[rte_rcu_qsbr]) -> ffi.c_ulong
 alias rte_rcu_qsbr_quiescent = fn (UnsafePointer[rte_rcu_qsbr], UInt32) -> NoneType
 alias __rte_rcu_qsbr_check_selective = fn (UnsafePointer[rte_rcu_qsbr], ffi.c_ulong, Bool) -> Int32
