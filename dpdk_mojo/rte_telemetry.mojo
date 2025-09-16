@@ -187,22 +187,14 @@ alias cpu_set_t = anonomous_record_10
 alias __sched_cpucount = fn (size_t, UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
 alias __sched_cpufree = fn (UnsafePointer[cpu_set_t]) -> NoneType
-alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param
-sched_param
-]) -> Int32
+alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param]) -> Int32
 alias sched_getscheduler = fn (__pid_t) -> Int32
 alias sched_yield = fn () -> Int32
 alias sched_get_priority_max = fn (Int32) -> Int32
 alias sched_get_priority_min = fn (Int32) -> Int32
-alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
+alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec]) -> Int32
 alias unaligned_uint64_t = uint64_t
 alias unaligned_uint32_t = uint32_t
 alias unaligned_uint16_t = uint16_t
@@ -273,68 +265,28 @@ struct rte_tel_value_type(Copyable & Movable):
 
 	alias RTE_TEL_CONTAINER = 3
 
-alias rte_tel_data_start_array = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], 
-rte_tel_value_type
-) -> Int32
-alias rte_tel_data_start_dict = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-]) -> Int32
-alias rte_tel_data_string = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], UnsafePointer[Int8]) -> Int32
-alias rte_tel_data_add_array_string = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], UnsafePointer[Int8]) -> Int32
-alias rte_tel_data_add_array_int = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], ffi.c_long) -> Int32
-alias rte_tel_data_add_array_uint = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], ffi.c_ulong) -> Int32
-alias rte_tel_data_add_array_u64 = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], ffi.c_ulong) -> Int32
-alias rte_tel_data_add_array_container = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], UnsafePointer[rte_tel_data
-rte_tel_data
-], Int32) -> Int32
-alias rte_tel_data_add_array_uint_hex = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], ffi.c_ulong, UInt8) -> Int32
-alias rte_tel_data_add_dict_string = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
-alias rte_tel_data_add_dict_int = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], UnsafePointer[Int8], ffi.c_long) -> Int32
-alias rte_tel_data_add_dict_uint = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], UnsafePointer[Int8], ffi.c_ulong) -> Int32
-alias rte_tel_data_add_dict_u64 = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], UnsafePointer[Int8], ffi.c_ulong) -> Int32
-alias rte_tel_data_add_dict_container = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], UnsafePointer[Int8], UnsafePointer[rte_tel_data
-rte_tel_data
-], Int32) -> Int32
-alias rte_tel_data_add_dict_uint_hex = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-], UnsafePointer[Int8], ffi.c_ulong, UInt8) -> Int32
+alias rte_tel_data_start_array = fn (UnsafePointer[rte_tel_data], rte_tel_value_type) -> Int32
+alias rte_tel_data_start_dict = fn (UnsafePointer[rte_tel_data]) -> Int32
+alias rte_tel_data_string = fn (UnsafePointer[rte_tel_data], UnsafePointer[Int8]) -> Int32
+alias rte_tel_data_add_array_string = fn (UnsafePointer[rte_tel_data], UnsafePointer[Int8]) -> Int32
+alias rte_tel_data_add_array_int = fn (UnsafePointer[rte_tel_data], ffi.c_long) -> Int32
+alias rte_tel_data_add_array_uint = fn (UnsafePointer[rte_tel_data], ffi.c_ulong) -> Int32
+alias rte_tel_data_add_array_u64 = fn (UnsafePointer[rte_tel_data], ffi.c_ulong) -> Int32
+alias rte_tel_data_add_array_container = fn (UnsafePointer[rte_tel_data], UnsafePointer[rte_tel_data], Int32) -> Int32
+alias rte_tel_data_add_array_uint_hex = fn (UnsafePointer[rte_tel_data], ffi.c_ulong, UInt8) -> Int32
+alias rte_tel_data_add_dict_string = fn (UnsafePointer[rte_tel_data], UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
+alias rte_tel_data_add_dict_int = fn (UnsafePointer[rte_tel_data], UnsafePointer[Int8], ffi.c_long) -> Int32
+alias rte_tel_data_add_dict_uint = fn (UnsafePointer[rte_tel_data], UnsafePointer[Int8], ffi.c_ulong) -> Int32
+alias rte_tel_data_add_dict_u64 = fn (UnsafePointer[rte_tel_data], UnsafePointer[Int8], ffi.c_ulong) -> Int32
+alias rte_tel_data_add_dict_container = fn (UnsafePointer[rte_tel_data], UnsafePointer[Int8], UnsafePointer[rte_tel_data], Int32) -> Int32
+alias rte_tel_data_add_dict_uint_hex = fn (UnsafePointer[rte_tel_data], UnsafePointer[Int8], ffi.c_ulong, UInt8) -> Int32
 alias telemetry_cb = fn(read UnsafePointer[Int8], read UnsafePointer[Int8], UnsafePointer[rte_tel_data]) -> Int32
 alias telemetry_arg_cb = fn(read UnsafePointer[Int8], read UnsafePointer[Int8], OpaquePointer, UnsafePointer[rte_tel_data]) -> Int32
 alias handler = fn(OpaquePointer) -> OpaquePointer
 alias rte_telemetry_register_cmd = fn (UnsafePointer[Int8], telemetry_cb, UnsafePointer[Int8]) -> Int32
 alias rte_telemetry_register_cmd_arg = fn (UnsafePointer[Int8], telemetry_arg_cb, OpaquePointer, UnsafePointer[Int8]) -> Int32
-alias rte_tel_data_free = fn (UnsafePointer[rte_tel_data
-rte_tel_data
-]) -> NoneType
-alias rte_tel_data_alloc = fn () -> UnsafePointer[rte_tel_data
-rte_tel_data
-]
+alias rte_tel_data_free = fn (UnsafePointer[rte_tel_data]) -> NoneType
+alias rte_tel_data_alloc = fn () -> UnsafePointer[rte_tel_data]
 
 
 alias rte_telemetry_alloca = ExternalFunction['alloca', alloca]

@@ -96,63 +96,23 @@ alias CFG_FLAG_GLOBAL_SECTION = 1
 
 alias CFG_FLAG_EMPTY_VALUES = 2
 
-alias rte_cfgfile_load = fn (UnsafePointer[Int8], Int32) -> UnsafePointer[rte_cfgfile
-rte_cfgfile
-]
-alias rte_cfgfile_load_with_params = fn (UnsafePointer[Int8], Int32, UnsafePointer[rte_cfgfile_parameters
-rte_cfgfile_parameters
-]) -> UnsafePointer[rte_cfgfile
-rte_cfgfile
-]
-alias rte_cfgfile_create = fn (Int32) -> UnsafePointer[rte_cfgfile
-rte_cfgfile
-]
-alias rte_cfgfile_add_section = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], UnsafePointer[Int8]) -> Int32
-alias rte_cfgfile_add_entry = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], UnsafePointer[Int8], UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
-alias rte_cfgfile_set_entry = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], UnsafePointer[Int8], UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
-alias rte_cfgfile_save = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], UnsafePointer[Int8]) -> Int32
-alias rte_cfgfile_num_sections = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], UnsafePointer[Int8], size_t) -> Int32
-alias rte_cfgfile_sections = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], UnsafePointer[UnsafePointer[Int8]], Int32) -> Int32
-alias rte_cfgfile_has_section = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], UnsafePointer[Int8]) -> Int32
-alias rte_cfgfile_section_num_entries = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], UnsafePointer[Int8]) -> Int32
-alias rte_cfgfile_section_num_entries_by_index = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], UnsafePointer[Int8], Int32) -> Int32
-alias rte_cfgfile_section_entries = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], UnsafePointer[Int8], UnsafePointer[rte_cfgfile_entry
-rte_cfgfile_entry
-], Int32) -> Int32
-alias rte_cfgfile_section_entries_by_index = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], Int32, UnsafePointer[Int8], UnsafePointer[rte_cfgfile_entry
-rte_cfgfile_entry
-], Int32) -> Int32
-alias rte_cfgfile_get_entry = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[Int8]
-alias rte_cfgfile_has_entry = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-], UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
-alias rte_cfgfile_close = fn (UnsafePointer[rte_cfgfile
-rte_cfgfile
-]) -> Int32
+alias rte_cfgfile_load = fn (UnsafePointer[Int8], Int32) -> UnsafePointer[rte_cfgfile]
+alias rte_cfgfile_load_with_params = fn (UnsafePointer[Int8], Int32, UnsafePointer[rte_cfgfile_parameters]) -> UnsafePointer[rte_cfgfile]
+alias rte_cfgfile_create = fn (Int32) -> UnsafePointer[rte_cfgfile]
+alias rte_cfgfile_add_section = fn (UnsafePointer[rte_cfgfile], UnsafePointer[Int8]) -> Int32
+alias rte_cfgfile_add_entry = fn (UnsafePointer[rte_cfgfile], UnsafePointer[Int8], UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
+alias rte_cfgfile_set_entry = fn (UnsafePointer[rte_cfgfile], UnsafePointer[Int8], UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
+alias rte_cfgfile_save = fn (UnsafePointer[rte_cfgfile], UnsafePointer[Int8]) -> Int32
+alias rte_cfgfile_num_sections = fn (UnsafePointer[rte_cfgfile], UnsafePointer[Int8], size_t) -> Int32
+alias rte_cfgfile_sections = fn (UnsafePointer[rte_cfgfile], UnsafePointer[UnsafePointer[Int8]], Int32) -> Int32
+alias rte_cfgfile_has_section = fn (UnsafePointer[rte_cfgfile], UnsafePointer[Int8]) -> Int32
+alias rte_cfgfile_section_num_entries = fn (UnsafePointer[rte_cfgfile], UnsafePointer[Int8]) -> Int32
+alias rte_cfgfile_section_num_entries_by_index = fn (UnsafePointer[rte_cfgfile], UnsafePointer[Int8], Int32) -> Int32
+alias rte_cfgfile_section_entries = fn (UnsafePointer[rte_cfgfile], UnsafePointer[Int8], UnsafePointer[rte_cfgfile_entry], Int32) -> Int32
+alias rte_cfgfile_section_entries_by_index = fn (UnsafePointer[rte_cfgfile], Int32, UnsafePointer[Int8], UnsafePointer[rte_cfgfile_entry], Int32) -> Int32
+alias rte_cfgfile_get_entry = fn (UnsafePointer[rte_cfgfile], UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[Int8]
+alias rte_cfgfile_has_entry = fn (UnsafePointer[rte_cfgfile], UnsafePointer[Int8], UnsafePointer[Int8]) -> Int32
+alias rte_cfgfile_close = fn (UnsafePointer[rte_cfgfile]) -> Int32
 
 
 alias rte_cfgfile_rte_cfgfile_load = ExternalFunction['rte_cfgfile_load', rte_cfgfile_load]

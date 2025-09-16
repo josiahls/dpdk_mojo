@@ -80,47 +80,15 @@ struct rte_distributor(Copyable & Movable):
 	pass
 struct rte_mbuf(Copyable & Movable):
 	pass
-alias rte_distributor_create = fn (UnsafePointer[Int8], UInt32, UInt32, UInt32) -> UnsafePointer[rte_distributor
-rte_distributor
-]
-alias rte_distributor_process = fn (UnsafePointer[rte_distributor
-rte_distributor
-], UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], UInt32) -> Int32
-alias rte_distributor_returned_pkts = fn (UnsafePointer[rte_distributor
-rte_distributor
-], UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], UInt32) -> Int32
-alias rte_distributor_flush = fn (UnsafePointer[rte_distributor
-rte_distributor
-]) -> Int32
-alias rte_distributor_clear_returns = fn (UnsafePointer[rte_distributor
-rte_distributor
-]) -> NoneType
-alias rte_distributor_get_pkt = fn (UnsafePointer[rte_distributor
-rte_distributor
-], UInt32, UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], UInt32) -> Int32
-alias rte_distributor_return_pkt = fn (UnsafePointer[rte_distributor
-rte_distributor
-], UInt32, UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], Int32) -> Int32
-alias rte_distributor_request_pkt = fn (UnsafePointer[rte_distributor
-rte_distributor
-], UInt32, UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], UInt32) -> NoneType
-alias rte_distributor_poll_pkt = fn (UnsafePointer[rte_distributor
-rte_distributor
-], UInt32, UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]]) -> Int32
+alias rte_distributor_create = fn (UnsafePointer[Int8], UInt32, UInt32, UInt32) -> UnsafePointer[rte_distributor]
+alias rte_distributor_process = fn (UnsafePointer[rte_distributor], UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> Int32
+alias rte_distributor_returned_pkts = fn (UnsafePointer[rte_distributor], UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> Int32
+alias rte_distributor_flush = fn (UnsafePointer[rte_distributor]) -> Int32
+alias rte_distributor_clear_returns = fn (UnsafePointer[rte_distributor]) -> NoneType
+alias rte_distributor_get_pkt = fn (UnsafePointer[rte_distributor], UInt32, UnsafePointer[UnsafePointer[rte_mbuf]], UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> Int32
+alias rte_distributor_return_pkt = fn (UnsafePointer[rte_distributor], UInt32, UnsafePointer[UnsafePointer[rte_mbuf]], Int32) -> Int32
+alias rte_distributor_request_pkt = fn (UnsafePointer[rte_distributor], UInt32, UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> NoneType
+alias rte_distributor_poll_pkt = fn (UnsafePointer[rte_distributor], UInt32, UnsafePointer[UnsafePointer[rte_mbuf]]) -> Int32
 
 
 alias rte_distributor_rte_distributor_create = ExternalFunction['rte_distributor_create', rte_distributor_create]

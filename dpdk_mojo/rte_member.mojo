@@ -201,22 +201,14 @@ alias cpu_set_t = anonomous_record_861
 alias __sched_cpucount = fn (size_t, UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
 alias __sched_cpufree = fn (UnsafePointer[cpu_set_t]) -> NoneType
-alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param
-sched_param
-]) -> Int32
+alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param]) -> Int32
 alias sched_getscheduler = fn (__pid_t) -> Int32
 alias sched_yield = fn () -> Int32
 alias sched_get_priority_max = fn (Int32) -> Int32
 alias sched_get_priority_min = fn (Int32) -> Int32
-alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
+alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec]) -> Int32
 alias unaligned_uint64_t = uint64_t
 alias unaligned_uint32_t = uint32_t
 alias unaligned_uint16_t = uint16_t
@@ -535,9 +527,7 @@ alias rte_jhash_3words = fn (UInt32, UInt32, UInt32, UInt32) -> UInt32
 alias rte_jhash_2words = fn (UInt32, UInt32, UInt32) -> UInt32
 alias rte_jhash_1word = fn (UInt32, UInt32) -> UInt32
 struct rte_member_setsum(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"closeName":"","id":"0x156e6c10","inner":[{"id":"0x156e6c60","kind":"VerbatimBlockLineComment","loc":{"col":14,"offset":4310,"tokLen":0},"range":{"begin":{"col":14,"offset":4310,"tokLen":0},"end":{"col":37,"offset":4333,"tokLen":1}},"text":" setsummary structure. "},{"id":"0x156e6c80","kind":"VerbatimBlockLineComment","loc":{"col":39,"offset":4335,"tokLen":0},"range":{"begin":{"col":39,"offset":4335,"tokLen":0},"end":{"col":39,"offset":4335,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"offset":4302,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"offset":4301,"tokLen":1},"end":{"col":14,"offset":4310,"tokLen":0}}}
-
+# #  setsummary structure. # 
 	pass
 struct rte_member_parameters(Copyable & Movable):
 
@@ -553,9 +543,7 @@ struct rte_member_setsum_type(Copyable & Movable):
 	alias RTE_MEMBER_NUM_TYPE = 3
 
 struct rte_member_sig_compare_function(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"closeName":"","id":"0x156e70c0","inner":[{"id":"0x156e7110","kind":"VerbatimBlockLineComment","loc":{"col":14,"offset":4711,"tokLen":0},"range":{"begin":{"col":14,"offset":4711,"tokLen":0},"end":{"col":52,"offset":4749,"tokLen":1}},"text":" compare function for different arch. "},{"id":"0x156e7130","kind":"VerbatimBlockLineComment","loc":{"col":54,"offset":4751,"tokLen":0},"range":{"begin":{"col":54,"offset":4751,"tokLen":0},"end":{"col":54,"offset":4751,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":6,"offset":4703,"tokLen":8},"name":"internal","range":{"begin":{"col":5,"offset":4702,"tokLen":1},"end":{"col":14,"offset":4711,"tokLen":0}}}
-
+# #  compare function for different arch. # 
 	alias RTE_MEMBER_COMPARE_SCALAR = 0
 
 	alias RTE_MEMBER_COMPARE_AVX2 = 1
@@ -565,47 +553,19 @@ struct rte_member_sig_compare_function(Copyable & Movable):
 alias sketch_update_fn_t = fn(read UnsafePointer[rte_member_setsum], read OpaquePointer, ffi.c_ulong) -> NoneType
 alias sketch_lookup_fn_t = fn(read UnsafePointer[rte_member_setsum], read OpaquePointer) -> ffi.c_ulong_long
 alias sketch_delete_fn_t = fn(read UnsafePointer[rte_member_setsum], read OpaquePointer) -> NoneType
-alias rte_member_find_existing = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_member_setsum
-rte_member_setsum
-]
-alias rte_member_free = fn (UnsafePointer[rte_member_setsum
-rte_member_setsum
-]) -> NoneType
-alias rte_member_create = fn (UnsafePointer[rte_member_parameters
-rte_member_parameters
-]) -> UnsafePointer[rte_member_setsum
-rte_member_setsum
-]
-alias rte_member_lookup = fn (UnsafePointer[rte_member_setsum
-rte_member_setsum
-], OpaquePointer, UnsafePointer[member_set_t]) -> Int32
-alias rte_member_lookup_bulk = fn (UnsafePointer[rte_member_setsum
-rte_member_setsum
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[member_set_t]) -> Int32
-alias rte_member_lookup_multi = fn (UnsafePointer[rte_member_setsum
-rte_member_setsum
-], OpaquePointer, UInt32, UnsafePointer[member_set_t]) -> Int32
-alias rte_member_lookup_multi_bulk = fn (UnsafePointer[rte_member_setsum
-rte_member_setsum
-], UnsafePointer[OpaquePointer], UInt32, UInt32, UnsafePointer[UInt32], UnsafePointer[member_set_t]) -> Int32
-alias rte_member_add = fn (UnsafePointer[rte_member_setsum
-rte_member_setsum
-], OpaquePointer, member_set_t) -> Int32
-alias rte_member_add_byte_count = fn (UnsafePointer[rte_member_setsum
-rte_member_setsum
-], OpaquePointer, UInt32) -> Int32
-alias rte_member_query_count = fn (UnsafePointer[rte_member_setsum
-rte_member_setsum
-], OpaquePointer, UnsafePointer[ffi.c_ulong]) -> Int32
-alias rte_member_report_heavyhitter = fn (UnsafePointer[rte_member_setsum
-rte_member_setsum
-], UnsafePointer[OpaquePointer], UnsafePointer[ffi.c_ulong]) -> Int32
-alias rte_member_reset = fn (UnsafePointer[rte_member_setsum
-rte_member_setsum
-]) -> NoneType
-alias rte_member_delete = fn (UnsafePointer[rte_member_setsum
-rte_member_setsum
-], OpaquePointer, member_set_t) -> Int32
+alias rte_member_find_existing = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_member_setsum]
+alias rte_member_free = fn (UnsafePointer[rte_member_setsum]) -> NoneType
+alias rte_member_create = fn (UnsafePointer[rte_member_parameters]) -> UnsafePointer[rte_member_setsum]
+alias rte_member_lookup = fn (UnsafePointer[rte_member_setsum], OpaquePointer, UnsafePointer[member_set_t]) -> Int32
+alias rte_member_lookup_bulk = fn (UnsafePointer[rte_member_setsum], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[member_set_t]) -> Int32
+alias rte_member_lookup_multi = fn (UnsafePointer[rte_member_setsum], OpaquePointer, UInt32, UnsafePointer[member_set_t]) -> Int32
+alias rte_member_lookup_multi_bulk = fn (UnsafePointer[rte_member_setsum], UnsafePointer[OpaquePointer], UInt32, UInt32, UnsafePointer[UInt32], UnsafePointer[member_set_t]) -> Int32
+alias rte_member_add = fn (UnsafePointer[rte_member_setsum], OpaquePointer, member_set_t) -> Int32
+alias rte_member_add_byte_count = fn (UnsafePointer[rte_member_setsum], OpaquePointer, UInt32) -> Int32
+alias rte_member_query_count = fn (UnsafePointer[rte_member_setsum], OpaquePointer, UnsafePointer[ffi.c_ulong]) -> Int32
+alias rte_member_report_heavyhitter = fn (UnsafePointer[rte_member_setsum], UnsafePointer[OpaquePointer], UnsafePointer[ffi.c_ulong]) -> Int32
+alias rte_member_reset = fn (UnsafePointer[rte_member_setsum]) -> NoneType
+alias rte_member_delete = fn (UnsafePointer[rte_member_setsum], OpaquePointer, member_set_t) -> Int32
 
 
 alias rte_member_imaxabs = ExternalFunction['imaxabs', imaxabs]

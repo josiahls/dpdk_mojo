@@ -320,22 +320,14 @@ alias cpu_set_t = anonomous_record_8
 alias __sched_cpucount = fn (size_t, UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
 alias __sched_cpufree = fn (UnsafePointer[cpu_set_t]) -> NoneType
-alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param
-sched_param
-]) -> Int32
+alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param]) -> Int32
 alias sched_getscheduler = fn (__pid_t) -> Int32
 alias sched_yield = fn () -> Int32
 alias sched_get_priority_max = fn (Int32) -> Int32
 alias sched_get_priority_min = fn (Int32) -> Int32
-alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
+alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec]) -> Int32
 alias unaligned_uint64_t = uint64_t
 alias unaligned_uint32_t = uint32_t
 alias unaligned_uint16_t = uint16_t
@@ -530,12 +522,8 @@ struct rte_argparse(Copyable & Movable):
 
 	var args : UnsafePointer[rte_argparse_arg] # Failed to parse array size
 
-alias rte_argparse_parse = fn (UnsafePointer[rte_argparse
-rte_argparse
-], Int32, UnsafePointer[UnsafePointer[Int8]]) -> Int32
-alias rte_argparse_parse_type = fn (UnsafePointer[Int8], 
-rte_argparse_value_type
-, OpaquePointer) -> Int32
+alias rte_argparse_parse = fn (UnsafePointer[rte_argparse], Int32, UnsafePointer[UnsafePointer[Int8]]) -> Int32
+alias rte_argparse_parse_type = fn (UnsafePointer[Int8], rte_argparse_value_type, OpaquePointer) -> Int32
 
 
 alias rte_argparse_remove = ExternalFunction['remove', remove]

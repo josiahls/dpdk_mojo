@@ -320,22 +320,14 @@ alias cpu_set_t = anonomous_record_1772
 alias __sched_cpucount = fn (size_t, UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
 alias __sched_cpufree = fn (UnsafePointer[cpu_set_t]) -> NoneType
-alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param
-sched_param
-]) -> Int32
+alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param]) -> Int32
 alias sched_getscheduler = fn (__pid_t) -> Int32
 alias sched_yield = fn () -> Int32
 alias sched_get_priority_max = fn (Int32) -> Int32
 alias sched_get_priority_min = fn (Int32) -> Int32
-alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
+alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec]) -> Int32
 alias unaligned_uint64_t = uint64_t
 alias unaligned_uint32_t = uint32_t
 alias unaligned_uint16_t = uint16_t
@@ -422,7 +414,7 @@ alias anonomous_record_1775 = C_Union[anonomous_record_1773, anonomous_record_17
 
 struct rte_graph_param(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x1af7b6e0","inner":[{"id":"0x1af7b740","inner":[{"id":"0x1af7b710","kind":"TextComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}},"text":" rte_graph_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":4774,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":4773,"tokLen":1},"end":{"col":26,"offset":4795,"tokLen":1}}}
+# {"id":"0x298d16e0","inner":[{"id":"0x298d1740","inner":[{"id":"0x298d1710","kind":"TextComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}},"text":" rte_graph_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":4774,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":4773,"tokLen":1},"end":{"col":26,"offset":4795,"tokLen":1}}}
 
 	var socket_id : Int32
 
@@ -444,7 +436,7 @@ alias anonomous_record_1776 = C_Union[OpaquePointer, UnsafePointer[FILE]]
 
 struct rte_graph_cluster_stats_param(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x1af7bf10","inner":[{"id":"0x1af7bf70","inner":[{"id":"0x1af7bf40","kind":"TextComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}},"text":" rte_graph_cluster_stats_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":5572,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":5571,"tokLen":1},"end":{"col":40,"offset":5607,"tokLen":1}}}
+# {"id":"0x298d1f10","inner":[{"id":"0x298d1f70","inner":[{"id":"0x298d1f40","kind":"TextComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}},"text":" rte_graph_cluster_stats_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":5572,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":5571,"tokLen":1},"end":{"col":40,"offset":5607,"tokLen":1}}}
 
 	var socket_id : Int32
 
@@ -465,47 +457,25 @@ struct anonomous_record_1777(Copyable & Movable):
 
 alias anonomous_record_1778 = C_Union[anonomous_record_1777]
 
-alias rte_graph_create = fn (UnsafePointer[Int8], UnsafePointer[rte_graph_param
-rte_graph_param
-]) -> rte_graph_t
+alias rte_graph_create = fn (UnsafePointer[Int8], UnsafePointer[rte_graph_param]) -> rte_graph_t
 alias rte_graph_destroy = fn (rte_graph_t) -> Int32
-alias rte_graph_clone = fn (rte_graph_t, UnsafePointer[Int8], UnsafePointer[rte_graph_param
-rte_graph_param
-]) -> rte_graph_t
+alias rte_graph_clone = fn (rte_graph_t, UnsafePointer[Int8], UnsafePointer[rte_graph_param]) -> rte_graph_t
 alias rte_graph_from_name = fn (UnsafePointer[Int8]) -> rte_graph_t
 alias rte_graph_id_to_name = fn (rte_graph_t) -> UnsafePointer[Int8]
 alias rte_graph_export = fn (UnsafePointer[Int8], UnsafePointer[FILE]) -> Int32
 alias rte_graph_model_mcore_dispatch_core_bind = fn (rte_graph_t, Int32) -> Int32
 alias rte_graph_model_mcore_dispatch_core_unbind = fn (rte_graph_t) -> NoneType
-alias rte_graph_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_graph
-rte_graph
-]
+alias rte_graph_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_graph]
 alias rte_graph_max_count = fn () -> rte_graph_t
 alias rte_graph_dump = fn (UnsafePointer[FILE], rte_graph_t) -> NoneType
 alias rte_graph_list_dump = fn (UnsafePointer[FILE]) -> NoneType
-alias rte_graph_obj_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_graph
-rte_graph
-], Bool) -> NoneType
-alias rte_graph_node_get = fn (rte_graph_t, rte_node_t) -> UnsafePointer[rte_node
-rte_node
-]
-alias rte_graph_node_get_by_name = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[rte_node
-rte_node
-]
-alias rte_graph_cluster_stats_create = fn (UnsafePointer[rte_graph_cluster_stats_param
-rte_graph_cluster_stats_param
-]) -> UnsafePointer[rte_graph_cluster_stats
-rte_graph_cluster_stats
-]
-alias rte_graph_cluster_stats_destroy = fn (UnsafePointer[rte_graph_cluster_stats
-rte_graph_cluster_stats
-]) -> NoneType
-alias rte_graph_cluster_stats_get = fn (UnsafePointer[rte_graph_cluster_stats
-rte_graph_cluster_stats
-], Bool) -> NoneType
-alias rte_graph_cluster_stats_reset = fn (UnsafePointer[rte_graph_cluster_stats
-rte_graph_cluster_stats
-]) -> NoneType
+alias rte_graph_obj_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_graph], Bool) -> NoneType
+alias rte_graph_node_get = fn (rte_graph_t, rte_node_t) -> UnsafePointer[rte_node]
+alias rte_graph_node_get_by_name = fn (UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[rte_node]
+alias rte_graph_cluster_stats_create = fn (UnsafePointer[rte_graph_cluster_stats_param]) -> UnsafePointer[rte_graph_cluster_stats]
+alias rte_graph_cluster_stats_destroy = fn (UnsafePointer[rte_graph_cluster_stats]) -> NoneType
+alias rte_graph_cluster_stats_get = fn (UnsafePointer[rte_graph_cluster_stats], Bool) -> NoneType
+alias rte_graph_cluster_stats_reset = fn (UnsafePointer[rte_graph_cluster_stats]) -> NoneType
 struct rte_node_xstats(Copyable & Movable):
 
 	var nb_xstats : UInt16
@@ -514,7 +484,7 @@ struct rte_node_xstats(Copyable & Movable):
 
 struct rte_node_register(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x1af80c70","inner":[{"id":"0x1af80cd0","inner":[{"id":"0x1af80ca0","kind":"TextComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}},"text":" __rte_node_register(), RTE_NODE_REGISTER()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":13323,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":13322,"tokLen":1},"end":{"col":50,"offset":13368,"tokLen":1}}}
+# {"id":"0x298d6c70","inner":[{"id":"0x298d6cd0","inner":[{"id":"0x298d6ca0","kind":"TextComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}},"text":" __rte_node_register(), RTE_NODE_REGISTER()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":13323,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":13322,"tokLen":1},"end":{"col":50,"offset":13368,"tokLen":1}}}
 
 	var name : InlineArray[Int8, 64]
 
@@ -536,9 +506,7 @@ struct rte_node_register(Copyable & Movable):
 
 	var next_nodes : UnsafePointer[UnsafePointer[Int8]] # Failed to parse array size
 
-alias __rte_node_register = fn (UnsafePointer[rte_node_register
-rte_node_register
-]) -> rte_node_t
+alias __rte_node_register = fn (UnsafePointer[rte_node_register]) -> rte_node_t
 alias rte_node_clone = fn (rte_node_t, UnsafePointer[Int8]) -> rte_node_t
 alias rte_node_from_name = fn (UnsafePointer[Int8]) -> rte_node_t
 alias rte_node_id_to_name = fn (rte_node_t) -> UnsafePointer[Int8]

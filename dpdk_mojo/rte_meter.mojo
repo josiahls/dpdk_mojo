@@ -219,84 +219,18 @@ struct rte_meter_trtcm(Copyable & Movable):
 struct rte_meter_trtcm_rfc4115(Copyable & Movable):
 
 	pass
-alias rte_meter_srtcm_profile_config = fn (UnsafePointer[rte_meter_srtcm_profile
-rte_meter_srtcm_profile
-], UnsafePointer[rte_meter_srtcm_params
-rte_meter_srtcm_params
-]) -> Int32
-alias rte_meter_trtcm_profile_config = fn (UnsafePointer[rte_meter_trtcm_profile
-rte_meter_trtcm_profile
-], UnsafePointer[rte_meter_trtcm_params
-rte_meter_trtcm_params
-]) -> Int32
-alias rte_meter_trtcm_rfc4115_profile_config = fn (UnsafePointer[rte_meter_trtcm_rfc4115_profile
-rte_meter_trtcm_rfc4115_profile
-], UnsafePointer[rte_meter_trtcm_rfc4115_params
-rte_meter_trtcm_rfc4115_params
-]) -> Int32
-alias rte_meter_srtcm_config = fn (UnsafePointer[rte_meter_srtcm
-rte_meter_srtcm
-], UnsafePointer[rte_meter_srtcm_profile
-rte_meter_srtcm_profile
-]) -> Int32
-alias rte_meter_trtcm_config = fn (UnsafePointer[rte_meter_trtcm
-rte_meter_trtcm
-], UnsafePointer[rte_meter_trtcm_profile
-rte_meter_trtcm_profile
-]) -> Int32
-alias rte_meter_trtcm_rfc4115_config = fn (UnsafePointer[rte_meter_trtcm_rfc4115
-rte_meter_trtcm_rfc4115
-], UnsafePointer[rte_meter_trtcm_rfc4115_profile
-rte_meter_trtcm_rfc4115_profile
-]) -> Int32
-alias rte_meter_srtcm_color_blind_check = fn (UnsafePointer[rte_meter_srtcm
-rte_meter_srtcm
-], UnsafePointer[rte_meter_srtcm_profile
-rte_meter_srtcm_profile
-], ffi.c_ulong, UInt32) -> 
-rte_color
-
-alias rte_meter_srtcm_color_aware_check = fn (UnsafePointer[rte_meter_srtcm
-rte_meter_srtcm
-], UnsafePointer[rte_meter_srtcm_profile
-rte_meter_srtcm_profile
-], ffi.c_ulong, UInt32, 
-rte_color
-) -> 
-rte_color
-
-alias rte_meter_trtcm_color_blind_check = fn (UnsafePointer[rte_meter_trtcm
-rte_meter_trtcm
-], UnsafePointer[rte_meter_trtcm_profile
-rte_meter_trtcm_profile
-], ffi.c_ulong, UInt32) -> 
-rte_color
-
-alias rte_meter_trtcm_color_aware_check = fn (UnsafePointer[rte_meter_trtcm
-rte_meter_trtcm
-], UnsafePointer[rte_meter_trtcm_profile
-rte_meter_trtcm_profile
-], ffi.c_ulong, UInt32, 
-rte_color
-) -> 
-rte_color
-
-alias rte_meter_trtcm_rfc4115_color_blind_check = fn (UnsafePointer[rte_meter_trtcm_rfc4115
-rte_meter_trtcm_rfc4115
-], UnsafePointer[rte_meter_trtcm_rfc4115_profile
-rte_meter_trtcm_rfc4115_profile
-], ffi.c_ulong, UInt32) -> 
-rte_color
-
-alias rte_meter_trtcm_rfc4115_color_aware_check = fn (UnsafePointer[rte_meter_trtcm_rfc4115
-rte_meter_trtcm_rfc4115
-], UnsafePointer[rte_meter_trtcm_rfc4115_profile
-rte_meter_trtcm_rfc4115_profile
-], ffi.c_ulong, UInt32, 
-rte_color
-) -> 
-rte_color
-
+alias rte_meter_srtcm_profile_config = fn (UnsafePointer[rte_meter_srtcm_profile], UnsafePointer[rte_meter_srtcm_params]) -> Int32
+alias rte_meter_trtcm_profile_config = fn (UnsafePointer[rte_meter_trtcm_profile], UnsafePointer[rte_meter_trtcm_params]) -> Int32
+alias rte_meter_trtcm_rfc4115_profile_config = fn (UnsafePointer[rte_meter_trtcm_rfc4115_profile], UnsafePointer[rte_meter_trtcm_rfc4115_params]) -> Int32
+alias rte_meter_srtcm_config = fn (UnsafePointer[rte_meter_srtcm], UnsafePointer[rte_meter_srtcm_profile]) -> Int32
+alias rte_meter_trtcm_config = fn (UnsafePointer[rte_meter_trtcm], UnsafePointer[rte_meter_trtcm_profile]) -> Int32
+alias rte_meter_trtcm_rfc4115_config = fn (UnsafePointer[rte_meter_trtcm_rfc4115], UnsafePointer[rte_meter_trtcm_rfc4115_profile]) -> Int32
+alias rte_meter_srtcm_color_blind_check = fn (UnsafePointer[rte_meter_srtcm], UnsafePointer[rte_meter_srtcm_profile], ffi.c_ulong, UInt32) -> rte_color
+alias rte_meter_srtcm_color_aware_check = fn (UnsafePointer[rte_meter_srtcm], UnsafePointer[rte_meter_srtcm_profile], ffi.c_ulong, UInt32, rte_color) -> rte_color
+alias rte_meter_trtcm_color_blind_check = fn (UnsafePointer[rte_meter_trtcm], UnsafePointer[rte_meter_trtcm_profile], ffi.c_ulong, UInt32) -> rte_color
+alias rte_meter_trtcm_color_aware_check = fn (UnsafePointer[rte_meter_trtcm], UnsafePointer[rte_meter_trtcm_profile], ffi.c_ulong, UInt32, rte_color) -> rte_color
+alias rte_meter_trtcm_rfc4115_color_blind_check = fn (UnsafePointer[rte_meter_trtcm_rfc4115], UnsafePointer[rte_meter_trtcm_rfc4115_profile], ffi.c_ulong, UInt32) -> rte_color
+alias rte_meter_trtcm_rfc4115_color_aware_check = fn (UnsafePointer[rte_meter_trtcm_rfc4115], UnsafePointer[rte_meter_trtcm_rfc4115_profile], ffi.c_ulong, UInt32, rte_color) -> rte_color
 
 
 alias rte_meter_rte_meter_srtcm_profile_config = ExternalFunction['rte_meter_srtcm_profile_config', rte_meter_srtcm_profile_config]

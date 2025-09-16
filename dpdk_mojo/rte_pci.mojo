@@ -373,12 +373,8 @@ struct anonomous_record_241(Copyable & Movable):
 alias fd_set = anonomous_record_241
 
 alias fd_mask = __fd_mask
-alias select = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timeval
-timeval
-]) -> Int32
-alias pselect = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timespec
-timespec
-], UnsafePointer[__sigset_t]) -> Int32
+alias select = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timeval]) -> Int32
+alias pselect = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timespec], UnsafePointer[__sigset_t]) -> Int32
 alias blksize_t = __blksize_t
 alias blkcnt_t = __blkcnt_t
 alias fsblkcnt_t = __fsblkcnt_t
@@ -524,17 +520,9 @@ struct rte_pci_addr(Copyable & Movable):
 
 	var function : UInt8
 
-alias rte_pci_device_name = fn (UnsafePointer[rte_pci_addr
-rte_pci_addr
-], UnsafePointer[Int8], size_t) -> NoneType
-alias rte_pci_addr_cmp = fn (UnsafePointer[rte_pci_addr
-rte_pci_addr
-], UnsafePointer[rte_pci_addr
-rte_pci_addr
-]) -> Int32
-alias rte_pci_addr_parse = fn (UnsafePointer[Int8], UnsafePointer[rte_pci_addr
-rte_pci_addr
-]) -> Int32
+alias rte_pci_device_name = fn (UnsafePointer[rte_pci_addr], UnsafePointer[Int8], size_t) -> NoneType
+alias rte_pci_addr_cmp = fn (UnsafePointer[rte_pci_addr], UnsafePointer[rte_pci_addr]) -> Int32
+alias rte_pci_addr_parse = fn (UnsafePointer[Int8], UnsafePointer[rte_pci_addr]) -> Int32
 
 
 alias rte_pci_remove = ExternalFunction['remove', remove]

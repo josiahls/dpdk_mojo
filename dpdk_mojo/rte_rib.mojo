@@ -247,12 +247,8 @@ struct anonomous_record_1002(Copyable & Movable):
 alias fd_set = anonomous_record_1002
 
 alias fd_mask = __fd_mask
-alias select = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timeval
-timeval
-]) -> Int32
-alias pselect = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timespec
-timespec
-], UnsafePointer[__sigset_t]) -> Int32
+alias select = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timeval]) -> Int32
+alias pselect = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timespec], UnsafePointer[__sigset_t]) -> Int32
 alias blksize_t = __blksize_t
 alias blkcnt_t = __blkcnt_t
 alias fsblkcnt_t = __fsblkcnt_t
@@ -395,18 +391,10 @@ struct random_data(Copyable & Movable):
 
 	var end_ptr : UnsafePointer[ffi.c_long]
 
-alias random_r = fn (UnsafePointer[random_data
-random_data
-], UnsafePointer[Int32]) -> Int32
-alias srandom_r = fn (UInt32, UnsafePointer[random_data
-random_data
-]) -> Int32
-alias initstate_r = fn (UInt32, UnsafePointer[Int8], size_t, UnsafePointer[random_data
-random_data
-]) -> Int32
-alias setstate_r = fn (UnsafePointer[Int8], UnsafePointer[random_data
-random_data
-]) -> Int32
+alias random_r = fn (UnsafePointer[random_data], UnsafePointer[Int32]) -> Int32
+alias srandom_r = fn (UInt32, UnsafePointer[random_data]) -> Int32
+alias initstate_r = fn (UInt32, UnsafePointer[Int8], size_t, UnsafePointer[random_data]) -> Int32
+alias setstate_r = fn (UnsafePointer[Int8], UnsafePointer[random_data]) -> Int32
 alias rand = fn () -> Int32
 alias srand = fn (UInt32) -> NoneType
 alias rand_r = fn (UnsafePointer[UInt32]) -> Int32
@@ -430,33 +418,15 @@ struct drand48_data(Copyable & Movable):
 
 	var __a : ffi.c_ulong_long
 
-alias drand48_r = fn (UnsafePointer[drand48_data
-drand48_data
-], UnsafePointer[Float64]) -> Int32
-alias erand48_r = fn (UnsafePointer[UInt16], UnsafePointer[drand48_data
-drand48_data
-], UnsafePointer[Float64]) -> Int32
-alias lrand48_r = fn (UnsafePointer[drand48_data
-drand48_data
-], UnsafePointer[ffi.c_long]) -> Int32
-alias nrand48_r = fn (UnsafePointer[UInt16], UnsafePointer[drand48_data
-drand48_data
-], UnsafePointer[ffi.c_long]) -> Int32
-alias mrand48_r = fn (UnsafePointer[drand48_data
-drand48_data
-], UnsafePointer[ffi.c_long]) -> Int32
-alias jrand48_r = fn (UnsafePointer[UInt16], UnsafePointer[drand48_data
-drand48_data
-], UnsafePointer[ffi.c_long]) -> Int32
-alias srand48_r = fn (ffi.c_long, UnsafePointer[drand48_data
-drand48_data
-]) -> Int32
-alias seed48_r = fn (UnsafePointer[UInt16], UnsafePointer[drand48_data
-drand48_data
-]) -> Int32
-alias lcong48_r = fn (UnsafePointer[UInt16], UnsafePointer[drand48_data
-drand48_data
-]) -> Int32
+alias drand48_r = fn (UnsafePointer[drand48_data], UnsafePointer[Float64]) -> Int32
+alias erand48_r = fn (UnsafePointer[UInt16], UnsafePointer[drand48_data], UnsafePointer[Float64]) -> Int32
+alias lrand48_r = fn (UnsafePointer[drand48_data], UnsafePointer[ffi.c_long]) -> Int32
+alias nrand48_r = fn (UnsafePointer[UInt16], UnsafePointer[drand48_data], UnsafePointer[ffi.c_long]) -> Int32
+alias mrand48_r = fn (UnsafePointer[drand48_data], UnsafePointer[ffi.c_long]) -> Int32
+alias jrand48_r = fn (UnsafePointer[UInt16], UnsafePointer[drand48_data], UnsafePointer[ffi.c_long]) -> Int32
+alias srand48_r = fn (ffi.c_long, UnsafePointer[drand48_data]) -> Int32
+alias seed48_r = fn (UnsafePointer[UInt16], UnsafePointer[drand48_data]) -> Int32
+alias lcong48_r = fn (UnsafePointer[UInt16], UnsafePointer[drand48_data]) -> Int32
 alias malloc = fn (ffi.c_ulong) -> OpaquePointer
 alias calloc = fn (ffi.c_ulong, ffi.c_ulong) -> OpaquePointer
 alias realloc = fn (OpaquePointer, ffi.c_ulong) -> OpaquePointer
@@ -466,9 +436,9 @@ alias alloca = fn (ffi.c_ulong) -> OpaquePointer
 alias valloc = fn (size_t) -> OpaquePointer
 alias posix_memalign = fn (UnsafePointer[OpaquePointer], size_t, size_t) -> Int32
 alias aligned_alloc = fn (ffi.c_ulong, ffi.c_ulong) -> OpaquePointer
-alias atexit = fn (/,__func: fn (NoneType) -> NoneType) -> Int32
-alias at_quick_exit = fn (/,__func: fn (NoneType) -> NoneType) -> Int32
-alias on_exit = fn (/,__func: fn (Int32, OpaquePointer) -> NoneType, OpaquePointer) -> Int32
+alias atexit = fn (fn (NoneType) -> NoneType) -> Int32
+alias at_quick_exit = fn (fn (NoneType) -> NoneType) -> Int32
+alias on_exit = fn (fn (Int32, OpaquePointer) -> NoneType, OpaquePointer) -> Int32
 alias exit = fn (Int32) -> NoneType
 alias quick_exit = fn (Int32) -> NoneType
 alias _Exit = fn (Int32) -> NoneType
@@ -547,22 +517,14 @@ alias cpu_set_t = anonomous_record_1014
 alias __sched_cpucount = fn (size_t, UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
 alias __sched_cpufree = fn (UnsafePointer[cpu_set_t]) -> NoneType
-alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param
-sched_param
-]) -> Int32
+alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param]) -> Int32
 alias sched_getscheduler = fn (__pid_t) -> Int32
 alias sched_yield = fn () -> Int32
 alias sched_get_priority_max = fn (Int32) -> Int32
 alias sched_get_priority_min = fn (Int32) -> Int32
-alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
+alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec]) -> Int32
 alias unaligned_uint64_t = uint64_t
 alias unaligned_uint32_t = uint32_t
 alias unaligned_uint16_t = uint16_t
@@ -636,62 +598,20 @@ struct rte_rib_conf(Copyable & Movable):
 	var max_nodes : Int32
 
 alias rte_rib_depth_to_mask = fn (UInt8) -> UInt32
-alias rte_rib_lookup = fn (UnsafePointer[rte_rib
-rte_rib
-], UInt32) -> UnsafePointer[rte_rib_node
-rte_rib_node
-]
-alias rte_rib_lookup_parent = fn (UnsafePointer[rte_rib_node
-rte_rib_node
-]) -> UnsafePointer[rte_rib_node
-rte_rib_node
-]
-alias rte_rib_lookup_exact = fn (UnsafePointer[rte_rib
-rte_rib
-], UInt32, UInt8) -> UnsafePointer[rte_rib_node
-rte_rib_node
-]
-alias rte_rib_get_nxt = fn (UnsafePointer[rte_rib
-rte_rib
-], UInt32, UInt8, UnsafePointer[rte_rib_node
-rte_rib_node
-], Int32) -> UnsafePointer[rte_rib_node
-rte_rib_node
-]
-alias rte_rib_remove = fn (UnsafePointer[rte_rib
-rte_rib
-], UInt32, UInt8) -> NoneType
-alias rte_rib_insert = fn (UnsafePointer[rte_rib
-rte_rib
-], UInt32, UInt8) -> UnsafePointer[rte_rib_node
-rte_rib_node
-]
-alias rte_rib_get_ip = fn (UnsafePointer[rte_rib_node
-rte_rib_node
-], UnsafePointer[UInt32]) -> Int32
-alias rte_rib_get_depth = fn (UnsafePointer[rte_rib_node
-rte_rib_node
-], UnsafePointer[UInt8]) -> Int32
-alias rte_rib_get_ext = fn (UnsafePointer[rte_rib_node
-rte_rib_node
-]) -> OpaquePointer
-alias rte_rib_get_nh = fn (UnsafePointer[rte_rib_node
-rte_rib_node
-], UnsafePointer[ffi.c_ulong]) -> Int32
-alias rte_rib_set_nh = fn (UnsafePointer[rte_rib_node
-rte_rib_node
-], ffi.c_ulong) -> Int32
-alias rte_rib_free = fn (UnsafePointer[rte_rib
-rte_rib
-]) -> NoneType
-alias rte_rib_create = fn (UnsafePointer[Int8], Int32, UnsafePointer[rte_rib_conf
-rte_rib_conf
-]) -> UnsafePointer[rte_rib
-rte_rib
-]
-alias rte_rib_find_existing = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_rib
-rte_rib
-]
+alias rte_rib_lookup = fn (UnsafePointer[rte_rib], UInt32) -> UnsafePointer[rte_rib_node]
+alias rte_rib_lookup_parent = fn (UnsafePointer[rte_rib_node]) -> UnsafePointer[rte_rib_node]
+alias rte_rib_lookup_exact = fn (UnsafePointer[rte_rib], UInt32, UInt8) -> UnsafePointer[rte_rib_node]
+alias rte_rib_get_nxt = fn (UnsafePointer[rte_rib], UInt32, UInt8, UnsafePointer[rte_rib_node], Int32) -> UnsafePointer[rte_rib_node]
+alias rte_rib_remove = fn (UnsafePointer[rte_rib], UInt32, UInt8) -> NoneType
+alias rte_rib_insert = fn (UnsafePointer[rte_rib], UInt32, UInt8) -> UnsafePointer[rte_rib_node]
+alias rte_rib_get_ip = fn (UnsafePointer[rte_rib_node], UnsafePointer[UInt32]) -> Int32
+alias rte_rib_get_depth = fn (UnsafePointer[rte_rib_node], UnsafePointer[UInt8]) -> Int32
+alias rte_rib_get_ext = fn (UnsafePointer[rte_rib_node]) -> OpaquePointer
+alias rte_rib_get_nh = fn (UnsafePointer[rte_rib_node], UnsafePointer[ffi.c_ulong]) -> Int32
+alias rte_rib_set_nh = fn (UnsafePointer[rte_rib_node], ffi.c_ulong) -> Int32
+alias rte_rib_free = fn (UnsafePointer[rte_rib]) -> NoneType
+alias rte_rib_create = fn (UnsafePointer[Int8], Int32, UnsafePointer[rte_rib_conf]) -> UnsafePointer[rte_rib]
+alias rte_rib_find_existing = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_rib]
 
 
 alias rte_rib_atof = ExternalFunction['atof', atof]

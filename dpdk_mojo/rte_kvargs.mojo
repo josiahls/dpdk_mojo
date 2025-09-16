@@ -83,30 +83,14 @@ struct rte_kvargs(Copyable & Movable):
 
 	var pairs : InlineArray[rte_kvargs_pair, 32]
 
-alias rte_kvargs_parse = fn (UnsafePointer[Int8], UnsafePointer[UnsafePointer[Int8], mut=False]) -> UnsafePointer[rte_kvargs
-rte_kvargs
-]
-alias rte_kvargs_parse_delim = fn (UnsafePointer[Int8], UnsafePointer[UnsafePointer[Int8], mut=False], UnsafePointer[Int8]) -> UnsafePointer[rte_kvargs
-rte_kvargs
-]
-alias rte_kvargs_free = fn (UnsafePointer[rte_kvargs
-rte_kvargs
-]) -> NoneType
-alias rte_kvargs_get = fn (UnsafePointer[rte_kvargs
-rte_kvargs
-], UnsafePointer[Int8]) -> UnsafePointer[Int8]
-alias rte_kvargs_get_with_value = fn (UnsafePointer[rte_kvargs
-rte_kvargs
-], UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[Int8]
-alias rte_kvargs_process = fn (UnsafePointer[rte_kvargs
-rte_kvargs
-], UnsafePointer[Int8], arg_handler_t, OpaquePointer) -> Int32
-alias rte_kvargs_process_opt = fn (UnsafePointer[rte_kvargs
-rte_kvargs
-], UnsafePointer[Int8], arg_handler_t, OpaquePointer) -> Int32
-alias rte_kvargs_count = fn (UnsafePointer[rte_kvargs
-rte_kvargs
-], UnsafePointer[Int8]) -> UInt32
+alias rte_kvargs_parse = fn (UnsafePointer[Int8], UnsafePointer[UnsafePointer[Int8], mut=False]) -> UnsafePointer[rte_kvargs]
+alias rte_kvargs_parse_delim = fn (UnsafePointer[Int8], UnsafePointer[UnsafePointer[Int8], mut=False], UnsafePointer[Int8]) -> UnsafePointer[rte_kvargs]
+alias rte_kvargs_free = fn (UnsafePointer[rte_kvargs]) -> NoneType
+alias rte_kvargs_get = fn (UnsafePointer[rte_kvargs], UnsafePointer[Int8]) -> UnsafePointer[Int8]
+alias rte_kvargs_get_with_value = fn (UnsafePointer[rte_kvargs], UnsafePointer[Int8], UnsafePointer[Int8]) -> UnsafePointer[Int8]
+alias rte_kvargs_process = fn (UnsafePointer[rte_kvargs], UnsafePointer[Int8], arg_handler_t, OpaquePointer) -> Int32
+alias rte_kvargs_process_opt = fn (UnsafePointer[rte_kvargs], UnsafePointer[Int8], arg_handler_t, OpaquePointer) -> Int32
+alias rte_kvargs_count = fn (UnsafePointer[rte_kvargs], UnsafePointer[Int8]) -> UInt32
 
 
 alias rte_kvargs_rte_kvargs_parse = ExternalFunction['rte_kvargs_parse', rte_kvargs_parse]

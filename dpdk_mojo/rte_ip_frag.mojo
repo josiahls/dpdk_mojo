@@ -329,22 +329,14 @@ alias cpu_set_t = anonomous_record_737
 alias __sched_cpucount = fn (size_t, UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
 alias __sched_cpufree = fn (UnsafePointer[cpu_set_t]) -> NoneType
-alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param
-sched_param
-]) -> Int32
+alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param]) -> Int32
 alias sched_getscheduler = fn (__pid_t) -> Int32
 alias sched_yield = fn () -> Int32
 alias sched_get_priority_max = fn (Int32) -> Int32
 alias sched_get_priority_min = fn (Int32) -> Int32
-alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
+alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec]) -> Int32
 alias unaligned_uint64_t = uint64_t
 alias unaligned_uint32_t = uint32_t
 alias unaligned_uint16_t = uint16_t
@@ -560,8 +552,7 @@ alias rte_atomic64_clear = fn (UnsafePointer[rte_atomic64_t]) -> NoneType
 alias anonomous_record_741 = C_Union[InlineArray[ffi.c_ulong_long, 2], ffi.c_long_long]
 
 struct anonomous_record_742(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30bf3230","inner":[{"id":"0x30bf3210","inner":[{"id":"0x30bf3150","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}},"end":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}},"end":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":16,"file":"dpdk/lib/eal/include/generic/rte_atomic.h","includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"line":1101,"offset":25559,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":16,"file":"dpdk/lib/eal/include/generic/rte_atomic.h","includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"line":1101,"offset":25559,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 16 
 
 
 	var union_placeholder_1 : anonomous_record_741
@@ -654,38 +645,16 @@ alias locale_t = __locale_t
 alias clock = fn () -> clock_t
 alias time = fn (UnsafePointer[time_t]) -> time_t
 alias difftime = fn (time_t, time_t) -> Float64
-alias mktime = fn (UnsafePointer[tm
-tm
-]) -> time_t
-alias strftime = fn (UnsafePointer[Int8], size_t, UnsafePointer[Int8], UnsafePointer[tm
-tm
-]) -> size_t
-alias strftime_l = fn (UnsafePointer[Int8], size_t, UnsafePointer[Int8], UnsafePointer[tm
-tm
-], locale_t) -> size_t
-alias gmtime = fn (UnsafePointer[time_t]) -> UnsafePointer[tm
-tm
-]
-alias localtime = fn (UnsafePointer[time_t]) -> UnsafePointer[tm
-tm
-]
-alias gmtime_r = fn (UnsafePointer[time_t], UnsafePointer[tm
-tm
-]) -> UnsafePointer[tm
-tm
-]
-alias localtime_r = fn (UnsafePointer[time_t], UnsafePointer[tm
-tm
-]) -> UnsafePointer[tm
-tm
-]
-alias asctime = fn (UnsafePointer[tm
-tm
-]) -> UnsafePointer[Int8]
+alias mktime = fn (UnsafePointer[tm]) -> time_t
+alias strftime = fn (UnsafePointer[Int8], size_t, UnsafePointer[Int8], UnsafePointer[tm]) -> size_t
+alias strftime_l = fn (UnsafePointer[Int8], size_t, UnsafePointer[Int8], UnsafePointer[tm], locale_t) -> size_t
+alias gmtime = fn (UnsafePointer[time_t]) -> UnsafePointer[tm]
+alias localtime = fn (UnsafePointer[time_t]) -> UnsafePointer[tm]
+alias gmtime_r = fn (UnsafePointer[time_t], UnsafePointer[tm]) -> UnsafePointer[tm]
+alias localtime_r = fn (UnsafePointer[time_t], UnsafePointer[tm]) -> UnsafePointer[tm]
+alias asctime = fn (UnsafePointer[tm]) -> UnsafePointer[Int8]
 alias ctime = fn (UnsafePointer[time_t]) -> UnsafePointer[Int8]
-alias asctime_r = fn (UnsafePointer[tm
-tm
-], UnsafePointer[Int8]) -> UnsafePointer[Int8]
+alias asctime_r = fn (UnsafePointer[tm], UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias ctime_r = fn (UnsafePointer[time_t], UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias __tzname = InlineArray[UnsafePointer[Int8], 2]
 alias __daylight = Int32
@@ -694,49 +663,21 @@ alias tzname = InlineArray[UnsafePointer[Int8], 2]
 alias tzset = fn () -> NoneType
 alias daylight = Int32
 alias timezone = ffi.c_long
-alias timegm = fn (UnsafePointer[tm
-tm
-]) -> time_t
-alias timelocal = fn (UnsafePointer[tm
-tm
-]) -> time_t
+alias timegm = fn (UnsafePointer[tm]) -> time_t
+alias timelocal = fn (UnsafePointer[tm]) -> time_t
 alias dysize = fn (Int32) -> Int32
-alias nanosleep = fn (UnsafePointer[timespec
-timespec
-], UnsafePointer[timespec
-timespec
-]) -> Int32
-alias clock_getres = fn (clockid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
-alias clock_gettime = fn (clockid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
-alias clock_settime = fn (clockid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
-alias clock_nanosleep = fn (clockid_t, Int32, UnsafePointer[timespec
-timespec
-], UnsafePointer[timespec
-timespec
-]) -> Int32
+alias nanosleep = fn (UnsafePointer[timespec], UnsafePointer[timespec]) -> Int32
+alias clock_getres = fn (clockid_t, UnsafePointer[timespec]) -> Int32
+alias clock_gettime = fn (clockid_t, UnsafePointer[timespec]) -> Int32
+alias clock_settime = fn (clockid_t, UnsafePointer[timespec]) -> Int32
+alias clock_nanosleep = fn (clockid_t, Int32, UnsafePointer[timespec], UnsafePointer[timespec]) -> Int32
 alias clock_getcpuclockid = fn (pid_t, UnsafePointer[clockid_t]) -> Int32
-alias timer_create = fn (clockid_t, UnsafePointer[sigevent
-sigevent
-], UnsafePointer[timer_t]) -> Int32
+alias timer_create = fn (clockid_t, UnsafePointer[sigevent], UnsafePointer[timer_t]) -> Int32
 alias timer_delete = fn (timer_t) -> Int32
-alias timer_settime = fn (timer_t, Int32, UnsafePointer[itimerspec
-itimerspec
-], UnsafePointer[itimerspec
-itimerspec
-]) -> Int32
-alias timer_gettime = fn (timer_t, UnsafePointer[itimerspec
-itimerspec
-]) -> Int32
+alias timer_settime = fn (timer_t, Int32, UnsafePointer[itimerspec], UnsafePointer[itimerspec]) -> Int32
+alias timer_gettime = fn (timer_t, UnsafePointer[itimerspec]) -> Int32
 alias timer_getoverrun = fn (timer_t) -> Int32
-alias timespec_get = fn (UnsafePointer[timespec
-timespec
-], Int32) -> Int32
+alias timespec_get = fn (UnsafePointer[timespec], Int32) -> Int32
 alias memcpy = fn (OpaquePointer, OpaquePointer, ffi.c_ulong) -> OpaquePointer
 alias memmove = fn (OpaquePointer, OpaquePointer, ffi.c_ulong) -> OpaquePointer
 alias memccpy = fn (OpaquePointer, OpaquePointer, Int32, ffi.c_ulong) -> OpaquePointer
@@ -820,9 +761,7 @@ struct rte_proc_type_t(Copyable & Movable):
 
 	alias RTE_PROC_INVALID = 2
 
-alias rte_eal_process_type = fn () -> 
-rte_proc_type_t
-
+alias rte_eal_process_type = fn () -> rte_proc_type_t
 alias rte_eal_iopl_init = fn () -> Int32
 alias rte_eal_init = fn (Int32, UnsafePointer[UnsafePointer[Int8]]) -> Int32
 alias rte_eal_cleanup = fn () -> Int32
@@ -850,29 +789,15 @@ alias rte_mp_t = fn(read UnsafePointer[rte_mp_msg], read OpaquePointer) -> Int32
 alias rte_mp_async_reply_t = fn(read UnsafePointer[rte_mp_msg], read UnsafePointer[rte_mp_reply]) -> Int32
 alias rte_mp_action_register = fn (UnsafePointer[Int8], rte_mp_t) -> Int32
 alias rte_mp_action_unregister = fn (UnsafePointer[Int8]) -> NoneType
-alias rte_mp_sendmsg = fn (UnsafePointer[rte_mp_msg
-rte_mp_msg
-]) -> Int32
-alias rte_mp_request_sync = fn (UnsafePointer[rte_mp_msg
-rte_mp_msg
-], UnsafePointer[rte_mp_reply
-rte_mp_reply
-], UnsafePointer[timespec
-timespec
-]) -> Int32
-alias rte_mp_request_async = fn (UnsafePointer[rte_mp_msg
-rte_mp_msg
-], UnsafePointer[timespec
-timespec
-], rte_mp_async_reply_t) -> Int32
+alias rte_mp_sendmsg = fn (UnsafePointer[rte_mp_msg]) -> Int32
+alias rte_mp_request_sync = fn (UnsafePointer[rte_mp_msg], UnsafePointer[rte_mp_reply], UnsafePointer[timespec]) -> Int32
+alias rte_mp_request_async = fn (UnsafePointer[rte_mp_msg], UnsafePointer[timespec], rte_mp_async_reply_t) -> Int32
 alias rte_usage_hook_t = fn(read UnsafePointer[Int8]) -> NoneType
 alias rte_set_application_usage_hook = fn (rte_usage_hook_t) -> rte_usage_hook_t
 alias rte_eal_has_hugepages = fn () -> Int32
 alias rte_eal_has_pci = fn () -> Int32
 alias rte_eal_create_uio_dev = fn () -> Int32
-alias rte_eal_vfio_intr_mode = fn () -> 
-rte_intr_mode
-
+alias rte_eal_vfio_intr_mode = fn () -> rte_intr_mode
 alias rte_eal_vfio_get_vf_token = fn (UnsafePointer[UInt8]) -> NoneType
 alias rte_sys_gettid = fn () -> Int32
 alias per_lcore__thread_id = Int32
@@ -886,9 +811,7 @@ struct rte_iova_mode(Copyable & Movable):
 
 	alias RTE_IOVA_VA = 2
 
-alias rte_eal_iova_mode = fn () -> 
-rte_iova_mode
-
+alias rte_eal_iova_mode = fn () -> rte_iova_mode
 alias rte_eal_mbuf_user_pool_ops = fn () -> UnsafePointer[Int8]
 alias rte_eal_get_runtime_dir = fn () -> UnsafePointer[Int8]
 alias rte_eal_parse_coremask = fn (UnsafePointer[Int8], UnsafePointer[Int32]) -> Int32
@@ -898,9 +821,7 @@ struct rte_lcore_state_t(Copyable & Movable):
 
 	alias RUNNING = 1
 
-alias lcore_function_t = 	# # Node: PlaceHolder()
-	# {"id":"0x30c57140","inner":[{"cc":"cdecl","id":"0x30c30400","inner":[{"id":"0x3099c8a0","kind":"BuiltinType","type":{"qualType":"int"}},{"id":"0x3099d540","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"int (void *)"}}],"kind":"ParenType","type":{"qualType":"int (void *)"}}
-
+alias lcore_function_t = UnsafePointer[fn (OpaquePointer) -> Int32]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
@@ -913,12 +834,8 @@ struct rte_rmt_call_main_t(Copyable & Movable):
 
 	alias CALL_MAIN = 1
 
-alias rte_eal_mp_remote_launch = fn (UnsafePointer[lcore_function_t], OpaquePointer, 
-rte_rmt_call_main_t
-) -> Int32
-alias rte_eal_get_lcore_state = fn (UInt32) -> 
-rte_lcore_state_t
-
+alias rte_eal_mp_remote_launch = fn (UnsafePointer[lcore_function_t], OpaquePointer, rte_rmt_call_main_t) -> Int32
+alias rte_eal_get_lcore_state = fn (UInt32) -> rte_lcore_state_t
 alias rte_eal_wait_lcore = fn (UInt32) -> Int32
 alias rte_eal_mp_wait_lcore = fn () -> NoneType
 struct anonomous_record_744(Copyable & Movable):
@@ -969,16 +886,10 @@ alias rte_thread_set_name = fn (rte_thread_t, UnsafePointer[Int8]) -> NoneType
 alias rte_thread_set_prefixed_name = fn (rte_thread_t, UnsafePointer[Int8]) -> NoneType
 alias rte_thread_equal = fn (rte_thread_t, rte_thread_t) -> Int32
 alias rte_thread_attr_init = fn (UnsafePointer[rte_thread_attr_t]) -> Int32
-alias rte_thread_attr_set_priority = fn (UnsafePointer[rte_thread_attr_t], 
-rte_thread_priority
-) -> Int32
-alias rte_thread_get_priority = fn (rte_thread_t, UnsafePointer[
-rte_thread_priority
-]) -> Int32
-alias rte_thread_set_priority = fn (rte_thread_t, 
-rte_thread_priority
-) -> Int32
-alias rte_thread_key_create = fn (UnsafePointer[rte_thread_key], /,destructor: fn (OpaquePointer) -> NoneType) -> Int32
+alias rte_thread_attr_set_priority = fn (UnsafePointer[rte_thread_attr_t], rte_thread_priority) -> Int32
+alias rte_thread_get_priority = fn (rte_thread_t, UnsafePointer[rte_thread_priority]) -> Int32
+alias rte_thread_set_priority = fn (rte_thread_t, rte_thread_priority) -> Int32
+alias rte_thread_key_create = fn (UnsafePointer[rte_thread_key], fn (OpaquePointer) -> NoneType) -> Int32
 alias rte_thread_key_delete = fn (rte_thread_key) -> Int32
 alias rte_thread_value_set = fn (rte_thread_key, OpaquePointer) -> Int32
 alias rte_thread_value_get = fn (rte_thread_key) -> OpaquePointer
@@ -993,12 +904,8 @@ struct rte_lcore_role_t(Copyable & Movable):
 
 	alias ROLE_NON_EAL = 3
 
-alias rte_eal_lcore_role = fn (UInt32) -> 
-rte_lcore_role_t
-
-alias rte_lcore_has_role = fn (UInt32, 
-rte_lcore_role_t
-) -> Int32
+alias rte_eal_lcore_role = fn (UInt32) -> rte_lcore_role_t
+alias rte_lcore_has_role = fn (UInt32, rte_lcore_role_t) -> Int32
 alias rte_lcore_id = fn () -> UInt32
 alias rte_get_main_lcore = fn () -> UInt32
 alias rte_lcore_count = fn () -> UInt32
@@ -1103,89 +1010,37 @@ struct rte_fbarray(Copyable & Movable):
 
 	var rwlock : rte_rwlock_t
 
-alias rte_fbarray_init = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UnsafePointer[Int8], UInt32, UInt32) -> Int32
-alias rte_fbarray_attach = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-]) -> Int32
-alias rte_fbarray_destroy = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-]) -> Int32
-alias rte_fbarray_detach = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-]) -> Int32
-alias rte_fbarray_get = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> OpaquePointer
-alias rte_fbarray_find_idx = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], OpaquePointer) -> Int32
-alias rte_fbarray_set_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_set_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_is_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_next_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_next_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_next_n_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32, UInt32) -> Int32
-alias rte_fbarray_find_next_n_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32, UInt32) -> Int32
-alias rte_fbarray_find_contig_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_contig_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_prev_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_prev_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_prev_n_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32, UInt32) -> Int32
-alias rte_fbarray_find_prev_n_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32, UInt32) -> Int32
-alias rte_fbarray_find_rev_contig_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_rev_contig_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_biggest_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_biggest_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_rev_biggest_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_rev_biggest_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_dump_metadata = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UnsafePointer[FILE]) -> NoneType
+alias rte_fbarray_init = fn (UnsafePointer[rte_fbarray], UnsafePointer[Int8], UInt32, UInt32) -> Int32
+alias rte_fbarray_attach = fn (UnsafePointer[rte_fbarray]) -> Int32
+alias rte_fbarray_destroy = fn (UnsafePointer[rte_fbarray]) -> Int32
+alias rte_fbarray_detach = fn (UnsafePointer[rte_fbarray]) -> Int32
+alias rte_fbarray_get = fn (UnsafePointer[rte_fbarray], UInt32) -> OpaquePointer
+alias rte_fbarray_find_idx = fn (UnsafePointer[rte_fbarray], OpaquePointer) -> Int32
+alias rte_fbarray_set_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_set_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_is_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_next_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_next_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_next_n_free = fn (UnsafePointer[rte_fbarray], UInt32, UInt32) -> Int32
+alias rte_fbarray_find_next_n_used = fn (UnsafePointer[rte_fbarray], UInt32, UInt32) -> Int32
+alias rte_fbarray_find_contig_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_contig_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_prev_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_prev_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_prev_n_free = fn (UnsafePointer[rte_fbarray], UInt32, UInt32) -> Int32
+alias rte_fbarray_find_prev_n_used = fn (UnsafePointer[rte_fbarray], UInt32, UInt32) -> Int32
+alias rte_fbarray_find_rev_contig_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_rev_contig_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_biggest_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_biggest_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_rev_biggest_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_rev_biggest_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_dump_metadata = fn (UnsafePointer[rte_fbarray], UnsafePointer[FILE]) -> NoneType
 alias anonomous_record_748 = C_Union[OpaquePointer, ffi.c_ulong]
 
 struct rte_memseg(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x30c7cfa8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_malloc.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_malloc.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
+	# {"id":"0x1ccbfa8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_malloc.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_malloc.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var iova : ffi.c_ulong
@@ -1232,14 +1087,8 @@ alias rte_mem_lock_page = fn (OpaquePointer) -> Int32
 alias rte_mem_virt2phy = fn (OpaquePointer) -> phys_addr_t
 alias rte_mem_virt2iova = fn (OpaquePointer) -> rte_iova_t
 alias rte_mem_iova2virt = fn (rte_iova_t) -> OpaquePointer
-alias rte_mem_virt2memseg = fn (OpaquePointer, UnsafePointer[rte_memseg_list
-rte_memseg_list
-]) -> UnsafePointer[rte_memseg
-rte_memseg
-]
-alias rte_mem_virt2memseg_list = fn (OpaquePointer) -> UnsafePointer[rte_memseg_list
-rte_memseg_list
-]
+alias rte_mem_virt2memseg = fn (OpaquePointer, UnsafePointer[rte_memseg_list]) -> UnsafePointer[rte_memseg]
+alias rte_mem_virt2memseg_list = fn (OpaquePointer) -> UnsafePointer[rte_memseg_list]
 alias rte_memseg_walk_t = fn(read UnsafePointer[rte_memseg_list], read UnsafePointer[rte_memseg], OpaquePointer) -> Int32
 alias rte_memseg_contig_walk_t = fn(read UnsafePointer[rte_memseg_list], read UnsafePointer[rte_memseg], size_t, OpaquePointer) -> Int32
 alias rte_memseg_list_walk_t = fn(read UnsafePointer[rte_memseg_list], OpaquePointer) -> Int32
@@ -1249,18 +1098,10 @@ alias rte_memseg_list_walk = fn (rte_memseg_list_walk_t, OpaquePointer) -> Int32
 alias rte_memseg_walk_thread_unsafe = fn (rte_memseg_walk_t, OpaquePointer) -> Int32
 alias rte_memseg_contig_walk_thread_unsafe = fn (rte_memseg_contig_walk_t, OpaquePointer) -> Int32
 alias rte_memseg_list_walk_thread_unsafe = fn (rte_memseg_list_walk_t, OpaquePointer) -> Int32
-alias rte_memseg_get_fd = fn (UnsafePointer[rte_memseg
-rte_memseg
-]) -> Int32
-alias rte_memseg_get_fd_thread_unsafe = fn (UnsafePointer[rte_memseg
-rte_memseg
-]) -> Int32
-alias rte_memseg_get_fd_offset = fn (UnsafePointer[rte_memseg
-rte_memseg
-], UnsafePointer[size_t]) -> Int32
-alias rte_memseg_get_fd_offset_thread_unsafe = fn (UnsafePointer[rte_memseg
-rte_memseg
-], UnsafePointer[size_t]) -> Int32
+alias rte_memseg_get_fd = fn (UnsafePointer[rte_memseg]) -> Int32
+alias rte_memseg_get_fd_thread_unsafe = fn (UnsafePointer[rte_memseg]) -> Int32
+alias rte_memseg_get_fd_offset = fn (UnsafePointer[rte_memseg], UnsafePointer[size_t]) -> Int32
+alias rte_memseg_get_fd_offset_thread_unsafe = fn (UnsafePointer[rte_memseg], UnsafePointer[size_t]) -> Int32
 alias rte_extmem_register = fn (OpaquePointer, size_t, UnsafePointer[rte_iova_t], UInt32, size_t) -> Int32
 alias rte_extmem_unregister = fn (OpaquePointer, size_t) -> Int32
 alias rte_extmem_attach = fn (OpaquePointer, size_t) -> Int32
@@ -1311,9 +1152,7 @@ alias rte_malloc_socket = fn (UnsafePointer[Int8], size_t, UInt32, Int32) -> Opa
 alias rte_zmalloc_socket = fn (UnsafePointer[Int8], size_t, UInt32, Int32) -> OpaquePointer
 alias rte_calloc_socket = fn (UnsafePointer[Int8], size_t, size_t, UInt32, Int32) -> OpaquePointer
 alias rte_malloc_validate = fn (OpaquePointer, UnsafePointer[size_t]) -> Int32
-alias rte_malloc_get_socket_stats = fn (Int32, UnsafePointer[rte_malloc_socket_stats
-rte_malloc_socket_stats
-]) -> Int32
+alias rte_malloc_get_socket_stats = fn (Int32, UnsafePointer[rte_malloc_socket_stats]) -> Int32
 alias rte_malloc_heap_memory_add = fn (UnsafePointer[Int8], OpaquePointer, size_t, UnsafePointer[rte_iova_t], UInt32, size_t) -> Int32
 alias rte_malloc_heap_memory_remove = fn (UnsafePointer[Int8], OpaquePointer, size_t) -> Int32
 alias rte_malloc_heap_memory_attach = fn (UnsafePointer[Int8], OpaquePointer, size_t) -> Int32
@@ -1382,12 +1221,8 @@ struct anonomous_record_751(Copyable & Movable):
 alias fd_set = anonomous_record_751
 
 alias fd_mask = __fd_mask
-alias select = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timeval
-timeval
-]) -> Int32
-alias pselect = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timespec
-timespec
-], UnsafePointer[__sigset_t]) -> Int32
+alias select = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timeval]) -> Int32
+alias pselect = fn (Int32, UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[fd_set], UnsafePointer[timespec], UnsafePointer[__sigset_t]) -> Int32
 alias blksize_t = __blksize_t
 alias blkcnt_t = __blkcnt_t
 alias fsblkcnt_t = __fsblkcnt_t
@@ -1610,13 +1445,7 @@ struct cmsghdr(Copyable & Movable):
 
 	var __cmsg_data : UnsafePointer[UInt8] # Failed to parse array size
 
-alias __cmsg_nxthdr = fn (UnsafePointer[msghdr
-msghdr
-], UnsafePointer[cmsghdr
-cmsghdr
-]) -> UnsafePointer[cmsghdr
-cmsghdr
-]
+alias __cmsg_nxthdr = fn (UnsafePointer[msghdr], UnsafePointer[cmsghdr]) -> UnsafePointer[cmsghdr]
 alias SCM_RIGHTS = 1
 
 struct anonomous_record_763(Copyable & Movable):
@@ -1679,38 +1508,20 @@ alias SHUT_RDWR = 2
 
 alias socket = fn (Int32, Int32, Int32) -> Int32
 alias socketpair = fn (Int32, Int32, Int32, UnsafePointer[Int32]) -> Int32
-alias bind = fn (Int32, UnsafePointer[sockaddr
-sockaddr
-], socklen_t) -> Int32
-alias getsockname = fn (Int32, UnsafePointer[sockaddr
-sockaddr
-], UnsafePointer[socklen_t]) -> Int32
-alias connect = fn (Int32, UnsafePointer[sockaddr
-sockaddr
-], socklen_t) -> Int32
-alias getpeername = fn (Int32, UnsafePointer[sockaddr
-sockaddr
-], UnsafePointer[socklen_t]) -> Int32
+alias bind = fn (Int32, UnsafePointer[sockaddr], socklen_t) -> Int32
+alias getsockname = fn (Int32, UnsafePointer[sockaddr], UnsafePointer[socklen_t]) -> Int32
+alias connect = fn (Int32, UnsafePointer[sockaddr], socklen_t) -> Int32
+alias getpeername = fn (Int32, UnsafePointer[sockaddr], UnsafePointer[socklen_t]) -> Int32
 alias send = fn (Int32, OpaquePointer, size_t, Int32) -> ssize_t
 alias recv = fn (Int32, OpaquePointer, size_t, Int32) -> ssize_t
-alias sendto = fn (Int32, OpaquePointer, size_t, Int32, UnsafePointer[sockaddr
-sockaddr
-], socklen_t) -> ssize_t
-alias recvfrom = fn (Int32, OpaquePointer, size_t, Int32, UnsafePointer[sockaddr
-sockaddr
-], UnsafePointer[socklen_t]) -> ssize_t
-alias sendmsg = fn (Int32, UnsafePointer[msghdr
-msghdr
-], Int32) -> ssize_t
-alias recvmsg = fn (Int32, UnsafePointer[msghdr
-msghdr
-], Int32) -> ssize_t
+alias sendto = fn (Int32, OpaquePointer, size_t, Int32, UnsafePointer[sockaddr], socklen_t) -> ssize_t
+alias recvfrom = fn (Int32, OpaquePointer, size_t, Int32, UnsafePointer[sockaddr], UnsafePointer[socklen_t]) -> ssize_t
+alias sendmsg = fn (Int32, UnsafePointer[msghdr], Int32) -> ssize_t
+alias recvmsg = fn (Int32, UnsafePointer[msghdr], Int32) -> ssize_t
 alias getsockopt = fn (Int32, Int32, Int32, OpaquePointer, UnsafePointer[socklen_t]) -> Int32
 alias setsockopt = fn (Int32, Int32, Int32, OpaquePointer, socklen_t) -> Int32
 alias listen = fn (Int32, Int32) -> Int32
-alias accept = fn (Int32, UnsafePointer[sockaddr
-sockaddr
-], UnsafePointer[socklen_t]) -> Int32
+alias accept = fn (Int32, UnsafePointer[sockaddr], UnsafePointer[socklen_t]) -> Int32
 alias shutdown = fn (Int32, Int32) -> Int32
 alias sockatmark = fn (Int32) -> Int32
 alias isfdtype = fn (Int32, Int32) -> Int32
@@ -1942,31 +1753,17 @@ alias ntohl = fn (UInt32) -> UInt32
 alias ntohs = fn (UInt16) -> UInt16
 alias htonl = fn (UInt32) -> UInt32
 alias htons = fn (UInt16) -> UInt16
-alias bindresvport = fn (Int32, UnsafePointer[sockaddr_in
-sockaddr_in
-]) -> Int32
-alias bindresvport6 = fn (Int32, UnsafePointer[sockaddr_in6
-sockaddr_in6
-]) -> Int32
+alias bindresvport = fn (Int32, UnsafePointer[sockaddr_in]) -> Int32
+alias bindresvport6 = fn (Int32, UnsafePointer[sockaddr_in6]) -> Int32
 alias inet_addr = fn (UnsafePointer[Int8]) -> in_addr_t
-alias inet_lnaof = fn (in_addr
-in_addr
-) -> in_addr_t
+alias inet_lnaof = fn (in_addr) -> in_addr_t
 alias inet_makeaddr = fn (in_addr_t, in_addr_t) -> in_addr
-in_addr
-
-alias inet_netof = fn (in_addr
-in_addr
-) -> in_addr_t
+alias inet_netof = fn (in_addr) -> in_addr_t
 alias inet_network = fn (UnsafePointer[Int8]) -> in_addr_t
-alias inet_ntoa = fn (in_addr
-in_addr
-) -> UnsafePointer[Int8]
+alias inet_ntoa = fn (in_addr) -> UnsafePointer[Int8]
 alias inet_pton = fn (Int32, UnsafePointer[Int8], OpaquePointer) -> Int32
 alias inet_ntop = fn (Int32, OpaquePointer, UnsafePointer[Int8], socklen_t) -> UnsafePointer[Int8]
-alias inet_aton = fn (UnsafePointer[Int8], UnsafePointer[in_addr
-in_addr
-]) -> Int32
+alias inet_aton = fn (UnsafePointer[Int8], UnsafePointer[in_addr]) -> Int32
 alias inet_neta = fn (in_addr_t, UnsafePointer[Int8], size_t) -> UnsafePointer[Int8]
 alias inet_net_ntop = fn (Int32, OpaquePointer, Int32, UnsafePointer[Int8], size_t) -> UnsafePointer[Int8]
 alias inet_net_pton = fn (Int32, UnsafePointer[Int8], OpaquePointer, size_t) -> Int32
@@ -2182,7 +1979,7 @@ alias anonomous_record_768 = C_Union[OpaquePointer, ffi.c_ulong]
 
 struct rte_memzone(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x30d61bd8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
+	# {"id":"0x1db0bd8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var name : InlineArray[Int8, 32]
@@ -2203,25 +2000,13 @@ struct rte_memzone(Copyable & Movable):
 
 alias rte_memzone_max_set = fn (size_t) -> Int32
 alias rte_memzone_max_get = fn () -> size_t
-alias rte_memzone_reserve = fn (UnsafePointer[Int8], size_t, Int32, UInt32) -> UnsafePointer[rte_memzone
-rte_memzone
-]
-alias rte_memzone_reserve_aligned = fn (UnsafePointer[Int8], size_t, Int32, UInt32, UInt32) -> UnsafePointer[rte_memzone
-rte_memzone
-]
-alias rte_memzone_reserve_bounded = fn (UnsafePointer[Int8], size_t, Int32, UInt32, UInt32, UInt32) -> UnsafePointer[rte_memzone
-rte_memzone
-]
-alias rte_memzone_free = fn (UnsafePointer[rte_memzone
-rte_memzone
-]) -> Int32
-alias rte_memzone_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_memzone
-rte_memzone
-]
+alias rte_memzone_reserve = fn (UnsafePointer[Int8], size_t, Int32, UInt32) -> UnsafePointer[rte_memzone]
+alias rte_memzone_reserve_aligned = fn (UnsafePointer[Int8], size_t, Int32, UInt32, UInt32) -> UnsafePointer[rte_memzone]
+alias rte_memzone_reserve_bounded = fn (UnsafePointer[Int8], size_t, Int32, UInt32, UInt32, UInt32) -> UnsafePointer[rte_memzone]
+alias rte_memzone_free = fn (UnsafePointer[rte_memzone]) -> Int32
+alias rte_memzone_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_memzone]
 alias rte_memzone_dump = fn (UnsafePointer[FILE]) -> NoneType
-alias rte_memzone_walk = fn (/,func: fn (UnsafePointer[rte_memzone
-rte_memzone
-], OpaquePointer) -> NoneType, OpaquePointer) -> NoneType
+alias rte_memzone_walk = fn (fn (UnsafePointer[rte_memzone], OpaquePointer) -> NoneType, OpaquePointer) -> NoneType
 struct rte_ring_queue_behavior(Copyable & Movable):
 
 	alias RTE_RING_QUEUE_FIXED = 0
@@ -2279,12 +2064,10 @@ struct rte_ring_hts_headtail(Copyable & Movable):
 	var sync_type : rte_ring_sync_type
 
 alias anonomous_record_773 = C_Union[rte_ring_headtail, rte_ring_hts_headtail, rte_ring_rts_headtail]
-		# # Node: PlaceHolder()
-		# {"id":"0x30d707a0","inner":[{"id":"0x30d70780","inner":[{"id":"0x30d706b8","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"line":138,"offset":4241,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 128 
 
 alias anonomous_record_772 = C_Union[rte_ring_headtail, rte_ring_hts_headtail, rte_ring_rts_headtail]
-		# # Node: PlaceHolder()
-		# {"id":"0x30d70040","inner":[{"id":"0x30d70020","inner":[{"id":"0x30d6ff58","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"isMacroArgExpansion":true,"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_core.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring.h"},"line":129,"offset":4043,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 128 
 
 struct rte_ring(Copyable & Movable):
 
@@ -2320,295 +2103,92 @@ alias __rte_ring_enqueue_elems_32 = fn (OpaquePointer, OpaquePointer, UInt32, UI
 alias __rte_ring_enqueue_elems_64 = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32) -> NoneType
 alias __rte_ring_enqueue_elems_128 = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32) -> NoneType
 alias __rte_ring_do_enqueue_elems = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_enqueue_elems = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, OpaquePointer, UInt32, UInt32) -> NoneType
+alias __rte_ring_enqueue_elems = fn (UnsafePointer[rte_ring], UInt32, OpaquePointer, UInt32, UInt32) -> NoneType
 alias __rte_ring_dequeue_elems_32 = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32) -> NoneType
 alias __rte_ring_dequeue_elems_64 = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32) -> NoneType
 alias __rte_ring_dequeue_elems_128 = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32) -> NoneType
 alias __rte_ring_do_dequeue_elems = fn (OpaquePointer, OpaquePointer, UInt32, UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_dequeue_elems = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, OpaquePointer, UInt32, UInt32) -> NoneType
-alias __rte_ring_update_tail = fn (UnsafePointer[rte_ring_headtail
-rte_ring_headtail
-], UInt32, UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_headtail_move_head = fn (UnsafePointer[rte_ring_headtail
-rte_ring_headtail
-], UnsafePointer[rte_ring_headtail
-rte_ring_headtail
-], UInt32, UInt32, UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32], UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_move_prod_head = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32], UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_move_cons_head = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32], UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_enqueue_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, 
-rte_ring_queue_behavior
-, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_dequeue_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, 
-rte_ring_queue_behavior
-, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_dequeue_elems = fn (UnsafePointer[rte_ring], UInt32, OpaquePointer, UInt32, UInt32) -> NoneType
+alias __rte_ring_update_tail = fn (UnsafePointer[rte_ring_headtail], UInt32, UInt32, UInt32, UInt32) -> NoneType
+alias __rte_ring_headtail_move_head = fn (UnsafePointer[rte_ring_headtail], UnsafePointer[rte_ring_headtail], UInt32, UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_move_prod_head = fn (UnsafePointer[rte_ring], UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_move_cons_head = fn (UnsafePointer[rte_ring], UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_do_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_do_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UInt32, UnsafePointer[UInt32]) -> UInt32
 alias rte_ring_get_memsize_elem = fn (UInt32, UInt32) -> ssize_t
-alias rte_ring_create_elem = fn (UnsafePointer[Int8], UInt32, UInt32, Int32, UInt32) -> UnsafePointer[rte_ring
-rte_ring
-]
-alias rte_ring_mp_enqueue_bulk_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sp_enqueue_bulk_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_hts_update_tail = fn (UnsafePointer[rte_ring_hts_headtail
-rte_ring_hts_headtail
-], UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_hts_head_wait = fn (UnsafePointer[rte_ring_hts_headtail
-rte_ring_hts_headtail
-], UnsafePointer[
-__rte_ring_hts_pos
-]) -> NoneType
-alias __rte_ring_hts_move_head = fn (UnsafePointer[rte_ring_hts_headtail
-rte_ring_hts_headtail
-], UnsafePointer[rte_ring_headtail
-rte_ring_headtail
-], UInt32, UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_hts_move_prod_head = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_hts_move_cons_head = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_hts_enqueue_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_hts_dequeue_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_hts_enqueue_bulk_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_hts_dequeue_bulk_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_hts_enqueue_burst_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_hts_dequeue_burst_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_hts_enqueue_bulk = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_hts_dequeue_bulk = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_hts_enqueue_burst = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_hts_dequeue_burst = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_rts_update_tail = fn (UnsafePointer[rte_ring_rts_headtail
-rte_ring_rts_headtail
-]) -> NoneType
-alias __rte_ring_rts_head_wait = fn (UnsafePointer[rte_ring_rts_headtail
-rte_ring_rts_headtail
-], UnsafePointer[
-__rte_ring_rts_poscnt
-]) -> NoneType
-alias __rte_ring_rts_move_head = fn (UnsafePointer[rte_ring_rts_headtail
-rte_ring_rts_headtail
-], UnsafePointer[rte_ring_headtail
-rte_ring_headtail
-], UInt32, UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_rts_move_prod_head = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_rts_move_cons_head = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_rts_enqueue_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_rts_dequeue_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_rts_enqueue_bulk_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_rts_dequeue_bulk_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_rts_enqueue_burst_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_rts_dequeue_burst_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_rts_enqueue_bulk = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_rts_dequeue_bulk = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_rts_enqueue_burst = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_rts_dequeue_burst = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_get_prod_htd_max = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> UInt32
-alias rte_ring_set_prod_htd_max = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32) -> Int32
-alias rte_ring_get_cons_htd_max = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> UInt32
-alias rte_ring_set_cons_htd_max = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32) -> Int32
-alias rte_ring_enqueue_bulk_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_enqueue_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32) -> Int32
-alias rte_ring_sp_enqueue_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32) -> Int32
-alias rte_ring_enqueue_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32) -> Int32
-alias rte_ring_mc_dequeue_bulk_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sc_dequeue_bulk_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_bulk_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_dequeue_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32) -> Int32
-alias rte_ring_sc_dequeue_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32) -> Int32
-alias rte_ring_dequeue_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32) -> Int32
-alias rte_ring_mp_enqueue_burst_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sp_enqueue_burst_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_burst_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_dequeue_burst_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sc_dequeue_burst_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_burst_elem = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_st_get_tail = fn (UnsafePointer[rte_ring_headtail
-rte_ring_headtail
-], UnsafePointer[UInt32], UInt32) -> UInt32
-alias __rte_ring_st_set_head_tail = fn (UnsafePointer[rte_ring_headtail
-rte_ring_headtail
-], UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_hts_get_tail = fn (UnsafePointer[rte_ring_hts_headtail
-rte_ring_hts_headtail
-], UnsafePointer[UInt32], UInt32) -> UInt32
-alias __rte_ring_hts_set_head_tail = fn (UnsafePointer[rte_ring_hts_headtail
-rte_ring_hts_headtail
-], UInt32, UInt32, UInt32) -> NoneType
-alias __rte_ring_do_enqueue_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32]) -> UInt32
-alias __rte_ring_do_dequeue_start = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_bulk_elem_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_bulk_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_burst_elem_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_burst_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_elem_finish = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32) -> NoneType
-alias rte_ring_enqueue_finish = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer, mut=False], UInt32) -> NoneType
-alias rte_ring_dequeue_bulk_elem_start = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_bulk_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_burst_elem_start = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_burst_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_elem_finish = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32) -> NoneType
-alias rte_ring_dequeue_finish = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32) -> NoneType
+alias rte_ring_create_elem = fn (UnsafePointer[Int8], UInt32, UInt32, Int32, UInt32) -> UnsafePointer[rte_ring]
+alias rte_ring_mp_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_sp_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_hts_update_tail = fn (UnsafePointer[rte_ring_hts_headtail], UInt32, UInt32, UInt32) -> NoneType
+alias __rte_ring_hts_head_wait = fn (UnsafePointer[rte_ring_hts_headtail], UnsafePointer[__rte_ring_hts_pos]) -> NoneType
+alias __rte_ring_hts_move_head = fn (UnsafePointer[rte_ring_hts_headtail], UnsafePointer[rte_ring_headtail], UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_hts_move_prod_head = fn (UnsafePointer[rte_ring], UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_hts_move_cons_head = fn (UnsafePointer[rte_ring], UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_do_hts_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_do_hts_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mp_hts_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mc_hts_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mp_hts_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mc_hts_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mp_hts_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mc_hts_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mp_hts_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mc_hts_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_rts_update_tail = fn (UnsafePointer[rte_ring_rts_headtail]) -> NoneType
+alias __rte_ring_rts_head_wait = fn (UnsafePointer[rte_ring_rts_headtail], UnsafePointer[__rte_ring_rts_poscnt]) -> NoneType
+alias __rte_ring_rts_move_head = fn (UnsafePointer[rte_ring_rts_headtail], UnsafePointer[rte_ring_headtail], UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_rts_move_prod_head = fn (UnsafePointer[rte_ring], UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_rts_move_cons_head = fn (UnsafePointer[rte_ring], UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32], UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_do_rts_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_do_rts_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mp_rts_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mc_rts_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mp_rts_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mc_rts_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mp_rts_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mc_rts_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mp_rts_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mc_rts_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_get_prod_htd_max = fn (UnsafePointer[rte_ring]) -> UInt32
+alias rte_ring_set_prod_htd_max = fn (UnsafePointer[rte_ring], UInt32) -> Int32
+alias rte_ring_get_cons_htd_max = fn (UnsafePointer[rte_ring]) -> UInt32
+alias rte_ring_set_cons_htd_max = fn (UnsafePointer[rte_ring], UInt32) -> Int32
+alias rte_ring_enqueue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mp_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32) -> Int32
+alias rte_ring_sp_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32) -> Int32
+alias rte_ring_enqueue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32) -> Int32
+alias rte_ring_mc_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_sc_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_bulk_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mc_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32) -> Int32
+alias rte_ring_sc_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32) -> Int32
+alias rte_ring_dequeue_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32) -> Int32
+alias rte_ring_mp_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_sp_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mc_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_sc_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_burst_elem = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_st_get_tail = fn (UnsafePointer[rte_ring_headtail], UnsafePointer[UInt32], UInt32) -> UInt32
+alias __rte_ring_st_set_head_tail = fn (UnsafePointer[rte_ring_headtail], UInt32, UInt32, UInt32) -> NoneType
+alias __rte_ring_hts_get_tail = fn (UnsafePointer[rte_ring_hts_headtail], UnsafePointer[UInt32], UInt32) -> UInt32
+alias __rte_ring_hts_set_head_tail = fn (UnsafePointer[rte_ring_hts_headtail], UInt32, UInt32, UInt32) -> NoneType
+alias __rte_ring_do_enqueue_start = fn (UnsafePointer[rte_ring], UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32]) -> UInt32
+alias __rte_ring_do_dequeue_start = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_bulk_elem_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_bulk_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_burst_elem_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_burst_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_elem_finish = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32) -> NoneType
+alias rte_ring_enqueue_finish = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32) -> NoneType
+alias rte_ring_dequeue_bulk_elem_start = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_bulk_start = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_burst_elem_start = fn (UnsafePointer[rte_ring], OpaquePointer, UInt32, UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_burst_start = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_elem_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
+alias rte_ring_dequeue_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
 struct rte_ring_zc_data(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30dd4790","inner":[{"id":"0x30dd4770","inner":[{"id":"0x30dd46b0","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"isMacroArgExpansion":true,"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"isMacroArgExpansion":true,"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"isMacroArgExpansion":true,"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"isMacroArgExpansion":true,"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/ring/rte_ring_peek_zc.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_elem.h"},"line":82,"offset":2533,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 128 
 
 
 	var ptr1 : OpaquePointer
@@ -2617,186 +2197,58 @@ struct rte_ring_zc_data(Copyable & Movable):
 
 	var n1 : UInt32
 
-alias __rte_ring_get_elem_addr = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UInt32, UInt32, UnsafePointer[OpaquePointer], UnsafePointer[UInt32], UnsafePointer[OpaquePointer]) -> NoneType
-alias __rte_ring_do_enqueue_zc_elem_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[rte_ring_zc_data
-rte_ring_zc_data
-], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_zc_bulk_elem_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UInt32, UnsafePointer[rte_ring_zc_data
-rte_ring_zc_data
-], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_zc_bulk_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UnsafePointer[rte_ring_zc_data
-rte_ring_zc_data
-], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_zc_burst_elem_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UInt32, UnsafePointer[rte_ring_zc_data
-rte_ring_zc_data
-], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_zc_burst_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UnsafePointer[rte_ring_zc_data
-rte_ring_zc_data
-], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_zc_elem_finish = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32) -> NoneType
-alias rte_ring_enqueue_zc_finish = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32) -> NoneType
-alias __rte_ring_do_dequeue_zc_elem_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UInt32, 
-rte_ring_queue_behavior
-, UnsafePointer[rte_ring_zc_data
-rte_ring_zc_data
-], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_zc_bulk_elem_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UInt32, UnsafePointer[rte_ring_zc_data
-rte_ring_zc_data
-], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_zc_bulk_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UnsafePointer[rte_ring_zc_data
-rte_ring_zc_data
-], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_zc_burst_elem_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UInt32, UnsafePointer[rte_ring_zc_data
-rte_ring_zc_data
-], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_zc_burst_start = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32, UnsafePointer[rte_ring_zc_data
-rte_ring_zc_data
-], UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_zc_elem_finish = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32) -> NoneType
-alias rte_ring_dequeue_zc_finish = fn (UnsafePointer[rte_ring
-rte_ring
-], UInt32) -> NoneType
+alias __rte_ring_get_elem_addr = fn (UnsafePointer[rte_ring], UInt32, UInt32, UInt32, UnsafePointer[OpaquePointer], UnsafePointer[UInt32], UnsafePointer[OpaquePointer]) -> NoneType
+alias __rte_ring_do_enqueue_zc_elem_start = fn (UnsafePointer[rte_ring], UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_zc_bulk_elem_start = fn (UnsafePointer[rte_ring], UInt32, UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_zc_bulk_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_zc_burst_elem_start = fn (UnsafePointer[rte_ring], UInt32, UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_zc_burst_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_zc_elem_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
+alias rte_ring_enqueue_zc_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
+alias __rte_ring_do_dequeue_zc_elem_start = fn (UnsafePointer[rte_ring], UInt32, UInt32, rte_ring_queue_behavior, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_zc_bulk_elem_start = fn (UnsafePointer[rte_ring], UInt32, UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_zc_bulk_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_zc_burst_elem_start = fn (UnsafePointer[rte_ring], UInt32, UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_zc_burst_start = fn (UnsafePointer[rte_ring], UInt32, UnsafePointer[rte_ring_zc_data], UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_zc_elem_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
+alias rte_ring_dequeue_zc_finish = fn (UnsafePointer[rte_ring], UInt32) -> NoneType
 alias rte_ring_get_memsize = fn (UInt32) -> ssize_t
-alias rte_ring_init = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[Int8], UInt32, UInt32) -> Int32
-alias rte_ring_free = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> NoneType
-alias rte_ring_create = fn (UnsafePointer[Int8], UInt32, Int32, UInt32) -> UnsafePointer[rte_ring
-rte_ring
-]
-alias rte_ring_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_ring
-rte_ring
-]) -> NoneType
-alias rte_ring_headtail_dump = fn (UnsafePointer[FILE], UnsafePointer[Int8], UnsafePointer[rte_ring_headtail
-rte_ring_headtail
-]) -> NoneType
-alias rte_ring_mp_enqueue_bulk = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sp_enqueue_bulk = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_bulk = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mp_enqueue = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer) -> Int32
-alias rte_ring_sp_enqueue = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer) -> Int32
-alias rte_ring_enqueue = fn (UnsafePointer[rte_ring
-rte_ring
-], OpaquePointer) -> Int32
-alias rte_ring_mc_dequeue_bulk = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sc_dequeue_bulk = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_bulk = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_dequeue = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer]) -> Int32
-alias rte_ring_sc_dequeue = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer]) -> Int32
-alias rte_ring_dequeue = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer]) -> Int32
-alias rte_ring_reset = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> NoneType
-alias rte_ring_count = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> UInt32
-alias rte_ring_free_count = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> UInt32
-alias rte_ring_full = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> Int32
-alias rte_ring_empty = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> Int32
-alias rte_ring_get_size = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> UInt32
-alias rte_ring_get_capacity = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> UInt32
-alias rte_ring_get_prod_sync_type = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> 
-rte_ring_sync_type
-
-alias rte_ring_is_prod_single = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> Int32
-alias rte_ring_get_cons_sync_type = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> 
-rte_ring_sync_type
-
-alias rte_ring_is_cons_single = fn (UnsafePointer[rte_ring
-rte_ring
-]) -> Int32
+alias rte_ring_init = fn (UnsafePointer[rte_ring], UnsafePointer[Int8], UInt32, UInt32) -> Int32
+alias rte_ring_free = fn (UnsafePointer[rte_ring]) -> NoneType
+alias rte_ring_create = fn (UnsafePointer[Int8], UInt32, Int32, UInt32) -> UnsafePointer[rte_ring]
+alias rte_ring_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_ring]) -> NoneType
+alias rte_ring_headtail_dump = fn (UnsafePointer[FILE], UnsafePointer[Int8], UnsafePointer[rte_ring_headtail]) -> NoneType
+alias rte_ring_mp_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_sp_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mp_enqueue = fn (UnsafePointer[rte_ring], OpaquePointer) -> Int32
+alias rte_ring_sp_enqueue = fn (UnsafePointer[rte_ring], OpaquePointer) -> Int32
+alias rte_ring_enqueue = fn (UnsafePointer[rte_ring], OpaquePointer) -> Int32
+alias rte_ring_mc_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_sc_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_bulk = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mc_dequeue = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer]) -> Int32
+alias rte_ring_sc_dequeue = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer]) -> Int32
+alias rte_ring_dequeue = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer]) -> Int32
+alias rte_ring_reset = fn (UnsafePointer[rte_ring]) -> NoneType
+alias rte_ring_count = fn (UnsafePointer[rte_ring]) -> UInt32
+alias rte_ring_free_count = fn (UnsafePointer[rte_ring]) -> UInt32
+alias rte_ring_full = fn (UnsafePointer[rte_ring]) -> Int32
+alias rte_ring_empty = fn (UnsafePointer[rte_ring]) -> Int32
+alias rte_ring_get_size = fn (UnsafePointer[rte_ring]) -> UInt32
+alias rte_ring_get_capacity = fn (UnsafePointer[rte_ring]) -> UInt32
+alias rte_ring_get_prod_sync_type = fn (UnsafePointer[rte_ring]) -> rte_ring_sync_type
+alias rte_ring_is_prod_single = fn (UnsafePointer[rte_ring]) -> Int32
+alias rte_ring_get_cons_sync_type = fn (UnsafePointer[rte_ring]) -> rte_ring_sync_type
+alias rte_ring_is_cons_single = fn (UnsafePointer[rte_ring]) -> Int32
 alias rte_ring_list_dump = fn (UnsafePointer[FILE]) -> NoneType
-alias rte_ring_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_ring
-rte_ring
-]
-alias rte_ring_mp_enqueue_burst = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sp_enqueue_burst = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_enqueue_burst = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_mc_dequeue_burst = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_sc_dequeue_burst = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
-alias rte_ring_dequeue_burst = fn (UnsafePointer[rte_ring
-rte_ring
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_ring]
+alias rte_ring_mp_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_sp_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_enqueue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_mc_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_sc_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
+alias rte_ring_dequeue_burst = fn (UnsafePointer[rte_ring], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[UInt32]) -> UInt32
 alias rte_mov16 = fn (UnsafePointer[UInt8], UnsafePointer[UInt8]) -> NoneType
 alias rte_mov32 = fn (UnsafePointer[UInt8], UnsafePointer[UInt8]) -> NoneType
 alias rte_mov64 = fn (UnsafePointer[UInt8], UnsafePointer[UInt8]) -> NoneType
@@ -2817,7 +2269,7 @@ alias rte_delay_us = fn(UInt32) -> NoneType
 alias rte_delay_ms = fn (UInt32) -> NoneType
 alias rte_delay_us_block = fn (UInt32) -> NoneType
 alias rte_delay_us_sleep = fn (UInt32) -> NoneType
-alias rte_delay_us_callback_register = fn (/,userfunc: fn (UInt32) -> NoneType) -> NoneType
+alias rte_delay_us_callback_register = fn (fn (UInt32) -> NoneType) -> NoneType
 alias __rte_arm64_cntfrq = fn () -> ffi.c_ulong
 alias __rte_arm64_cntvct = fn () -> ffi.c_ulong
 alias __rte_arm64_cntvct_precise = fn () -> ffi.c_ulong
@@ -2897,12 +2349,8 @@ struct rte_trace_mode(Copyable & Movable):
 
 	alias RTE_TRACE_MODE_DISCARD = 1
 
-alias rte_trace_mode_set = fn (
-rte_trace_mode
-) -> NoneType
-alias rte_trace_mode_get = fn () -> 
-rte_trace_mode
-
+alias rte_trace_mode_set = fn (rte_trace_mode) -> NoneType
+alias rte_trace_mode_get = fn () -> rte_trace_mode
 alias rte_trace_pattern = fn (UnsafePointer[Int8], Bool) -> Int32
 alias rte_trace_regexp = fn (UnsafePointer[Int8], Bool) -> Int32
 alias rte_trace_save = fn () -> Int32
@@ -2921,7 +2369,7 @@ alias rte_trace_point_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_tra
 alias __rte_trace_point_fp_is_enabled = fn () -> Bool
 alias __rte_trace_mem_per_thread_alloc = fn () -> NoneType
 alias __rte_trace_point_emit_field = fn (size_t, UnsafePointer[Int8], UnsafePointer[Int8]) -> NoneType
-alias __rte_trace_point_register = fn (UnsafePointer[rte_trace_point_t], UnsafePointer[Int8], /,register_fn: fn (NoneType) -> NoneType) -> Int32
+alias __rte_trace_point_register = fn (UnsafePointer[rte_trace_point_t], UnsafePointer[Int8], fn (NoneType) -> NoneType) -> Int32
 alias __rte_mempool_trace_ops_dequeue_bulk = rte_trace_point_t
 alias rte_mempool_trace_ops_dequeue_bulk = fn (OpaquePointer, UnsafePointer[OpaquePointer], UInt32) -> NoneType
 alias __rte_mempool_trace_ops_dequeue_contig_blocks = rte_trace_point_t
@@ -2943,8 +2391,7 @@ alias rte_mempool_trace_default_cache = fn (OpaquePointer, UInt32, OpaquePointer
 alias __rte_mempool_trace_cache_flush = rte_trace_point_t
 alias rte_mempool_trace_cache_flush = fn (OpaquePointer, OpaquePointer) -> NoneType
 struct rte_mempool_cache(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30e37fd0","inner":[{"id":"0x30e37fb0","inner":[{"id":"0x30e37ef0","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":90,"offset":3552,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 128 
 
 
 	var size : UInt32
@@ -2993,9 +2440,8 @@ struct rte_mempool_memhdr_list(Copyable & Movable):
 
 	var stqh_last : UnsafePointer[UnsafePointer[rte_mempool_memhdr]]
 
-alias rte_mempool_memchunk_free_cb_t = 	# # Node: PlaceHolder()
-	# {"id":"0x30e395f0","inner":[{"cc":"cdecl","id":"0x30e395b0","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x30e39330","inner":[{"id":"0x30e39300","inner":[{"decl":{"id":"0x30e396d8","kind":"RecordDecl","name":"rte_mempool_memhdr"},"id":"0x30e391c0","kind":"RecordType","type":{"qualType":"struct rte_mempool_memhdr"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool_memhdr"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool_memhdr *"}},{"id":"0x3099d540","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool_memhdr *, void *)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool_memhdr *, void *)"}}
-
+alias rte_mempool_memchunk_free_cb_t = UnsafePointer[fn (UnsafePointer[rte_mempool_memhdr
+], OpaquePointer) -> NoneType]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
@@ -3005,31 +2451,20 @@ struct anonomous_record_775(Copyable & Movable):
 	var stqe_next : UnsafePointer[rte_mempool_memhdr]
 
 struct rte_mempool_info(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30e42270","inner":[{"id":"0x30e42250","inner":[{"id":"0x30e42188","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":222,"offset":7728,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 128 
 
 
 	var contig_block_size : UInt32
 
 alias anonomous_record_776 = C_Union[OpaquePointer, ffi.c_ulong]
 
-alias rte_mempool_get_header = fn (OpaquePointer) -> UnsafePointer[rte_mempool_objhdr
-rte_mempool_objhdr
-]
-alias rte_mempool_from_obj = fn (OpaquePointer) -> UnsafePointer[rte_mempool
-rte_mempool
-]
+alias rte_mempool_get_header = fn (OpaquePointer) -> UnsafePointer[rte_mempool_objhdr]
+alias rte_mempool_from_obj = fn (OpaquePointer) -> UnsafePointer[rte_mempool]
 struct rte_mempool_objtlr(Copyable & Movable):
 	pass
-alias rte_mempool_get_trailer = fn (OpaquePointer) -> UnsafePointer[rte_mempool_objtlr
-rte_mempool_objtlr
-]
-alias rte_mempool_check_cookies = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer, mut=False], UInt32, Int32) -> NoneType
-alias rte_mempool_contig_blocks_check_cookies = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer, mut=False], UInt32, Int32) -> NoneType
+alias rte_mempool_get_trailer = fn (OpaquePointer) -> UnsafePointer[rte_mempool_objtlr]
+alias rte_mempool_check_cookies = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], UInt32, Int32) -> NoneType
+alias rte_mempool_contig_blocks_check_cookies = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], UInt32, Int32) -> NoneType
 alias rte_mempool_alloc_t = fn(UnsafePointer[rte_mempool]) -> Int32
 alias rte_mempool_free_t = fn(UnsafePointer[rte_mempool]) -> NoneType
 alias rte_mempool_enqueue_t = fn(UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
@@ -3037,15 +2472,10 @@ alias rte_mempool_dequeue_t = fn(UnsafePointer[rte_mempool], UnsafePointer[Opaqu
 alias rte_mempool_dequeue_contig_blocks_t = fn(UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
 alias rte_mempool_get_count = fn(read UnsafePointer[rte_mempool]) -> UInt32
 alias rte_mempool_calc_mem_size_t = fn(read UnsafePointer[rte_mempool], ffi.c_ulong, ffi.c_ulong, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
-alias rte_mempool_op_calc_mem_size_helper = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UInt32, UInt32, size_t, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
-alias rte_mempool_op_calc_mem_size_default = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UInt32, UInt32, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
-alias rte_mempool_populate_obj_cb_t = 	# # Node: PlaceHolder()
-	# {"id":"0x30e471b0","inner":[{"cc":"cdecl","id":"0x30e47160","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x30e39990","inner":[{"id":"0x30e39960","inner":[{"decl":{"id":"0x30e423a8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x30e38b50","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x3099d540","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"id":"0x3099d540","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"decl":{"id":"0x30b6ac78","kind":"TypedefDecl","name":"rte_iova_t"},"id":"0x30c7a810","inner":[{"decl":{"id":"0x30a9f940","kind":"TypedefDecl","name":"uint64_t"},"id":"0x30b3f460","inner":[{"decl":{"id":"0x30a42f10","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x30a94ab0","inner":[{"id":"0x3099c960","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"uint64_t"}}],"kind":"TypedefType","type":{"qualType":"rte_iova_t"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool *, void *, void *, rte_iova_t)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool *, void *, void *, rte_iova_t)"}}
-
+alias rte_mempool_op_calc_mem_size_helper = fn (UnsafePointer[rte_mempool], UInt32, UInt32, size_t, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
+alias rte_mempool_op_calc_mem_size_default = fn (UnsafePointer[rte_mempool], UInt32, UInt32, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
+alias rte_mempool_populate_obj_cb_t = UnsafePointer[fn (UnsafePointer[rte_mempool
+], OpaquePointer, OpaquePointer, rte_iova_t) -> NoneType]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
@@ -3053,26 +2483,31 @@ alias rte_mempool_populate_obj_cb_t = 	# # Node: PlaceHolder()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  
-# # Node: PlaceHolder()
-# {"direction":"in","explicit":true,"id":"0x30fe8f20","inner":[{"id":"0x30fe8fd0","inner":[{"id":"0x30fe8f80","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":587,"offset":20070,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20070,"tokLen":0},"end":{"col":40,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20107,"tokLen":1}},"text":"   A pointer to the mempool structure."},{"id":"0x30fe8fa0","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":588,"offset":20111,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20111,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20111,"tokLen":0}},"text":" "}],"kind":"ParagraphComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":587,"offset":20070,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20070,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":588,"offset":20111,"tokLen":0}}}],"kind":"ParamCommandComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20055,"tokLen":5},"param":"mp","paramIdx":0,"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20054,"tokLen":1},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":588,"offset":20111,"tokLen":0}}}
-# # Node: PlaceHolder()
-# {"direction":"in","explicit":true,"id":"0x30fe8ff0","inner":[{"id":"0x30fe90a0","inner":[{"id":"0x30fe9050","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":589,"offset":20132,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20132,"tokLen":0},"end":{"col":42,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20171,"tokLen":1}},"text":"   An opaque pointer passed to iterator."},{"id":"0x30fe9070","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":590,"offset":20175,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20175,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20175,"tokLen":0}},"text":" "}],"kind":"ParagraphComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":589,"offset":20132,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20132,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":590,"offset":20175,"tokLen":0}}}],"kind":"ParamCommandComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20113,"tokLen":5},"param":"opaque","paramIdx":1,"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20112,"tokLen":1},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":590,"offset":20175,"tokLen":0}}}
-# # Node: PlaceHolder()
-# {"direction":"in","explicit":true,"id":"0x30fe90c0","inner":[{"id":"0x30fe9170","inner":[{"id":"0x30fe9120","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":591,"offset":20195,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20195,"tokLen":0},"end":{"col":28,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20220,"tokLen":1}},"text":"   Object virtual address."},{"id":"0x30fe9140","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":592,"offset":20224,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20224,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20224,"tokLen":0}},"text":" "}],"kind":"ParagraphComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":591,"offset":20195,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20195,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":592,"offset":20224,"tokLen":0}}}],"kind":"ParamCommandComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20177,"tokLen":5},"param":"vaddr","paramIdx":2,"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20176,"tokLen":1},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":592,"offset":20224,"tokLen":0}}}
-# # Node: PlaceHolder()
-# {"direction":"in","explicit":true,"id":"0x30fe9190","inner":[{"id":"0x30fe9220","inner":[{"id":"0x30fe91f0","kind":"TextComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20243,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20243,"tokLen":0},"end":{"col":64,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20304,"tokLen":1}},"text":"   Input/output virtual address of the object or RTE_BAD_IOVA."}],"kind":"ParagraphComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20243,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20243,"tokLen":0},"end":{"col":64,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20304,"tokLen":1}}}],"kind":"ParamCommandComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20226,"tokLen":5},"param":"iova","paramIdx":3,"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":20225,"tokLen":1},"end":{"col":64,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":593,"offset":20304,"tokLen":1}}}
+#mp: 	# Node: ParagraphComment()
+	# Node: TextComment()
+	#    A pointer to the mempool structure.
+	# Node: TextComment()
+	#  
+#opaque: 	# Node: ParagraphComment()
+	# Node: TextComment()
+	#    An opaque pointer passed to iterator.
+	# Node: TextComment()
+	#  
+#vaddr: 	# Node: ParagraphComment()
+	# Node: TextComment()
+	#    Object virtual address.
+	# Node: TextComment()
+	#  
+#iova: 	# Node: ParagraphComment()
+	# Node: TextComment()
+	#    Input/output virtual address of the object or RTE_BAD_IOVA.
 
 alias rte_mempool_populate_t = fn(UnsafePointer[rte_mempool], UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
-alias rte_mempool_op_populate_helper = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UInt32, UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
-alias rte_mempool_op_populate_default = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
+alias rte_mempool_op_populate_helper = fn (UnsafePointer[rte_mempool], UInt32, UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
+alias rte_mempool_op_populate_default = fn (UnsafePointer[rte_mempool], UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
 alias rte_mempool_get_info_t = fn(read UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_info]) -> Int32
 struct rte_mempool_ops(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30e488d0","inner":[{"id":"0x30e488b0","inner":[{"id":"0x30e487e8","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":692,"offset":23692,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 128 
 
 
 	var name : InlineArray[Int8, 32]
@@ -3096,8 +2531,7 @@ struct rte_mempool_ops(Copyable & Movable):
 	var dequeue_contig_blocks : fn(UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
 
 struct rte_mempool_ops_table(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30e49180","inner":[{"id":"0x30e49160","inner":[{"id":"0x30e49098","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mempool/rte_mempool.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":730,"offset":25181,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 128 
 
 
 	var sl : rte_spinlock_t
@@ -3106,47 +2540,20 @@ struct rte_mempool_ops_table(Copyable & Movable):
 
 	var ops : InlineArray[rte_mempool_ops, 16]
 
-alias rte_mempool_get_ops = fn (Int32) -> UnsafePointer[rte_mempool_ops
-rte_mempool_ops
-]
-alias rte_mempool_ops_alloc = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> Int32
-alias rte_mempool_ops_dequeue_bulk = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer], UInt32) -> Int32
-alias rte_mempool_ops_dequeue_contig_blocks = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer], UInt32) -> Int32
-alias rte_mempool_ops_enqueue_bulk = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer, mut=False], UInt32) -> Int32
-alias rte_mempool_ops_get_count = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> UInt32
-alias rte_mempool_ops_calc_mem_size = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UInt32, UInt32, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
-alias rte_mempool_ops_populate = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
-alias rte_mempool_ops_get_info = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[rte_mempool_info
-rte_mempool_info
-]) -> Int32
-alias rte_mempool_ops_free = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> NoneType
-alias rte_mempool_set_ops_byname = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[Int8], OpaquePointer) -> Int32
-alias rte_mempool_register_ops = fn (UnsafePointer[rte_mempool_ops
-rte_mempool_ops
-]) -> Int32
-alias rte_mempool_obj_cb_t = 	# # Node: PlaceHolder()
-	# {"id":"0x30e4fad0","inner":[{"cc":"cdecl","id":"0x30e4fa80","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x30e39990","inner":[{"id":"0x30e39960","inner":[{"decl":{"id":"0x30e423a8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x30e38b50","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x3099d540","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"id":"0x3099d540","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"id":"0x3099c940","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool *, void *, void *, unsigned int)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool *, void *, void *, unsigned int)"}}
-
+alias rte_mempool_get_ops = fn (Int32) -> UnsafePointer[rte_mempool_ops]
+alias rte_mempool_ops_alloc = fn (UnsafePointer[rte_mempool]) -> Int32
+alias rte_mempool_ops_dequeue_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
+alias rte_mempool_ops_dequeue_contig_blocks = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
+alias rte_mempool_ops_enqueue_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], UInt32) -> Int32
+alias rte_mempool_ops_get_count = fn (UnsafePointer[rte_mempool]) -> UInt32
+alias rte_mempool_ops_calc_mem_size = fn (UnsafePointer[rte_mempool], UInt32, UInt32, UnsafePointer[size_t], UnsafePointer[size_t]) -> ssize_t
+alias rte_mempool_ops_populate = fn (UnsafePointer[rte_mempool], UInt32, OpaquePointer, rte_iova_t, size_t, UnsafePointer[rte_mempool_populate_obj_cb_t], OpaquePointer) -> Int32
+alias rte_mempool_ops_get_info = fn (UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_info]) -> Int32
+alias rte_mempool_ops_free = fn (UnsafePointer[rte_mempool]) -> NoneType
+alias rte_mempool_set_ops_byname = fn (UnsafePointer[rte_mempool], UnsafePointer[Int8], OpaquePointer) -> Int32
+alias rte_mempool_register_ops = fn (UnsafePointer[rte_mempool_ops]) -> Int32
+alias rte_mempool_obj_cb_t = UnsafePointer[fn (UnsafePointer[rte_mempool
+], OpaquePointer, OpaquePointer, UInt32) -> NoneType]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
@@ -3156,9 +2563,9 @@ alias rte_mempool_obj_cb_t = 	# # Node: PlaceHolder()
 #  Used by rte_mempool_create() and rte_mempool_obj_iter().
 
 alias rte_mempool_obj_ctor_t = rte_mempool_obj_cb_t
-alias rte_mempool_mem_cb_t = 	# # Node: PlaceHolder()
-	# {"id":"0x30e4ff80","inner":[{"cc":"cdecl","id":"0x30e4ff30","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x30e39990","inner":[{"id":"0x30e39960","inner":[{"decl":{"id":"0x30e423a8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x30e38b50","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x3099d540","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}},{"id":"0x30e39330","inner":[{"id":"0x30e39300","inner":[{"decl":{"id":"0x30e396d8","kind":"RecordDecl","name":"rte_mempool_memhdr"},"id":"0x30e391c0","kind":"RecordType","type":{"qualType":"struct rte_mempool_memhdr"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool_memhdr"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool_memhdr *"}},{"id":"0x3099c940","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool *, void *, struct rte_mempool_memhdr *, unsigned int)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool *, void *, struct rte_mempool_memhdr *, unsigned int)"}}
-
+alias rte_mempool_mem_cb_t = UnsafePointer[fn (UnsafePointer[rte_mempool
+], OpaquePointer, UnsafePointer[rte_mempool_memhdr
+], UInt32) -> NoneType]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
@@ -3167,9 +2574,8 @@ alias rte_mempool_mem_cb_t = 	# # Node: PlaceHolder()
 # Node: TextComment()
 #  Used by rte_mempool_mem_iter().
 
-alias rte_mempool_ctor_t = 	# # Node: PlaceHolder()
-	# {"id":"0x30e50210","inner":[{"cc":"cdecl","id":"0x30e501d0","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x30e39990","inner":[{"id":"0x30e39960","inner":[{"decl":{"id":"0x30e423a8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x30e38b50","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x3099d540","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"void (struct rte_mempool *, void *)"}}],"kind":"ParenType","type":{"qualType":"void (struct rte_mempool *, void *)"}}
-
+alias rte_mempool_ctor_t = UnsafePointer[fn (UnsafePointer[rte_mempool
+], OpaquePointer) -> NoneType]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
@@ -3180,118 +2586,42 @@ alias rte_mempool_ctor_t = 	# # Node: PlaceHolder()
 # Node: TextComment()
 #  rte_mempool_create().
 
-alias rte_mempool_free = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> NoneType
-alias rte_mempool_create = fn (UnsafePointer[Int8], UInt32, UInt32, UInt32, UInt32, UnsafePointer[rte_mempool_ctor_t], OpaquePointer, UnsafePointer[rte_mempool_obj_cb_t], OpaquePointer, Int32, UInt32) -> UnsafePointer[rte_mempool
-rte_mempool
-]
-alias rte_mempool_create_empty = fn (UnsafePointer[Int8], UInt32, UInt32, UInt32, UInt32, Int32, UInt32) -> UnsafePointer[rte_mempool
-rte_mempool
-]
-alias rte_mempool_populate_iova = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[Int8], rte_iova_t, size_t, UnsafePointer[rte_mempool_memchunk_free_cb_t], OpaquePointer) -> Int32
-alias rte_mempool_populate_virt = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[Int8], size_t, size_t, UnsafePointer[rte_mempool_memchunk_free_cb_t], OpaquePointer) -> Int32
-alias rte_mempool_populate_default = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> Int32
-alias rte_mempool_populate_anon = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> Int32
-alias rte_mempool_obj_iter = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[rte_mempool_obj_cb_t], OpaquePointer) -> UInt32
-alias rte_mempool_mem_iter = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[rte_mempool_mem_cb_t], OpaquePointer) -> UInt32
-alias rte_mempool_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_mempool
-rte_mempool
-]) -> NoneType
-alias rte_mempool_cache_create = fn (UInt32, Int32) -> UnsafePointer[rte_mempool_cache
-rte_mempool_cache
-]
-alias rte_mempool_cache_free = fn (UnsafePointer[rte_mempool_cache
-rte_mempool_cache
-]) -> NoneType
-alias rte_mempool_default_cache = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UInt32) -> UnsafePointer[rte_mempool_cache
-rte_mempool_cache
-]
-alias rte_mempool_cache_flush = fn (UnsafePointer[rte_mempool_cache
-rte_mempool_cache
-], UnsafePointer[rte_mempool
-rte_mempool
-]) -> NoneType
-alias rte_mempool_do_generic_put = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[rte_mempool_cache
-rte_mempool_cache
-]) -> NoneType
+alias rte_mempool_free = fn (UnsafePointer[rte_mempool]) -> NoneType
+alias rte_mempool_create = fn (UnsafePointer[Int8], UInt32, UInt32, UInt32, UInt32, UnsafePointer[rte_mempool_ctor_t], OpaquePointer, UnsafePointer[rte_mempool_obj_cb_t], OpaquePointer, Int32, UInt32) -> UnsafePointer[rte_mempool]
+alias rte_mempool_create_empty = fn (UnsafePointer[Int8], UInt32, UInt32, UInt32, UInt32, Int32, UInt32) -> UnsafePointer[rte_mempool]
+alias rte_mempool_populate_iova = fn (UnsafePointer[rte_mempool], UnsafePointer[Int8], rte_iova_t, size_t, UnsafePointer[rte_mempool_memchunk_free_cb_t], OpaquePointer) -> Int32
+alias rte_mempool_populate_virt = fn (UnsafePointer[rte_mempool], UnsafePointer[Int8], size_t, size_t, UnsafePointer[rte_mempool_memchunk_free_cb_t], OpaquePointer) -> Int32
+alias rte_mempool_populate_default = fn (UnsafePointer[rte_mempool]) -> Int32
+alias rte_mempool_populate_anon = fn (UnsafePointer[rte_mempool]) -> Int32
+alias rte_mempool_obj_iter = fn (UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_obj_cb_t], OpaquePointer) -> UInt32
+alias rte_mempool_mem_iter = fn (UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_mem_cb_t], OpaquePointer) -> UInt32
+alias rte_mempool_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_mempool]) -> NoneType
+alias rte_mempool_cache_create = fn (UInt32, Int32) -> UnsafePointer[rte_mempool_cache]
+alias rte_mempool_cache_free = fn (UnsafePointer[rte_mempool_cache]) -> NoneType
+alias rte_mempool_default_cache = fn (UnsafePointer[rte_mempool], UInt32) -> UnsafePointer[rte_mempool_cache]
+alias rte_mempool_cache_flush = fn (UnsafePointer[rte_mempool_cache], UnsafePointer[rte_mempool]) -> NoneType
+alias rte_mempool_do_generic_put = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[rte_mempool_cache]) -> NoneType
 alias __builtin_assume = fn (Bool) -> NoneType
-alias rte_mempool_generic_put = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[rte_mempool_cache
-rte_mempool_cache
-]) -> NoneType
-alias rte_mempool_put_bulk = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer, mut=False], UInt32) -> NoneType
-alias rte_mempool_put = fn (UnsafePointer[rte_mempool
-rte_mempool
-], OpaquePointer) -> NoneType
-alias rte_mempool_do_generic_get = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[rte_mempool_cache
-rte_mempool_cache
-]) -> Int32
+alias rte_mempool_generic_put = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], UInt32, UnsafePointer[rte_mempool_cache]) -> NoneType
+alias rte_mempool_put_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer, mut=False], UInt32) -> NoneType
+alias rte_mempool_put = fn (UnsafePointer[rte_mempool], OpaquePointer) -> NoneType
+alias rte_mempool_do_generic_get = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[rte_mempool_cache]) -> Int32
 alias __builtin_constant_p = fn () -> Int32
-alias rte_mempool_generic_get = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[rte_mempool_cache
-rte_mempool_cache
-]) -> Int32
-alias rte_mempool_get_bulk = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer], UInt32) -> Int32
-alias rte_mempool_get = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer]) -> Int32
-alias rte_mempool_get_contig_blocks = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[OpaquePointer], UInt32) -> Int32
-alias rte_mempool_avail_count = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> UInt32
-alias rte_mempool_in_use_count = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> UInt32
-alias rte_mempool_full = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> Int32
-alias rte_mempool_empty = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> Int32
+alias rte_mempool_generic_get = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32, UnsafePointer[rte_mempool_cache]) -> Int32
+alias rte_mempool_get_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
+alias rte_mempool_get = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer]) -> Int32
+alias rte_mempool_get_contig_blocks = fn (UnsafePointer[rte_mempool], UnsafePointer[OpaquePointer], UInt32) -> Int32
+alias rte_mempool_avail_count = fn (UnsafePointer[rte_mempool]) -> UInt32
+alias rte_mempool_in_use_count = fn (UnsafePointer[rte_mempool]) -> UInt32
+alias rte_mempool_full = fn (UnsafePointer[rte_mempool]) -> Int32
+alias rte_mempool_empty = fn (UnsafePointer[rte_mempool]) -> Int32
 alias rte_mempool_virt2iova = fn (OpaquePointer) -> rte_iova_t
-alias rte_mempool_audit = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> NoneType
-alias rte_mempool_get_priv = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> OpaquePointer
+alias rte_mempool_audit = fn (UnsafePointer[rte_mempool]) -> NoneType
+alias rte_mempool_get_priv = fn (UnsafePointer[rte_mempool]) -> OpaquePointer
 alias rte_mempool_list_dump = fn (UnsafePointer[FILE]) -> NoneType
-alias rte_mempool_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_mempool
-rte_mempool
-]
-alias rte_mempool_calc_obj_size = fn (UInt32, UInt32, UnsafePointer[rte_mempool_objsz
-rte_mempool_objsz
-]) -> UInt32
-alias rte_mempool_walk = fn (/,func: fn (UnsafePointer[rte_mempool
-rte_mempool
-], OpaquePointer) -> NoneType, OpaquePointer) -> NoneType
+alias rte_mempool_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_mempool]
+alias rte_mempool_calc_obj_size = fn (UInt32, UInt32, UnsafePointer[rte_mempool_objsz]) -> UInt32
+alias rte_mempool_walk = fn (fn (UnsafePointer[rte_mempool], OpaquePointer) -> NoneType, OpaquePointer) -> NoneType
 struct rte_mempool_mem_range_info(Copyable & Movable):
 
 	var start : OpaquePointer
@@ -3300,35 +2630,22 @@ struct rte_mempool_mem_range_info(Copyable & Movable):
 
 	var is_contiguous : Bool
 
-alias rte_mempool_get_mem_range = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[rte_mempool_mem_range_info
-rte_mempool_mem_range_info
-]) -> Int32
-alias rte_mempool_get_obj_alignment = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> size_t
-alias rte_mempool_get_page_size = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[size_t]) -> Int32
+alias rte_mempool_get_mem_range = fn (UnsafePointer[rte_mempool], UnsafePointer[rte_mempool_mem_range_info]) -> Int32
+alias rte_mempool_get_obj_alignment = fn (UnsafePointer[rte_mempool]) -> size_t
+alias rte_mempool_get_page_size = fn (UnsafePointer[rte_mempool], UnsafePointer[size_t]) -> Int32
 struct rte_mempool_event(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"closeName":"","id":"0x30ff8440","inner":[{"id":"0x30ff8490","kind":"VerbatimBlockLineComment","loc":{"col":1,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":1990,"offset":64759,"tokLen":0},"range":{"begin":{"col":1,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":64759,"tokLen":0},"end":{"col":2,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":64760,"tokLen":1}},"text":" "},{"id":"0x30ff84b0","kind":"VerbatimBlockLineComment","loc":{"col":4,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":64762,"tokLen":0},"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":64762,"tokLen":0},"end":{"col":4,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":64762,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":64750,"tokLen":8},"name":"internal","range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":64749,"tokLen":1},"end":{"col":13,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":64758,"tokLen":0}}}
-
+# #  # 
 	alias RTE_MEMPOOL_EVENT_READY = 0
 
 	alias RTE_MEMPOOL_EVENT_DESTROY = 1
 
-alias rte_mempool_event_callback = 	# # Node: PlaceHolder()
-	# {"id":"0x30e64850","inner":[{"cc":"cdecl","id":"0x30e64810","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}},{"id":"0x30e64600","inner":[{"decl":{"id":"0x30e64388","kind":"EnumDecl","name":"rte_mempool_event"},"id":"0x30e64430","kind":"EnumType","type":{"qualType":"enum rte_mempool_event"}}],"kind":"ElaboratedType","type":{"qualType":"enum rte_mempool_event"}},{"id":"0x30e39990","inner":[{"id":"0x30e39960","inner":[{"decl":{"id":"0x30e423a8","kind":"RecordDecl","name":"rte_mempool"},"id":"0x30e38b50","kind":"RecordType","type":{"qualType":"struct rte_mempool"}}],"kind":"ElaboratedType","type":{"qualType":"struct rte_mempool"}}],"kind":"PointerType","type":{"qualType":"struct rte_mempool *"}},{"id":"0x3099d540","inner":[{"id":"0x3099c800","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"void (enum rte_mempool_event, struct rte_mempool *, void *)"}}],"kind":"ParenType","type":{"qualType":"void (enum rte_mempool_event, struct rte_mempool *, void *)"}}
-
+alias rte_mempool_event_callback = UnsafePointer[fn (rte_mempool_event, UnsafePointer[rte_mempool
+], OpaquePointer) -> NoneType]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  
-# # Node: PlaceHolder()
-# {"closeName":"","id":"0x30ff8750","inner":[{"id":"0x30ff87a0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":2000,"offset":64983,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":64983,"tokLen":0},"end":{"col":27,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65007,"tokLen":0}},"text":" Mempool event callback."},{"id":"0x30ff87c0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":2001,"offset":65010,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65010,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65010,"tokLen":0}},"text":""},{"id":"0x30ff87e0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":2002,"offset":65013,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65013,"tokLen":0},"end":{"col":81,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65091,"tokLen":0}},"text":" rte_mempool_event_callback_register() may be called from within the callback,"},{"id":"0x30ff8800","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":2003,"offset":65094,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65094,"tokLen":0},"end":{"col":81,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65172,"tokLen":0}},"text":" but the callbacks registered this way will not be invoked for the same event."},{"id":"0x30ff8820","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":2004,"offset":65175,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65175,"tokLen":0},"end":{"col":69,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65241,"tokLen":0}},"text":" rte_mempool_event_callback_unregister() may only be safely called"},{"id":"0x30ff8840","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":2005,"offset":65244,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65244,"tokLen":0},"end":{"col":35,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65276,"tokLen":0}},"text":" to remove the running callback."},{"id":"0x30ff8860","kind":"VerbatimBlockLineComment","loc":{"col":1,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":2006,"offset":65277,"tokLen":0},"range":{"begin":{"col":1,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65277,"tokLen":0},"end":{"col":2,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65278,"tokLen":1}},"text":" "},{"id":"0x30ff8880","kind":"VerbatimBlockLineComment","loc":{"col":4,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65280,"tokLen":0},"range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65280,"tokLen":0},"end":{"col":4,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":65280,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":64972,"tokLen":8},"name":"internal","range":{"begin":{"col":4,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":64971,"tokLen":1},"end":{"col":13,"includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"offset":64980,"tokLen":0}}}
-
+# #  Mempool event callback.# #  rte_mempool_event_callback_register() may be called from within the callback,#  but the callbacks registered this way will not be invoked for the same event.#  rte_mempool_event_callback_unregister() may only be safely called#  to remove the running callback.#  # 
 alias rte_mempool_event_callback_register = fn (UnsafePointer[rte_mempool_event_callback], OpaquePointer) -> Int32
 alias rte_mempool_event_callback_unregister = fn (UnsafePointer[rte_mempool_event_callback], OpaquePointer) -> Int32
 alias rte_prefetch0 = fn (OpaquePointer) -> NoneType
@@ -3493,8 +2810,7 @@ alias anonomous_record_790 = C_Union[InlineArray[OpaquePointer, 3], anonomous_re
 alias anonomous_record_778 = C_Union[InlineArray[ffi.c_ulong_long, 1], anonomous_record_777, , , , ]
 
 struct rte_mbuf(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30e77be0","inner":[{"id":"0x30e77bc0","inner":[{"id":"0x30e77af8","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mbuf/rte_mbuf_core.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":467,"offset":17345,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mbuf/rte_mbuf_core.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":467,"offset":17345,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mbuf/rte_mbuf_core.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":467,"offset":17345,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mbuf/rte_mbuf_core.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"isMacroArgExpansion":true,"line":467,"offset":17345,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/mbuf/rte_mbuf_core.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":467,"offset":17345,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/mbuf/rte_mbuf_core.h","includedFrom":{"file":"dpdk/lib/mbuf/rte_mbuf.h"},"line":467,"offset":17345,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 128 
 
 
 	var buf_addr : OpaquePointer
@@ -3554,46 +2870,18 @@ alias rte_get_rx_ol_flag_name = fn (ffi.c_ulong) -> UnsafePointer[Int8]
 alias rte_get_rx_ol_flag_list = fn (ffi.c_ulong, UnsafePointer[Int8], size_t) -> Int32
 alias rte_get_tx_ol_flag_name = fn (ffi.c_ulong) -> UnsafePointer[Int8]
 alias rte_get_tx_ol_flag_list = fn (ffi.c_ulong, UnsafePointer[Int8], size_t) -> Int32
-alias rte_mbuf_prefetch_part1 = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias rte_mbuf_prefetch_part2 = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias rte_pktmbuf_priv_size = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> UInt16
-alias rte_mbuf_iova_get = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> rte_iova_t
-alias rte_mbuf_iova_set = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], rte_iova_t) -> NoneType
-alias rte_mbuf_data_iova = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> rte_iova_t
-alias rte_mbuf_data_iova_default = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> rte_iova_t
-alias rte_mbuf_from_indirect = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> UnsafePointer[rte_mbuf
-rte_mbuf
-]
-alias rte_mbuf_buf_addr = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_mempool
-rte_mempool
-]) -> UnsafePointer[Int8]
-alias rte_mbuf_data_addr_default = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> UnsafePointer[Int8]
-alias rte_mbuf_to_baddr = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> UnsafePointer[Int8]
-alias rte_mbuf_to_priv = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> OpaquePointer
+alias rte_mbuf_prefetch_part1 = fn (UnsafePointer[rte_mbuf]) -> NoneType
+alias rte_mbuf_prefetch_part2 = fn (UnsafePointer[rte_mbuf]) -> NoneType
+alias rte_pktmbuf_priv_size = fn (UnsafePointer[rte_mempool]) -> UInt16
+alias rte_mbuf_iova_get = fn (UnsafePointer[rte_mbuf]) -> rte_iova_t
+alias rte_mbuf_iova_set = fn (UnsafePointer[rte_mbuf], rte_iova_t) -> NoneType
+alias rte_mbuf_data_iova = fn (UnsafePointer[rte_mbuf]) -> rte_iova_t
+alias rte_mbuf_data_iova_default = fn (UnsafePointer[rte_mbuf]) -> rte_iova_t
+alias rte_mbuf_from_indirect = fn (UnsafePointer[rte_mbuf]) -> UnsafePointer[rte_mbuf]
+alias rte_mbuf_buf_addr = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mempool]) -> UnsafePointer[Int8]
+alias rte_mbuf_data_addr_default = fn (UnsafePointer[rte_mbuf]) -> UnsafePointer[Int8]
+alias rte_mbuf_to_baddr = fn (UnsafePointer[rte_mbuf]) -> UnsafePointer[Int8]
+alias rte_mbuf_to_priv = fn (UnsafePointer[rte_mbuf]) -> OpaquePointer
 struct rte_pktmbuf_pool_private(Copyable & Movable):
 
 	var mbuf_data_room_size : UInt16
@@ -3602,69 +2890,25 @@ struct rte_pktmbuf_pool_private(Copyable & Movable):
 
 	var flags : UInt32
 
-alias rte_pktmbuf_priv_flags = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> UInt32
-alias rte_mbuf_refcnt_read = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> UInt16
-alias rte_mbuf_refcnt_set = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt16) -> NoneType
-alias __rte_mbuf_refcnt_update = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], Int16) -> UInt16
-alias rte_mbuf_refcnt_update = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], Int16) -> UInt16
-alias rte_mbuf_ext_refcnt_read = fn (UnsafePointer[rte_mbuf_ext_shared_info
-rte_mbuf_ext_shared_info
-]) -> UInt16
-alias rte_mbuf_ext_refcnt_set = fn (UnsafePointer[rte_mbuf_ext_shared_info
-rte_mbuf_ext_shared_info
-], UInt16) -> NoneType
-alias rte_mbuf_ext_refcnt_update = fn (UnsafePointer[rte_mbuf_ext_shared_info
-rte_mbuf_ext_shared_info
-], Int16) -> UInt16
-alias rte_mbuf_sanity_check = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], Int32) -> NoneType
-alias rte_mbuf_check = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], Int32, UnsafePointer[UnsafePointer[Int8]]) -> Int32
-alias __rte_mbuf_raw_sanity_check = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias rte_mbuf_raw_alloc = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> UnsafePointer[rte_mbuf
-rte_mbuf
-]
-alias rte_mbuf_raw_alloc_bulk = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], UInt32) -> Int32
-alias rte_mbuf_raw_free = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias rte_mbuf_raw_free_bulk = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], UInt32) -> NoneType
-alias rte_pktmbuf_init = fn (UnsafePointer[rte_mempool
-rte_mempool
-], OpaquePointer, OpaquePointer, UInt32) -> NoneType
-alias rte_pktmbuf_pool_init = fn (UnsafePointer[rte_mempool
-rte_mempool
-], OpaquePointer) -> NoneType
-alias rte_pktmbuf_pool_create = fn (UnsafePointer[Int8], UInt32, UInt32, UInt16, UInt16, Int32) -> UnsafePointer[rte_mempool
-rte_mempool
-]
-alias rte_pktmbuf_pool_create_by_ops = fn (UnsafePointer[Int8], UInt32, UInt32, UInt16, UInt16, Int32, UnsafePointer[Int8]) -> UnsafePointer[rte_mempool
-rte_mempool
-]
+alias rte_pktmbuf_priv_flags = fn (UnsafePointer[rte_mempool]) -> UInt32
+alias rte_mbuf_refcnt_read = fn (UnsafePointer[rte_mbuf]) -> UInt16
+alias rte_mbuf_refcnt_set = fn (UnsafePointer[rte_mbuf], UInt16) -> NoneType
+alias __rte_mbuf_refcnt_update = fn (UnsafePointer[rte_mbuf], Int16) -> UInt16
+alias rte_mbuf_refcnt_update = fn (UnsafePointer[rte_mbuf], Int16) -> UInt16
+alias rte_mbuf_ext_refcnt_read = fn (UnsafePointer[rte_mbuf_ext_shared_info]) -> UInt16
+alias rte_mbuf_ext_refcnt_set = fn (UnsafePointer[rte_mbuf_ext_shared_info], UInt16) -> NoneType
+alias rte_mbuf_ext_refcnt_update = fn (UnsafePointer[rte_mbuf_ext_shared_info], Int16) -> UInt16
+alias rte_mbuf_sanity_check = fn (UnsafePointer[rte_mbuf], Int32) -> NoneType
+alias rte_mbuf_check = fn (UnsafePointer[rte_mbuf], Int32, UnsafePointer[UnsafePointer[Int8]]) -> Int32
+alias __rte_mbuf_raw_sanity_check = fn (UnsafePointer[rte_mbuf]) -> NoneType
+alias rte_mbuf_raw_alloc = fn (UnsafePointer[rte_mempool]) -> UnsafePointer[rte_mbuf]
+alias rte_mbuf_raw_alloc_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> Int32
+alias rte_mbuf_raw_free = fn (UnsafePointer[rte_mbuf]) -> NoneType
+alias rte_mbuf_raw_free_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> NoneType
+alias rte_pktmbuf_init = fn (UnsafePointer[rte_mempool], OpaquePointer, OpaquePointer, UInt32) -> NoneType
+alias rte_pktmbuf_pool_init = fn (UnsafePointer[rte_mempool], OpaquePointer) -> NoneType
+alias rte_pktmbuf_pool_create = fn (UnsafePointer[Int8], UInt32, UInt32, UInt16, UInt16, Int32) -> UnsafePointer[rte_mempool]
+alias rte_pktmbuf_pool_create_by_ops = fn (UnsafePointer[Int8], UInt32, UInt32, UInt16, UInt16, Int32, UnsafePointer[Int8]) -> UnsafePointer[rte_mempool]
 struct rte_pktmbuf_extmem(Copyable & Movable):
 
 	var buf_ptr : OpaquePointer
@@ -3675,176 +2919,56 @@ struct rte_pktmbuf_extmem(Copyable & Movable):
 
 	var elt_size : UInt16
 
-alias rte_pktmbuf_pool_create_extbuf = fn (UnsafePointer[Int8], UInt32, UInt32, UInt16, UInt16, Int32, UnsafePointer[rte_pktmbuf_extmem
-rte_pktmbuf_extmem
-], UInt32) -> UnsafePointer[rte_mempool
-rte_mempool
-]
-alias rte_pktmbuf_data_room_size = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> UInt16
-alias rte_pktmbuf_reset_headroom = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias rte_pktmbuf_reset = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias rte_pktmbuf_alloc = fn (UnsafePointer[rte_mempool
-rte_mempool
-]) -> UnsafePointer[rte_mbuf
-rte_mbuf
-]
-alias rte_pktmbuf_alloc_bulk = fn (UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], UInt32) -> Int32
-alias rte_pktmbuf_ext_shinfo_init_helper = fn (OpaquePointer, UnsafePointer[UInt16], rte_mbuf_extbuf_free_callback_t, OpaquePointer) -> UnsafePointer[rte_mbuf_ext_shared_info
-rte_mbuf_ext_shared_info
-]
-alias rte_pktmbuf_attach_extbuf = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], OpaquePointer, rte_iova_t, UInt16, UnsafePointer[rte_mbuf_ext_shared_info
-rte_mbuf_ext_shared_info
-]) -> NoneType
-alias rte_mbuf_dynfield_copy = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias __rte_pktmbuf_copy_hdr = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias rte_pktmbuf_attach = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias __rte_pktmbuf_free_extbuf = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias __rte_pktmbuf_free_direct = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias rte_pktmbuf_detach = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias __rte_pktmbuf_pinned_extbuf_decref = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> Int32
-alias rte_pktmbuf_prefree_seg = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> UnsafePointer[rte_mbuf
-rte_mbuf
-]
-alias rte_pktmbuf_free_seg = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias rte_pktmbuf_free = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> NoneType
-alias rte_pktmbuf_free_bulk = fn (UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], UInt32) -> NoneType
-alias rte_pktmbuf_clone = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_mempool
-rte_mempool
-]) -> UnsafePointer[rte_mbuf
-rte_mbuf
-]
-alias rte_pktmbuf_copy = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_mempool
-rte_mempool
-], UInt32, UInt32) -> UnsafePointer[rte_mbuf
-rte_mbuf
-]
-alias rte_pktmbuf_refcnt_update = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], Int16) -> NoneType
-alias rte_pktmbuf_headroom = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> UInt16
-alias rte_pktmbuf_tailroom = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> UInt16
-alias rte_pktmbuf_lastseg = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> UnsafePointer[rte_mbuf
-rte_mbuf
-]
-alias rte_pktmbuf_prepend = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt16) -> UnsafePointer[Int8]
-alias rte_pktmbuf_append = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt16) -> UnsafePointer[Int8]
-alias rte_pktmbuf_adj = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt16) -> UnsafePointer[Int8]
-alias rte_pktmbuf_trim = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt16) -> Int32
-alias rte_pktmbuf_is_contiguous = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> Int32
-alias __rte_pktmbuf_read = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt32, UInt32, OpaquePointer) -> OpaquePointer
-alias rte_pktmbuf_read = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt32, UInt32, OpaquePointer) -> OpaquePointer
-alias rte_pktmbuf_chain = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> Int32
+alias rte_pktmbuf_pool_create_extbuf = fn (UnsafePointer[Int8], UInt32, UInt32, UInt16, UInt16, Int32, UnsafePointer[rte_pktmbuf_extmem], UInt32) -> UnsafePointer[rte_mempool]
+alias rte_pktmbuf_data_room_size = fn (UnsafePointer[rte_mempool]) -> UInt16
+alias rte_pktmbuf_reset_headroom = fn (UnsafePointer[rte_mbuf]) -> NoneType
+alias rte_pktmbuf_reset = fn (UnsafePointer[rte_mbuf]) -> NoneType
+alias rte_pktmbuf_alloc = fn (UnsafePointer[rte_mempool]) -> UnsafePointer[rte_mbuf]
+alias rte_pktmbuf_alloc_bulk = fn (UnsafePointer[rte_mempool], UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> Int32
+alias rte_pktmbuf_ext_shinfo_init_helper = fn (OpaquePointer, UnsafePointer[UInt16], rte_mbuf_extbuf_free_callback_t, OpaquePointer) -> UnsafePointer[rte_mbuf_ext_shared_info]
+alias rte_pktmbuf_attach_extbuf = fn (UnsafePointer[rte_mbuf], OpaquePointer, rte_iova_t, UInt16, UnsafePointer[rte_mbuf_ext_shared_info]) -> NoneType
+alias rte_mbuf_dynfield_copy = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mbuf]) -> NoneType
+alias __rte_pktmbuf_copy_hdr = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mbuf]) -> NoneType
+alias rte_pktmbuf_attach = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mbuf]) -> NoneType
+alias __rte_pktmbuf_free_extbuf = fn (UnsafePointer[rte_mbuf]) -> NoneType
+alias __rte_pktmbuf_free_direct = fn (UnsafePointer[rte_mbuf]) -> NoneType
+alias rte_pktmbuf_detach = fn (UnsafePointer[rte_mbuf]) -> NoneType
+alias __rte_pktmbuf_pinned_extbuf_decref = fn (UnsafePointer[rte_mbuf]) -> Int32
+alias rte_pktmbuf_prefree_seg = fn (UnsafePointer[rte_mbuf]) -> UnsafePointer[rte_mbuf]
+alias rte_pktmbuf_free_seg = fn (UnsafePointer[rte_mbuf]) -> NoneType
+alias rte_pktmbuf_free = fn (UnsafePointer[rte_mbuf]) -> NoneType
+alias rte_pktmbuf_free_bulk = fn (UnsafePointer[UnsafePointer[rte_mbuf]], UInt32) -> NoneType
+alias rte_pktmbuf_clone = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mempool]) -> UnsafePointer[rte_mbuf]
+alias rte_pktmbuf_copy = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mempool], UInt32, UInt32) -> UnsafePointer[rte_mbuf]
+alias rte_pktmbuf_refcnt_update = fn (UnsafePointer[rte_mbuf], Int16) -> NoneType
+alias rte_pktmbuf_headroom = fn (UnsafePointer[rte_mbuf]) -> UInt16
+alias rte_pktmbuf_tailroom = fn (UnsafePointer[rte_mbuf]) -> UInt16
+alias rte_pktmbuf_lastseg = fn (UnsafePointer[rte_mbuf]) -> UnsafePointer[rte_mbuf]
+alias rte_pktmbuf_prepend = fn (UnsafePointer[rte_mbuf], UInt16) -> UnsafePointer[Int8]
+alias rte_pktmbuf_append = fn (UnsafePointer[rte_mbuf], UInt16) -> UnsafePointer[Int8]
+alias rte_pktmbuf_adj = fn (UnsafePointer[rte_mbuf], UInt16) -> UnsafePointer[Int8]
+alias rte_pktmbuf_trim = fn (UnsafePointer[rte_mbuf], UInt16) -> Int32
+alias rte_pktmbuf_is_contiguous = fn (UnsafePointer[rte_mbuf]) -> Int32
+alias __rte_pktmbuf_read = fn (UnsafePointer[rte_mbuf], UInt32, UInt32, OpaquePointer) -> OpaquePointer
+alias rte_pktmbuf_read = fn (UnsafePointer[rte_mbuf], UInt32, UInt32, OpaquePointer) -> OpaquePointer
+alias rte_pktmbuf_chain = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_mbuf]) -> Int32
 alias rte_mbuf_tx_offload = fn (ffi.c_ulong, ffi.c_ulong, ffi.c_ulong, ffi.c_ulong, ffi.c_ulong, ffi.c_ulong, ffi.c_ulong) -> ffi.c_ulong
-alias rte_validate_tx_offload = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> Int32
-alias __rte_pktmbuf_linearize = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> Int32
-alias rte_pktmbuf_linearize = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> Int32
-alias rte_pktmbuf_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt32) -> NoneType
-alias rte_mbuf_sched_queue_get = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> UInt32
-alias rte_mbuf_sched_traffic_class_get = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> UInt8
-alias rte_mbuf_sched_color_get = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> UInt8
-alias rte_mbuf_sched_get = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[UInt32], UnsafePointer[UInt8], UnsafePointer[UInt8]) -> NoneType
-alias rte_mbuf_sched_queue_set = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt32) -> NoneType
-alias rte_mbuf_sched_traffic_class_set = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt8) -> NoneType
-alias rte_mbuf_sched_color_set = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt8) -> NoneType
-alias rte_mbuf_sched_set = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt32, UInt8, UInt8) -> NoneType
+alias rte_validate_tx_offload = fn (UnsafePointer[rte_mbuf]) -> Int32
+alias __rte_pktmbuf_linearize = fn (UnsafePointer[rte_mbuf]) -> Int32
+alias rte_pktmbuf_linearize = fn (UnsafePointer[rte_mbuf]) -> Int32
+alias rte_pktmbuf_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_mbuf], UInt32) -> NoneType
+alias rte_mbuf_sched_queue_get = fn (UnsafePointer[rte_mbuf]) -> UInt32
+alias rte_mbuf_sched_traffic_class_get = fn (UnsafePointer[rte_mbuf]) -> UInt8
+alias rte_mbuf_sched_color_get = fn (UnsafePointer[rte_mbuf]) -> UInt8
+alias rte_mbuf_sched_get = fn (UnsafePointer[rte_mbuf], UnsafePointer[UInt32], UnsafePointer[UInt8], UnsafePointer[UInt8]) -> NoneType
+alias rte_mbuf_sched_queue_set = fn (UnsafePointer[rte_mbuf], UInt32) -> NoneType
+alias rte_mbuf_sched_traffic_class_set = fn (UnsafePointer[rte_mbuf], UInt8) -> NoneType
+alias rte_mbuf_sched_color_set = fn (UnsafePointer[rte_mbuf], UInt8) -> NoneType
+alias rte_mbuf_sched_set = fn (UnsafePointer[rte_mbuf], UInt32, UInt8, UInt8) -> NoneType
 alias __rte_raw_cksum = fn (OpaquePointer, size_t, UInt32) -> UInt32
 alias __rte_raw_cksum_reduce = fn (UInt32) -> UInt16
 alias rte_raw_cksum = fn (OpaquePointer, size_t) -> UInt16
-alias rte_raw_cksum_mbuf = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UInt32, UInt32, UnsafePointer[UInt16]) -> Int32
+alias rte_raw_cksum_mbuf = fn (UnsafePointer[rte_mbuf], UInt32, UInt32, UnsafePointer[UInt16]) -> Int32
 alias __builtin_bswap16 = fn (UInt16) -> UInt16
 struct anonomous_record_793(Copyable & Movable):
 	var ihl : UInt8
@@ -3854,11 +2978,10 @@ struct anonomous_record_793(Copyable & Movable):
 alias anonomous_record_794 = C_Union[UInt8, anonomous_record_793, , ]
 
 struct rte_ipv4_hdr(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30ee6e50","inner":[{"id":"0x30ee6e30","inner":[{"id":"0x30ee6d68","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":696,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":710,"tokLen":1}},"end":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":696,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":710,"tokLen":1}}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":696,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":710,"tokLen":1}},"end":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":696,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":710,"tokLen":1}}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/net/rte_ip4.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":42,"offset":696,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/net/rte_ip4.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":42,"offset":696,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 2 
 
 	# # Node: PlaceHolder()
-	# {"id":"0x30ee7a88","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip4.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":65,"offset":1544,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip4.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":65,"offset":1544,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
+	# {"id":"0x1f36a18","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip4.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":65,"offset":1544,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip4.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":65,"offset":1544,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var union_placeholder_1 : anonomous_record_794
@@ -3884,95 +3007,42 @@ struct rte_ipv4_hdr(Copyable & Movable):
 
 	var dst_addr : UInt32
 
-alias rte_ipv4_hdr_len = fn (UnsafePointer[rte_ipv4_hdr
-rte_ipv4_hdr
-]) -> UInt8
-alias rte_ipv4_cksum = fn (UnsafePointer[rte_ipv4_hdr
-rte_ipv4_hdr
-]) -> UInt16
-alias rte_ipv4_cksum_simple = fn (UnsafePointer[rte_ipv4_hdr
-rte_ipv4_hdr
-]) -> UInt16
-alias rte_ipv4_phdr_cksum = fn (UnsafePointer[rte_ipv4_hdr
-rte_ipv4_hdr
-], ffi.c_ulong) -> UInt16
-alias __rte_ipv4_udptcp_cksum = fn (UnsafePointer[rte_ipv4_hdr
-rte_ipv4_hdr
-], OpaquePointer) -> UInt16
-alias rte_ipv4_udptcp_cksum = fn (UnsafePointer[rte_ipv4_hdr
-rte_ipv4_hdr
-], OpaquePointer) -> UInt16
-alias __rte_ipv4_udptcp_cksum_mbuf = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_ipv4_hdr
-rte_ipv4_hdr
-], UInt16) -> UInt16
-alias rte_ipv4_udptcp_cksum_mbuf = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_ipv4_hdr
-rte_ipv4_hdr
-], UInt16) -> UInt16
-alias rte_ipv4_udptcp_cksum_verify = fn (UnsafePointer[rte_ipv4_hdr
-rte_ipv4_hdr
-], OpaquePointer) -> Int32
-alias rte_ipv4_udptcp_cksum_mbuf_verify = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_ipv4_hdr
-rte_ipv4_hdr
-], UInt16) -> Int32
+alias rte_ipv4_hdr_len = fn (UnsafePointer[rte_ipv4_hdr]) -> UInt8
+alias rte_ipv4_cksum = fn (UnsafePointer[rte_ipv4_hdr]) -> UInt16
+alias rte_ipv4_cksum_simple = fn (UnsafePointer[rte_ipv4_hdr]) -> UInt16
+alias rte_ipv4_phdr_cksum = fn (UnsafePointer[rte_ipv4_hdr], ffi.c_ulong) -> UInt16
+alias __rte_ipv4_udptcp_cksum = fn (UnsafePointer[rte_ipv4_hdr], OpaquePointer) -> UInt16
+alias rte_ipv4_udptcp_cksum = fn (UnsafePointer[rte_ipv4_hdr], OpaquePointer) -> UInt16
+alias __rte_ipv4_udptcp_cksum_mbuf = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_ipv4_hdr], UInt16) -> UInt16
+alias rte_ipv4_udptcp_cksum_mbuf = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_ipv4_hdr], UInt16) -> UInt16
+alias rte_ipv4_udptcp_cksum_verify = fn (UnsafePointer[rte_ipv4_hdr], OpaquePointer) -> Int32
+alias rte_ipv4_udptcp_cksum_mbuf_verify = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_ipv4_hdr], UInt16) -> Int32
 alias rte_srand = fn (ffi.c_ulong) -> NoneType
 alias rte_rand = fn () -> ffi.c_ulong
 alias rte_rand_max = fn (ffi.c_ulong) -> ffi.c_ulong
 alias rte_drand = fn () -> Float64
 struct rte_ether_addr(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30ef3670","inner":[{"id":"0x30ef3650","inner":[{"id":"0x30ef3588","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"isMacroArgExpansion":true,"offset":2606,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2620,"tokLen":1}},"end":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"isMacroArgExpansion":true,"offset":2606,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2620,"tokLen":1}}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"isMacroArgExpansion":true,"offset":2606,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2620,"tokLen":1}},"end":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"isMacroArgExpansion":true,"offset":2606,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2620,"tokLen":1}}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":76,"offset":2606,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":76,"offset":2606,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 2 
 
 
 	var addr_bytes : InlineArray[UInt8, 6]
 
 # # Node: PlaceHolder()
-# {"id":"0x30ef3a08","inner":[{"castKind":"IntegralToBoolean","id":"0x30ef3978","inner":[{"id":"0x30ef38d8","inner":[{"argType":{"desugaredQualType":"struct rte_ether_addr","qualType":"struct rte_ether_addr"},"id":"0x30ef3880","kind":"UnaryExprOrTypeTraitExpr","name":"sizeof","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2730,"tokLen":6},"end":{"col":43,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2758,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"},{"castKind":"IntegralCast","id":"0x30ef38c0","inner":[{"id":"0x30ef38a0","kind":"IntegerLiteral","range":{"begin":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2763,"tokLen":1},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2763,"tokLen":1}},"type":{"qualType":"int"},"value":"6","valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2763,"tokLen":1},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2763,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"}],"kind":"BinaryOperator","opcode":"==","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2730,"tokLen":6},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2763,"tokLen":1}},"type":{"qualType":"int"},"valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":80,"offset":2730,"tokLen":6},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2763,"tokLen":1}},"type":{"qualType":"bool"},"valueCategory":"prvalue"},{"id":"0x30ef3938","kind":"StringLiteral","range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":81,"offset":2768,"tokLen":36},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2768,"tokLen":36}},"type":{"qualType":"char[35]"},"value":"\"sizeof(struct rte_ether_addr) == 6\"","valueCategory":"lvalue"}],"kind":"StaticAssertDecl","loc":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":80,"offset":2716,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"range":{"begin":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":80,"offset":2716,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"end":{"col":39,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":81,"offset":2804,"tokLen":1}}}
+# {"id":"0x1f42998","inner":[{"castKind":"IntegralToBoolean","id":"0x1f42908","inner":[{"id":"0x1f42868","inner":[{"argType":{"desugaredQualType":"struct rte_ether_addr","qualType":"struct rte_ether_addr"},"id":"0x1f42810","kind":"UnaryExprOrTypeTraitExpr","name":"sizeof","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2730,"tokLen":6},"end":{"col":43,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2758,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"},{"castKind":"IntegralCast","id":"0x1f42850","inner":[{"id":"0x1f42830","kind":"IntegerLiteral","range":{"begin":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2763,"tokLen":1},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2763,"tokLen":1}},"type":{"qualType":"int"},"value":"6","valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2763,"tokLen":1},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2763,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"}],"kind":"BinaryOperator","opcode":"==","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2730,"tokLen":6},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2763,"tokLen":1}},"type":{"qualType":"int"},"valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":80,"offset":2730,"tokLen":6},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2763,"tokLen":1}},"type":{"qualType":"bool"},"valueCategory":"prvalue"},{"id":"0x1f428c8","kind":"StringLiteral","range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":81,"offset":2768,"tokLen":36},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2768,"tokLen":36}},"type":{"qualType":"char[35]"},"value":"\"sizeof(struct rte_ether_addr) == 6\"","valueCategory":"lvalue"}],"kind":"StaticAssertDecl","loc":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":80,"offset":2716,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"range":{"begin":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":80,"offset":2716,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"end":{"col":39,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":81,"offset":2804,"tokLen":1}}}
 # # Node: PlaceHolder()
-# {"id":"0x30ef3c20","inner":[{"castKind":"IntegralToBoolean","id":"0x30ef3be8","inner":[{"id":"0x30ef3ac0","inner":[{"argType":{"desugaredQualType":"struct rte_ether_addr","qualType":"struct rte_ether_addr"},"id":"0x30ef3a68","kind":"UnaryExprOrTypeTraitExpr","name":"alignof","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":82,"offset":2821,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":44,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2850,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"},{"castKind":"IntegralCast","id":"0x30ef3aa8","inner":[{"id":"0x30ef3a88","kind":"IntegerLiteral","range":{"begin":{"col":49,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2855,"tokLen":1},"end":{"col":49,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2855,"tokLen":1}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":49,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2855,"tokLen":1},"end":{"col":49,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2855,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"}],"kind":"BinaryOperator","opcode":"==","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":82,"offset":2821,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":49,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2855,"tokLen":1}},"type":{"qualType":"int"},"valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":82,"offset":2821,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":49,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2855,"tokLen":1}},"type":{"qualType":"bool"},"valueCategory":"prvalue"},{"id":"0x30ef3b18","kind":"StringLiteral","range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":83,"offset":2860,"tokLen":37},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2860,"tokLen":37}},"type":{"qualType":"char[36]"},"value":"\"alignof(struct rte_ether_addr) == 2\"","valueCategory":"lvalue"}],"kind":"StaticAssertDecl","loc":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":82,"offset":2807,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"range":{"begin":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":82,"offset":2807,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"end":{"col":40,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":83,"offset":2897,"tokLen":1}}}
-alias rte_is_same_ether_addr = fn (UnsafePointer[rte_ether_addr
-rte_ether_addr
-], UnsafePointer[rte_ether_addr
-rte_ether_addr
-]) -> Int32
-alias rte_is_zero_ether_addr = fn (UnsafePointer[rte_ether_addr
-rte_ether_addr
-]) -> Int32
-alias rte_is_unicast_ether_addr = fn (UnsafePointer[rte_ether_addr
-rte_ether_addr
-]) -> Int32
-alias rte_is_multicast_ether_addr = fn (UnsafePointer[rte_ether_addr
-rte_ether_addr
-]) -> Int32
-alias rte_is_broadcast_ether_addr = fn (UnsafePointer[rte_ether_addr
-rte_ether_addr
-]) -> Int32
-alias rte_is_universal_ether_addr = fn (UnsafePointer[rte_ether_addr
-rte_ether_addr
-]) -> Int32
-alias rte_is_local_admin_ether_addr = fn (UnsafePointer[rte_ether_addr
-rte_ether_addr
-]) -> Int32
-alias rte_is_valid_assigned_ether_addr = fn (UnsafePointer[rte_ether_addr
-rte_ether_addr
-]) -> Int32
+# {"id":"0x1f42bb0","inner":[{"castKind":"IntegralToBoolean","id":"0x1f42b78","inner":[{"id":"0x1f42a50","inner":[{"argType":{"desugaredQualType":"struct rte_ether_addr","qualType":"struct rte_ether_addr"},"id":"0x1f429f8","kind":"UnaryExprOrTypeTraitExpr","name":"alignof","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":82,"offset":2821,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":44,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2850,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"},{"castKind":"IntegralCast","id":"0x1f42a38","inner":[{"id":"0x1f42a18","kind":"IntegerLiteral","range":{"begin":{"col":49,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2855,"tokLen":1},"end":{"col":49,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2855,"tokLen":1}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":49,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2855,"tokLen":1},"end":{"col":49,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2855,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"}],"kind":"BinaryOperator","opcode":"==","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":82,"offset":2821,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":49,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2855,"tokLen":1}},"type":{"qualType":"int"},"valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":82,"offset":2821,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":49,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2855,"tokLen":1}},"type":{"qualType":"bool"},"valueCategory":"prvalue"},{"id":"0x1f42aa8","kind":"StringLiteral","range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":83,"offset":2860,"tokLen":37},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":2860,"tokLen":37}},"type":{"qualType":"char[36]"},"value":"\"alignof(struct rte_ether_addr) == 2\"","valueCategory":"lvalue"}],"kind":"StaticAssertDecl","loc":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":82,"offset":2807,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"range":{"begin":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":82,"offset":2807,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"end":{"col":40,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":83,"offset":2897,"tokLen":1}}}
+alias rte_is_same_ether_addr = fn (UnsafePointer[rte_ether_addr], UnsafePointer[rte_ether_addr]) -> Int32
+alias rte_is_zero_ether_addr = fn (UnsafePointer[rte_ether_addr]) -> Int32
+alias rte_is_unicast_ether_addr = fn (UnsafePointer[rte_ether_addr]) -> Int32
+alias rte_is_multicast_ether_addr = fn (UnsafePointer[rte_ether_addr]) -> Int32
+alias rte_is_broadcast_ether_addr = fn (UnsafePointer[rte_ether_addr]) -> Int32
+alias rte_is_universal_ether_addr = fn (UnsafePointer[rte_ether_addr]) -> Int32
+alias rte_is_local_admin_ether_addr = fn (UnsafePointer[rte_ether_addr]) -> Int32
+alias rte_is_valid_assigned_ether_addr = fn (UnsafePointer[rte_ether_addr]) -> Int32
 alias rte_eth_random_addr = fn (UnsafePointer[UInt8]) -> NoneType
-alias rte_ether_addr_copy = fn (UnsafePointer[rte_ether_addr
-rte_ether_addr
-], UnsafePointer[rte_ether_addr
-rte_ether_addr
-]) -> NoneType
-alias rte_ether_format_addr = fn (UnsafePointer[Int8], UInt16, UnsafePointer[rte_ether_addr
-rte_ether_addr
-]) -> NoneType
-alias rte_ether_unformat_addr = fn (UnsafePointer[Int8], UnsafePointer[rte_ether_addr
-rte_ether_addr
-]) -> Int32
+alias rte_ether_addr_copy = fn (UnsafePointer[rte_ether_addr], UnsafePointer[rte_ether_addr]) -> NoneType
+alias rte_ether_format_addr = fn (UnsafePointer[Int8], UInt16, UnsafePointer[rte_ether_addr]) -> NoneType
+alias rte_ether_unformat_addr = fn (UnsafePointer[Int8], UnsafePointer[rte_ether_addr]) -> Int32
 struct rte_ether_hdr(Copyable & Movable):
 
 	var dst_addr : rte_ether_addr
@@ -3982,9 +3052,9 @@ struct rte_ether_hdr(Copyable & Movable):
 	var ether_type : UInt16
 
 # # Node: PlaceHolder()
-# {"id":"0x30bc4ff8","inner":[{"castKind":"IntegralToBoolean","id":"0x30bc4f58","inner":[{"id":"0x30bc4ef8","inner":[{"argType":{"desugaredQualType":"struct rte_ether_hdr","qualType":"struct rte_ether_hdr"},"id":"0x30bc4ea0","kind":"UnaryExprOrTypeTraitExpr","name":"sizeof","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9215,"tokLen":6},"end":{"col":42,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9242,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"},{"castKind":"IntegralCast","id":"0x30bc4ee0","inner":[{"id":"0x30bc4ec0","kind":"IntegerLiteral","range":{"begin":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9247,"tokLen":2},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9247,"tokLen":2}},"type":{"qualType":"int"},"value":"14","valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9247,"tokLen":2},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9247,"tokLen":2}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"}],"kind":"BinaryOperator","opcode":"==","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9215,"tokLen":6},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9247,"tokLen":2}},"type":{"qualType":"int"},"valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":306,"offset":9215,"tokLen":6},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9247,"tokLen":2}},"type":{"qualType":"bool"},"valueCategory":"prvalue"},{"id":"0x30bc4f18","kind":"StringLiteral","range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":307,"offset":9253,"tokLen":36},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9253,"tokLen":36}},"type":{"qualType":"char[35]"},"value":"\"sizeof(struct rte_ether_hdr) == 14\"","valueCategory":"lvalue"}],"kind":"StaticAssertDecl","loc":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":306,"offset":9201,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"range":{"begin":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":306,"offset":9201,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"end":{"col":39,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":307,"offset":9289,"tokLen":1}}}
+# {"id":"0x1c13ff8","inner":[{"castKind":"IntegralToBoolean","id":"0x1c13f58","inner":[{"id":"0x1c13ef8","inner":[{"argType":{"desugaredQualType":"struct rte_ether_hdr","qualType":"struct rte_ether_hdr"},"id":"0x1c13ea0","kind":"UnaryExprOrTypeTraitExpr","name":"sizeof","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9215,"tokLen":6},"end":{"col":42,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9242,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"},{"castKind":"IntegralCast","id":"0x1c13ee0","inner":[{"id":"0x1c13ec0","kind":"IntegerLiteral","range":{"begin":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9247,"tokLen":2},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9247,"tokLen":2}},"type":{"qualType":"int"},"value":"14","valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9247,"tokLen":2},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9247,"tokLen":2}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"}],"kind":"BinaryOperator","opcode":"==","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9215,"tokLen":6},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9247,"tokLen":2}},"type":{"qualType":"int"},"valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":306,"offset":9215,"tokLen":6},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9247,"tokLen":2}},"type":{"qualType":"bool"},"valueCategory":"prvalue"},{"id":"0x1c13f18","kind":"StringLiteral","range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":307,"offset":9253,"tokLen":36},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9253,"tokLen":36}},"type":{"qualType":"char[35]"},"value":"\"sizeof(struct rte_ether_hdr) == 14\"","valueCategory":"lvalue"}],"kind":"StaticAssertDecl","loc":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":306,"offset":9201,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"range":{"begin":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":306,"offset":9201,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"end":{"col":39,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":307,"offset":9289,"tokLen":1}}}
 # # Node: PlaceHolder()
-# {"id":"0x30bc5170","inner":[{"castKind":"IntegralToBoolean","id":"0x30bc5138","inner":[{"id":"0x30bc50b0","inner":[{"argType":{"desugaredQualType":"struct rte_ether_hdr","qualType":"struct rte_ether_hdr"},"id":"0x30bc5058","kind":"UnaryExprOrTypeTraitExpr","name":"alignof","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":308,"offset":9306,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":43,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9334,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"},{"castKind":"IntegralCast","id":"0x30bc5098","inner":[{"id":"0x30bc5078","kind":"IntegerLiteral","range":{"begin":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9339,"tokLen":1},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9339,"tokLen":1}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9339,"tokLen":1},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9339,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"}],"kind":"BinaryOperator","opcode":"==","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":308,"offset":9306,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9339,"tokLen":1}},"type":{"qualType":"int"},"valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":308,"offset":9306,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9339,"tokLen":1}},"type":{"qualType":"bool"},"valueCategory":"prvalue"},{"id":"0x30bc50d0","kind":"StringLiteral","range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":309,"offset":9344,"tokLen":36},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9344,"tokLen":36}},"type":{"qualType":"char[35]"},"value":"\"alignof(struct rte_ether_hdr) == 2\"","valueCategory":"lvalue"}],"kind":"StaticAssertDecl","loc":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":308,"offset":9292,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"range":{"begin":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":308,"offset":9292,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"end":{"col":39,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":309,"offset":9380,"tokLen":1}}}
+# {"id":"0x1c14170","inner":[{"castKind":"IntegralToBoolean","id":"0x1c14138","inner":[{"id":"0x1c140b0","inner":[{"argType":{"desugaredQualType":"struct rte_ether_hdr","qualType":"struct rte_ether_hdr"},"id":"0x1c14058","kind":"UnaryExprOrTypeTraitExpr","name":"alignof","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":308,"offset":9306,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":43,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9334,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"},{"castKind":"IntegralCast","id":"0x1c14098","inner":[{"id":"0x1c14078","kind":"IntegerLiteral","range":{"begin":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9339,"tokLen":1},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9339,"tokLen":1}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9339,"tokLen":1},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9339,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"}],"kind":"BinaryOperator","opcode":"==","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":308,"offset":9306,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9339,"tokLen":1}},"type":{"qualType":"int"},"valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":308,"offset":9306,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":48,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9339,"tokLen":1}},"type":{"qualType":"bool"},"valueCategory":"prvalue"},{"id":"0x1c140d0","kind":"StringLiteral","range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":309,"offset":9344,"tokLen":36},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9344,"tokLen":36}},"type":{"qualType":"char[35]"},"value":"\"alignof(struct rte_ether_hdr) == 2\"","valueCategory":"lvalue"}],"kind":"StaticAssertDecl","loc":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":308,"offset":9292,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"range":{"begin":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":308,"offset":9292,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"end":{"col":39,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":309,"offset":9380,"tokLen":1}}}
 struct rte_vlan_hdr(Copyable & Movable):
 
 	var vlan_tci : UInt16
@@ -3992,56 +3062,26 @@ struct rte_vlan_hdr(Copyable & Movable):
 	var eth_proto : UInt16
 
 # # Node: PlaceHolder()
-# {"id":"0x30bc5548","inner":[{"castKind":"IntegralToBoolean","id":"0x30bc54b0","inner":[{"id":"0x30bc5418","inner":[{"argType":{"desugaredQualType":"struct rte_vlan_hdr","qualType":"struct rte_vlan_hdr"},"id":"0x30bc53c0","kind":"UnaryExprOrTypeTraitExpr","name":"sizeof","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9705,"tokLen":6},"end":{"col":41,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9731,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"},{"castKind":"IntegralCast","id":"0x30bc5400","inner":[{"id":"0x30bc53e0","kind":"IntegerLiteral","range":{"begin":{"col":46,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9736,"tokLen":1},"end":{"col":46,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9736,"tokLen":1}},"type":{"qualType":"int"},"value":"4","valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":46,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9736,"tokLen":1},"end":{"col":46,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9736,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"}],"kind":"BinaryOperator","opcode":"==","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9705,"tokLen":6},"end":{"col":46,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9736,"tokLen":1}},"type":{"qualType":"int"},"valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":321,"offset":9705,"tokLen":6},"end":{"col":46,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9736,"tokLen":1}},"type":{"qualType":"bool"},"valueCategory":"prvalue"},{"id":"0x30bc5478","kind":"StringLiteral","range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":322,"offset":9741,"tokLen":34},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9741,"tokLen":34}},"type":{"qualType":"char[33]"},"value":"\"sizeof(struct rte_vlan_hdr) == 4\"","valueCategory":"lvalue"}],"kind":"StaticAssertDecl","loc":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":321,"offset":9691,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"range":{"begin":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":321,"offset":9691,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"end":{"col":37,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":322,"offset":9775,"tokLen":1}}}
+# {"id":"0x1c14548","inner":[{"castKind":"IntegralToBoolean","id":"0x1c144b0","inner":[{"id":"0x1c14418","inner":[{"argType":{"desugaredQualType":"struct rte_vlan_hdr","qualType":"struct rte_vlan_hdr"},"id":"0x1c143c0","kind":"UnaryExprOrTypeTraitExpr","name":"sizeof","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9705,"tokLen":6},"end":{"col":41,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9731,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"},{"castKind":"IntegralCast","id":"0x1c14400","inner":[{"id":"0x1c143e0","kind":"IntegerLiteral","range":{"begin":{"col":46,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9736,"tokLen":1},"end":{"col":46,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9736,"tokLen":1}},"type":{"qualType":"int"},"value":"4","valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":46,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9736,"tokLen":1},"end":{"col":46,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9736,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"}],"kind":"BinaryOperator","opcode":"==","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9705,"tokLen":6},"end":{"col":46,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9736,"tokLen":1}},"type":{"qualType":"int"},"valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":15,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":321,"offset":9705,"tokLen":6},"end":{"col":46,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9736,"tokLen":1}},"type":{"qualType":"bool"},"valueCategory":"prvalue"},{"id":"0x1c14478","kind":"StringLiteral","range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":322,"offset":9741,"tokLen":34},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9741,"tokLen":34}},"type":{"qualType":"char[33]"},"value":"\"sizeof(struct rte_vlan_hdr) == 4\"","valueCategory":"lvalue"}],"kind":"StaticAssertDecl","loc":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":321,"offset":9691,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"range":{"begin":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":321,"offset":9691,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"end":{"col":37,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":322,"offset":9775,"tokLen":1}}}
 # # Node: PlaceHolder()
-# {"id":"0x30bc5ac0","inner":[{"castKind":"IntegralToBoolean","id":"0x30bc5a88","inner":[{"id":"0x30bc5600","inner":[{"argType":{"desugaredQualType":"struct rte_vlan_hdr","qualType":"struct rte_vlan_hdr"},"id":"0x30bc55a8","kind":"UnaryExprOrTypeTraitExpr","name":"alignof","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":323,"offset":9792,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":42,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9819,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"},{"castKind":"IntegralCast","id":"0x30bc55e8","inner":[{"id":"0x30bc55c8","kind":"IntegerLiteral","range":{"begin":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9824,"tokLen":1},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9824,"tokLen":1}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9824,"tokLen":1},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9824,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"}],"kind":"BinaryOperator","opcode":"==","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":323,"offset":9792,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9824,"tokLen":1}},"type":{"qualType":"int"},"valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":323,"offset":9792,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9824,"tokLen":1}},"type":{"qualType":"bool"},"valueCategory":"prvalue"},{"id":"0x30bc5658","kind":"StringLiteral","range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":324,"offset":9829,"tokLen":35},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9829,"tokLen":35}},"type":{"qualType":"char[34]"},"value":"\"alignof(struct rte_vlan_hdr) == 2\"","valueCategory":"lvalue"}],"kind":"StaticAssertDecl","loc":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":323,"offset":9778,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"range":{"begin":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":323,"offset":9778,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"end":{"col":38,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":324,"offset":9864,"tokLen":1}}}
-alias rte_vlan_strip = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-]) -> Int32
-alias rte_vlan_insert = fn (UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]]) -> Int32
+# {"id":"0x1c14ac0","inner":[{"castKind":"IntegralToBoolean","id":"0x1c14a88","inner":[{"id":"0x1c14600","inner":[{"argType":{"desugaredQualType":"struct rte_vlan_hdr","qualType":"struct rte_vlan_hdr"},"id":"0x1c145a8","kind":"UnaryExprOrTypeTraitExpr","name":"alignof","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":323,"offset":9792,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":42,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9819,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"},{"castKind":"IntegralCast","id":"0x1c145e8","inner":[{"id":"0x1c145c8","kind":"IntegerLiteral","range":{"begin":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9824,"tokLen":1},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9824,"tokLen":1}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9824,"tokLen":1},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9824,"tokLen":1}},"type":{"qualType":"unsigned long"},"valueCategory":"prvalue"}],"kind":"BinaryOperator","opcode":"==","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":323,"offset":9792,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9824,"tokLen":1}},"type":{"qualType":"int"},"valueCategory":"prvalue"}],"kind":"ImplicitCastExpr","range":{"begin":{"expansionLoc":{"col":15,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":323,"offset":9792,"tokLen":7},"spellingLoc":{"col":17,"file":"/usr/lib/llvm-14/lib/clang/14.0.0/include/stdalign.h","includedFrom":{"file":"dpdk/lib/eal/include/rte_common.h"},"line":15,"offset":477,"tokLen":8}},"end":{"col":47,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9824,"tokLen":1}},"type":{"qualType":"bool"},"valueCategory":"prvalue"},{"id":"0x1c14658","kind":"StringLiteral","range":{"begin":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":324,"offset":9829,"tokLen":35},"end":{"col":3,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"offset":9829,"tokLen":35}},"type":{"qualType":"char[34]"},"value":"\"alignof(struct rte_vlan_hdr) == 2\"","valueCategory":"lvalue"}],"kind":"StaticAssertDecl","loc":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":323,"offset":9778,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"range":{"begin":{"expansionLoc":{"col":1,"file":"dpdk/lib/net/rte_ether.h","includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":323,"offset":9778,"tokLen":13},"spellingLoc":{"col":24,"file":"/usr/include/assert.h","includedFrom":{"file":"dpdk/lib/net/rte_ether.h"},"line":143,"offset":4621,"tokLen":14}},"end":{"col":38,"includedFrom":{"file":"dpdk/lib/net/rte_ip6.h"},"line":324,"offset":9864,"tokLen":1}}}
+alias rte_vlan_strip = fn (UnsafePointer[rte_mbuf]) -> Int32
+alias rte_vlan_insert = fn (UnsafePointer[UnsafePointer[rte_mbuf]]) -> Int32
 struct rte_ipv6_addr(Copyable & Movable):
 
 	var a : InlineArray[UInt8, 16]
 
-alias rte_ipv6_addr_eq = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-], UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-]) -> Bool
-alias rte_ipv6_addr_mask = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-], UInt8) -> NoneType
-alias rte_ipv6_addr_eq_prefix = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-], UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-], UInt8) -> Bool
-alias rte_ipv6_mask_depth = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-]) -> UInt8
-alias rte_ipv6_addr_is_unspec = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-]) -> Bool
-alias rte_ipv6_addr_is_loopback = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-]) -> Bool
-alias rte_ipv6_addr_is_linklocal = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-]) -> Bool
-alias rte_ipv6_addr_is_sitelocal = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-]) -> Bool
-alias rte_ipv6_addr_is_v4compat = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-]) -> Bool
-alias rte_ipv6_addr_is_v4mapped = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-]) -> Bool
-alias rte_ipv6_addr_is_mcast = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-]) -> Bool
+alias rte_ipv6_addr_eq = fn (UnsafePointer[rte_ipv6_addr], UnsafePointer[rte_ipv6_addr]) -> Bool
+alias rte_ipv6_addr_mask = fn (UnsafePointer[rte_ipv6_addr], UInt8) -> NoneType
+alias rte_ipv6_addr_eq_prefix = fn (UnsafePointer[rte_ipv6_addr], UnsafePointer[rte_ipv6_addr], UInt8) -> Bool
+alias rte_ipv6_mask_depth = fn (UnsafePointer[rte_ipv6_addr]) -> UInt8
+alias rte_ipv6_addr_is_unspec = fn (UnsafePointer[rte_ipv6_addr]) -> Bool
+alias rte_ipv6_addr_is_loopback = fn (UnsafePointer[rte_ipv6_addr]) -> Bool
+alias rte_ipv6_addr_is_linklocal = fn (UnsafePointer[rte_ipv6_addr]) -> Bool
+alias rte_ipv6_addr_is_sitelocal = fn (UnsafePointer[rte_ipv6_addr]) -> Bool
+alias rte_ipv6_addr_is_v4compat = fn (UnsafePointer[rte_ipv6_addr]) -> Bool
+alias rte_ipv6_addr_is_v4mapped = fn (UnsafePointer[rte_ipv6_addr]) -> Bool
+alias rte_ipv6_addr_is_mcast = fn (UnsafePointer[rte_ipv6_addr]) -> Bool
 struct rte_ipv6_mc_scope(Copyable & Movable):
 
 	alias RTE_IPV6_MC_SCOPE_NONE = 0
@@ -4056,21 +3096,9 @@ struct rte_ipv6_mc_scope(Copyable & Movable):
 
 	alias RTE_IPV6_MC_SCOPE_GLOBAL = 14
 
-alias rte_ipv6_llocal_from_ethernet = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-], UnsafePointer[rte_ether_addr
-rte_ether_addr
-]) -> NoneType
-alias rte_ipv6_solnode_from_addr = fn (UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-], UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-]) -> NoneType
-alias rte_ether_mcast_from_ipv6 = fn (UnsafePointer[rte_ether_addr
-rte_ether_addr
-], UnsafePointer[rte_ipv6_addr
-rte_ipv6_addr
-]) -> NoneType
+alias rte_ipv6_llocal_from_ethernet = fn (UnsafePointer[rte_ipv6_addr], UnsafePointer[rte_ether_addr]) -> NoneType
+alias rte_ipv6_solnode_from_addr = fn (UnsafePointer[rte_ipv6_addr], UnsafePointer[rte_ipv6_addr]) -> NoneType
+alias rte_ether_mcast_from_ipv6 = fn (UnsafePointer[rte_ether_addr], UnsafePointer[rte_ipv6_addr]) -> NoneType
 struct anonomous_record_795(Copyable & Movable):
 	var flow_label : UInt32
 
@@ -4083,11 +3111,10 @@ struct anonomous_record_795(Copyable & Movable):
 alias anonomous_record_796 = C_Union[UInt32, anonomous_record_795, , , , ]
 
 struct rte_ipv6_hdr(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30f2c490","inner":[{"id":"0x30f2c470","inner":[{"id":"0x30f2c3a8","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":11891,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":11905,"tokLen":1}},"end":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":11891,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":11905,"tokLen":1}}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":11891,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":11905,"tokLen":1}},"end":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":11891,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":11905,"tokLen":1}}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":464,"offset":11891,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":464,"offset":11891,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 2 
 
 	# # Node: PlaceHolder()
-	# {"id":"0x30f2e6d8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":487,"offset":12833,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":487,"offset":12833,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
+	# {"id":"0x1f7d668","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":487,"offset":12833,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":487,"offset":12833,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var union_placeholder_1 : anonomous_record_796
@@ -4107,9 +3134,7 @@ struct rte_ipv6_hdr(Copyable & Movable):
 
 	var dst_addr : rte_ipv6_addr
 
-alias rte_ipv6_check_version = fn (UnsafePointer[rte_ipv6_hdr
-rte_ipv6_hdr
-]) -> Int32
+alias rte_ipv6_check_version = fn (UnsafePointer[rte_ipv6_hdr]) -> Int32
 struct anonomous_record_797(Copyable & Movable):
 	var last_entry : UInt8
 
@@ -4120,11 +3145,10 @@ struct anonomous_record_797(Copyable & Movable):
 alias anonomous_record_798 = C_Union[UInt32, anonomous_record_797, , , ]
 
 struct rte_ipv6_routing_ext(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30f2eec0","inner":[{"id":"0x30f2eea0","inner":[{"id":"0x30f2ede0","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":13367,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":13381,"tokLen":1}},"end":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":13367,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":13381,"tokLen":1}}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":13367,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":13381,"tokLen":1}},"end":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":13367,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":13381,"tokLen":1}}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":511,"offset":13367,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":511,"offset":13367,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 2 
 
 	# # Node: PlaceHolder()
-	# {"id":"0x30f2f8d8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":526,"offset":13936,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":526,"offset":13936,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
+	# {"id":"0x1f7e868","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":526,"offset":13936,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":526,"offset":13936,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var next_hdr : UInt8
@@ -4141,39 +3165,18 @@ struct rte_ipv6_routing_ext(Copyable & Movable):
 
 
 
-alias rte_ipv6_phdr_cksum = fn (UnsafePointer[rte_ipv6_hdr
-rte_ipv6_hdr
-], ffi.c_ulong) -> UInt16
-alias __rte_ipv6_udptcp_cksum = fn (UnsafePointer[rte_ipv6_hdr
-rte_ipv6_hdr
-], OpaquePointer) -> UInt16
-alias rte_ipv6_udptcp_cksum = fn (UnsafePointer[rte_ipv6_hdr
-rte_ipv6_hdr
-], OpaquePointer) -> UInt16
-alias __rte_ipv6_udptcp_cksum_mbuf = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_ipv6_hdr
-rte_ipv6_hdr
-], UInt16) -> UInt16
-alias rte_ipv6_udptcp_cksum_mbuf = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_ipv6_hdr
-rte_ipv6_hdr
-], UInt16) -> UInt16
-alias rte_ipv6_udptcp_cksum_verify = fn (UnsafePointer[rte_ipv6_hdr
-rte_ipv6_hdr
-], OpaquePointer) -> Int32
-alias rte_ipv6_udptcp_cksum_mbuf_verify = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[rte_ipv6_hdr
-rte_ipv6_hdr
-], UInt16) -> Int32
+alias rte_ipv6_phdr_cksum = fn (UnsafePointer[rte_ipv6_hdr], ffi.c_ulong) -> UInt16
+alias __rte_ipv6_udptcp_cksum = fn (UnsafePointer[rte_ipv6_hdr], OpaquePointer) -> UInt16
+alias rte_ipv6_udptcp_cksum = fn (UnsafePointer[rte_ipv6_hdr], OpaquePointer) -> UInt16
+alias __rte_ipv6_udptcp_cksum_mbuf = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_ipv6_hdr], UInt16) -> UInt16
+alias rte_ipv6_udptcp_cksum_mbuf = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_ipv6_hdr], UInt16) -> UInt16
+alias rte_ipv6_udptcp_cksum_verify = fn (UnsafePointer[rte_ipv6_hdr], OpaquePointer) -> Int32
+alias rte_ipv6_udptcp_cksum_mbuf_verify = fn (UnsafePointer[rte_mbuf], UnsafePointer[rte_ipv6_hdr], UInt16) -> Int32
 struct rte_ipv6_fragment_ext(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x30f38530","inner":[{"id":"0x30f38510","inner":[{"id":"0x30f38450","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":20400,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":20414,"tokLen":1}},"end":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":20400,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":20414,"tokLen":1}}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":20400,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":20414,"tokLen":1}},"end":{"expansionLoc":{"col":8,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"isMacroArgExpansion":true,"offset":20400,"tokLen":13},"spellingLoc":{"col":22,"includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"offset":20414,"tokLen":1}}},"type":{"qualType":"int"},"value":"2","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":755,"offset":20400,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":755,"offset":20400,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 2 
 
 	# # Node: PlaceHolder()
-	# {"id":"0x30f387c8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":760,"offset":20634,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":760,"offset":20634,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
+	# {"id":"0x1f87758","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":760,"offset":20634,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/net/rte_ip6.h","includedFrom":{"file":"dpdk/lib/net/rte_ip.h"},"line":760,"offset":20634,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 	var next_header : UInt8
 
@@ -4192,80 +3195,18 @@ struct rte_ip_frag_death_row(Copyable & Movable):
 
 struct rte_ip_frag_tbl(Copyable & Movable):
 	pass
-alias rte_ip_frag_table_create = fn (UInt32, UInt32, UInt32, ffi.c_ulong, Int32) -> UnsafePointer[rte_ip_frag_tbl
-rte_ip_frag_tbl
-]
-alias rte_ip_frag_table_destroy = fn (UnsafePointer[rte_ip_frag_tbl
-rte_ip_frag_tbl
-]) -> NoneType
-alias rte_ipv6_fragment_packet = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], UInt16, UInt16, UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[rte_mempool
-rte_mempool
-]) -> Int32
-alias rte_ipv6_frag_reassemble_packet = fn (UnsafePointer[rte_ip_frag_tbl
-rte_ip_frag_tbl
-], UnsafePointer[rte_ip_frag_death_row
-rte_ip_frag_death_row
-], UnsafePointer[rte_mbuf
-rte_mbuf
-], ffi.c_ulong, UnsafePointer[rte_ipv6_hdr
-rte_ipv6_hdr
-], UnsafePointer[rte_ipv6_fragment_ext
-rte_ipv6_fragment_ext
-]) -> UnsafePointer[rte_mbuf
-rte_mbuf
-]
-alias rte_ipv6_frag_get_ipv6_fragment_header = fn (UnsafePointer[rte_ipv6_hdr
-rte_ipv6_hdr
-]) -> UnsafePointer[rte_ipv6_fragment_ext
-rte_ipv6_fragment_ext
-]
-alias rte_ipv4_fragment_packet = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], UInt16, UInt16, UnsafePointer[rte_mempool
-rte_mempool
-], UnsafePointer[rte_mempool
-rte_mempool
-]) -> Int32
-alias rte_ipv4_fragment_copy_nonseg_packet = fn (UnsafePointer[rte_mbuf
-rte_mbuf
-], UnsafePointer[UnsafePointer[rte_mbuf
-rte_mbuf
-]], UInt16, UInt16, UnsafePointer[rte_mempool
-rte_mempool
-]) -> Int32
-alias rte_ipv4_frag_reassemble_packet = fn (UnsafePointer[rte_ip_frag_tbl
-rte_ip_frag_tbl
-], UnsafePointer[rte_ip_frag_death_row
-rte_ip_frag_death_row
-], UnsafePointer[rte_mbuf
-rte_mbuf
-], ffi.c_ulong, UnsafePointer[rte_ipv4_hdr
-rte_ipv4_hdr
-]) -> UnsafePointer[rte_mbuf
-rte_mbuf
-]
-alias rte_ipv4_frag_pkt_is_fragmented = fn (UnsafePointer[rte_ipv4_hdr
-rte_ipv4_hdr
-]) -> Int32
-alias rte_ip_frag_free_death_row = fn (UnsafePointer[rte_ip_frag_death_row
-rte_ip_frag_death_row
-], UInt32) -> NoneType
-alias rte_ip_frag_table_statistics_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_ip_frag_tbl
-rte_ip_frag_tbl
-]) -> NoneType
-alias rte_ip_frag_table_del_expired_entries = fn (UnsafePointer[rte_ip_frag_tbl
-rte_ip_frag_tbl
-], UnsafePointer[rte_ip_frag_death_row
-rte_ip_frag_death_row
-], ffi.c_ulong) -> NoneType
+alias rte_ip_frag_table_create = fn (UInt32, UInt32, UInt32, ffi.c_ulong, Int32) -> UnsafePointer[rte_ip_frag_tbl]
+alias rte_ip_frag_table_destroy = fn (UnsafePointer[rte_ip_frag_tbl]) -> NoneType
+alias rte_ipv6_fragment_packet = fn (UnsafePointer[rte_mbuf], UnsafePointer[UnsafePointer[rte_mbuf]], UInt16, UInt16, UnsafePointer[rte_mempool], UnsafePointer[rte_mempool]) -> Int32
+alias rte_ipv6_frag_reassemble_packet = fn (UnsafePointer[rte_ip_frag_tbl], UnsafePointer[rte_ip_frag_death_row], UnsafePointer[rte_mbuf], ffi.c_ulong, UnsafePointer[rte_ipv6_hdr], UnsafePointer[rte_ipv6_fragment_ext]) -> UnsafePointer[rte_mbuf]
+alias rte_ipv6_frag_get_ipv6_fragment_header = fn (UnsafePointer[rte_ipv6_hdr]) -> UnsafePointer[rte_ipv6_fragment_ext]
+alias rte_ipv4_fragment_packet = fn (UnsafePointer[rte_mbuf], UnsafePointer[UnsafePointer[rte_mbuf]], UInt16, UInt16, UnsafePointer[rte_mempool], UnsafePointer[rte_mempool]) -> Int32
+alias rte_ipv4_fragment_copy_nonseg_packet = fn (UnsafePointer[rte_mbuf], UnsafePointer[UnsafePointer[rte_mbuf]], UInt16, UInt16, UnsafePointer[rte_mempool]) -> Int32
+alias rte_ipv4_frag_reassemble_packet = fn (UnsafePointer[rte_ip_frag_tbl], UnsafePointer[rte_ip_frag_death_row], UnsafePointer[rte_mbuf], ffi.c_ulong, UnsafePointer[rte_ipv4_hdr]) -> UnsafePointer[rte_mbuf]
+alias rte_ipv4_frag_pkt_is_fragmented = fn (UnsafePointer[rte_ipv4_hdr]) -> Int32
+alias rte_ip_frag_free_death_row = fn (UnsafePointer[rte_ip_frag_death_row], UInt32) -> NoneType
+alias rte_ip_frag_table_statistics_dump = fn (UnsafePointer[FILE], UnsafePointer[rte_ip_frag_tbl]) -> NoneType
+alias rte_ip_frag_table_del_expired_entries = fn (UnsafePointer[rte_ip_frag_tbl], UnsafePointer[rte_ip_frag_death_row], ffi.c_ulong) -> NoneType
 
 
 alias rte_ip_frag_remove = ExternalFunction['remove', remove]

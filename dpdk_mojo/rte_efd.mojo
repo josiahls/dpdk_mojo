@@ -168,27 +168,13 @@ alias efd_lookuptbl_t = uint16_t
 alias efd_hashfunc_t = uint16_t
 struct rte_efd_table(Copyable & Movable):
 	pass
-alias rte_efd_create = fn (UnsafePointer[Int8], UInt32, UInt32, ffi.c_ulong, UInt8) -> UnsafePointer[rte_efd_table
-rte_efd_table
-]
-alias rte_efd_free = fn (UnsafePointer[rte_efd_table
-rte_efd_table
-]) -> NoneType
-alias rte_efd_find_existing = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_efd_table
-rte_efd_table
-]
-alias rte_efd_update = fn (UnsafePointer[rte_efd_table
-rte_efd_table
-], UInt32, OpaquePointer, efd_value_t) -> Int32
-alias rte_efd_delete = fn (UnsafePointer[rte_efd_table
-rte_efd_table
-], UInt32, OpaquePointer, UnsafePointer[efd_value_t]) -> Int32
-alias rte_efd_lookup = fn (UnsafePointer[rte_efd_table
-rte_efd_table
-], UInt32, OpaquePointer) -> efd_value_t
-alias rte_efd_lookup_bulk = fn (UnsafePointer[rte_efd_table
-rte_efd_table
-], UInt32, Int32, UnsafePointer[OpaquePointer], UnsafePointer[efd_value_t]) -> NoneType
+alias rte_efd_create = fn (UnsafePointer[Int8], UInt32, UInt32, ffi.c_ulong, UInt8) -> UnsafePointer[rte_efd_table]
+alias rte_efd_free = fn (UnsafePointer[rte_efd_table]) -> NoneType
+alias rte_efd_find_existing = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_efd_table]
+alias rte_efd_update = fn (UnsafePointer[rte_efd_table], UInt32, OpaquePointer, efd_value_t) -> Int32
+alias rte_efd_delete = fn (UnsafePointer[rte_efd_table], UInt32, OpaquePointer, UnsafePointer[efd_value_t]) -> Int32
+alias rte_efd_lookup = fn (UnsafePointer[rte_efd_table], UInt32, OpaquePointer) -> efd_value_t
+alias rte_efd_lookup_bulk = fn (UnsafePointer[rte_efd_table], UInt32, Int32, UnsafePointer[OpaquePointer], UnsafePointer[efd_value_t]) -> NoneType
 
 
 alias rte_efd_rte_efd_create = ExternalFunction['rte_efd_create', rte_efd_create]

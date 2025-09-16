@@ -178,12 +178,8 @@ alias rte_metrics_init = fn (Int32) -> Int32
 alias rte_metrics_deinit = fn () -> Int32
 alias rte_metrics_reg_name = fn (UnsafePointer[Int8]) -> Int32
 alias rte_metrics_reg_names = fn (UnsafePointer[UnsafePointer[Int8], mut=False], UInt16) -> Int32
-alias rte_metrics_get_names = fn (UnsafePointer[rte_metric_name
-rte_metric_name
-], UInt16) -> Int32
-alias rte_metrics_get_values = fn (Int32, UnsafePointer[rte_metric_value
-rte_metric_value
-], UInt16) -> Int32
+alias rte_metrics_get_names = fn (UnsafePointer[rte_metric_name], UInt16) -> Int32
+alias rte_metrics_get_values = fn (Int32, UnsafePointer[rte_metric_value], UInt16) -> Int32
 alias rte_metrics_update_value = fn (Int32, UInt16, ffi.c_long) -> Int32
 alias rte_metrics_update_values = fn (Int32, UInt16, UnsafePointer[ffi.c_ulong], UInt32) -> Int32
 

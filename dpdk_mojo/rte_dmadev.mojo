@@ -320,22 +320,14 @@ alias cpu_set_t = anonomous_record_525
 alias __sched_cpucount = fn (size_t, UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
 alias __sched_cpufree = fn (UnsafePointer[cpu_set_t]) -> NoneType
-alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param
-sched_param
-]) -> Int32
+alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param]) -> Int32
 alias sched_getscheduler = fn (__pid_t) -> Int32
 alias sched_yield = fn () -> Int32
 alias sched_get_priority_max = fn (Int32) -> Int32
 alias sched_get_priority_min = fn (Int32) -> Int32
-alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
+alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec]) -> Int32
 alias unaligned_uint64_t = uint64_t
 alias unaligned_uint32_t = uint32_t
 alias unaligned_uint16_t = uint16_t
@@ -468,7 +460,7 @@ alias rte_dma_count_avail = fn () -> UInt16
 alias rte_dma_next_dev = fn (Int16) -> Int16
 struct rte_dma_info(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x18d456e0","inner":[{"id":"0x18d45740","inner":[{"id":"0x18d45710","kind":"TextComment","loc":{"col":8,"offset":11018,"tokLen":0},"range":{"begin":{"col":8,"offset":11018,"tokLen":0},"end":{"col":24,"offset":11034,"tokLen":1}},"text":" rte_dma_info_get"}],"kind":"ParagraphComment","loc":{"col":8,"offset":11018,"tokLen":0},"range":{"begin":{"col":8,"offset":11018,"tokLen":0},"end":{"col":24,"offset":11034,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":11015,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":11014,"tokLen":1},"end":{"col":24,"offset":11034,"tokLen":1}}}
+# {"id":"0x9b6cae0","inner":[{"id":"0x9b6cb40","inner":[{"id":"0x9b6cb10","kind":"TextComment","loc":{"col":8,"offset":11018,"tokLen":0},"range":{"begin":{"col":8,"offset":11018,"tokLen":0},"end":{"col":24,"offset":11034,"tokLen":1}},"text":" rte_dma_info_get"}],"kind":"ParagraphComment","loc":{"col":8,"offset":11018,"tokLen":0},"range":{"begin":{"col":8,"offset":11018,"tokLen":0},"end":{"col":24,"offset":11034,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":11015,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":11014,"tokLen":1},"end":{"col":24,"offset":11034,"tokLen":1}}}
 
 	var dev_name : UnsafePointer[Int8]
 
@@ -488,12 +480,10 @@ struct rte_dma_info(Copyable & Movable):
 
 	var nb_priorities : UInt16
 
-alias rte_dma_info_get = fn (Int16, UnsafePointer[rte_dma_info
-rte_dma_info
-]) -> Int32
+alias rte_dma_info_get = fn (Int16, UnsafePointer[rte_dma_info]) -> Int32
 struct rte_dma_conf(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x18d46470","inner":[{"id":"0x18d464d0","inner":[{"id":"0x18d464a0","kind":"TextComment","loc":{"col":8,"offset":12456,"tokLen":0},"range":{"begin":{"col":8,"offset":12456,"tokLen":0},"end":{"col":25,"offset":12473,"tokLen":1}},"text":" rte_dma_configure"}],"kind":"ParagraphComment","loc":{"col":8,"offset":12456,"tokLen":0},"range":{"begin":{"col":8,"offset":12456,"tokLen":0},"end":{"col":25,"offset":12473,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":12453,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":12452,"tokLen":1},"end":{"col":25,"offset":12473,"tokLen":1}}}
+# {"id":"0x9b6d870","inner":[{"id":"0x9b6d8d0","inner":[{"id":"0x9b6d8a0","kind":"TextComment","loc":{"col":8,"offset":12456,"tokLen":0},"range":{"begin":{"col":8,"offset":12456,"tokLen":0},"end":{"col":25,"offset":12473,"tokLen":1}},"text":" rte_dma_configure"}],"kind":"ParagraphComment","loc":{"col":8,"offset":12456,"tokLen":0},"range":{"begin":{"col":8,"offset":12456,"tokLen":0},"end":{"col":25,"offset":12473,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":12453,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":12452,"tokLen":1},"end":{"col":25,"offset":12473,"tokLen":1}}}
 
 	var nb_vchans : UInt16
 
@@ -501,15 +491,13 @@ struct rte_dma_conf(Copyable & Movable):
 
 	var priority : UInt16
 
-alias rte_dma_configure = fn (Int16, UnsafePointer[rte_dma_conf
-rte_dma_conf
-]) -> Int32
+alias rte_dma_configure = fn (Int16, UnsafePointer[rte_dma_conf]) -> Int32
 alias rte_dma_start = fn (Int16) -> Int32
 alias rte_dma_stop = fn (Int16) -> Int32
 alias rte_dma_close = fn (Int16) -> Int32
 struct rte_dma_direction(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x18d478b0","inner":[{"id":"0x18d47910","inner":[{"id":"0x18d478e0","kind":"TextComment","loc":{"col":8,"offset":14660,"tokLen":0},"range":{"begin":{"col":8,"offset":14660,"tokLen":0},"end":{"col":44,"offset":14696,"tokLen":1}},"text":" struct rte_dma_vchan_conf::direction"}],"kind":"ParagraphComment","loc":{"col":8,"offset":14660,"tokLen":0},"range":{"begin":{"col":8,"offset":14660,"tokLen":0},"end":{"col":44,"offset":14696,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":14657,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":14656,"tokLen":1},"end":{"col":44,"offset":14696,"tokLen":1}}}
+# {"id":"0x9b6ecb0","inner":[{"id":"0x9b6ed10","inner":[{"id":"0x9b6ece0","kind":"TextComment","loc":{"col":8,"offset":14660,"tokLen":0},"range":{"begin":{"col":8,"offset":14660,"tokLen":0},"end":{"col":44,"offset":14696,"tokLen":1}},"text":" struct rte_dma_vchan_conf::direction"}],"kind":"ParagraphComment","loc":{"col":8,"offset":14660,"tokLen":0},"range":{"begin":{"col":8,"offset":14660,"tokLen":0},"end":{"col":44,"offset":14696,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":14657,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":14656,"tokLen":1},"end":{"col":44,"offset":14696,"tokLen":1}}}
 
 	alias RTE_DMA_DIR_MEM_TO_MEM = 0
 
@@ -521,7 +509,7 @@ struct rte_dma_direction(Copyable & Movable):
 
 struct rte_dma_port_type(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x18d48300","inner":[{"id":"0x18d48360","inner":[{"id":"0x18d48330","kind":"TextComment","loc":{"col":8,"offset":16138,"tokLen":0},"range":{"begin":{"col":8,"offset":16138,"tokLen":0},"end":{"col":44,"offset":16174,"tokLen":1}},"text":" struct rte_dma_port_param::port_type"}],"kind":"ParagraphComment","loc":{"col":8,"offset":16138,"tokLen":0},"range":{"begin":{"col":8,"offset":16138,"tokLen":0},"end":{"col":44,"offset":16174,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":16135,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":16134,"tokLen":1},"end":{"col":44,"offset":16174,"tokLen":1}}}
+# {"id":"0x9b6f700","inner":[{"id":"0x9b6f760","inner":[{"id":"0x9b6f730","kind":"TextComment","loc":{"col":8,"offset":16138,"tokLen":0},"range":{"begin":{"col":8,"offset":16138,"tokLen":0},"end":{"col":44,"offset":16174,"tokLen":1}},"text":" struct rte_dma_port_param::port_type"}],"kind":"ParagraphComment","loc":{"col":8,"offset":16138,"tokLen":0},"range":{"begin":{"col":8,"offset":16138,"tokLen":0},"end":{"col":44,"offset":16174,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":16135,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":16134,"tokLen":1},"end":{"col":44,"offset":16174,"tokLen":1}}}
 
 	alias RTE_DMA_PORT_NONE = 0
 
@@ -545,18 +533,16 @@ struct anonomous_record_526(Copyable & Movable):
 	var st : ffi.c_ulong
 
 alias anonomous_record_527 = C_Union[anonomous_record_526, , , , , , , , , ffi.c_ulong]
-		# # Node: PlaceHolder()
-		# {"closeName":"endcode","id":"0x18d48a90","inner":[{"id":"0x18d48ae0","kind":"VerbatimBlockLineComment","loc":{"col":11,"offset":16940,"tokLen":1},"range":{"begin":{"col":11,"offset":16940,"tokLen":1},"end":{"col":22,"offset":16951,"tokLen":0}},"text":"{.unparsed}"},{"id":"0x18d48b00","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":487,"offset":16956,"tokLen":0},"range":{"begin":{"col":5,"offset":16956,"tokLen":0},"end":{"col":16,"offset":16967,"tokLen":0}},"text":" System Bus"},{"id":"0x18d48b20","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":488,"offset":16972,"tokLen":0},"range":{"begin":{"col":5,"offset":16972,"tokLen":0},"end":{"col":46,"offset":17013,"tokLen":0}},"text":"    |     ----------PCIe module----------"},{"id":"0x18d48b40","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":489,"offset":17018,"tokLen":0},"range":{"begin":{"col":5,"offset":17018,"tokLen":0},"end":{"col":18,"offset":17031,"tokLen":0}},"text":"    |     Bus"},{"id":"0x18d48b60","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":490,"offset":17036,"tokLen":0},"range":{"begin":{"col":5,"offset":17036,"tokLen":0},"end":{"col":24,"offset":17055,"tokLen":0}},"text":"    |     Interface"},{"id":"0x18d48b80","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":491,"offset":17060,"tokLen":0},"range":{"begin":{"col":5,"offset":17060,"tokLen":0},"end":{"col":46,"offset":17101,"tokLen":0}},"text":"    |     -----        ------------------"},{"id":"0x18d48ba0","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":492,"offset":17106,"tokLen":0},"range":{"begin":{"col":5,"offset":17106,"tokLen":0},"end":{"col":46,"offset":17147,"tokLen":0}},"text":"    |     |   |        | PCIe Core0     |"},{"id":"0x18d49bf0","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":493,"offset":17152,"tokLen":0},"range":{"begin":{"col":5,"offset":17152,"tokLen":0},"end":{"col":65,"offset":17212,"tokLen":0}},"text":"    |     |   |        |                |        -----------"},{"id":"0x18d49c10","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":494,"offset":17217,"tokLen":0},"range":{"begin":{"col":5,"offset":17217,"tokLen":0},"end":{"col":65,"offset":17277,"tokLen":0}},"text":"    |     |   |        |   PF-0 -- VF-0 |        | Host A  |"},{"id":"0x18d49c30","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":495,"offset":17282,"tokLen":0},"range":{"begin":{"col":5,"offset":17282,"tokLen":0},"end":{"col":65,"offset":17342,"tokLen":0}},"text":"    |     |   |--------|        |- VF-1 |--------| Root    |"},{"id":"0x18d49c50","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":496,"offset":17347,"tokLen":0},"range":{"begin":{"col":5,"offset":17347,"tokLen":0},"end":{"col":65,"offset":17407,"tokLen":0}},"text":"    |     |   |        |   PF-1         |        | Complex |"},{"id":"0x18d49c70","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":497,"offset":17412,"tokLen":0},"range":{"begin":{"col":5,"offset":17412,"tokLen":0},"end":{"col":65,"offset":17472,"tokLen":0}},"text":"    |     |   |        |   PF-2         |        -----------"},{"id":"0x18d49c90","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":498,"offset":17477,"tokLen":0},"range":{"begin":{"col":5,"offset":17477,"tokLen":0},"end":{"col":46,"offset":17518,"tokLen":0}},"text":"    |     |   |        ------------------"},{"id":"0x18d49cb0","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":499,"offset":17523,"tokLen":0},"range":{"begin":{"col":5,"offset":17523,"tokLen":0},"end":{"col":20,"offset":17538,"tokLen":0}},"text":"    |     |   |"},{"id":"0x18d49cd0","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":500,"offset":17543,"tokLen":0},"range":{"begin":{"col":5,"offset":17543,"tokLen":0},"end":{"col":46,"offset":17584,"tokLen":0}},"text":"    |     |   |        ------------------"},{"id":"0x18d49cf0","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":501,"offset":17589,"tokLen":0},"range":{"begin":{"col":5,"offset":17589,"tokLen":0},"end":{"col":46,"offset":17630,"tokLen":0}},"text":"    |     |   |        | PCIe Core1     |"},{"id":"0x18d49d10","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":502,"offset":17635,"tokLen":0},"range":{"begin":{"col":5,"offset":17635,"tokLen":0},"end":{"col":65,"offset":17695,"tokLen":0}},"text":"    |     |   |        |                |        -----------"},{"id":"0x18d49d30","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":503,"offset":17700,"tokLen":0},"range":{"begin":{"col":5,"offset":17700,"tokLen":0},"end":{"col":65,"offset":17760,"tokLen":0}},"text":"    |     |   |        |   PF-0 -- VF-0 |        | Host B  |"},{"id":"0x18d49d50","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":504,"offset":17765,"tokLen":0},"range":{"begin":{"col":5,"offset":17765,"tokLen":0},"end":{"col":65,"offset":17825,"tokLen":0}},"text":"    |-----|   |--------|   PF-1 -- VF-0 |--------| Root    |"},{"id":"0x18d49d70","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":505,"offset":17830,"tokLen":0},"range":{"begin":{"col":5,"offset":17830,"tokLen":0},"end":{"col":65,"offset":17890,"tokLen":0}},"text":"    |     |   |        |        |- VF-1 |        | Complex |"},{"id":"0x18d49d90","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":506,"offset":17895,"tokLen":0},"range":{"begin":{"col":5,"offset":17895,"tokLen":0},"end":{"col":65,"offset":17955,"tokLen":0}},"text":"    |     |   |        |   PF-2         |        -----------"},{"id":"0x18d49db0","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":507,"offset":17960,"tokLen":0},"range":{"begin":{"col":5,"offset":17960,"tokLen":0},"end":{"col":46,"offset":18001,"tokLen":0}},"text":"    |     |   |        ------------------"},{"id":"0x18d49dd0","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":508,"offset":18006,"tokLen":0},"range":{"begin":{"col":5,"offset":18006,"tokLen":0},"end":{"col":20,"offset":18021,"tokLen":0}},"text":"    |     |   |"},{"id":"0x18d49df0","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":509,"offset":18026,"tokLen":0},"range":{"begin":{"col":5,"offset":18026,"tokLen":0},"end":{"col":46,"offset":18067,"tokLen":0}},"text":"    |     |   |        ------------------"},{"id":"0x18d49e10","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":510,"offset":18072,"tokLen":0},"range":{"begin":{"col":5,"offset":18072,"tokLen":0},"end":{"col":60,"offset":18127,"tokLen":0}},"text":"    |     |DMA|        |                |        ------"},{"id":"0x18d49e30","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":511,"offset":18132,"tokLen":0},"range":{"begin":{"col":5,"offset":18132,"tokLen":0},"end":{"col":60,"offset":18187,"tokLen":0}},"text":"    |     |   |        |                |--------| EP |"},{"id":"0x18d49e50","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":512,"offset":18192,"tokLen":0},"range":{"begin":{"col":5,"offset":18192,"tokLen":0},"end":{"col":60,"offset":18247,"tokLen":0}},"text":"    |     |   |--------| PCIe Core2     |        ------"},{"id":"0x18d49e70","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":513,"offset":18252,"tokLen":0},"range":{"begin":{"col":5,"offset":18252,"tokLen":0},"end":{"col":60,"offset":18307,"tokLen":0}},"text":"    |     |   |        |                |        ------"},{"id":"0x18d49e90","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":514,"offset":18312,"tokLen":0},"range":{"begin":{"col":5,"offset":18312,"tokLen":0},"end":{"col":60,"offset":18367,"tokLen":0}},"text":"    |     |   |        |                |--------| EP |"},{"id":"0x18d49eb0","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":515,"offset":18372,"tokLen":0},"range":{"begin":{"col":5,"offset":18372,"tokLen":0},"end":{"col":60,"offset":18427,"tokLen":0}},"text":"    |     |   |        |                |        ------"},{"id":"0x18d49ed0","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":516,"offset":18432,"tokLen":0},"range":{"begin":{"col":5,"offset":18432,"tokLen":0},"end":{"col":46,"offset":18473,"tokLen":0}},"text":"    |     -----        ------------------"},{"id":"0x18d49ef0","kind":"VerbatimBlockLineComment","loc":{"col":5,"line":517,"offset":18478,"tokLen":0},"range":{"begin":{"col":5,"offset":18478,"tokLen":0},"end":{"col":5,"offset":18478,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":7,"offset":16936,"tokLen":4},"name":"code","range":{"begin":{"col":6,"offset":16935,"tokLen":1},"end":{"col":11,"offset":16940,"tokLen":1}}}
-		# # Node: PlaceHolder()
-		# {"id":"0x18d4a060","inner":[{"id":"0x18d4a130","inner":[{"id":"0x18d4a090","kind":"TextComment","loc":{"col":11,"line":520,"offset":18508,"tokLen":0},"range":{"begin":{"col":11,"offset":18508,"tokLen":0},"end":{"col":53,"offset":18550,"tokLen":1}},"text":" If some fields can not be supported by the"},{"id":"0x18d4a0b0","kind":"TextComment","loc":{"col":5,"line":521,"offset":18556,"tokLen":0},"range":{"begin":{"col":5,"offset":18556,"tokLen":0},"end":{"col":59,"offset":18610,"tokLen":1}},"text":" hardware/driver, then the driver ignores those fields."},{"id":"0x18d4a0d0","kind":"TextComment","loc":{"col":5,"line":522,"offset":18616,"tokLen":0},"range":{"begin":{"col":5,"offset":18616,"tokLen":0},"end":{"col":63,"offset":18674,"tokLen":1}},"text":" Please check driver-specific documentation for limitations"},{"id":"0x18d4a0f0","kind":"TextComment","loc":{"col":5,"line":523,"offset":18680,"tokLen":0},"range":{"begin":{"col":5,"offset":18680,"tokLen":0},"end":{"col":22,"offset":18697,"tokLen":1}},"text":" and capabilities."}],"kind":"ParagraphComment","loc":{"col":11,"line":520,"offset":18508,"tokLen":0},"range":{"begin":{"col":11,"offset":18508,"tokLen":0},"end":{"col":22,"line":523,"offset":18697,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":7,"offset":18504,"tokLen":4},"name":"note","range":{"begin":{"col":6,"offset":18503,"tokLen":1},"end":{"col":22,"line":523,"offset":18697,"tokLen":1}}}
+# # {.unparsed}#  System Bus#     |     ----------PCIe module----------#     |     Bus#     |     Interface#     |     -----        ------------------#     |     |   |        | PCIe Core0     |#     |     |   |        |                |        -----------#     |     |   |        |   PF-0 -- VF-0 |        | Host A  |#     |     |   |--------|        |- VF-1 |--------| Root    |#     |     |   |        |   PF-1         |        | Complex |#     |     |   |        |   PF-2         |        -----------#     |     |   |        ------------------#     |     |   |#     |     |   |        ------------------#     |     |   |        | PCIe Core1     |#     |     |   |        |                |        -----------#     |     |   |        |   PF-0 -- VF-0 |        | Host B  |#     |-----|   |--------|   PF-1 -- VF-0 |--------| Root    |#     |     |   |        |        |- VF-1 |        | Complex |#     |     |   |        |   PF-2         |        -----------#     |     |   |        ------------------#     |     |   |#     |     |   |        ------------------#     |     |DMA|        |                |        ------#     |     |   |        |                |--------| EP |#     |     |   |--------| PCIe Core2     |        ------#     |     |   |        |                |        ------#     |     |   |        |                |--------| EP |#     |     |   |        |                |        ------#     |     -----        ------------------# 		# # Node: PlaceHolder()
+		# {"id":"0x9b71460","inner":[{"id":"0x9b71530","inner":[{"id":"0x9b71490","kind":"TextComment","loc":{"col":11,"line":520,"offset":18508,"tokLen":0},"range":{"begin":{"col":11,"offset":18508,"tokLen":0},"end":{"col":53,"offset":18550,"tokLen":1}},"text":" If some fields can not be supported by the"},{"id":"0x9b714b0","kind":"TextComment","loc":{"col":5,"line":521,"offset":18556,"tokLen":0},"range":{"begin":{"col":5,"offset":18556,"tokLen":0},"end":{"col":59,"offset":18610,"tokLen":1}},"text":" hardware/driver, then the driver ignores those fields."},{"id":"0x9b714d0","kind":"TextComment","loc":{"col":5,"line":522,"offset":18616,"tokLen":0},"range":{"begin":{"col":5,"offset":18616,"tokLen":0},"end":{"col":63,"offset":18674,"tokLen":1}},"text":" Please check driver-specific documentation for limitations"},{"id":"0x9b714f0","kind":"TextComment","loc":{"col":5,"line":523,"offset":18680,"tokLen":0},"range":{"begin":{"col":5,"offset":18680,"tokLen":0},"end":{"col":22,"offset":18697,"tokLen":1}},"text":" and capabilities."}],"kind":"ParagraphComment","loc":{"col":11,"line":520,"offset":18508,"tokLen":0},"range":{"begin":{"col":11,"offset":18508,"tokLen":0},"end":{"col":22,"line":523,"offset":18697,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":7,"offset":18504,"tokLen":4},"name":"note","range":{"begin":{"col":6,"offset":18503,"tokLen":1},"end":{"col":22,"line":523,"offset":18697,"tokLen":1}}}
 
 alias anonomous_record_528 = C_Union[anonomous_record_527]
 
 struct rte_dma_port_param(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x18d48580","inner":[{"id":"0x18d48600","inner":[{"id":"0x18d485b0","kind":"TextComment","loc":{"col":8,"line":467,"offset":16360,"tokLen":0},"range":{"begin":{"col":8,"offset":16360,"tokLen":0},"end":{"col":43,"offset":16395,"tokLen":1}},"text":" struct rte_dma_vchan_conf::src_port"},{"id":"0x18d485d0","kind":"TextComment","loc":{"col":3,"line":468,"offset":16399,"tokLen":0},"range":{"begin":{"col":3,"offset":16399,"tokLen":0},"end":{"col":3,"offset":16399,"tokLen":0}},"text":" "}],"kind":"ParagraphComment","loc":{"col":8,"line":467,"offset":16360,"tokLen":0},"range":{"begin":{"col":8,"offset":16360,"tokLen":0},"end":{"col":3,"line":468,"offset":16399,"tokLen":0}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":16357,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":16356,"tokLen":1},"end":{"col":3,"line":468,"offset":16399,"tokLen":0}}}
+# {"id":"0x9b6f980","inner":[{"id":"0x9b6fa00","inner":[{"id":"0x9b6f9b0","kind":"TextComment","loc":{"col":8,"line":467,"offset":16360,"tokLen":0},"range":{"begin":{"col":8,"offset":16360,"tokLen":0},"end":{"col":43,"offset":16395,"tokLen":1}},"text":" struct rte_dma_vchan_conf::src_port"},{"id":"0x9b6f9d0","kind":"TextComment","loc":{"col":3,"line":468,"offset":16399,"tokLen":0},"range":{"begin":{"col":3,"offset":16399,"tokLen":0},"end":{"col":3,"offset":16399,"tokLen":0}},"text":" "}],"kind":"ParagraphComment","loc":{"col":8,"line":467,"offset":16360,"tokLen":0},"range":{"begin":{"col":8,"offset":16360,"tokLen":0},"end":{"col":3,"line":468,"offset":16399,"tokLen":0}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":16357,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":16356,"tokLen":1},"end":{"col":3,"line":468,"offset":16399,"tokLen":0}}}
 # # Node: PlaceHolder()
-# {"id":"0x18d48620","inner":[{"id":"0x18d48680","inner":[{"id":"0x18d48650","kind":"TextComment","loc":{"col":8,"offset":16404,"tokLen":0},"range":{"begin":{"col":8,"offset":16404,"tokLen":0},"end":{"col":43,"offset":16439,"tokLen":1}},"text":" struct rte_dma_vchan_conf::dst_port"}],"kind":"ParagraphComment","loc":{"col":8,"offset":16404,"tokLen":0},"range":{"begin":{"col":8,"offset":16404,"tokLen":0},"end":{"col":43,"offset":16439,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":16401,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":16400,"tokLen":1},"end":{"col":43,"offset":16439,"tokLen":1}}}
+# {"id":"0x9b6fa20","inner":[{"id":"0x9b6fa80","inner":[{"id":"0x9b6fa50","kind":"TextComment","loc":{"col":8,"offset":16404,"tokLen":0},"range":{"begin":{"col":8,"offset":16404,"tokLen":0},"end":{"col":43,"offset":16439,"tokLen":1}},"text":" struct rte_dma_vchan_conf::dst_port"}],"kind":"ParagraphComment","loc":{"col":8,"offset":16404,"tokLen":0},"range":{"begin":{"col":8,"offset":16404,"tokLen":0},"end":{"col":43,"offset":16439,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":16401,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":16400,"tokLen":1},"end":{"col":43,"offset":16439,"tokLen":1}}}
 
 	var port_type : rte_dma_port_type
 
@@ -581,7 +567,7 @@ struct rte_dma_auto_free_param(Copyable & Movable):
 
 struct rte_dma_vchan_conf(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x18d4ad80","inner":[{"id":"0x18d4ade0","inner":[{"id":"0x18d4adb0","kind":"TextComment","loc":{"col":8,"offset":19822,"tokLen":0},"range":{"begin":{"col":8,"offset":19822,"tokLen":0},"end":{"col":27,"offset":19841,"tokLen":1}},"text":" rte_dma_vchan_setup"}],"kind":"ParagraphComment","loc":{"col":8,"offset":19822,"tokLen":0},"range":{"begin":{"col":8,"offset":19822,"tokLen":0},"end":{"col":27,"offset":19841,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":19819,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":19818,"tokLen":1},"end":{"col":27,"offset":19841,"tokLen":1}}}
+# {"id":"0x9b72180","inner":[{"id":"0x9b721e0","inner":[{"id":"0x9b721b0","kind":"TextComment","loc":{"col":8,"offset":19822,"tokLen":0},"range":{"begin":{"col":8,"offset":19822,"tokLen":0},"end":{"col":27,"offset":19841,"tokLen":1}},"text":" rte_dma_vchan_setup"}],"kind":"ParagraphComment","loc":{"col":8,"offset":19822,"tokLen":0},"range":{"begin":{"col":8,"offset":19822,"tokLen":0},"end":{"col":27,"offset":19841,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":19819,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":19818,"tokLen":1},"end":{"col":27,"offset":19841,"tokLen":1}}}
 
 	var direction : rte_dma_direction
 
@@ -593,12 +579,10 @@ struct rte_dma_vchan_conf(Copyable & Movable):
 
 	var auto_free : rte_dma_auto_free_param
 
-alias rte_dma_vchan_setup = fn (Int16, UInt16, UnsafePointer[rte_dma_vchan_conf
-rte_dma_vchan_conf
-]) -> Int32
+alias rte_dma_vchan_setup = fn (Int16, UInt16, UnsafePointer[rte_dma_vchan_conf]) -> Int32
 struct rte_dma_stats(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x18d4bd70","inner":[{"id":"0x18d4bdd0","inner":[{"id":"0x18d4bda0","kind":"TextComment","loc":{"col":8,"offset":21580,"tokLen":0},"range":{"begin":{"col":8,"offset":21580,"tokLen":0},"end":{"col":25,"offset":21597,"tokLen":1}},"text":" rte_dma_stats_get"}],"kind":"ParagraphComment","loc":{"col":8,"offset":21580,"tokLen":0},"range":{"begin":{"col":8,"offset":21580,"tokLen":0},"end":{"col":25,"offset":21597,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":21577,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":21576,"tokLen":1},"end":{"col":25,"offset":21597,"tokLen":1}}}
+# {"id":"0x9b73170","inner":[{"id":"0x9b731d0","inner":[{"id":"0x9b731a0","kind":"TextComment","loc":{"col":8,"offset":21580,"tokLen":0},"range":{"begin":{"col":8,"offset":21580,"tokLen":0},"end":{"col":25,"offset":21597,"tokLen":1}},"text":" rte_dma_stats_get"}],"kind":"ParagraphComment","loc":{"col":8,"offset":21580,"tokLen":0},"range":{"begin":{"col":8,"offset":21580,"tokLen":0},"end":{"col":25,"offset":21597,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":21577,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":21576,"tokLen":1},"end":{"col":25,"offset":21597,"tokLen":1}}}
 
 	var submitted : ffi.c_ulong
 
@@ -606,13 +590,11 @@ struct rte_dma_stats(Copyable & Movable):
 
 	var errors : ffi.c_ulong
 
-alias rte_dma_stats_get = fn (Int16, UInt16, UnsafePointer[rte_dma_stats
-rte_dma_stats
-]) -> Int32
+alias rte_dma_stats_get = fn (Int16, UInt16, UnsafePointer[rte_dma_stats]) -> Int32
 alias rte_dma_stats_reset = fn (Int16, UInt16) -> Int32
 struct rte_dma_vchan_status(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x18d4ca40","inner":[{"id":"0x18d4caa0","inner":[{"id":"0x18d4ca70","kind":"TextComment","loc":{"col":8,"offset":23079,"tokLen":0},"range":{"begin":{"col":8,"offset":23079,"tokLen":0},"end":{"col":28,"offset":23099,"tokLen":1}},"text":" rte_dma_vchan_status"}],"kind":"ParagraphComment","loc":{"col":8,"offset":23079,"tokLen":0},"range":{"begin":{"col":8,"offset":23079,"tokLen":0},"end":{"col":28,"offset":23099,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":23076,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":23075,"tokLen":1},"end":{"col":28,"offset":23099,"tokLen":1}}}
+# {"id":"0x9b73e40","inner":[{"id":"0x9b73ea0","inner":[{"id":"0x9b73e70","kind":"TextComment","loc":{"col":8,"offset":23079,"tokLen":0},"range":{"begin":{"col":8,"offset":23079,"tokLen":0},"end":{"col":28,"offset":23099,"tokLen":1}},"text":" rte_dma_vchan_status"}],"kind":"ParagraphComment","loc":{"col":8,"offset":23079,"tokLen":0},"range":{"begin":{"col":8,"offset":23079,"tokLen":0},"end":{"col":28,"offset":23099,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":23076,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":23075,"tokLen":1},"end":{"col":28,"offset":23099,"tokLen":1}}}
 
 	alias RTE_DMA_VCHAN_IDLE = 0
 
@@ -623,7 +605,7 @@ struct rte_dma_vchan_status(Copyable & Movable):
 alias rte_dma_dump = fn (Int16, UnsafePointer[FILE]) -> Int32
 struct rte_dma_status_code(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x18d4d6e0","inner":[{"id":"0x18d4d740","inner":[{"id":"0x18d4d710","kind":"TextComment","loc":{"col":8,"offset":24281,"tokLen":0},"range":{"begin":{"col":8,"offset":24281,"tokLen":0},"end":{"col":32,"offset":24305,"tokLen":1}},"text":" rte_dma_completed_status"}],"kind":"ParagraphComment","loc":{"col":8,"offset":24281,"tokLen":0},"range":{"begin":{"col":8,"offset":24281,"tokLen":0},"end":{"col":32,"offset":24305,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":24278,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":24277,"tokLen":1},"end":{"col":32,"offset":24305,"tokLen":1}}}
+# {"id":"0x9b74ae0","inner":[{"id":"0x9b74b40","inner":[{"id":"0x9b74b10","kind":"TextComment","loc":{"col":8,"offset":24281,"tokLen":0},"range":{"begin":{"col":8,"offset":24281,"tokLen":0},"end":{"col":32,"offset":24305,"tokLen":1}},"text":" rte_dma_completed_status"}],"kind":"ParagraphComment","loc":{"col":8,"offset":24281,"tokLen":0},"range":{"begin":{"col":8,"offset":24281,"tokLen":0},"end":{"col":32,"offset":24305,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":24278,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":24277,"tokLen":1},"end":{"col":32,"offset":24305,"tokLen":1}}}
 
 	alias RTE_DMA_STATUS_SUCCESSFUL = 0
 
@@ -659,7 +641,7 @@ struct rte_dma_status_code(Copyable & Movable):
 
 struct rte_dma_sge(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x18d4e840","inner":[{"id":"0x18d4e8a0","inner":[{"id":"0x18d4e870","kind":"TextComment","loc":{"col":8,"offset":27022,"tokLen":0},"range":{"begin":{"col":8,"offset":27022,"tokLen":0},"end":{"col":23,"offset":27037,"tokLen":1}},"text":" rte_dma_copy_sg"}],"kind":"ParagraphComment","loc":{"col":8,"offset":27022,"tokLen":0},"range":{"begin":{"col":8,"offset":27022,"tokLen":0},"end":{"col":23,"offset":27037,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":27019,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":27018,"tokLen":1},"end":{"col":23,"offset":27037,"tokLen":1}}}
+# {"id":"0x9b75c40","inner":[{"id":"0x9b75ca0","inner":[{"id":"0x9b75c70","kind":"TextComment","loc":{"col":8,"offset":27022,"tokLen":0},"range":{"begin":{"col":8,"offset":27022,"tokLen":0},"end":{"col":23,"offset":27037,"tokLen":1}},"text":" rte_dma_copy_sg"}],"kind":"ParagraphComment","loc":{"col":8,"offset":27022,"tokLen":0},"range":{"begin":{"col":8,"offset":27022,"tokLen":0},"end":{"col":23,"offset":27037,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":27019,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":27018,"tokLen":1},"end":{"col":23,"offset":27037,"tokLen":1}}}
 
 	var addr : ffi.c_ulong
 
@@ -673,12 +655,9 @@ alias rte_dma_completed_t = fn(OpaquePointer, UInt16, read UInt16, UnsafePointer
 alias rte_dma_completed_status_t = fn(OpaquePointer, UInt16, read UInt16, UnsafePointer[UInt16], UnsafePointer[rte_dma_status_code]) -> UInt16
 alias rte_dma_burst_capacity_t = fn(read OpaquePointer, UInt16) -> UInt16
 struct rte_dma_fp_object(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x18c7de50","inner":[{"id":"0x18c7de30","inner":[{"id":"0x18c7dd68","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/dmadev/rte_dmadev_core.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"isMacroArgExpansion":true,"line":64,"offset":2155,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/dmadev/rte_dmadev_core.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"isMacroArgExpansion":true,"line":64,"offset":2155,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/dmadev/rte_dmadev_core.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"isMacroArgExpansion":true,"line":64,"offset":2155,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/dmadev/rte_dmadev_core.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"isMacroArgExpansion":true,"line":64,"offset":2155,"tokLen":19},"spellingLoc":{"col":29,"file":"dpdk/build/rte_build_config.h","includedFrom":{"file":"dpdk/config/rte_config.h"},"line":54,"offset":750,"tokLen":3}}},"type":{"qualType":"int"},"value":"128","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":8,"file":"dpdk/lib/dmadev/rte_dmadev_core.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"line":64,"offset":2155,"tokLen":19},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":8,"file":"dpdk/lib/dmadev/rte_dmadev_core.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"line":64,"offset":2155,"tokLen":19},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 128 
 
-# # Node: PlaceHolder()
-# {"closeName":"","id":"0x18d4f550","inner":[{"id":"0x18d4f5a0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"line":55,"offset":1821,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":1821,"tokLen":0},"end":{"col":73,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":1891,"tokLen":0}},"text":" Fast-path dmadev functions and related data are hold in a flat array."},{"id":"0x18d4f5c0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"line":56,"offset":1894,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":1894,"tokLen":0},"end":{"col":25,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":1916,"tokLen":0}},"text":" One entry per dmadev."},{"id":"0x18d4f5e0","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"line":57,"offset":1919,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":1919,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":1919,"tokLen":0}},"text":""},{"id":"0x18d4f600","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"line":58,"offset":1922,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":1922,"tokLen":0},"end":{"col":72,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":1991,"tokLen":0}},"text":" This structure occupy exactly 128B which reserve space for future IO"},{"id":"0x18d4f620","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"line":59,"offset":1994,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":1994,"tokLen":0},"end":{"col":14,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":2005,"tokLen":0}},"text":" functions."},{"id":"0x18d4f640","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"line":60,"offset":2008,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":2008,"tokLen":0},"end":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":2008,"tokLen":0}},"text":""},{"id":"0x18d4f660","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"line":61,"offset":2011,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":2011,"tokLen":0},"end":{"col":74,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":2082,"tokLen":0}},"text":" The 'dev_private' field was placed in the first cache line to optimize"},{"id":"0x18d4f680","kind":"VerbatimBlockLineComment","loc":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"line":62,"offset":2085,"tokLen":0},"range":{"begin":{"col":3,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":2085,"tokLen":0},"end":{"col":61,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":2143,"tokLen":0}},"text":" performance because the PMD mainly depends on this field."},{"id":"0x18d4f6a0","kind":"VerbatimBlockLineComment","loc":{"col":1,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"line":63,"offset":2144,"tokLen":0},"range":{"begin":{"col":1,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":2144,"tokLen":0},"end":{"col":2,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":2145,"tokLen":1}},"text":" "},{"id":"0x18d4f6c0","kind":"VerbatimBlockLineComment","loc":{"col":4,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":2147,"tokLen":0},"range":{"begin":{"col":4,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":2147,"tokLen":0},"end":{"col":4,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":2147,"tokLen":0}},"text":""}],"kind":"VerbatimBlockComment","loc":{"col":5,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":1810,"tokLen":8},"name":"internal","range":{"begin":{"col":4,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":1809,"tokLen":1},"end":{"col":13,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/dmadev/rte_dmadev.h"},"offset":1818,"tokLen":0}}}
-
+# #  Fast-path dmadev functions and related data are hold in a flat array.#  One entry per dmadev.# #  This structure occupy exactly 128B which reserve space for future IO#  functions.# #  The 'dev_private' field was placed in the first cache line to optimize#  performance because the PMD mainly depends on this field.#  # 
 	var dev_private : OpaquePointer
 
 	var copy_ : fn(OpaquePointer, UInt16, rte_iova_t, rte_iova_t, ffi.c_ulong, ffi.c_ulong_long) -> Int32
@@ -748,38 +727,16 @@ alias locale_t = __locale_t
 alias clock = fn () -> clock_t
 alias time = fn (UnsafePointer[time_t]) -> time_t
 alias difftime = fn (time_t, time_t) -> Float64
-alias mktime = fn (UnsafePointer[tm
-tm
-]) -> time_t
-alias strftime = fn (UnsafePointer[Int8], size_t, UnsafePointer[Int8], UnsafePointer[tm
-tm
-]) -> size_t
-alias strftime_l = fn (UnsafePointer[Int8], size_t, UnsafePointer[Int8], UnsafePointer[tm
-tm
-], locale_t) -> size_t
-alias gmtime = fn (UnsafePointer[time_t]) -> UnsafePointer[tm
-tm
-]
-alias localtime = fn (UnsafePointer[time_t]) -> UnsafePointer[tm
-tm
-]
-alias gmtime_r = fn (UnsafePointer[time_t], UnsafePointer[tm
-tm
-]) -> UnsafePointer[tm
-tm
-]
-alias localtime_r = fn (UnsafePointer[time_t], UnsafePointer[tm
-tm
-]) -> UnsafePointer[tm
-tm
-]
-alias asctime = fn (UnsafePointer[tm
-tm
-]) -> UnsafePointer[Int8]
+alias mktime = fn (UnsafePointer[tm]) -> time_t
+alias strftime = fn (UnsafePointer[Int8], size_t, UnsafePointer[Int8], UnsafePointer[tm]) -> size_t
+alias strftime_l = fn (UnsafePointer[Int8], size_t, UnsafePointer[Int8], UnsafePointer[tm], locale_t) -> size_t
+alias gmtime = fn (UnsafePointer[time_t]) -> UnsafePointer[tm]
+alias localtime = fn (UnsafePointer[time_t]) -> UnsafePointer[tm]
+alias gmtime_r = fn (UnsafePointer[time_t], UnsafePointer[tm]) -> UnsafePointer[tm]
+alias localtime_r = fn (UnsafePointer[time_t], UnsafePointer[tm]) -> UnsafePointer[tm]
+alias asctime = fn (UnsafePointer[tm]) -> UnsafePointer[Int8]
 alias ctime = fn (UnsafePointer[time_t]) -> UnsafePointer[Int8]
-alias asctime_r = fn (UnsafePointer[tm
-tm
-], UnsafePointer[Int8]) -> UnsafePointer[Int8]
+alias asctime_r = fn (UnsafePointer[tm], UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias ctime_r = fn (UnsafePointer[time_t], UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias __tzname = InlineArray[UnsafePointer[Int8], 2]
 alias __daylight = Int32
@@ -788,49 +745,21 @@ alias tzname = InlineArray[UnsafePointer[Int8], 2]
 alias tzset = fn () -> NoneType
 alias daylight = Int32
 alias timezone = ffi.c_long
-alias timegm = fn (UnsafePointer[tm
-tm
-]) -> time_t
-alias timelocal = fn (UnsafePointer[tm
-tm
-]) -> time_t
+alias timegm = fn (UnsafePointer[tm]) -> time_t
+alias timelocal = fn (UnsafePointer[tm]) -> time_t
 alias dysize = fn (Int32) -> Int32
-alias nanosleep = fn (UnsafePointer[timespec
-timespec
-], UnsafePointer[timespec
-timespec
-]) -> Int32
-alias clock_getres = fn (clockid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
-alias clock_gettime = fn (clockid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
-alias clock_settime = fn (clockid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
-alias clock_nanosleep = fn (clockid_t, Int32, UnsafePointer[timespec
-timespec
-], UnsafePointer[timespec
-timespec
-]) -> Int32
+alias nanosleep = fn (UnsafePointer[timespec], UnsafePointer[timespec]) -> Int32
+alias clock_getres = fn (clockid_t, UnsafePointer[timespec]) -> Int32
+alias clock_gettime = fn (clockid_t, UnsafePointer[timespec]) -> Int32
+alias clock_settime = fn (clockid_t, UnsafePointer[timespec]) -> Int32
+alias clock_nanosleep = fn (clockid_t, Int32, UnsafePointer[timespec], UnsafePointer[timespec]) -> Int32
 alias clock_getcpuclockid = fn (pid_t, UnsafePointer[clockid_t]) -> Int32
-alias timer_create = fn (clockid_t, UnsafePointer[sigevent
-sigevent
-], UnsafePointer[timer_t]) -> Int32
+alias timer_create = fn (clockid_t, UnsafePointer[sigevent], UnsafePointer[timer_t]) -> Int32
 alias timer_delete = fn (timer_t) -> Int32
-alias timer_settime = fn (timer_t, Int32, UnsafePointer[itimerspec
-itimerspec
-], UnsafePointer[itimerspec
-itimerspec
-]) -> Int32
-alias timer_gettime = fn (timer_t, UnsafePointer[itimerspec
-itimerspec
-]) -> Int32
+alias timer_settime = fn (timer_t, Int32, UnsafePointer[itimerspec], UnsafePointer[itimerspec]) -> Int32
+alias timer_gettime = fn (timer_t, UnsafePointer[itimerspec]) -> Int32
 alias timer_getoverrun = fn (timer_t) -> Int32
-alias timespec_get = fn (UnsafePointer[timespec
-timespec
-], Int32) -> Int32
+alias timespec_get = fn (UnsafePointer[timespec], Int32) -> Int32
 alias rte_atomic_thread_fence = fn (rte_memory_order) -> NoneType
 alias rte_atomic16_cmpset = fn (UnsafePointer[Int16], UInt16, UInt16) -> Int32
 alias __sync_bool_compare_and_swap = fn () -> NoneType
@@ -920,8 +849,7 @@ alias rte_atomic64_clear = fn (UnsafePointer[rte_atomic64_t]) -> NoneType
 alias anonomous_record_534 = C_Union[InlineArray[ffi.c_ulong_long, 2], ffi.c_long_long]
 
 struct anonomous_record_535(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x18cc0460","inner":[{"id":"0x18cc0440","inner":[{"id":"0x18cc0180","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}},"end":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}},"end":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":16,"file":"dpdk/lib/eal/include/generic/rte_atomic.h","includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"line":1101,"offset":25559,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":16,"file":"dpdk/lib/eal/include/generic/rte_atomic.h","includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"line":1101,"offset":25559,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 16 
 
 
 	var union_placeholder_1 : anonomous_record_534
@@ -952,7 +880,7 @@ alias rte_delay_us = fn(UInt32) -> NoneType
 alias rte_delay_ms = fn (UInt32) -> NoneType
 alias rte_delay_us_block = fn (UInt32) -> NoneType
 alias rte_delay_us_sleep = fn (UInt32) -> NoneType
-alias rte_delay_us_callback_register = fn (/,userfunc: fn (UInt32) -> NoneType) -> NoneType
+alias rte_delay_us_callback_register = fn (fn (UInt32) -> NoneType) -> NoneType
 alias __rte_arm64_cntfrq = fn () -> ffi.c_ulong
 alias __rte_arm64_cntvct = fn () -> ffi.c_ulong
 alias __rte_arm64_cntvct_precise = fn () -> ffi.c_ulong
@@ -1084,12 +1012,8 @@ struct rte_trace_mode(Copyable & Movable):
 
 	alias RTE_TRACE_MODE_DISCARD = 1
 
-alias rte_trace_mode_set = fn (
-rte_trace_mode
-) -> NoneType
-alias rte_trace_mode_get = fn () -> 
-rte_trace_mode
-
+alias rte_trace_mode_set = fn (rte_trace_mode) -> NoneType
+alias rte_trace_mode_get = fn () -> rte_trace_mode
 alias rte_trace_pattern = fn (UnsafePointer[Int8], Bool) -> Int32
 alias rte_trace_regexp = fn (UnsafePointer[Int8], Bool) -> Int32
 alias rte_trace_save = fn () -> Int32
@@ -1128,23 +1052,15 @@ alias rte_trace_point_lookup = fn (UnsafePointer[Int8]) -> UnsafePointer[rte_tra
 alias __rte_trace_point_fp_is_enabled = fn () -> Bool
 alias __rte_trace_mem_per_thread_alloc = fn () -> NoneType
 alias __rte_trace_point_emit_field = fn (size_t, UnsafePointer[Int8], UnsafePointer[Int8]) -> NoneType
-alias __rte_trace_point_register = fn (UnsafePointer[rte_trace_point_t], UnsafePointer[Int8], /,register_fn: fn (NoneType) -> NoneType) -> Int32
+alias __rte_trace_point_register = fn (UnsafePointer[rte_trace_point_t], UnsafePointer[Int8], fn (NoneType) -> NoneType) -> Int32
 alias __rte_dma_trace_stats_get = rte_trace_point_t
-alias rte_dma_trace_stats_get = fn (Int16, UInt16, UnsafePointer[rte_dma_stats
-rte_dma_stats
-], Int32) -> NoneType
+alias rte_dma_trace_stats_get = fn (Int16, UInt16, UnsafePointer[rte_dma_stats], Int32) -> NoneType
 alias __rte_dma_trace_vchan_status = rte_trace_point_t
-alias rte_dma_trace_vchan_status = fn (Int16, UInt16, UnsafePointer[
-rte_dma_vchan_status
-], Int32) -> NoneType
+alias rte_dma_trace_vchan_status = fn (Int16, UInt16, UnsafePointer[rte_dma_vchan_status], Int32) -> NoneType
 alias __rte_dma_trace_copy = rte_trace_point_t
 alias rte_dma_trace_copy = fn (Int16, UInt16, rte_iova_t, rte_iova_t, UInt32, ffi.c_ulong, Int32) -> NoneType
 alias __rte_dma_trace_copy_sg = rte_trace_point_t
-alias rte_dma_trace_copy_sg = fn (Int16, UInt16, UnsafePointer[rte_dma_sge
-rte_dma_sge
-], UnsafePointer[rte_dma_sge
-rte_dma_sge
-], UInt16, UInt16, ffi.c_ulong, Int32) -> NoneType
+alias rte_dma_trace_copy_sg = fn (Int16, UInt16, UnsafePointer[rte_dma_sge], UnsafePointer[rte_dma_sge], UInt16, UInt16, ffi.c_ulong, Int32) -> NoneType
 alias __rte_dma_trace_fill = rte_trace_point_t
 alias rte_dma_trace_fill = fn (Int16, UInt16, ffi.c_ulong, rte_iova_t, UInt32, ffi.c_ulong, Int32) -> NoneType
 alias __rte_dma_trace_submit = rte_trace_point_t
@@ -1152,23 +1068,15 @@ alias rte_dma_trace_submit = fn (Int16, UInt16, Int32) -> NoneType
 alias __rte_dma_trace_completed = rte_trace_point_t
 alias rte_dma_trace_completed = fn (Int16, UInt16, Int16, UnsafePointer[UInt16], UnsafePointer[Bool], UInt16) -> NoneType
 alias __rte_dma_trace_completed_status = rte_trace_point_t
-alias rte_dma_trace_completed_status = fn (Int16, UInt16, Int16, UnsafePointer[UInt16], UnsafePointer[
-rte_dma_status_code
-], UInt16) -> NoneType
+alias rte_dma_trace_completed_status = fn (Int16, UInt16, Int16, UnsafePointer[UInt16], UnsafePointer[rte_dma_status_code], UInt16) -> NoneType
 alias __rte_dma_trace_burst_capacity = rte_trace_point_t
 alias rte_dma_trace_burst_capacity = fn (Int16, UInt16, UInt16) -> NoneType
 alias rte_dma_copy = fn (Int16, UInt16, rte_iova_t, rte_iova_t, UInt32, ffi.c_ulong) -> Int32
-alias rte_dma_copy_sg = fn (Int16, UInt16, UnsafePointer[rte_dma_sge
-rte_dma_sge
-], UnsafePointer[rte_dma_sge
-rte_dma_sge
-], UInt16, UInt16, ffi.c_ulong) -> Int32
+alias rte_dma_copy_sg = fn (Int16, UInt16, UnsafePointer[rte_dma_sge], UnsafePointer[rte_dma_sge], UInt16, UInt16, ffi.c_ulong) -> Int32
 alias rte_dma_fill = fn (Int16, UInt16, ffi.c_ulong, rte_iova_t, UInt32, ffi.c_ulong) -> Int32
 alias rte_dma_submit = fn (Int16, UInt16) -> Int32
 alias rte_dma_completed = fn (Int16, UInt16, Int16, UnsafePointer[UInt16], UnsafePointer[Bool]) -> UInt16
-alias rte_dma_completed_status = fn (Int16, UInt16, Int16, UnsafePointer[UInt16], UnsafePointer[
-rte_dma_status_code
-]) -> UInt16
+alias rte_dma_completed_status = fn (Int16, UInt16, Int16, UnsafePointer[UInt16], UnsafePointer[rte_dma_status_code]) -> UInt16
 alias rte_dma_burst_capacity = fn (Int16, UInt16) -> UInt16
 
 

@@ -329,22 +329,14 @@ alias cpu_set_t = anonomous_record_803
 alias __sched_cpucount = fn (size_t, UnsafePointer[cpu_set_t]) -> Int32
 alias __sched_cpualloc = fn (size_t) -> UnsafePointer[cpu_set_t]
 alias __sched_cpufree = fn (UnsafePointer[cpu_set_t]) -> NoneType
-alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param
-sched_param
-]) -> Int32
-alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param
-sched_param
-]) -> Int32
+alias sched_setparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_getparam = fn (__pid_t, UnsafePointer[sched_param]) -> Int32
+alias sched_setscheduler = fn (__pid_t, Int32, UnsafePointer[sched_param]) -> Int32
 alias sched_getscheduler = fn (__pid_t) -> Int32
 alias sched_yield = fn () -> Int32
 alias sched_get_priority_max = fn (Int32) -> Int32
 alias sched_get_priority_min = fn (Int32) -> Int32
-alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
+alias sched_rr_get_interval = fn (__pid_t, UnsafePointer[timespec]) -> Int32
 alias unaligned_uint64_t = uint64_t
 alias unaligned_uint32_t = uint32_t
 alias unaligned_uint16_t = uint16_t
@@ -560,8 +552,7 @@ alias rte_atomic64_clear = fn (UnsafePointer[rte_atomic64_t]) -> NoneType
 alias anonomous_record_807 = C_Union[InlineArray[ffi.c_ulong_long, 2], ffi.c_long_long]
 
 struct anonomous_record_808(Copyable & Movable):
-	# # Node: PlaceHolder()
-	# {"id":"0x1da4c3c0","inner":[{"id":"0x1da4c3a0","inner":[{"id":"0x1da4c2e0","kind":"IntegerLiteral","range":{"begin":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}},"end":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"ConstantExpr","range":{"begin":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}},"end":{"expansionLoc":{"col":16,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"isMacroArgExpansion":true,"offset":25559,"tokLen":13},"spellingLoc":{"col":30,"includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"offset":25573,"tokLen":2}}},"type":{"qualType":"int"},"value":"16","valueCategory":"prvalue"}],"kind":"AlignedAttr","range":{"begin":{"expansionLoc":{"col":16,"file":"dpdk/lib/eal/include/generic/rte_atomic.h","includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"line":1101,"offset":25559,"tokLen":13},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3784,"tokLen":11}},"end":{"expansionLoc":{"col":16,"file":"dpdk/lib/eal/include/generic/rte_atomic.h","includedFrom":{"file":"dpdk/lib/eal/arm/include/rte_atomic_64.h"},"line":1101,"offset":25559,"tokLen":13},"spellingLoc":{"col":54,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":121,"offset":3797,"tokLen":1}}}}
+# Alignment: 16 
 
 
 	var union_placeholder_1 : anonomous_record_807
@@ -654,38 +645,16 @@ alias locale_t = __locale_t
 alias clock = fn () -> clock_t
 alias time = fn (UnsafePointer[time_t]) -> time_t
 alias difftime = fn (time_t, time_t) -> Float64
-alias mktime = fn (UnsafePointer[tm
-tm
-]) -> time_t
-alias strftime = fn (UnsafePointer[Int8], size_t, UnsafePointer[Int8], UnsafePointer[tm
-tm
-]) -> size_t
-alias strftime_l = fn (UnsafePointer[Int8], size_t, UnsafePointer[Int8], UnsafePointer[tm
-tm
-], locale_t) -> size_t
-alias gmtime = fn (UnsafePointer[time_t]) -> UnsafePointer[tm
-tm
-]
-alias localtime = fn (UnsafePointer[time_t]) -> UnsafePointer[tm
-tm
-]
-alias gmtime_r = fn (UnsafePointer[time_t], UnsafePointer[tm
-tm
-]) -> UnsafePointer[tm
-tm
-]
-alias localtime_r = fn (UnsafePointer[time_t], UnsafePointer[tm
-tm
-]) -> UnsafePointer[tm
-tm
-]
-alias asctime = fn (UnsafePointer[tm
-tm
-]) -> UnsafePointer[Int8]
+alias mktime = fn (UnsafePointer[tm]) -> time_t
+alias strftime = fn (UnsafePointer[Int8], size_t, UnsafePointer[Int8], UnsafePointer[tm]) -> size_t
+alias strftime_l = fn (UnsafePointer[Int8], size_t, UnsafePointer[Int8], UnsafePointer[tm], locale_t) -> size_t
+alias gmtime = fn (UnsafePointer[time_t]) -> UnsafePointer[tm]
+alias localtime = fn (UnsafePointer[time_t]) -> UnsafePointer[tm]
+alias gmtime_r = fn (UnsafePointer[time_t], UnsafePointer[tm]) -> UnsafePointer[tm]
+alias localtime_r = fn (UnsafePointer[time_t], UnsafePointer[tm]) -> UnsafePointer[tm]
+alias asctime = fn (UnsafePointer[tm]) -> UnsafePointer[Int8]
 alias ctime = fn (UnsafePointer[time_t]) -> UnsafePointer[Int8]
-alias asctime_r = fn (UnsafePointer[tm
-tm
-], UnsafePointer[Int8]) -> UnsafePointer[Int8]
+alias asctime_r = fn (UnsafePointer[tm], UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias ctime_r = fn (UnsafePointer[time_t], UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias __tzname = InlineArray[UnsafePointer[Int8], 2]
 alias __daylight = Int32
@@ -694,49 +663,21 @@ alias tzname = InlineArray[UnsafePointer[Int8], 2]
 alias tzset = fn () -> NoneType
 alias daylight = Int32
 alias timezone = ffi.c_long
-alias timegm = fn (UnsafePointer[tm
-tm
-]) -> time_t
-alias timelocal = fn (UnsafePointer[tm
-tm
-]) -> time_t
+alias timegm = fn (UnsafePointer[tm]) -> time_t
+alias timelocal = fn (UnsafePointer[tm]) -> time_t
 alias dysize = fn (Int32) -> Int32
-alias nanosleep = fn (UnsafePointer[timespec
-timespec
-], UnsafePointer[timespec
-timespec
-]) -> Int32
-alias clock_getres = fn (clockid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
-alias clock_gettime = fn (clockid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
-alias clock_settime = fn (clockid_t, UnsafePointer[timespec
-timespec
-]) -> Int32
-alias clock_nanosleep = fn (clockid_t, Int32, UnsafePointer[timespec
-timespec
-], UnsafePointer[timespec
-timespec
-]) -> Int32
+alias nanosleep = fn (UnsafePointer[timespec], UnsafePointer[timespec]) -> Int32
+alias clock_getres = fn (clockid_t, UnsafePointer[timespec]) -> Int32
+alias clock_gettime = fn (clockid_t, UnsafePointer[timespec]) -> Int32
+alias clock_settime = fn (clockid_t, UnsafePointer[timespec]) -> Int32
+alias clock_nanosleep = fn (clockid_t, Int32, UnsafePointer[timespec], UnsafePointer[timespec]) -> Int32
 alias clock_getcpuclockid = fn (pid_t, UnsafePointer[clockid_t]) -> Int32
-alias timer_create = fn (clockid_t, UnsafePointer[sigevent
-sigevent
-], UnsafePointer[timer_t]) -> Int32
+alias timer_create = fn (clockid_t, UnsafePointer[sigevent], UnsafePointer[timer_t]) -> Int32
 alias timer_delete = fn (timer_t) -> Int32
-alias timer_settime = fn (timer_t, Int32, UnsafePointer[itimerspec
-itimerspec
-], UnsafePointer[itimerspec
-itimerspec
-]) -> Int32
-alias timer_gettime = fn (timer_t, UnsafePointer[itimerspec
-itimerspec
-]) -> Int32
+alias timer_settime = fn (timer_t, Int32, UnsafePointer[itimerspec], UnsafePointer[itimerspec]) -> Int32
+alias timer_gettime = fn (timer_t, UnsafePointer[itimerspec]) -> Int32
 alias timer_getoverrun = fn (timer_t) -> Int32
-alias timespec_get = fn (UnsafePointer[timespec
-timespec
-], Int32) -> Int32
+alias timespec_get = fn (UnsafePointer[timespec], Int32) -> Int32
 alias memcpy = fn (OpaquePointer, OpaquePointer, ffi.c_ulong) -> OpaquePointer
 alias memmove = fn (OpaquePointer, OpaquePointer, ffi.c_ulong) -> OpaquePointer
 alias memccpy = fn (OpaquePointer, OpaquePointer, Int32, ffi.c_ulong) -> OpaquePointer
@@ -820,9 +761,7 @@ struct rte_proc_type_t(Copyable & Movable):
 
 	alias RTE_PROC_INVALID = 2
 
-alias rte_eal_process_type = fn () -> 
-rte_proc_type_t
-
+alias rte_eal_process_type = fn () -> rte_proc_type_t
 alias rte_eal_iopl_init = fn () -> Int32
 alias rte_eal_init = fn (Int32, UnsafePointer[UnsafePointer[Int8]]) -> Int32
 alias rte_eal_cleanup = fn () -> Int32
@@ -850,29 +789,15 @@ alias rte_mp_t = fn(read UnsafePointer[rte_mp_msg], read OpaquePointer) -> Int32
 alias rte_mp_async_reply_t = fn(read UnsafePointer[rte_mp_msg], read UnsafePointer[rte_mp_reply]) -> Int32
 alias rte_mp_action_register = fn (UnsafePointer[Int8], rte_mp_t) -> Int32
 alias rte_mp_action_unregister = fn (UnsafePointer[Int8]) -> NoneType
-alias rte_mp_sendmsg = fn (UnsafePointer[rte_mp_msg
-rte_mp_msg
-]) -> Int32
-alias rte_mp_request_sync = fn (UnsafePointer[rte_mp_msg
-rte_mp_msg
-], UnsafePointer[rte_mp_reply
-rte_mp_reply
-], UnsafePointer[timespec
-timespec
-]) -> Int32
-alias rte_mp_request_async = fn (UnsafePointer[rte_mp_msg
-rte_mp_msg
-], UnsafePointer[timespec
-timespec
-], rte_mp_async_reply_t) -> Int32
+alias rte_mp_sendmsg = fn (UnsafePointer[rte_mp_msg]) -> Int32
+alias rte_mp_request_sync = fn (UnsafePointer[rte_mp_msg], UnsafePointer[rte_mp_reply], UnsafePointer[timespec]) -> Int32
+alias rte_mp_request_async = fn (UnsafePointer[rte_mp_msg], UnsafePointer[timespec], rte_mp_async_reply_t) -> Int32
 alias rte_usage_hook_t = fn(read UnsafePointer[Int8]) -> NoneType
 alias rte_set_application_usage_hook = fn (rte_usage_hook_t) -> rte_usage_hook_t
 alias rte_eal_has_hugepages = fn () -> Int32
 alias rte_eal_has_pci = fn () -> Int32
 alias rte_eal_create_uio_dev = fn () -> Int32
-alias rte_eal_vfio_intr_mode = fn () -> 
-rte_intr_mode
-
+alias rte_eal_vfio_intr_mode = fn () -> rte_intr_mode
 alias rte_eal_vfio_get_vf_token = fn (UnsafePointer[UInt8]) -> NoneType
 alias rte_sys_gettid = fn () -> Int32
 alias per_lcore__thread_id = Int32
@@ -886,9 +811,7 @@ struct rte_iova_mode(Copyable & Movable):
 
 	alias RTE_IOVA_VA = 2
 
-alias rte_eal_iova_mode = fn () -> 
-rte_iova_mode
-
+alias rte_eal_iova_mode = fn () -> rte_iova_mode
 alias rte_eal_mbuf_user_pool_ops = fn () -> UnsafePointer[Int8]
 alias rte_eal_get_runtime_dir = fn () -> UnsafePointer[Int8]
 alias rte_eal_parse_coremask = fn (UnsafePointer[Int8], UnsafePointer[Int32]) -> Int32
@@ -898,9 +821,7 @@ struct rte_lcore_state_t(Copyable & Movable):
 
 	alias RUNNING = 1
 
-alias lcore_function_t = 	# # Node: PlaceHolder()
-	# {"id":"0x1daa9000","inner":[{"cc":"cdecl","id":"0x1da83410","inner":[{"id":"0x1d801070","kind":"BuiltinType","type":{"qualType":"int"}},{"id":"0x1d801d10","inner":[{"id":"0x1d800fd0","kind":"BuiltinType","type":{"qualType":"void"}}],"kind":"PointerType","type":{"qualType":"void *"}}],"kind":"FunctionProtoType","type":{"qualType":"int (void *)"}}],"kind":"ParenType","type":{"qualType":"int (void *)"}}
-
+alias lcore_function_t = UnsafePointer[fn (OpaquePointer) -> Int32]
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
@@ -913,12 +834,8 @@ struct rte_rmt_call_main_t(Copyable & Movable):
 
 	alias CALL_MAIN = 1
 
-alias rte_eal_mp_remote_launch = fn (UnsafePointer[lcore_function_t], OpaquePointer, 
-rte_rmt_call_main_t
-) -> Int32
-alias rte_eal_get_lcore_state = fn (UInt32) -> 
-rte_lcore_state_t
-
+alias rte_eal_mp_remote_launch = fn (UnsafePointer[lcore_function_t], OpaquePointer, rte_rmt_call_main_t) -> Int32
+alias rte_eal_get_lcore_state = fn (UInt32) -> rte_lcore_state_t
 alias rte_eal_wait_lcore = fn (UInt32) -> Int32
 alias rte_eal_mp_wait_lcore = fn () -> NoneType
 struct anonomous_record_810(Copyable & Movable):
@@ -969,16 +886,10 @@ alias rte_thread_set_name = fn (rte_thread_t, UnsafePointer[Int8]) -> NoneType
 alias rte_thread_set_prefixed_name = fn (rte_thread_t, UnsafePointer[Int8]) -> NoneType
 alias rte_thread_equal = fn (rte_thread_t, rte_thread_t) -> Int32
 alias rte_thread_attr_init = fn (UnsafePointer[rte_thread_attr_t]) -> Int32
-alias rte_thread_attr_set_priority = fn (UnsafePointer[rte_thread_attr_t], 
-rte_thread_priority
-) -> Int32
-alias rte_thread_get_priority = fn (rte_thread_t, UnsafePointer[
-rte_thread_priority
-]) -> Int32
-alias rte_thread_set_priority = fn (rte_thread_t, 
-rte_thread_priority
-) -> Int32
-alias rte_thread_key_create = fn (UnsafePointer[rte_thread_key], /,destructor: fn (OpaquePointer) -> NoneType) -> Int32
+alias rte_thread_attr_set_priority = fn (UnsafePointer[rte_thread_attr_t], rte_thread_priority) -> Int32
+alias rte_thread_get_priority = fn (rte_thread_t, UnsafePointer[rte_thread_priority]) -> Int32
+alias rte_thread_set_priority = fn (rte_thread_t, rte_thread_priority) -> Int32
+alias rte_thread_key_create = fn (UnsafePointer[rte_thread_key], fn (OpaquePointer) -> NoneType) -> Int32
 alias rte_thread_key_delete = fn (rte_thread_key) -> Int32
 alias rte_thread_value_set = fn (rte_thread_key, OpaquePointer) -> Int32
 alias rte_thread_value_get = fn (rte_thread_key) -> OpaquePointer
@@ -993,12 +904,8 @@ struct rte_lcore_role_t(Copyable & Movable):
 
 	alias ROLE_NON_EAL = 3
 
-alias rte_eal_lcore_role = fn (UInt32) -> 
-rte_lcore_role_t
-
-alias rte_lcore_has_role = fn (UInt32, 
-rte_lcore_role_t
-) -> Int32
+alias rte_eal_lcore_role = fn (UInt32) -> rte_lcore_role_t
+alias rte_lcore_has_role = fn (UInt32, rte_lcore_role_t) -> Int32
 alias rte_lcore_id = fn () -> UInt32
 alias rte_get_main_lcore = fn () -> UInt32
 alias rte_lcore_count = fn () -> UInt32
@@ -1103,89 +1010,37 @@ struct rte_fbarray(Copyable & Movable):
 
 	var rwlock : rte_rwlock_t
 
-alias rte_fbarray_init = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UnsafePointer[Int8], UInt32, UInt32) -> Int32
-alias rte_fbarray_attach = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-]) -> Int32
-alias rte_fbarray_destroy = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-]) -> Int32
-alias rte_fbarray_detach = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-]) -> Int32
-alias rte_fbarray_get = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> OpaquePointer
-alias rte_fbarray_find_idx = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], OpaquePointer) -> Int32
-alias rte_fbarray_set_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_set_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_is_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_next_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_next_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_next_n_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32, UInt32) -> Int32
-alias rte_fbarray_find_next_n_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32, UInt32) -> Int32
-alias rte_fbarray_find_contig_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_contig_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_prev_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_prev_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_prev_n_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32, UInt32) -> Int32
-alias rte_fbarray_find_prev_n_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32, UInt32) -> Int32
-alias rte_fbarray_find_rev_contig_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_rev_contig_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_biggest_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_biggest_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_rev_biggest_free = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_find_rev_biggest_used = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UInt32) -> Int32
-alias rte_fbarray_dump_metadata = fn (UnsafePointer[rte_fbarray
-rte_fbarray
-], UnsafePointer[FILE]) -> NoneType
+alias rte_fbarray_init = fn (UnsafePointer[rte_fbarray], UnsafePointer[Int8], UInt32, UInt32) -> Int32
+alias rte_fbarray_attach = fn (UnsafePointer[rte_fbarray]) -> Int32
+alias rte_fbarray_destroy = fn (UnsafePointer[rte_fbarray]) -> Int32
+alias rte_fbarray_detach = fn (UnsafePointer[rte_fbarray]) -> Int32
+alias rte_fbarray_get = fn (UnsafePointer[rte_fbarray], UInt32) -> OpaquePointer
+alias rte_fbarray_find_idx = fn (UnsafePointer[rte_fbarray], OpaquePointer) -> Int32
+alias rte_fbarray_set_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_set_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_is_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_next_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_next_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_next_n_free = fn (UnsafePointer[rte_fbarray], UInt32, UInt32) -> Int32
+alias rte_fbarray_find_next_n_used = fn (UnsafePointer[rte_fbarray], UInt32, UInt32) -> Int32
+alias rte_fbarray_find_contig_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_contig_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_prev_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_prev_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_prev_n_free = fn (UnsafePointer[rte_fbarray], UInt32, UInt32) -> Int32
+alias rte_fbarray_find_prev_n_used = fn (UnsafePointer[rte_fbarray], UInt32, UInt32) -> Int32
+alias rte_fbarray_find_rev_contig_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_rev_contig_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_biggest_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_biggest_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_rev_biggest_free = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_find_rev_biggest_used = fn (UnsafePointer[rte_fbarray], UInt32) -> Int32
+alias rte_fbarray_dump_metadata = fn (UnsafePointer[rte_fbarray], UnsafePointer[FILE]) -> NoneType
 alias anonomous_record_814 = C_Union[OpaquePointer, ffi.c_ulong]
 
 struct rte_memseg(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x1dacd898","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/jobstats/rte_jobstats.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/jobstats/rte_jobstats.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
+	# {"id":"0x3feb5898","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/jobstats/rte_jobstats.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/jobstats/rte_jobstats.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"dpdk/lib/log/rte_log.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var iova : ffi.c_ulong
@@ -1232,14 +1087,8 @@ alias rte_mem_lock_page = fn (OpaquePointer) -> Int32
 alias rte_mem_virt2phy = fn (OpaquePointer) -> phys_addr_t
 alias rte_mem_virt2iova = fn (OpaquePointer) -> rte_iova_t
 alias rte_mem_iova2virt = fn (rte_iova_t) -> OpaquePointer
-alias rte_mem_virt2memseg = fn (OpaquePointer, UnsafePointer[rte_memseg_list
-rte_memseg_list
-]) -> UnsafePointer[rte_memseg
-rte_memseg
-]
-alias rte_mem_virt2memseg_list = fn (OpaquePointer) -> UnsafePointer[rte_memseg_list
-rte_memseg_list
-]
+alias rte_mem_virt2memseg = fn (OpaquePointer, UnsafePointer[rte_memseg_list]) -> UnsafePointer[rte_memseg]
+alias rte_mem_virt2memseg_list = fn (OpaquePointer) -> UnsafePointer[rte_memseg_list]
 alias rte_memseg_walk_t = fn(read UnsafePointer[rte_memseg_list], read UnsafePointer[rte_memseg], OpaquePointer) -> Int32
 alias rte_memseg_contig_walk_t = fn(read UnsafePointer[rte_memseg_list], read UnsafePointer[rte_memseg], size_t, OpaquePointer) -> Int32
 alias rte_memseg_list_walk_t = fn(read UnsafePointer[rte_memseg_list], OpaquePointer) -> Int32
@@ -1249,18 +1098,10 @@ alias rte_memseg_list_walk = fn (rte_memseg_list_walk_t, OpaquePointer) -> Int32
 alias rte_memseg_walk_thread_unsafe = fn (rte_memseg_walk_t, OpaquePointer) -> Int32
 alias rte_memseg_contig_walk_thread_unsafe = fn (rte_memseg_contig_walk_t, OpaquePointer) -> Int32
 alias rte_memseg_list_walk_thread_unsafe = fn (rte_memseg_list_walk_t, OpaquePointer) -> Int32
-alias rte_memseg_get_fd = fn (UnsafePointer[rte_memseg
-rte_memseg
-]) -> Int32
-alias rte_memseg_get_fd_thread_unsafe = fn (UnsafePointer[rte_memseg
-rte_memseg
-]) -> Int32
-alias rte_memseg_get_fd_offset = fn (UnsafePointer[rte_memseg
-rte_memseg
-], UnsafePointer[size_t]) -> Int32
-alias rte_memseg_get_fd_offset_thread_unsafe = fn (UnsafePointer[rte_memseg
-rte_memseg
-], UnsafePointer[size_t]) -> Int32
+alias rte_memseg_get_fd = fn (UnsafePointer[rte_memseg]) -> Int32
+alias rte_memseg_get_fd_thread_unsafe = fn (UnsafePointer[rte_memseg]) -> Int32
+alias rte_memseg_get_fd_offset = fn (UnsafePointer[rte_memseg], UnsafePointer[size_t]) -> Int32
+alias rte_memseg_get_fd_offset_thread_unsafe = fn (UnsafePointer[rte_memseg], UnsafePointer[size_t]) -> Int32
 alias rte_extmem_register = fn (OpaquePointer, size_t, UnsafePointer[rte_iova_t], UInt32, size_t) -> Int32
 alias rte_extmem_unregister = fn (OpaquePointer, size_t) -> Int32
 alias rte_extmem_attach = fn (OpaquePointer, size_t) -> Int32
@@ -1292,50 +1133,20 @@ struct rte_jobstats_context(Copyable & Movable):
 struct rte_jobstats(Copyable & Movable):
 	pass
 alias rte_job_update_period_cb_t = fn(UnsafePointer[rte_jobstats], ffi.c_long_long) -> NoneType
-alias rte_jobstats_context_init = fn (UnsafePointer[rte_jobstats_context
-rte_jobstats_context
-]) -> Int32
-alias rte_jobstats_context_start = fn (UnsafePointer[rte_jobstats_context
-rte_jobstats_context
-]) -> NoneType
-alias rte_jobstats_context_finish = fn (UnsafePointer[rte_jobstats_context
-rte_jobstats_context
-]) -> NoneType
-alias rte_jobstats_context_reset = fn (UnsafePointer[rte_jobstats_context
-rte_jobstats_context
-]) -> NoneType
-alias rte_jobstats_init = fn (UnsafePointer[rte_jobstats
-rte_jobstats
-], UnsafePointer[Int8], ffi.c_ulong, ffi.c_ulong, ffi.c_ulong, ffi.c_long) -> Int32
-alias rte_jobstats_set_target = fn (UnsafePointer[rte_jobstats
-rte_jobstats
-], ffi.c_long) -> NoneType
-alias rte_jobstats_start = fn (UnsafePointer[rte_jobstats_context
-rte_jobstats_context
-], UnsafePointer[rte_jobstats
-rte_jobstats
-]) -> Int32
-alias rte_jobstats_abort = fn (UnsafePointer[rte_jobstats
-rte_jobstats
-]) -> Int32
-alias rte_jobstats_finish = fn (UnsafePointer[rte_jobstats
-rte_jobstats
-], ffi.c_long) -> Int32
-alias rte_jobstats_set_period = fn (UnsafePointer[rte_jobstats
-rte_jobstats
-], ffi.c_ulong, UInt8) -> NoneType
-alias rte_jobstats_set_min = fn (UnsafePointer[rte_jobstats
-rte_jobstats
-], ffi.c_ulong) -> NoneType
-alias rte_jobstats_set_max = fn (UnsafePointer[rte_jobstats
-rte_jobstats
-], ffi.c_ulong) -> NoneType
-alias rte_jobstats_set_update_period_function = fn (UnsafePointer[rte_jobstats
-rte_jobstats
-], rte_job_update_period_cb_t) -> NoneType
-alias rte_jobstats_reset = fn (UnsafePointer[rte_jobstats
-rte_jobstats
-]) -> NoneType
+alias rte_jobstats_context_init = fn (UnsafePointer[rte_jobstats_context]) -> Int32
+alias rte_jobstats_context_start = fn (UnsafePointer[rte_jobstats_context]) -> NoneType
+alias rte_jobstats_context_finish = fn (UnsafePointer[rte_jobstats_context]) -> NoneType
+alias rte_jobstats_context_reset = fn (UnsafePointer[rte_jobstats_context]) -> NoneType
+alias rte_jobstats_init = fn (UnsafePointer[rte_jobstats], UnsafePointer[Int8], ffi.c_ulong, ffi.c_ulong, ffi.c_ulong, ffi.c_long) -> Int32
+alias rte_jobstats_set_target = fn (UnsafePointer[rte_jobstats], ffi.c_long) -> NoneType
+alias rte_jobstats_start = fn (UnsafePointer[rte_jobstats_context], UnsafePointer[rte_jobstats]) -> Int32
+alias rte_jobstats_abort = fn (UnsafePointer[rte_jobstats]) -> Int32
+alias rte_jobstats_finish = fn (UnsafePointer[rte_jobstats], ffi.c_long) -> Int32
+alias rte_jobstats_set_period = fn (UnsafePointer[rte_jobstats], ffi.c_ulong, UInt8) -> NoneType
+alias rte_jobstats_set_min = fn (UnsafePointer[rte_jobstats], ffi.c_ulong) -> NoneType
+alias rte_jobstats_set_max = fn (UnsafePointer[rte_jobstats], ffi.c_ulong) -> NoneType
+alias rte_jobstats_set_update_period_function = fn (UnsafePointer[rte_jobstats], rte_job_update_period_cb_t) -> NoneType
+alias rte_jobstats_reset = fn (UnsafePointer[rte_jobstats]) -> NoneType
 
 
 alias rte_jobstats_remove = ExternalFunction['remove', remove]
