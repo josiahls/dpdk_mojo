@@ -459,9 +459,7 @@ alias rte_dma_is_valid = fn (Int16) -> Bool
 alias rte_dma_count_avail = fn () -> UInt16
 alias rte_dma_next_dev = fn (Int16) -> Int16
 struct rte_dma_info(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x9b6cae0","inner":[{"id":"0x9b6cb40","inner":[{"id":"0x9b6cb10","kind":"TextComment","loc":{"col":8,"offset":11018,"tokLen":0},"range":{"begin":{"col":8,"offset":11018,"tokLen":0},"end":{"col":24,"offset":11034,"tokLen":1}},"text":" rte_dma_info_get"}],"kind":"ParagraphComment","loc":{"col":8,"offset":11018,"tokLen":0},"range":{"begin":{"col":8,"offset":11018,"tokLen":0},"end":{"col":24,"offset":11034,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":11015,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":11014,"tokLen":1},"end":{"col":24,"offset":11034,"tokLen":1}}}
-
+# 
 	var dev_name : UnsafePointer[Int8]
 
 	var dev_capa : ffi.c_ulong
@@ -482,9 +480,7 @@ struct rte_dma_info(Copyable & Movable):
 
 alias rte_dma_info_get = fn (Int16, UnsafePointer[rte_dma_info]) -> Int32
 struct rte_dma_conf(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x9b6d870","inner":[{"id":"0x9b6d8d0","inner":[{"id":"0x9b6d8a0","kind":"TextComment","loc":{"col":8,"offset":12456,"tokLen":0},"range":{"begin":{"col":8,"offset":12456,"tokLen":0},"end":{"col":25,"offset":12473,"tokLen":1}},"text":" rte_dma_configure"}],"kind":"ParagraphComment","loc":{"col":8,"offset":12456,"tokLen":0},"range":{"begin":{"col":8,"offset":12456,"tokLen":0},"end":{"col":25,"offset":12473,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":12453,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":12452,"tokLen":1},"end":{"col":25,"offset":12473,"tokLen":1}}}
-
+# 
 	var nb_vchans : UInt16
 
 	var enable_silent : Bool
@@ -496,9 +492,7 @@ alias rte_dma_start = fn (Int16) -> Int32
 alias rte_dma_stop = fn (Int16) -> Int32
 alias rte_dma_close = fn (Int16) -> Int32
 struct rte_dma_direction(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x9b6ecb0","inner":[{"id":"0x9b6ed10","inner":[{"id":"0x9b6ece0","kind":"TextComment","loc":{"col":8,"offset":14660,"tokLen":0},"range":{"begin":{"col":8,"offset":14660,"tokLen":0},"end":{"col":44,"offset":14696,"tokLen":1}},"text":" struct rte_dma_vchan_conf::direction"}],"kind":"ParagraphComment","loc":{"col":8,"offset":14660,"tokLen":0},"range":{"begin":{"col":8,"offset":14660,"tokLen":0},"end":{"col":44,"offset":14696,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":14657,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":14656,"tokLen":1},"end":{"col":44,"offset":14696,"tokLen":1}}}
-
+# 
 	alias RTE_DMA_DIR_MEM_TO_MEM = 0
 
 	alias RTE_DMA_DIR_MEM_TO_DEV = 1
@@ -508,9 +502,7 @@ struct rte_dma_direction(Copyable & Movable):
 	alias RTE_DMA_DIR_DEV_TO_DEV = 3
 
 struct rte_dma_port_type(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x9b6f700","inner":[{"id":"0x9b6f760","inner":[{"id":"0x9b6f730","kind":"TextComment","loc":{"col":8,"offset":16138,"tokLen":0},"range":{"begin":{"col":8,"offset":16138,"tokLen":0},"end":{"col":44,"offset":16174,"tokLen":1}},"text":" struct rte_dma_port_param::port_type"}],"kind":"ParagraphComment","loc":{"col":8,"offset":16138,"tokLen":0},"range":{"begin":{"col":8,"offset":16138,"tokLen":0},"end":{"col":44,"offset":16174,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":16135,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":16134,"tokLen":1},"end":{"col":44,"offset":16174,"tokLen":1}}}
-
+# 
 	alias RTE_DMA_PORT_NONE = 0
 
 	alias RTE_DMA_PORT_PCIE = 1
@@ -533,17 +525,11 @@ struct anonomous_record_526(Copyable & Movable):
 	var st : ffi.c_ulong
 
 alias anonomous_record_527 = C_Union[anonomous_record_526, , , , , , , , , ffi.c_ulong]
-# # {.unparsed}#  System Bus#     |     ----------PCIe module----------#     |     Bus#     |     Interface#     |     -----        ------------------#     |     |   |        | PCIe Core0     |#     |     |   |        |                |        -----------#     |     |   |        |   PF-0 -- VF-0 |        | Host A  |#     |     |   |--------|        |- VF-1 |--------| Root    |#     |     |   |        |   PF-1         |        | Complex |#     |     |   |        |   PF-2         |        -----------#     |     |   |        ------------------#     |     |   |#     |     |   |        ------------------#     |     |   |        | PCIe Core1     |#     |     |   |        |                |        -----------#     |     |   |        |   PF-0 -- VF-0 |        | Host B  |#     |-----|   |--------|   PF-1 -- VF-0 |--------| Root    |#     |     |   |        |        |- VF-1 |        | Complex |#     |     |   |        |   PF-2         |        -----------#     |     |   |        ------------------#     |     |   |#     |     |   |        ------------------#     |     |DMA|        |                |        ------#     |     |   |        |                |--------| EP |#     |     |   |--------| PCIe Core2     |        ------#     |     |   |        |                |        ------#     |     |   |        |                |--------| EP |#     |     |   |        |                |        ------#     |     -----        ------------------# 		# # Node: PlaceHolder()
-		# {"id":"0x9b71460","inner":[{"id":"0x9b71530","inner":[{"id":"0x9b71490","kind":"TextComment","loc":{"col":11,"line":520,"offset":18508,"tokLen":0},"range":{"begin":{"col":11,"offset":18508,"tokLen":0},"end":{"col":53,"offset":18550,"tokLen":1}},"text":" If some fields can not be supported by the"},{"id":"0x9b714b0","kind":"TextComment","loc":{"col":5,"line":521,"offset":18556,"tokLen":0},"range":{"begin":{"col":5,"offset":18556,"tokLen":0},"end":{"col":59,"offset":18610,"tokLen":1}},"text":" hardware/driver, then the driver ignores those fields."},{"id":"0x9b714d0","kind":"TextComment","loc":{"col":5,"line":522,"offset":18616,"tokLen":0},"range":{"begin":{"col":5,"offset":18616,"tokLen":0},"end":{"col":63,"offset":18674,"tokLen":1}},"text":" Please check driver-specific documentation for limitations"},{"id":"0x9b714f0","kind":"TextComment","loc":{"col":5,"line":523,"offset":18680,"tokLen":0},"range":{"begin":{"col":5,"offset":18680,"tokLen":0},"end":{"col":22,"offset":18697,"tokLen":1}},"text":" and capabilities."}],"kind":"ParagraphComment","loc":{"col":11,"line":520,"offset":18508,"tokLen":0},"range":{"begin":{"col":11,"offset":18508,"tokLen":0},"end":{"col":22,"line":523,"offset":18697,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":7,"offset":18504,"tokLen":4},"name":"note","range":{"begin":{"col":6,"offset":18503,"tokLen":1},"end":{"col":22,"line":523,"offset":18697,"tokLen":1}}}
-
+# # {.unparsed}#  System Bus#     |     ----------PCIe module----------#     |     Bus#     |     Interface#     |     -----        ------------------#     |     |   |        | PCIe Core0     |#     |     |   |        |                |        -----------#     |     |   |        |   PF-0 -- VF-0 |        | Host A  |#     |     |   |--------|        |- VF-1 |--------| Root    |#     |     |   |        |   PF-1         |        | Complex |#     |     |   |        |   PF-2         |        -----------#     |     |   |        ------------------#     |     |   |#     |     |   |        ------------------#     |     |   |        | PCIe Core1     |#     |     |   |        |                |        -----------#     |     |   |        |   PF-0 -- VF-0 |        | Host B  |#     |-----|   |--------|   PF-1 -- VF-0 |--------| Root    |#     |     |   |        |        |- VF-1 |        | Complex |#     |     |   |        |   PF-2         |        -----------#     |     |   |        ------------------#     |     |   |#     |     |   |        ------------------#     |     |DMA|        |                |        ------#     |     |   |        |                |--------| EP |#     |     |   |--------| PCIe Core2     |        ------#     |     |   |        |                |        ------#     |     |   |        |                |--------| EP |#     |     |   |        |                |        ------#     |     -----        ------------------# # 
 alias anonomous_record_528 = C_Union[anonomous_record_527]
 
 struct rte_dma_port_param(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x9b6f980","inner":[{"id":"0x9b6fa00","inner":[{"id":"0x9b6f9b0","kind":"TextComment","loc":{"col":8,"line":467,"offset":16360,"tokLen":0},"range":{"begin":{"col":8,"offset":16360,"tokLen":0},"end":{"col":43,"offset":16395,"tokLen":1}},"text":" struct rte_dma_vchan_conf::src_port"},{"id":"0x9b6f9d0","kind":"TextComment","loc":{"col":3,"line":468,"offset":16399,"tokLen":0},"range":{"begin":{"col":3,"offset":16399,"tokLen":0},"end":{"col":3,"offset":16399,"tokLen":0}},"text":" "}],"kind":"ParagraphComment","loc":{"col":8,"line":467,"offset":16360,"tokLen":0},"range":{"begin":{"col":8,"offset":16360,"tokLen":0},"end":{"col":3,"line":468,"offset":16399,"tokLen":0}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":16357,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":16356,"tokLen":1},"end":{"col":3,"line":468,"offset":16399,"tokLen":0}}}
-# # Node: PlaceHolder()
-# {"id":"0x9b6fa20","inner":[{"id":"0x9b6fa80","inner":[{"id":"0x9b6fa50","kind":"TextComment","loc":{"col":8,"offset":16404,"tokLen":0},"range":{"begin":{"col":8,"offset":16404,"tokLen":0},"end":{"col":43,"offset":16439,"tokLen":1}},"text":" struct rte_dma_vchan_conf::dst_port"}],"kind":"ParagraphComment","loc":{"col":8,"offset":16404,"tokLen":0},"range":{"begin":{"col":8,"offset":16404,"tokLen":0},"end":{"col":43,"offset":16439,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":16401,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":16400,"tokLen":1},"end":{"col":43,"offset":16439,"tokLen":1}}}
-
+# # 
 	var port_type : rte_dma_port_type
 
 	var union_placeholder_1 : anonomous_record_528
@@ -566,9 +552,7 @@ struct rte_dma_auto_free_param(Copyable & Movable):
 	var reserved : InlineArray[ffi.c_ulong_long, 2]
 
 struct rte_dma_vchan_conf(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x9b72180","inner":[{"id":"0x9b721e0","inner":[{"id":"0x9b721b0","kind":"TextComment","loc":{"col":8,"offset":19822,"tokLen":0},"range":{"begin":{"col":8,"offset":19822,"tokLen":0},"end":{"col":27,"offset":19841,"tokLen":1}},"text":" rte_dma_vchan_setup"}],"kind":"ParagraphComment","loc":{"col":8,"offset":19822,"tokLen":0},"range":{"begin":{"col":8,"offset":19822,"tokLen":0},"end":{"col":27,"offset":19841,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":19819,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":19818,"tokLen":1},"end":{"col":27,"offset":19841,"tokLen":1}}}
-
+# 
 	var direction : rte_dma_direction
 
 	var nb_desc : UInt16
@@ -581,9 +565,7 @@ struct rte_dma_vchan_conf(Copyable & Movable):
 
 alias rte_dma_vchan_setup = fn (Int16, UInt16, UnsafePointer[rte_dma_vchan_conf]) -> Int32
 struct rte_dma_stats(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x9b73170","inner":[{"id":"0x9b731d0","inner":[{"id":"0x9b731a0","kind":"TextComment","loc":{"col":8,"offset":21580,"tokLen":0},"range":{"begin":{"col":8,"offset":21580,"tokLen":0},"end":{"col":25,"offset":21597,"tokLen":1}},"text":" rte_dma_stats_get"}],"kind":"ParagraphComment","loc":{"col":8,"offset":21580,"tokLen":0},"range":{"begin":{"col":8,"offset":21580,"tokLen":0},"end":{"col":25,"offset":21597,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":21577,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":21576,"tokLen":1},"end":{"col":25,"offset":21597,"tokLen":1}}}
-
+# 
 	var submitted : ffi.c_ulong
 
 	var completed : ffi.c_ulong
@@ -593,9 +575,7 @@ struct rte_dma_stats(Copyable & Movable):
 alias rte_dma_stats_get = fn (Int16, UInt16, UnsafePointer[rte_dma_stats]) -> Int32
 alias rte_dma_stats_reset = fn (Int16, UInt16) -> Int32
 struct rte_dma_vchan_status(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x9b73e40","inner":[{"id":"0x9b73ea0","inner":[{"id":"0x9b73e70","kind":"TextComment","loc":{"col":8,"offset":23079,"tokLen":0},"range":{"begin":{"col":8,"offset":23079,"tokLen":0},"end":{"col":28,"offset":23099,"tokLen":1}},"text":" rte_dma_vchan_status"}],"kind":"ParagraphComment","loc":{"col":8,"offset":23079,"tokLen":0},"range":{"begin":{"col":8,"offset":23079,"tokLen":0},"end":{"col":28,"offset":23099,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":23076,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":23075,"tokLen":1},"end":{"col":28,"offset":23099,"tokLen":1}}}
-
+# 
 	alias RTE_DMA_VCHAN_IDLE = 0
 
 	alias RTE_DMA_VCHAN_ACTIVE = 1
@@ -604,9 +584,7 @@ struct rte_dma_vchan_status(Copyable & Movable):
 
 alias rte_dma_dump = fn (Int16, UnsafePointer[FILE]) -> Int32
 struct rte_dma_status_code(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x9b74ae0","inner":[{"id":"0x9b74b40","inner":[{"id":"0x9b74b10","kind":"TextComment","loc":{"col":8,"offset":24281,"tokLen":0},"range":{"begin":{"col":8,"offset":24281,"tokLen":0},"end":{"col":32,"offset":24305,"tokLen":1}},"text":" rte_dma_completed_status"}],"kind":"ParagraphComment","loc":{"col":8,"offset":24281,"tokLen":0},"range":{"begin":{"col":8,"offset":24281,"tokLen":0},"end":{"col":32,"offset":24305,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":24278,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":24277,"tokLen":1},"end":{"col":32,"offset":24305,"tokLen":1}}}
-
+# 
 	alias RTE_DMA_STATUS_SUCCESSFUL = 0
 
 	alias RTE_DMA_STATUS_USER_ABORT = 1
@@ -640,9 +618,7 @@ struct rte_dma_status_code(Copyable & Movable):
 	alias RTE_DMA_STATUS_ERROR_UNKNOWN = 256
 
 struct rte_dma_sge(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x9b75c40","inner":[{"id":"0x9b75ca0","inner":[{"id":"0x9b75c70","kind":"TextComment","loc":{"col":8,"offset":27022,"tokLen":0},"range":{"begin":{"col":8,"offset":27022,"tokLen":0},"end":{"col":23,"offset":27037,"tokLen":1}},"text":" rte_dma_copy_sg"}],"kind":"ParagraphComment","loc":{"col":8,"offset":27022,"tokLen":0},"range":{"begin":{"col":8,"offset":27022,"tokLen":0},"end":{"col":23,"offset":27037,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":27019,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":27018,"tokLen":1},"end":{"col":23,"offset":27037,"tokLen":1}}}
-
+# 
 	var addr : ffi.c_ulong
 
 	var length : UInt32

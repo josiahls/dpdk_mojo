@@ -1128,7 +1128,7 @@ alias anonomous_record_937 = C_Union[OpaquePointer, ffi.c_ulong]
 
 struct rte_memseg(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x16de0f48","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"line":159,"offset":4866,"tokLen":10}}}}
+	# {"id":"0x30250f48","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memory.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":61,"offset":1680,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var iova : ffi.c_ulong
@@ -1219,7 +1219,7 @@ alias anonomous_record_939 = C_Union[OpaquePointer, ffi.c_ulong]
 
 struct rte_memzone(Copyable & Movable):
 	# # Node: PlaceHolder()
-	# {"id":"0x16dee3b8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"line":159,"offset":4866,"tokLen":10}}}}
+	# {"id":"0x3025e3b8","kind":"PackedAttr","range":{"begin":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"line":159,"offset":4866,"tokLen":10}},"end":{"expansionLoc":{"col":3,"file":"dpdk/lib/eal/include/rte_memzone.h","includedFrom":{"file":"dpdk/lib/ring/rte_ring_core.h"},"line":65,"offset":2366,"tokLen":16},"spellingLoc":{"col":41,"file":"dpdk/lib/eal/include/rte_common.h","includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"line":159,"offset":4866,"tokLen":10}}}}
 
 
 	var name : InlineArray[Int8, 32]
@@ -2355,9 +2355,7 @@ struct anonomous_record_965(Copyable & Movable):
 alias anonomous_record_966 = C_Union[ffi.c_ulong, anonomous_record_965, , , , , ]
 
 struct rte_regexdev_match(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x17076940","inner":[{"id":"0x170769a0","inner":[{"id":"0x17076970","kind":"TextComment","loc":{"col":8,"offset":44043,"tokLen":0},"range":{"begin":{"col":8,"offset":44043,"tokLen":0},"end":{"col":37,"offset":44072,"tokLen":1}},"text":" struct rte_regex_ops::matches"}],"kind":"ParagraphComment","loc":{"col":8,"offset":44043,"tokLen":0},"range":{"begin":{"col":8,"offset":44043,"tokLen":0},"end":{"col":37,"offset":44072,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":44040,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":44039,"tokLen":1},"end":{"col":37,"offset":44072,"tokLen":1}}}
-
+# 
 	var union_placeholder_1 : anonomous_record_966
 
 
@@ -2372,7 +2370,7 @@ alias anonomous_record_967 = C_Union[ffi.c_ulong, OpaquePointer]
 
 struct rte_regexdev(Copyable & Movable):
 # # Node: PlaceHolder()
-# {"id":"0x170770a0","kind":"VerbatimLineComment","loc":{"col":5,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":154,"tokLen":4},"range":{"begin":{"col":4,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":153,"tokLen":1},"end":{"col":9,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":158,"tokLen":0}},"text":""}
+# {"id":"0x304e70a0","kind":"VerbatimLineComment","loc":{"col":5,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":154,"tokLen":4},"range":{"begin":{"col":4,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":153,"tokLen":1},"end":{"col":9,"includedFrom":{"file":"/home/mojo_user/dpdk_mojo/dpdk/build/../lib/regexdev/rte_regexdev.h"},"offset":158,"tokLen":0}},"text":""}
 
 	pass
 alias regexdev_info_get_t = fn(UnsafePointer[rte_regexdev], UnsafePointer[rte_regexdev_info]) -> Int32

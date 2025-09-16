@@ -413,9 +413,7 @@ struct anonomous_record_1773(Copyable & Movable):
 alias anonomous_record_1775 = C_Union[anonomous_record_1773, anonomous_record_1774]
 
 struct rte_graph_param(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x298d16e0","inner":[{"id":"0x298d1740","inner":[{"id":"0x298d1710","kind":"TextComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}},"text":" rte_graph_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":4777,"tokLen":0},"range":{"begin":{"col":8,"offset":4777,"tokLen":0},"end":{"col":26,"offset":4795,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":4774,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":4773,"tokLen":1},"end":{"col":26,"offset":4795,"tokLen":1}}}
-
+# 
 	var socket_id : Int32
 
 	var nb_node_patterns : UInt16
@@ -435,9 +433,7 @@ struct rte_graph_param(Copyable & Movable):
 alias anonomous_record_1776 = C_Union[OpaquePointer, UnsafePointer[FILE]]
 
 struct rte_graph_cluster_stats_param(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x298d1f10","inner":[{"id":"0x298d1f70","inner":[{"id":"0x298d1f40","kind":"TextComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}},"text":" rte_graph_cluster_stats_create()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":5575,"tokLen":0},"range":{"begin":{"col":8,"offset":5575,"tokLen":0},"end":{"col":40,"offset":5607,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":5572,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":5571,"tokLen":1},"end":{"col":40,"offset":5607,"tokLen":1}}}
-
+# 
 	var socket_id : Int32
 
 	var fn_ : fn(Bool, Bool, OpaquePointer, read UnsafePointer[rte_graph_cluster_node_stats]) -> Int32
@@ -483,9 +479,7 @@ struct rte_node_xstats(Copyable & Movable):
 	var xstat_desc : UnsafePointer[Int8] # Failed to parse array size
 
 struct rte_node_register(Copyable & Movable):
-# # Node: PlaceHolder()
-# {"id":"0x298d6c70","inner":[{"id":"0x298d6cd0","inner":[{"id":"0x298d6ca0","kind":"TextComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}},"text":" __rte_node_register(), RTE_NODE_REGISTER()"}],"kind":"ParagraphComment","loc":{"col":8,"offset":13326,"tokLen":0},"range":{"begin":{"col":8,"offset":13326,"tokLen":0},"end":{"col":50,"offset":13368,"tokLen":1}}}],"kind":"BlockCommandComment","loc":{"col":5,"offset":13323,"tokLen":3},"name":"see","range":{"begin":{"col":4,"offset":13322,"tokLen":1},"end":{"col":50,"offset":13368,"tokLen":1}}}
-
+# 
 	var name : InlineArray[Int8, 64]
 
 	var flags : ffi.c_ulong
